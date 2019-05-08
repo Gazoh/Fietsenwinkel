@@ -18,7 +18,7 @@
         <li>BESTELLINGEN</li>
         <li>FIETSEN</li>
         <li>AANBIEDINGEN</li>
-        <li>REVIEWS</li>
+        <li>REV;IEWS</li>
         <li class="MainMenu">NIEUWSBRIEF</li>
     </menu>
     <div class="col-md-10 col-lg-9 HomeMenu"></div>
