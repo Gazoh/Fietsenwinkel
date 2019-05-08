@@ -59,11 +59,10 @@
             </a>
         </ul>
     </div>
-
     <!-- End of the sidebar-->
     <!-- Navbar-->
     <nav class="navbar navbar-light bg-light justify-content-between">
-        <img src="Assets/img/logo.png" width="130">
+        <h3 class="logo">Gebruikte Fietsen</h3>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -73,6 +72,58 @@
             </button>
         </form>
     </nav>
+    <div class="container-fluid body">
+        <div class="row widgets">
+            <div class="col">
+                <div class="card text-white mb-3">
+                    <div class="card-body">
+                        <div class="card-icons">
+                            <i class="fas fa-users cardWidget"></i>
+                            <h1 class="card-title numbers">31</h1>
+                        </div>
+                        <h3 class="card-title">Bezoekers</h3>
+                        <p class="card-text">Op dit moment</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white mb-3">
+                    <div class="card-body">
+                        <div class="card-icons">
+                            <i class="fas fa-box cardWidget"></i>
+                            <h1 class="card-title numbers">94</h1>
+                        </div>
+                        <h3 class="card-title">Bestellingen</h3>
+                        <p class="card-text">In de afgelopen week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white mb-3">
+                    <div class="card-body">
+                        <div class="card-icons">
+                            <i class="fas fa-star-half-alt cardWidget"></i>
+                            <h1 class="card-title numbers">16</h1>
+                        </div>
+                        <h3 class="card-title">Reviews</h3>
+                        <p class="card-text">In de afgelopen week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white mb-3">
+                    <div class="card-body">
+                        <div class="card-icons">
+                            <i class="fas fa-money-bill-wave cardWidget"></i>
+                            <h1 class="card-title numbers">&euro; 6134</h1>
+                        </div>
+                        <h3 class="card-title">Netto winst</h3>
+                        <p class="card-text">In de afgelopen week</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
