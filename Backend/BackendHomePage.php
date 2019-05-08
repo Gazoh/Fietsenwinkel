@@ -17,7 +17,7 @@
     <title>Fietsenwinkel - CMS</title>
 </head>
 <body>
-<div class="container-fluid">
+<div class="wrapper">
     <!--  Sidebar  -->
     <div id="sidebar">
         <ul class="sidebarUl">
@@ -53,27 +53,27 @@
                 <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>Nieuwsbrief</li>
             </a>
             <a href="#">
-                <li class="sidebarLiUitloggen"><span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
+                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
                     Uitloggen
                 </li>
             </a>
         </ul>
     </div>
-</div>
-<!-- End of the sidebar-->
-<!-- Navbar-->
-<div id="container">
+
+    <!-- End of the sidebar-->
+    <!-- Navbar-->
     <nav class="navbar navbar-light bg-light justify-content-between">
         <img src="Assets/img/logo.png" width="130">
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-user"></i></span>Account</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-question"></i></span>Help</button>
+            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-user"></i></span>Account
+            </button>
+            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-question"></i></span>Help
+            </button>
         </form>
     </nav>
 </div>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

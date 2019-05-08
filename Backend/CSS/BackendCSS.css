@@ -35,8 +35,10 @@ body {
   font-family: Roboto-Regular;
 }
 
-.container-fluid {
-  padding: 0px !important;
+.wrapper {
+  position: relative;
+  top: 0;
+  height: 100vh;
 }
 
 /* -------------------------------------------- */
@@ -46,9 +48,7 @@ body {
   background-color: #073f7f;
   width: 260px;
   height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  float: left;
 }
 
 .sidebarLi {
@@ -72,6 +72,9 @@ body {
 
 .sidebarUl {
   padding: 0px;
+  overflow: hidden;
+  height: 100% !important;
+  display: inline;
 }
 
 .sidebarIcons {
@@ -115,7 +118,7 @@ body {
 /*                    NAV                       */
 /* -------------------------------------------- */
 nav.navbar.navbar-light.bg-light.justify-content-between {
-  margin-left: 260px;
+  height: 80px;
 }
 
 button.btn.btn-primary.nav-buttons {
@@ -124,5 +127,16 @@ button.btn.btn-primary.nav-buttons {
   padding-left: 16px;
   padding-right: 16px;
 }
+
+/* -------------------------------------------- */
+/*                    BODY                      */
+/* -------------------------------------------- */
+.row.widgets {
+  margin: 0px;
+}
+
+/* -------------------------------------------- */
+/*                    WIDGETS                   */
+/* -------------------------------------------- */
 
 /*# sourceMappingURL=BackendCSS.css.map */
