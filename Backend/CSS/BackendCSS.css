@@ -1,0 +1,128 @@
+/* -------------------------------------------- */
+/*                    VARIABLEN                 */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*                    FONTS                     */
+/* -------------------------------------------- */
+@font-face {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../Assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../Assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../Assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../Assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+/* -------------------------------------------- */
+/*                    CONTAINER                 */
+/* -------------------------------------------- */
+body {
+  font-family: Roboto-Regular;
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
+/* -------------------------------------------- */
+/*                    SIDEBAR                   */
+/* -------------------------------------------- */
+#sidebar {
+  background-color: #073f7f;
+  width: 260px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebarLi {
+  padding: 1.4rem;
+  color: #fff;
+  list-style-type: none;
+  text-align: left;
+  border-bottom: 2px solid #00316a;
+}
+
+.sidebarLiUitloggen {
+  position: absolute;
+  bottom: 0;
+  padding: 1.4rem;
+  color: #fff;
+  list-style-type: none;
+  text-align: left;
+  border-top: 2px solid #00316a;
+  width: 100%;
+}
+
+.sidebarUl {
+  padding: 0px;
+}
+
+.sidebarIcons {
+  padding-right: 20px;
+  font-size: 1.3rem;
+}
+
+.fas {
+  width: 23.41px !important;
+  padding-right: 11px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid #00316a;
+}
+
+.sidebarUsername {
+  float: right;
+  position: relative;
+  right: 3rem;
+  top: 1.3rem;
+  font-family: Roboto-Bold;
+}
+
+.adminVersie {
+  float: right;
+  position: relative;
+  right: 0rem;
+  top: 2.8rem;
+  margin: 0;
+  font-weight: 100;
+  font-family: Roboto-Regular;
+  font-size: 0.9rem;
+}
+
+/* -------------------------------------------- */
+/*                    NAV                       */
+/* -------------------------------------------- */
+nav.navbar.navbar-light.bg-light.justify-content-between {
+  margin-left: 260px;
+}
+
+button.btn.btn-primary.nav-buttons {
+  background-color: #073f7f;
+  border-color: #073f7f;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/*# sourceMappingURL=BackendCSS.css.map */

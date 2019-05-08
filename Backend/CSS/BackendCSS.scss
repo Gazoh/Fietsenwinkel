@@ -1,4 +1,10 @@
 /* -------------------------------------------- */
+/*                    VARIABLEN                 */
+/* -------------------------------------------- */
+$main_color: #073f7f;
+$main_color_shadow: #00316a;
+
+/* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
 @font-face {
@@ -39,14 +45,13 @@ body {
 
 .container-fluid {
   padding: 0px !important;
-
 }
 
 /* -------------------------------------------- */
 /*                    SIDEBAR                   */
 /* -------------------------------------------- */
 #sidebar {
-  background-color: #073f7f;
+  background-color: $main_color;
   width: 260px;
   height: 100%;
   position: absolute;
@@ -59,7 +64,7 @@ body {
   color: #fff;
   list-style-type: none;
   text-align: left;
-  border-bottom: 2px solid #00316a;
+  border-bottom: 2px solid $main_color_shadow;
 }
 
 .sidebarLiUitloggen {
@@ -69,7 +74,7 @@ body {
   color: #fff;
   list-style-type: none;
   text-align: left;
-  border-top: 2px solid #00316a;
+  border-top: 2px solid $main_color_shadow;
   width: 100%;
 }
 
@@ -84,6 +89,7 @@ body {
 
 .fas {
   width: 23.41px !important;
+  padding-right: 11px;
 }
 
 .profile-picture {
@@ -91,7 +97,7 @@ body {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border: 2px solid #00316a;
+  border: 2px solid $main_color_shadow;
 }
 
 .sidebarUsername {
@@ -118,4 +124,11 @@ body {
 /* -------------------------------------------- */
 nav.navbar.navbar-light.bg-light.justify-content-between {
   margin-left: 260px;
+}
+
+button.btn.btn-primary.nav-buttons {
+  background-color: $main_color;
+  border-color: $main_color;
+  padding-left: 16px;
+  padding-right: 16px;
 }
