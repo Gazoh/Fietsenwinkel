@@ -6,7 +6,7 @@ Om te kunnen compilen moet je het volgende downloaden:
 https://nodejs.org/en/download/
 ```
 
-Zodra je NodeJS hebt gedownload moet je SCSS/SASS downloaden dus ga naar je CMD(Command Prompt) en Kopier je de volgende:
+Zodra je NodeJS hebt gedownload moet je SCSS/SASS downloaden dus ga naar je CMD(Command Prompt) en Kopier je het volgende:
 ```
 npm install -g sass
 ```
