@@ -9,19 +9,48 @@
     <title>HomePage</title>
 </head>
 <body>
-<div>
-    <menu class="col-md-2 col-lg-3 HomeMenu">
-        <li>ACCOUNT</li>
-        <li>HOME</li>
-        <li>GEBRUIKERS</li>
-        <li>KLANTEN</li>
-        <li>BESTELLINGEN</li>
-        <li>FIETSEN</li>
-        <li>AANBIEDINGEN</li>
-        <li>REV;IEWS</li>
-        <li class="MainMenu">NIEUWSBRIEF</li>
-    </menu>
-    <div class="col-md-10 col-lg-9 HomeMenu"></div>
+<div class="row">
+    <div class="col-md-2 col-lg-3">
+        <menu class="HomeMenu">
+            <li class="MainMenu">ACCOUNT</li>
+            <li class="MainMenu">HOME</li>
+            <li class="MainMenu">GEBRUIKERS</li>
+            <li class="MainMenu">KLANTEN</li>
+            <li class="MainMenu">BESTELLINGEN</li>
+            <li class="MainMenu">FIETSEN</li>
+            <li class="MainMenu">AANBIEDINGEN</li>
+            <li class="MainMenu">REVIEWS</li>
+            <li class="MainMenu">NIEUWSBRIEF</li>
+        </menu>
+    </div>
+    <div class="col-md-10 col-lg-9 MainContent">
+        <div class="TitleBar">
+            <img>
+            <input type="text" placeholder="Search">
+            <button>Account</button>
+            <button>Help</button>
+        </div>
+        <div class="DashBoard">
+            <h1>Home</h1>
+            <hr>
+            <div>
+                <div class="StatusBlock"></div>
+                <div class="StatusBlock"></div>
+                <div class="StatusBlock"></div>
+                <div class="StatusBlock"></div>
+            </div>
+            <div class="InfoBlock">
+                <img>
+                <p>Klanten</p>
+                <hr>
+            </div>
+            <div class="InfoBlock">
+                <img>
+                <p>Meldingen</p>
+                <hr>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

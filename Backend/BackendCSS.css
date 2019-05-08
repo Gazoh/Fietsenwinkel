@@ -2,4 +2,20 @@
     background-color: #083f7f;
 }
 
-.MainMenu
+.MainMenu {
+    border-bottom: #040091 2px solid;
+    list-style-type: none;
+}
+
+.MainContent {
+    align-items: right;
+}
+
+.StatusBlock {
+    padding: 15px 15px 15px 15px;
+    background-color: #083f7f;
+}
+
+.InfoBlock {
+    border: black 2px solid;
+}
