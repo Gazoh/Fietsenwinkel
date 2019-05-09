@@ -80,7 +80,7 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button id="uitvoeren">Uitvoeren</button>
+                <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
                 <table id="gebruikers" class="display" style="width:100%">
