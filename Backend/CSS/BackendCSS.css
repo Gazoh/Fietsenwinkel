@@ -1,3 +1,6 @@
+/* ----------------------------------------------------------------------- */
+/*                         HOMEPAGE PAGINA                                 */
+/* ----------------------------------------------------------------------- */
 /* -------------------------------------------- */
 /*                    VARIABLEN                 */
 /* -------------------------------------------- */
@@ -32,7 +35,7 @@
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
 body {
-  font-family: Roboto-Regular;
+  font-family: Roboto-Regular !important;
 }
 
 .wrapper {
@@ -46,13 +49,14 @@ body {
 /* -------------------------------------------- */
 #sidebar {
   background-color: #073f7f;
-  width: 260px;
+  width: 240px;
   height: 100%;
   float: left;
+  overflow: hidden !important;
 }
 
 .sidebarLi {
-  padding: 1.4rem;
+  padding: 1rem;
   color: #fff;
   list-style-type: none;
   text-align: left;
@@ -62,12 +66,15 @@ body {
 .sidebarLiUitloggen {
   position: absolute;
   bottom: 0;
-  padding: 1.4rem;
+  padding: 1rem;
   color: #fff;
   list-style-type: none;
   text-align: left;
+  position: absolute;
+  vertical-align: bottom;
+  bottom: 0px;
   border-top: 2px solid #00316a;
-  width: 100%;
+  width: 260px;
 }
 
 .sidebarUl {
@@ -98,16 +105,17 @@ body {
 .sidebarUsername {
   float: right;
   position: relative;
-  right: 3rem;
-  top: 1.3rem;
+  right: 2.3rem;
+  top: 1.6rem;
   font-family: Roboto-Bold;
+  margin: 0;
 }
 
 .adminVersie {
   float: right;
   position: relative;
-  right: 0rem;
-  top: 2.8rem;
+  right: -0.6rem;
+  top: 3rem;
   margin: 0;
   font-weight: 100;
   font-family: Roboto-Regular;
@@ -138,7 +146,7 @@ button.btn.btn-primary.nav-buttons {
 }
 
 /* -------------------------------------------- */
-/*                    BODY                      */
+/*                BODY WIDGETS                  */
 /* -------------------------------------------- */
 .row.widgets {
   margin: 0px;
@@ -148,9 +156,6 @@ button.btn.btn-primary.nav-buttons {
   margin-top: 2rem;
 }
 
-/* -------------------------------------------- */
-/*                BODY WIDGETS                  */
-/* -------------------------------------------- */
 .card-body {
   background-color: #00316a !important;
   border-radius: 6px;
@@ -159,9 +164,9 @@ button.btn.btn-primary.nav-buttons {
 }
 
 .card.text-white.mb-3 {
-  border-radius: 8px;
   border-color: #073f7f;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border: none;
 }
 
 .card-title {
@@ -200,6 +205,14 @@ i.fas.fa-box.cardWidget {
 i.fas.fa-money-bill-wave.cardWidget {
   width: 55px !important;
   float: left;
+}
+
+/* ----------------------------------------------------------------------- */
+/*                         GEBRUIKERS PAGINA                               */
+/* ----------------------------------------------------------------------- */
+.datatableGebruikers {
+  width: 100%;
+  margin-left: 15px;
 }
 
 /*# sourceMappingURL=BackendCSS.css.map */
