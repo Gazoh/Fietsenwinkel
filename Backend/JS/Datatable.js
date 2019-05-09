@@ -55,15 +55,21 @@ $(document).ready(function () {
         '</select>' +
         '</div>').appendTo("#card-header");
 
+    // Data ophalen van persoon op de datatabel
+    var elementClicked;
+    $('td:first-child').on('click', function () {
+        elementClicked = true;
+    });
+
+
+    $('#uitvoeren').on('click', function () {
+        if ($('#aanpassen:selected').val() && elementClicked) {
+            alert('test');
+        }
+    });
+
+
 //  -------------------------------------------------------------
 //    Hier Eindigt de Custom datatable settings
 //  -------------------------------------------------------------
-
-    /*   // Data ophalen van persoon op de datatabel
-       $('#uitvoeren').on('click', function () {
-
-       });*/
-
-
-
 });
