@@ -189,11 +189,15 @@ input[type=search] {
 }
 
 select {
+  height: 28px;
+  font-family: "Roboto-Bold";
   margin-left: 5px;
   margin-right: 5px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: #073f7f !important;
+  color: #fff !important;
 }
 
 a.paginate_button:hover {
@@ -243,15 +247,12 @@ button.dt-button.Toevoegen {
 
 div#gebruikers_filter {
   float: right !important;
-}
-
-select {
-  font-family: "Roboto-Bold";
+  font-family: Roboto-Bold !important;
 }
 
 .uitvoeren {
   font-family: Roboto-Medium;
-  background-color: #073f7f !important;
+  background-color: #00316a !important;
   color: #fff !important;
   display: inline-block;
   text-align: center;
@@ -266,6 +267,11 @@ select {
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#gebruikers_length {
+  float: right !important;
+  height: 28px !important;
 }
 
 /* -------------------------------------------- */
@@ -328,6 +334,19 @@ i.fas.fa-box.cardWidget {
 i.fas.fa-money-bill-wave.cardWidget {
   width: 55px !important;
   float: left;
+}
+
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#klanten_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#klanten_filter {
+  float: right !important;
+  font-family: Roboto-Bold !important;
 }
 
 /*# sourceMappingURL=backend.css.map */

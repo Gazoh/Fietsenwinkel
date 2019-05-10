@@ -1,0 +1,20 @@
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#klanten_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#klanten_filter {
+  float: right !important;
+  font-family: Roboto-Bold !important;
+}
+
+a#klanten_previous:hover {
+  color: #fff !important;
+}
+
+button#Toevoegen {
+  display: none !important;
+}

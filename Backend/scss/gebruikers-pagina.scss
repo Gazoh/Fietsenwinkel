@@ -24,11 +24,15 @@ input[type="search"] {
 }
 
 select {
+  height: 28px;
+  font-family: 'Roboto-Bold';
   margin-left: 5px;
   margin-right: 5px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: $main_color !important;
+  color: #fff !important;
 }
 
 a.paginate_button:hover {
@@ -78,15 +82,12 @@ button.dt-button.Toevoegen {
 
 div#gebruikers_filter {
   float: right !important;
-}
-
-select {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto-Bold !important;
 }
 
 .uitvoeren {
   font-family: Roboto-Medium;
-  background-color: $main_color !important;
+  background-color: $main_color_shadow !important;
   color: #fff !important;
   display: inline-block;
   text-align: center;
@@ -102,3 +103,9 @@ select {
   border-radius: .25rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
+#gebruikers_length {
+  float: right !important;
+  height: 28px !important;
+}
+
