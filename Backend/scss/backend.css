@@ -1,45 +1,36 @@
-// sass --watch BackendCSS.scss:BackendCSS.css
 /* ----------------------------------------------------------------------- */
 /*                         HOMEPAGE PAGINA                                 */
 /* ----------------------------------------------------------------------- */
 /* -------------------------------------------- */
 /*                    VARIABLEN                 */
 /* -------------------------------------------- */
-$main_color: #073f7f;
-$main_color_shadow: #00316a;
-
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
 @font-face {
-  font-family: 'Roboto-Regular';
+  font-family: "Roboto-Regular";
   font-style: normal;
   font-weight: normal;
-  src: url("../Assets/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+  src: url("../Assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: 'Roboto-Thin';
+  font-family: "Roboto-Thin";
   font-style: normal;
   font-weight: normal;
-  src: url("../Assets/fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+  src: url("../Assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: 'Roboto-Bold';
+  font-family: "Roboto-Bold";
   font-style: normal;
   font-weight: bold;
-  src: url("../Assets/fonts/Roboto/Roboto-Bold.ttf") format('truetype');
+  src: url("../Assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: 'Roboto-Medium';
+  font-family: "Roboto-Medium";
   font-style: normal;
   font-weight: 500;
-  src: url("../Assets/fonts/Roboto/Roboto-Medium.ttf") format('truetype');
+  src: url("../Assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
 }
-
-
 /* -------------------------------------------- */
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
@@ -57,7 +48,7 @@ body {
 /*                    SIDEBAR                   */
 /* -------------------------------------------- */
 #sidebar {
-  background-color: $main_color;
+  background-color: #073f7f;
   width: 240px;
   height: 100%;
   float: left;
@@ -69,7 +60,7 @@ body {
   color: #fff;
   list-style-type: none;
   text-align: left;
-  border-bottom: 1px solid $main_color_shadow;
+  border-bottom: 1px solid #00316a;
 }
 
 .sidebarLi:hover {
@@ -89,7 +80,6 @@ body {
   bottom: 0px;
   border-top: 1px solid #00316a;
   width: 240px;
-
 }
 
 .sidebarUl {
@@ -114,7 +104,7 @@ body {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border: 2px solid $main_color_shadow;
+  border: 2px solid #00316a;
 }
 
 .sidebarUsername {
@@ -142,7 +132,7 @@ ul.nav a {
 }
 
 .active {
-  background: $main_color_shadow;
+  background: #00316a;
 }
 
 .sidebarProfilePicture {
@@ -150,9 +140,8 @@ ul.nav a {
   color: #fff;
   list-style-type: none;
   text-align: left;
-  border-bottom: 1px solid $main_color_shadow;
+  border-bottom: 1px solid #00316a;
 }
-
 
 /* -------------------------------------------- */
 /*                    NAV                       */
@@ -162,8 +151,8 @@ nav.navbar.navbar-light.bg-light.justify-content-between {
 }
 
 button.btn.btn-primary.nav-buttons {
-  background-color: $main_color;
-  border-color: $main_color;
+  background-color: #073f7f;
+  border-color: #073f7f;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -189,15 +178,15 @@ button.btn.btn-primary.nav-buttons {
 }
 
 .card-body {
-  background-color: $main_color_shadow !important;
+  background-color: #00316a !important;
   border-radius: 6px;
   display: grid;
   text-align: right;
 }
 
 .card.text-white.mb-3 {
-  border-color: $main_color;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.20);
+  border-color: #073f7f;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   border: none;
 }
 
@@ -242,7 +231,6 @@ i.fas.fa-money-bill-wave.cardWidget {
 /* ----------------------------------------------------------------------- */
 /*                         GEBRUIKERS PAGINA                               */
 /* ----------------------------------------------------------------------- */
-
 .card-body-table {
   padding: 18px;
 }
@@ -257,10 +245,10 @@ i.fas.fa-money-bill-wave.cardWidget {
 /* ----------------------------------------------------------------------- */
 /*                         GEBRUIKERS PAGINA DATA TABLE                    */
 /* ----------------------------------------------------------------------- */
-input[type="search"] {
+input[type=search] {
   border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   margin-left: 10px;
 }
 
@@ -273,14 +261,14 @@ select {
 }
 
 a.paginate_button:hover {
-  background: $main_color_shadow !important;
-  border-color: $main_color_shadow !important;
+  background: #00316a !important;
+  border-color: #00316a !important;
 }
 
 a.paginate_button.current {
   border: 1px solid #ced4da !important;
   border-radius: 0.25rem !important;
-  background: $main_color !important;
+  background: #073f7f !important;
   color: #fff !important;
 }
 
@@ -310,11 +298,11 @@ button.dt-button.Toevoegen {
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: .375rem .75rem;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 div#gebruikers_filter {
@@ -322,12 +310,12 @@ div#gebruikers_filter {
 }
 
 select {
-  font-family: 'Roboto-Bold';
+  font-family: "Roboto-Bold";
 }
 
 .uitvoeren {
   font-family: Roboto-Medium;
-  background-color: $main_color !important;
+  background-color: #073f7f !important;
   color: #fff !important;
   display: inline-block;
   text-align: center;
@@ -337,9 +325,11 @@ select {
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: .375rem .75rem;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/*# sourceMappingURL=backend.css.map */
