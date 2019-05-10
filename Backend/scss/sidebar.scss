@@ -1,0 +1,100 @@
+/* -------------------------------------------- */
+/*                    SIDEBAR                   */
+/* -------------------------------------------- */
+#sidebar {
+  background-color: $main_color;
+  width: 240px;
+  height: 100%;
+  float: left;
+  overflow: hidden !important;
+}
+
+.sidebarLi {
+  padding: 1rem;
+  color: #fff;
+  list-style-type: none;
+  text-align: left;
+  border-bottom: 1px solid $main_color_shadow;
+}
+
+.sidebarLi:hover {
+  background-color: rgba(0, 49, 106, 0.31);
+  text-decoration: none;
+}
+
+.sidebarLiUitloggen {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  color: #fff;
+  list-style-type: none;
+  text-align: left;
+  position: absolute;
+  vertical-align: bottom;
+  bottom: 0px;
+  border-top: 1px solid #00316a;
+  width: 240px;
+
+}
+
+.sidebarUl {
+  padding: 0px;
+  overflow: hidden;
+  height: 100% !important;
+  display: inline;
+}
+
+.sidebarIcons {
+  padding-right: 20px;
+  font-size: 1.3rem;
+}
+
+.fas {
+  width: 23.41px !important;
+  padding-right: 11px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid $main_color_shadow;
+}
+
+.sidebarUsername {
+  float: right;
+  position: relative;
+  right: 2.3rem;
+  top: 1.6rem;
+  font-family: Roboto-Bold;
+  margin: 0;
+}
+
+.adminVersie {
+  float: right;
+  position: relative;
+  right: -0.6rem;
+  top: 3rem;
+  margin: 0;
+  font-weight: 100;
+  font-family: Roboto-Regular;
+  font-size: 0.9rem;
+}
+
+ul.nav a {
+  cursor: pointer;
+}
+
+.active {
+  background: $main_color_shadow;
+}
+
+.sidebarProfilePicture {
+  padding: 1rem;
+  color: #fff;
+  list-style-type: none;
+  text-align: left;
+  border-bottom: 1px solid $main_color_shadow;
+}
+
