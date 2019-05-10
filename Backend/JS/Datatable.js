@@ -64,7 +64,29 @@ $(document).ready(function () {
 
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
-            alert('test');
+
+            var oTable = $('#gebruikers').DataTable();
+
+            $('#gebruikers thead').on('click', 'tr', function () {
+                $(this).toggleClass('selected');
+                var pos = oTable.row(this).index();
+                var row = oTable.row(pos).data();
+                console.log(row);
+            });
+            var oData = oTable.rows('.selected').data();
+
+            for (var i = 0; i < oData.length; i++) {
+                console.log("ID: " +  oData[i][0]);
+                console.log("Voornaam: " +  oData[i][1]);
+                console.log("Achternaam: " +  oData[i][2]);
+                console.log("Email: " +  oData[i][3]);
+                console.log("Telefoonnummer: " +  oData[i][4]);
+                console.log("Gebruikersnaam: " +  oData[i][5]);
+                console.log("Wachtwoord: " +  oData[i][6]);
+                console.log("Rol: " +  oData[i][7]);
+            }
+
+
         }
     });
 
