@@ -1,0 +1,20 @@
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#bestellingen_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#bestellingen_filter {
+  float: right !important;
+  font-family: Roboto-Bold !important;
+}
+
+a#bestellingen_previous:hover {
+  color: #fff !important;
+}
+
+td.betaald {
+  color: green !important;
+}

@@ -225,7 +225,7 @@ thead {
   margin-right: 20px;
 }
 
-button.dt-button.Toevoegen {
+.toevoegen {
   float: left !important;
   font-family: Roboto-Medium;
   background-color: #177a17 !important;
@@ -347,6 +347,47 @@ i.fas.fa-money-bill-wave.cardWidget {
 div#klanten_filter {
   float: right !important;
   font-family: Roboto-Bold !important;
+}
+
+a#klanten_previous:hover {
+  color: #fff !important;
+}
+
+button#Toevoegen {
+  display: none !important;
+}
+
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#bestellingen_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#bestellingen_filter {
+  float: right !important;
+  font-family: Roboto-Bold !important;
+}
+
+a#bestellingen_previous:hover {
+  color: #fff !important;
+}
+
+button#Toevoegen {
+  display: none !important;
+}
+
+.besteld {
+  color: green;
+}
+
+.inBehandelingen {
+  color: orange;
+}
+
+.notPayed {
+  color: red;
 }
 
 /*# sourceMappingURL=backend.css.map */
