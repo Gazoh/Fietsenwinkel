@@ -18,7 +18,7 @@
 }
 
 .sidebarLi:hover {
-  background-color: rgba(0, 49, 106, 0.31);
+  background-color: rgba(11, 134, 216, 0.25);
   text-decoration: none;
 }
 
@@ -87,7 +87,7 @@ ul.nav a {
 }
 
 .active {
-  background: $main_color_shadow;
+  background: $hover;
 }
 
 .sidebarProfilePicture {

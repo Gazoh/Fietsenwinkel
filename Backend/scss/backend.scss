@@ -4,6 +4,7 @@
 /* -------------------------------------------- */
 $main_color: #073f7f;
 $main_color_shadow: #00316a;
+$hover: #0b86d8;
 
 @import 'fonts';
 @import "container";
@@ -13,3 +14,53 @@ $main_color_shadow: #00316a;
 @import "home-pagina";
 @import "klanten-pagina";
 @import "bestellingen-pagina";
+
+.uitvoeren {
+  font-family: Roboto-Medium;
+  background-color: $hover !important;
+  color: #fff !important;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+select {
+  height: 28px;
+  font-family: 'Roboto-Bold';
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: $hover !important;
+  color: #fff !important;
+}
+
+input[type="search"] {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  margin-left: 10px;
+}
+
+a.paginate_button:hover {
+  background: $hover !important;
+  border-color: $hover !important;
+}
+
+a.paginate_button.current {
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  background: $hover !important;
+  color: #fff !important;
+}
