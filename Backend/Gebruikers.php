@@ -108,8 +108,8 @@
                 <div class="selectDatatable">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
-                        <option value="Verwijderen" id="verwijderen">Verwijderen</option>
                         <option value="Aanpassen" id="aanpassen">Aanpassen</option>
+                        <option value="Verwijderen" id="verwijderen">Verwijderen</option>
                     </select>
                 </div>
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
