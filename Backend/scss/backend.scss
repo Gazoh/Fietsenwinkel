@@ -13,7 +13,8 @@ $hover: #0b86d8;
 @import "gebruikers-pagina";
 @import "home-pagina";
 @import "klanten-pagina";
-@import "bestellingen-pagina";
+@import "bestellingen_pagina";
+@import "fietsen";
 
 .uitvoeren {
   font-family: Roboto-Medium;
@@ -62,5 +63,14 @@ a.paginate_button.current {
   border: 1px solid #ced4da !important;
   border-radius: 0.25rem !important;
   background: $hover !important;
+  color: #fff !important;
+}
+
+.data {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+a.paginate_button.current {
   color: #fff !important;
 }

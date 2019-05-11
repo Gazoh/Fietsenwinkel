@@ -7,11 +7,15 @@
 }
 
 div#klanten_filter {
-  float: right !important;
+  float: right;
   font-family: Roboto-Bold !important;
 }
 
 a#klanten_previous:hover {
+  color: #fff !important;
+}
+
+a#klanten_next:hover {
   color: #fff !important;
 }
 

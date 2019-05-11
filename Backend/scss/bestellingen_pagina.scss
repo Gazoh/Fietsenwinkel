@@ -14,7 +14,13 @@ div#bestellingen_filter {
 a#bestellingen_previous:hover {
   color: #fff !important;
 }
-
+a#bestellingen_next:hover {
+  color: #fff !important;
+}
 td.betaald {
   color: green !important;
+}
+
+.dropd:hover {
+  color: #fff;
 }

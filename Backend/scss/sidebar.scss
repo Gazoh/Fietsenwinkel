@@ -11,7 +11,7 @@
 
 .sidebarLi {
   padding: 1rem;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.66);
   list-style-type: none;
   text-align: left;
   border-bottom: 1px solid $main_color_shadow;
@@ -20,6 +20,18 @@
 .sidebarLi:hover {
   background-color: rgba(11, 134, 216, 0.25);
   text-decoration: none;
+  color: #fff;
+}
+
+
+.active {
+  background: $hover !important;
+  color: #fff;
+}
+
+.bg-active {
+  background: rgba(11, 134, 216, 0.31);
+  color: #fff;
 }
 
 .sidebarLiUitloggen {
@@ -86,9 +98,6 @@ ul.nav a {
   cursor: pointer;
 }
 
-.active {
-  background: $hover;
-}
 
 .sidebarProfilePicture {
   padding: 1rem;
@@ -97,4 +106,5 @@ ul.nav a {
   text-align: left;
   border-bottom: 1px solid $main_color_shadow;
 }
+
 
