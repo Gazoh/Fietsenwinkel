@@ -10,7 +10,7 @@ $hover: #0b86d8;
 @import "backend-pages/sidebar";
 @import "backend-pages/nav";
 @import "backend-pages/gebruikers-pagina";
-@import "backend-pages/dashboard";
+@import "backend-pages/home-pagina";
 @import "backend-pages/klanten-pagina";
 @import "backend-pages/bestellingen_pagina";
 @import "backend-pages/fietsen";
@@ -32,4 +32,3 @@ body {
   top: 0;
   height: 100vh;
 }
-

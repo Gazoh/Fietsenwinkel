@@ -52,6 +52,11 @@ $(document).ready(function () {
         }
     });
 
+    // Toevoegen knop actie
+    $('#toevoegen').on('click', function () {
+        alert('test');
+    });
+
     // Append Datatable toevoegen aan een id
     $('#klanten_length').appendTo('#card-header');
     $('#klanten_filter').appendTo('#card-header');

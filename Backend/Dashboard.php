@@ -13,47 +13,71 @@
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/BackendCSS.css">
-    <title>Fietsenwinkel - CMS</title>
+    <link rel="stylesheet" href="scss/backend.css">
+    <title>Fietsenwinkel - Dashboard</title>
 </head>
 <body>
 <div class="wrapper">
     <!--  Sidebar  -->
     <div id="sidebar">
         <ul class="sidebarUl">
-            <li class="sidebarLi">
-                <div class="sidebarProfilePicture">
-                    <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
-                    <h5 class="sidebarUsername">Admin</h5>
-                    <p class="adminVersie">v0.0.1</p>
-                </div>
-            </li>
-            <a href="Dashboard.php">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-home"></span></i>Home</li>
+            <div class="sidebarProfilePicture">
+                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
+                <h5 class="sidebarUsername">Admin</h5>
+                <p class="adminVersie">v0.0.1</p>
+            </div>
+            <a href="#">
+                <li class="sidebarLi active">
+                    <span class="sidebarIcons"><i class="fas fa-home"></span></i>
+                    Home
+                </li>
             </a>
-            <a href="Gebruikers.php">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-user"></span></i>Gebruikers</li>
+            <a href="gebruikers.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-user"></span></i>
+                    Gebruikers
+                </li>
+            </a>
+            <a href="klanten.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-users"></span></i>
+                    Klanten
+                </li>
+            </a>
+            <a href="bestellingen_openstaand.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-box"></span></i>
+                    Bestellingen
+                    <span class="dropdown-down"><i class="fas fa-caret-down"></i></span>
+                </li>
+            </a>
+            <a href="fietsen.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-bicycle"></span></i>
+                    Fietsen
+                </li>
+            </a>
+            <a href="aanbiedingen.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-tag"></span></i>
+                    Aanbiedingen
+                </li>
+            </a>
+            <a href="reviews.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>
+                    Reviews
+                </li>
+            </a>
+            <a href="nieuwsbrief.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>
+                    Nieuwsbrief
+                </li>
             </a>
             <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-users"></span></i>Klanten</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-box"></span></i>Bestellingen</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-bicycle"></span></i>Fietsen</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-tag"></span></i>Aanbiedingen</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>Reviews</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>Nieuwsbrief</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
+                <li class="sidebarLiUitloggen">
+                    <span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
                     Uitloggen
                 </li>
             </a>
@@ -72,6 +96,15 @@
             </button>
         </form>
     </nav>
+    <!-- End of the navbar -->
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid body">
         <div class="row widgets">
             <div class="col">

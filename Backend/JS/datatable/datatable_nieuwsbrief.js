@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#reviews').DataTable({
+    $('#nieuwsbrief').DataTable({
         responsive: true,
         // Kunnen selecteren van een persoon
         columnDefs: [{
@@ -22,12 +22,14 @@ $(document).ready(function () {
         "lengthMenu": [[10, 25, 50], [10, 25, 50]],
 
         "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            if (aData[7] == "Zichtbaar") {
-                $('td:eq(7)', nRow).css('color', '#388E3C');
-                $('td:eq(7)', nRow).css('font-family', 'Roboto-Bold');
-            } else if (aData[7] == "Niet zichtbaar") {
-                $('td:eq(7)', nRow).css('color', '#D32F2F');
-                $('td:eq(7)', nRow).css('font-family', 'Roboto-Bold');
+            if (aData[6] == "Verzonden") {
+                $('td:eq(6)', nRow).css('color', '#388E3C');
+                $('td:eq(6)', nRow).css('font-family', 'Roboto-Bold');
+            } else if (aData[6] == "In de wacht") {
+                $('td:eq(6)', nRow).css('color', '#F57C00');
+                $('td:eq(6)', nRow).css('font-family', 'Roboto-Bold');
+            } else if (aData[6] == "Concept") {
+                $('td:eq(6)', nRow).css('font-family', 'Roboto-Bold');
             }
         }
     });
@@ -43,8 +45,8 @@ $(document).ready(function () {
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
-            var oTable = $('#reviews').DataTable();
-            $('#reviews thead').on('click', 'tr', function () {
+            var oTable = $('#nieuwsbrief').DataTable();
+            $('#nieuwsbrief thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
                 var pos = oTable.row(this).index();
                 var row = oTable.row(pos).data();
@@ -71,7 +73,7 @@ $(document).ready(function () {
     });
 
     // Append Datatable toevoegen aan een id
-    $('#reviews_length').appendTo('#card-header');
-    $('#reviews_filter').appendTo('#card-header');
+    $('#nieuwsbrief_length').appendTo('#card-header');
+    $('#nieuwsbrief_filter').appendTo('#card-header');
 
 });

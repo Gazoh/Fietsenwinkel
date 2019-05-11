@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
     <!--   Title -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-rating.css">
     <title>Fietsenwinkel - Fietsen</title>
 </head>
 <body>
@@ -63,18 +64,18 @@
                 </li>
             </a>
             <a href="aanbiedingen.php">
-                <li class="sidebarLi active">
+                <li class="sidebarLi">
                     <span class="sidebarIcons"><i class="fas fa-tag"></span></i>
                     Aanbiedingen
                 </li>
             </a>
             <a href="#">
-                <li class="sidebarLi">
+                <li class="sidebarLi active">
                     <span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>
                     Reviews
                 </li>
             </a>
-            <a href="#">
+            <a href="nieuwsbrief.php">
                 <li class="sidebarLi">
                     <span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>
                     Nieuwsbrief
@@ -104,121 +105,62 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
+                <button class="toevoegen" id="toevoegen"><span><i class="fas fa-plus"></i></span>Toevoegen</button>
                 <div class="selectDatatable">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
                         <option value="Bekijken" id="bekijken">Bekijken</option>
-                        <option value="Aanpassen" id="aanpassen">Aanpassen</option>
                         <option value="Verwijderen" id="verwijderen">Verwijderen</option>
                     </select>
                 </div>
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="aanbiedingen" class="display" style="width:100%">
+                <table id="reviews" class="display" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Korting</th>
-                        <th>Titel</th>
-                        <th>Onderwerp</th>
-                        <th>Van</th>
-                        <th>Tot</th>
-                        <th>Korting op</th>
-                        <th>Status</th>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
+                        <th>Klant ID</th>
+                        <th>Beoordeling</th>
+                        <th>Datum</th>
+                        <th>Zichtbaarheid op website</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td>25%</td>
+                        <td>Lorem</td>
                         <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
+                        <td>123</td>
+                        <td>4 STERREN</td>
                         <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Actief</td>
+                        <td>Zichtbaar</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td>25%</td>
+                        <td>Lorem</td>
                         <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
+                        <td>123</td>
+                        <td>5 STERRREN</td>
                         <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Actief</td>
+                        <td>Niet zichtbaar</td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Korting</th>
-                        <th>Titel</th>
-                        <th>Onderwerp</th>
-                        <th>Van</th>
-                        <th>Tot</th>
-                        <th>Korting op</th>
-                        <th>Status</th>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
+                        <th>Klant ID</th>
+                        <th>Beoordeling</th>
+                        <th>Datum</th>
+                        <th>Zichtbaarheid op website</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -226,21 +168,15 @@
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- Datatable -->
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script src="js/datatable/datatable_aanbiedingen.js"></script>
-        <script src="js/index.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/datatable/datatable_reviews.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+
 </body>
 </html>

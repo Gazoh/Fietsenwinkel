@@ -57,24 +57,24 @@
                 </li>
             </a>
             <a href="fietsen.php">
-                <li class="sidebarLi active">
+                <li class="sidebarLi">
                     <span class="sidebarIcons"><i class="fas fa-bicycle"></span></i>
                     Fietsen
                 </li>
             </a>
             <a href="#">
-                <li class="sidebarLi">
+                <li class="sidebarLi active">
                     <span class="sidebarIcons"><i class="fas fa-tag"></span></i>
                     Aanbiedingen
                 </li>
             </a>
-            <a href="#">
+            <a href="reviews.php">
                 <li class="sidebarLi">
                     <span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>
                     Reviews
                 </li>
             </a>
-            <a href="#">
+            <a href="nieuwsbrief.php">
                 <li class="sidebarLi">
                     <span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>
                     Nieuwsbrief
@@ -104,6 +104,7 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
+                <button class="toevoegen" id="toevoegen"><span><i class="fas fa-plus"></i></span>Toevoegen</button>
                 <div class="selectDatatable">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
@@ -115,98 +116,110 @@
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="klanten" class="display" style="width:100%">
+                <table id="aanbiedingen" class="display" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Afbeelding</th>
-                        <th>Naam</th>
-                        <th>Merk</th>
-                        <th>Type</th>
-                        <th>Frametype</th>
-                        <th>Kleur</th>
-                        <th>Prijs</th>
+                        <th>Korting</th>
+                        <th>Titel</th>
+                        <th>Onderwerp</th>
+                        <th>Van</th>
+                        <th>Tot</th>
+                        <th>Korting op</th>
+                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Actief</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Niet actief</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Niet actief</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Niet actief</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Niet actief</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>101</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Actief</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>101</td>
+                        <td>25%</td>
+                        <td>Loremipsum</td>
+                        <td>Molestie</td>
+                        <td>20-3-2019</td>
+                        <td>27-3-2019</td>
+                        <td>Imperdiet</td>
+                        <td>Actief</td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Afbeelding</th>
-                        <th>Naam</th>
-                        <th>Merk</th>
-                        <th>Type</th>
-                        <th>Frametype</th>
-                        <th>Kleur</th>
-                        <th>Prijs</th>
+                        <th>Korting</th>
+                        <th>Titel</th>
+                        <th>Onderwerp</th>
+                        <th>Van</th>
+                        <th>Tot</th>
+                        <th>Korting op</th>
+                        <th>Status</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -214,22 +227,14 @@
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- Datatable -->
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script src="js/datatable_fietsen.js"></script>
-        <script src="js/index.js"></script>
-        <script type="text/javascript"
-                src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/datatable/datatable_aanbiedingen.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
 </body>
 </html>

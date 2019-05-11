@@ -69,14 +69,14 @@
                     Aanbiedingen
                 </li>
             </a>
-            <a href="#">
-                <li class="sidebarLi active">
+            <a href="reviews.php">
+                <li class="sidebarLi">
                     <span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>
                     Reviews
                 </li>
             </a>
             <a href="#">
-                <li class="sidebarLi">
+                <li class="sidebarLi active">
                     <span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>
                     Nieuwsbrief
                 </li>
@@ -109,58 +109,64 @@
                 <div class="selectDatatable">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
-                        <option value="Bekijken" id="bekijken">Bekijken</option>
+                        <option value="Bekijken" id="bekijken">Aanpassen</option>
                         <option value="Verwijderen" id="verwijderen">Verwijderen</option>
+                        <option value="Verzenden" id="verzenden">Verzenden</option>
                     </select>
                 </div>
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="reviews" class="display" style="width:100%">
+                <table id="nieuwsbrief" class="display" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Klant ID</th>
-                        <th>Beoordeling</th>
-                        <th>Datum</th>
-                        <th>Zichtbaarheid op website</th>
+                        <th>Titel</th>
+                        <th>Onderwerp</th>
+                        <th>Ontvangers</th>
+                        <th>Verzonden</th>
+                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td></td>
-                        <td>101</td>
-                        <td>Lorem</td>
-                        <td>Loremipsum</td>
-                        <td>123</td>
-                        <td>4 STERREN</td>
-                        <td>27-3-2019</td>
-                        <td>Zichtbaar</td>
+                        <td>210</td>
+                        <td>Lorem ipsum</td>
+                        <td>Duis condimentum</td>
+                        <td>314</td>
+                        <td>---</td>
+                        <td>In de wacht</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>101</td>
-                        <td>Lorem</td>
-                        <td>Loremipsum</td>
-                        <td>123</td>
-                        <td>5 STERRREN</td>
-                        <td>27-3-2019</td>
-                        <td>Niet zichtbaar</td>
+                        <td>210</td>
+                        <td>Lorem ipsum</td>
+                        <td>Duis condimentum</td>
+                        <td>314</td>
+                        <td>--</td>
+                        <td>Concept</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>210</td>
+                        <td>Lorem ipsum</td>
+                        <td>Duis condimentum</td>
+                        <td>314</td>
+                        <td>13-3-2019</td>
+                        <td>Verzonden</td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Klant ID</th>
-                        <th>Beoordeling</th>
-                        <th>Datum</th>
-                        <th>Zichtbaarheid op website</th>
+                        <th>Titel</th>
+                        <th>Onderwerp</th>
+                        <th>Ontvangers</th>
+                        <th>Verzonden</th>
+                        <th>Status</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -175,7 +181,7 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/datatable/datatable_reviews.js"></script>
+        <script type="text/javascript" src="js/datatable/datatable_nieuwsbrief.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
 
 </body>

@@ -14,51 +14,75 @@
           type='text/css' media='all'>
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/BackendCSS.css">
+    <link rel="stylesheet" href="scss/backend.css">
     <!--  Datatable  -->
-    <link rel="stylesheet" href="CSS/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css">
+    <link rel="stylesheet" href="css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
     <!--   Title -->
-    <title>Fietsenwinkel - CMS</title>
+    <title>Fietsenwinkel - Gebruikers</title>
 </head>
 <body>
 <div class="wrapper">
     <!--  Sidebar  -->
     <div id="sidebar">
         <ul class="sidebarUl">
-            <li class="sidebarLi">
-                <div class="sidebarProfilePicture">
-                    <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
-                    <h5 class="sidebarUsername">Admin</h5>
-                    <p class="adminVersie">v0.0.1</p>
-                </div>
-            </li>
-            <a href="Dashboard.php">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-home"></span></i>Home</li>
+            <div class="sidebarProfilePicture">
+                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
+                <h5 class="sidebarUsername">Admin</h5>
+                <p class="adminVersie">v0.0.1</p>
+            </div>
+            <a href="dashboard.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-home"></span></i>
+                    Home
+                </li>
             </a>
-            <a href="Gebruikers.php">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-user"></span></i>Gebruikers</li>
+            <a href="">
+                <li class="sidebarLi active">
+                    <span class="sidebarIcons"><i class="fas fa-user"></span></i>
+                    Gebruikers
+                </li>
+            </a>
+            <a href="klanten.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-users"></span></i>
+                    Klanten
+                </li>
+            </a>
+            <a href="bestellingen_openstaand.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-box"></span></i>
+                    Bestellingen
+                    <span class="dropdown-down"><i class="fas fa-caret-down"></i></span>
+                </li>
+            </a>
+            <a href="fietsen.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-bicycle"></span></i>
+                    Fietsen
+                </li>
+            </a>
+            <a href="aanbiedingen.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-tag"></span></i>
+                    Aanbiedingen
+                </li>
+            </a>
+            <a href="reviews.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>
+                    Reviews
+                </li>
+            </a>
+            <a href="nieuwsbrief.php">
+                <li class="sidebarLi">
+                    <span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>
+                    Nieuwsbrief
+                </li>
             </a>
             <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-users"></span></i>Klanten</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-box"></span></i>Bestellingen</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-bicycle"></span></i>Fietsen</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-tag"></span></i>Aanbiedingen</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>Reviews</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>Nieuwsbrief</li>
-            </a>
-            <a href="#">
-                <li class="sidebarLi"><span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
+                <li class="sidebarLiUitloggen">
+                    <span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
                     Uitloggen
                 </li>
             </a>
@@ -80,6 +104,14 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
+                <button class="toevoegen" id="toevoegen"><span><i class="fas fa-plus"></i></span>Toevoegen</button>
+                <div class="selectDatatable">
+                    <select class="form-control">
+                        <option value="" disabled selected id="opties">Opties</option>
+                        <option value="Verwijderen" id="verwijderen">Verwijderen</option>
+                        <option value="Aanpassen" id="aanpassen">Aanpassen</option>
+                    </select>
+                </div>
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
@@ -100,7 +132,7 @@
                     <tbody>
                     <tr>
                         <td></td>
-                        <td id="test">Tiger Nixon</td>
+                        <td>Tiger Nixon</td>
                         <td>System Architect</td>
                         <td>Edinburgh</td>
                         <td>61</td>
@@ -219,6 +251,72 @@
                         <td>$320,800</td>
                         <td>$320,800</td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                        <td>$320,800</td>
+                    </tr>
                     </tbody>
                     <tfoot>
                     <tr>
@@ -247,10 +345,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
         <!-- Datatable -->
-        <script src="JS/Datatable.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/datatable/datatable_gebruikers.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
 </body>
 </html>
