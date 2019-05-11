@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* -------------------------------------------- */
 /*    sass --watch backend.scss:backend.css     */
 /*                    VARIABLEN                 */
@@ -9,39 +10,26 @@
   font-family: "Roboto-Regular";
   font-style: normal;
   font-weight: normal;
-  src: url("../Assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Thin";
   font-style: normal;
   font-weight: normal;
-  src: url("../Assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  src: url("../assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Bold";
   font-style: normal;
   font-weight: bold;
-  src: url("../Assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Medium";
   font-style: normal;
   font-weight: 500;
-  src: url("../Assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
 }
-/* -------------------------------------------- */
-/*                    CONTAINER                 */
-/* -------------------------------------------- */
-body {
-  font-family: Roboto-Regular !important;
-}
-
-.wrapper {
-  position: relative;
-  top: 0;
-  height: 100vh;
-}
-
 /* -------------------------------------------- */
 /*                    SIDEBAR                   */
 /* -------------------------------------------- */
@@ -343,8 +331,45 @@ td.betaald {
   color: #fff;
 }
 
+.dropdown-right {
+  float: right;
+  line-height: 2.4;
+  font-size: 0.9rem;
+}
+
+.dropdown-down {
+  float: right;
+  line-height: 2.4;
+  font-size: 0.9rem;
+}
+
 .image-align-center {
+  text-align: center !important;
+}
+
+table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before {
+  content: " ";
+  margin-top: -6px;
+  margin-left: -6px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 0;
+  position: absolute !important;
+  top: 55% !important;
+  -ms-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+}
+
+table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after {
+  content: "✔";
+  margin-top: -11px;
+  margin-left: -4px;
   text-align: center;
+  text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+  position: absolute !important;
+  top: 55% !important;
+  -ms-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
 }
 
 .uitvoeren {
@@ -368,7 +393,7 @@ td.betaald {
 
 select {
   height: 28px;
-  font-family: "Roboto-Bold";
+  font-family: "Roboto-Medium";
   margin-left: 5px;
   margin-right: 5px;
   border: 1px solid #ced4da;
@@ -404,6 +429,54 @@ a.paginate_button.current {
 
 a.paginate_button.current {
   color: #fff !important;
+}
+
+.dropdown-toggle {
+  float: right;
+  line-height: 2.2;
+}
+
+div#aanbiedingen_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#aanbiedingen_length {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#reviews_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#reviews_length {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#nieuwsbrief_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#nieuwsbrief_length {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+/* -------------------------------------------- */
+/*                    CONTAINER                 */
+/* -------------------------------------------- */
+body {
+  font-family: Roboto-Regular;
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=backend.css.map */
