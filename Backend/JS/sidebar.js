@@ -1,4 +1,5 @@
-/* Dropdown sidemenu Active on click */
-$('#bestellingen').on('click',function () {
-   $('#bestellingen').toggleClass( "active");
+$(document).ready(function(){
+   $('#bestellingen').on('click',function () {
+      $('#bestellingen').toggleClass("active");
+   });
 });

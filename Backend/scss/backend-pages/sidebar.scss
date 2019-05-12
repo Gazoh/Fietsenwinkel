@@ -21,7 +21,7 @@ a {
 }
 
 .sidebarLi {
-  padding: 30px;
+  padding: 20px;
   font-size: 1rem;
 }
 
@@ -152,12 +152,17 @@ li.submenu-bestellingenLi.afgerond:hover {
 }
 
 .submenu-bestellingenLi {
-  padding: 20px;
+  padding-bottom: 17px !important;
   padding-left: 29px;
   padding-right: 29px;
+  padding-top: 17px;
 }
 
 .submenu-bestellingenUl {
   list-style: none !important;
   padding-left: 0px;
+}
+
+ul#submenu-2 {
+  width: 240px !important;
 }
