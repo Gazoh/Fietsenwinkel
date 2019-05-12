@@ -68,7 +68,7 @@
                     </div>
                 </a>
             </li>
-            <ul id="submenu-2" class="panel-collapse collapse panel-switch submenu-bestellingenUl" role="menu">
+            <ul id="submenu-2" class="panel-collapse collapse show panel-switch submenu-bestellingenUl" role="menu">
                 <li class="submenu-bestellingenLi openstaand active">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
@@ -285,7 +285,6 @@
         <script type="text/javascript"  src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $("#submenu-2").toggle("slide");
 
             });
         </script>
