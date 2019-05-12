@@ -1,6 +1,6 @@
 .uitvoeren {
   font-family: Roboto-Medium;
-  background-color: $hover !important;
+  background-color: $main_color_shadow !important;
   color: #fff !important;
   display: inline-block;
   text-align: center;
@@ -25,7 +25,7 @@ select {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: $hover !important;
+  background-color: $main_color_shadow !important;
   color: #fff !important;
 }
 
@@ -37,14 +37,14 @@ input[type="search"] {
 }
 
 a.paginate_button:hover {
-  background: $hover !important;
-  border-color: $hover !important;
+  background: $main_color_shadow !important;
+  border-color: $main_color_shadow !important;
 }
 
 a.paginate_button.current {
   border: 1px solid #ced4da !important;
   border-radius: 0.25rem !important;
-  background: $hover !important;
+  background: $main_color_shadow !important;
   color: #fff !important;
 }
 

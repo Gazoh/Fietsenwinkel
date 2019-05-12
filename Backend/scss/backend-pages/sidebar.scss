@@ -6,46 +6,11 @@
   width: 240px;
   height: 100%;
   float: left;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
-.sidebarLi {
-  padding: 1rem;
-  color: rgba(255, 255, 255, 0.66);
-  list-style-type: none;
-  text-align: left;
-  border-bottom: 1px solid $main_color_shadow;
-}
-
-.sidebarLi:hover {
-  background-color: rgba(11, 134, 216, 0.25);
-  text-decoration: none;
-  color: #fff;
-}
-
-.active {
-  background: $hover !important;
-  color: #fff;
-}
-
-.bg-active {
-  background: rgba(11, 134, 216, 0.31);
-  color: #fff;
-}
-
-.sidebarLiUitloggen {
-  position: absolute;
-  bottom: 0;
-  padding: 1rem;
-  color: #fff;
-  list-style-type: none;
-  text-align: left;
-  position: absolute;
-  vertical-align: bottom;
-  bottom: 0px;
-  border-top: 1px solid #00316a;
-  width: 240px;
-
+a {
+  text-decoration: none !important;
 }
 
 .sidebarUl {
@@ -55,14 +20,99 @@
   display: inline;
 }
 
-.sidebarIcons {
-  padding-right: 20px;
-  font-size: 1.3rem;
+.sidebarLi {
+  padding: 30px;
+  font-size: 1rem;
 }
 
-.fas {
-  width: 23.41px !important;
-  padding-right: 11px;
+.sidebarLi:hover {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+}
+
+li.submenu-bestellingenLi.openstaand:hover {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+
+  .sidebar-title {
+    color: #fff;
+  }
+}
+
+li.submenu-bestellingenLi.afgerond:hover {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+
+  .sidebar-title {
+    color: #fff;
+  }
+}
+
+.active {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+}
+
+.iconwidth {
+  font-size: 1.2rem;
+  width: 21.615px;
+}
+
+.iconwidthBestellingen {
+  font-size: 1rem;
+}
+
+.bestellingen {
+  padding-left: 13px;
+}
+
+.openstaand {
+  padding-top: 15px !important;
+}
+
+.afgerond {
+  padding-bottom: 15px !important;
+}
+
+.sidebar-icon {
+  padding-right: 20px;
+}
+
+.sidebarData {
+  color: #a2a3b7;
+}
+
+.active {
+  background: $sidebar !important;
+  color: #fff;
 }
 
 .profile-picture {
@@ -93,11 +143,6 @@
   font-size: 0.9rem;
 }
 
-ul.nav a {
-  cursor: pointer;
-}
-
-
 .sidebarProfilePicture {
   padding: 1rem;
   color: #fff;
@@ -106,4 +151,13 @@ ul.nav a {
   border-bottom: 1px solid $main_color_shadow;
 }
 
+.submenu-bestellingenLi {
+  padding: 20px;
+  padding-left: 29px;
+  padding-right: 29px;
+}
 
+.submenu-bestellingenUl {
+  list-style: none !important;
+  padding-left: 0px;
+}

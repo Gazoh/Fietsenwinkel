@@ -31,63 +31,110 @@
                 <h5 class="sidebarUsername">Admin</h5>
                 <p class="adminVersie">v0.0.1</p>
             </div>
-            <a href="dashboard.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-home"></span></i>
-                    Home
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
+                        <span class="sidebar-title">Home</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi active">
+                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
+                        <span class="sidebar-title">Gebruikers</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="klanten.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-users iconwidth"></i></span>
+                        <span class="sidebar-title">Klanten</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi" id="bestellingen" data-toggle="collapse" href="#submenu-2">
+                <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fa fa-box iconwidth"></i></span>
+                        <span class="sidebar-title">Bestellingen</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <ul id="submenu-2" class="panel-collapse collapse panel-switch submenu-bestellingenUl" role="menu">
+                <li class="submenu-bestellingenLi openstaand">
+                    <a href="bestellingen_openstaand.php">
+                        <div class="sidebarData">
+                            <span class="sidebar-icon bestellingen"><i
+                                        class="fas fa-times-circle iconwidthBestellingen"></i></span>
+                            <span class="sidebar-title">Openstaand</span>
+                        </div>
+                    </a>
                 </li>
-            </a>
-            <a href="">
-                <li class="sidebarLi active">
-                    <span class="sidebarIcons"><i class="fas fa-user"></span></i>
-                    Gebruikers
+                <li class="submenu-bestellingenLi afgerond">
+                    <a href="bestellingen_afgerond.php">
+                        <div class="sidebarData">
+                            <span class="sidebar-icon bestellingen"><i
+                                        class="fas fa-check iconwidthBestellingen"></i></span>
+                            <span class="sidebar-title">Afgerond</span>
+                        </div>
+                    </a>
                 </li>
-            </a>
-            <a href="klanten.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-users"></span></i>
-                    Klanten
-                </li>
-            </a>
-            <a href="bestellingen_openstaand.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-box"></span></i>
-                    Bestellingen
-                    <span class="dropdown-down"><i class="fas fa-caret-down"></i></span>
-                </li>
-            </a>
-            <a href="fietsen.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-bicycle"></span></i>
-                    Fietsen
-                </li>
-            </a>
-            <a href="aanbiedingen.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-tag"></span></i>
-                    Aanbiedingen
-                </li>
-            </a>
-            <a href="reviews.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-star-half-alt"></span></i>
-                    Reviews
-                </li>
-            </a>
-            <a href="nieuwsbrief.php">
-                <li class="sidebarLi">
-                    <span class="sidebarIcons"><i class="fas fa-newspaper"></span></i>
-                    Nieuwsbrief
-                </li>
-            </a>
-            <a href="#">
-                <li class="sidebarLiUitloggen">
-                    <span class="sidebarIcons"><i class="fas fa-sign-out-alt"></i></span></i>
-                    Uitloggen
-                </li>
-            </a>
+            </ul>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="fietsen.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-bicycle iconwidth"></i></span>
+                        <span class="sidebar-title">Fietsen</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="aanbiedingen.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-tag iconwidth"></i></span>
+                        <span class="sidebar-title">Aanbiedingen</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="reviews.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-star-half-alt iconwidth"></i></span>
+                        <span class="sidebar-title">Reviews</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="nieuwsbrief.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-newspaper iconwidth"></i></span>
+                        <span class="sidebar-title">Nieuwsbrief</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
+                        <span class="sidebar-title">Uitloggen</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
         </ul>
     </div>
+    <!-- End of the sidebar-->
     <!-- Navbar-->
     <nav class="navbar navbar-light bg-light justify-content-between">
         <h3 class="logo">Gebruikte Fietsen</h3>
@@ -336,20 +383,16 @@
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- Datatable -->
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/datatable/datatable_gebruikers.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+        <!--  Side bar -->
+        <script src="js/sidebar.js"></script>
 </body>
 </html>

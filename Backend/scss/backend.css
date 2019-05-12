@@ -38,45 +38,11 @@
   width: 240px;
   height: 100%;
   float: left;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
-.sidebarLi {
-  padding: 1rem;
-  color: rgba(255, 255, 255, 0.66);
-  list-style-type: none;
-  text-align: left;
-  border-bottom: 1px solid #00316a;
-}
-
-.sidebarLi:hover {
-  background-color: rgba(11, 134, 216, 0.25);
-  text-decoration: none;
-  color: #fff;
-}
-
-.active {
-  background: #0b86d8 !important;
-  color: #fff;
-}
-
-.bg-active {
-  background: rgba(11, 134, 216, 0.31);
-  color: #fff;
-}
-
-.sidebarLiUitloggen {
-  position: absolute;
-  bottom: 0;
-  padding: 1rem;
-  color: #fff;
-  list-style-type: none;
-  text-align: left;
-  position: absolute;
-  vertical-align: bottom;
-  bottom: 0px;
-  border-top: 1px solid #00316a;
-  width: 240px;
+a {
+  text-decoration: none !important;
 }
 
 .sidebarUl {
@@ -86,14 +52,89 @@
   display: inline;
 }
 
-.sidebarIcons {
-  padding-right: 20px;
-  font-size: 1.3rem;
+.sidebarLi {
+  padding: 30px;
+  font-size: 1rem;
 }
 
-.fas {
-  width: 23.41px !important;
-  padding-right: 11px;
+.sidebarLi:hover {
+  background: #073A74;
+}
+.sidebarLi:hover .sidebarData {
+  color: #fff;
+}
+.sidebarLi:hover .sidebar-icon {
+  color: #1587d2;
+}
+
+li.submenu-bestellingenLi.openstaand:hover {
+  background: #073A74;
+}
+li.submenu-bestellingenLi.openstaand:hover .sidebarData {
+  color: #fff;
+}
+li.submenu-bestellingenLi.openstaand:hover .sidebar-icon {
+  color: #1587d2;
+}
+li.submenu-bestellingenLi.openstaand:hover .sidebar-title {
+  color: #fff;
+}
+
+li.submenu-bestellingenLi.afgerond:hover {
+  background: #073A74;
+}
+li.submenu-bestellingenLi.afgerond:hover .sidebarData {
+  color: #fff;
+}
+li.submenu-bestellingenLi.afgerond:hover .sidebar-icon {
+  color: #1587d2;
+}
+li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
+  color: #fff;
+}
+
+.active {
+  background: #073A74;
+}
+.active .sidebarData {
+  color: #fff;
+}
+.active .sidebar-icon {
+  color: #1587d2;
+}
+
+.iconwidth {
+  font-size: 1.2rem;
+  width: 21.615px;
+}
+
+.iconwidthBestellingen {
+  font-size: 1rem;
+}
+
+.bestellingen {
+  padding-left: 13px;
+}
+
+.openstaand {
+  padding-top: 15px !important;
+}
+
+.afgerond {
+  padding-bottom: 15px !important;
+}
+
+.sidebar-icon {
+  padding-right: 20px;
+}
+
+.sidebarData {
+  color: #a2a3b7;
+}
+
+.active {
+  background: #07356A !important;
+  color: #fff;
 }
 
 .profile-picture {
@@ -101,7 +142,7 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border: 2px solid #00316a;
+  border: 2px solid #073A74;
 }
 
 .sidebarUsername {
@@ -124,16 +165,23 @@
   font-size: 0.9rem;
 }
 
-ul.nav a {
-  cursor: pointer;
-}
-
 .sidebarProfilePicture {
   padding: 1rem;
   color: #fff;
   list-style-type: none;
   text-align: left;
-  border-bottom: 1px solid #00316a;
+  border-bottom: 1px solid #073A74;
+}
+
+.submenu-bestellingenLi {
+  padding: 20px;
+  padding-left: 29px;
+  padding-right: 29px;
+}
+
+.submenu-bestellingenUl {
+  list-style: none !important;
+  padding-left: 0px;
 }
 
 /* -------------------------------------------- */
@@ -227,7 +275,7 @@ div#gebruikers_filter {
 }
 
 .card-body {
-  background-color: #00316a !important;
+  background-color: #073A74 !important;
   border-radius: 6px;
   display: grid;
   text-align: right;
@@ -374,7 +422,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
 
 .uitvoeren {
   font-family: Roboto-Medium;
-  background-color: #0b86d8 !important;
+  background-color: #073A74 !important;
   color: #fff !important;
   display: inline-block;
   text-align: center;
@@ -399,7 +447,7 @@ select {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: #0b86d8 !important;
+  background-color: #073A74 !important;
   color: #fff !important;
 }
 
@@ -411,14 +459,14 @@ input[type=search] {
 }
 
 a.paginate_button:hover {
-  background: #0b86d8 !important;
-  border-color: #0b86d8 !important;
+  background: #073A74 !important;
+  border-color: #073A74 !important;
 }
 
 a.paginate_button.current {
   border: 1px solid #ced4da !important;
   border-radius: 0.25rem !important;
-  background: #0b86d8 !important;
+  background: #073A74 !important;
   color: #fff !important;
 }
 
