@@ -124,7 +124,7 @@
                     </div>
                 </a>
             </li>
-            <li class="sidebarLi">
+            <li class="sidebarLi uitloggen">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>

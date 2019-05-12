@@ -23,6 +23,15 @@ a {
 .sidebarLi {
   padding: 20px;
   font-size: 1rem;
+  border-bottom: 1px solid $main_color_shadow;
+}
+
+.uitloggen {
+  border-top: 1px solid $main_color_shadow;
+  border-bottom: 0px !important;
+  position: absolute;
+  bottom: 0;
+  width: 240px;
 }
 
 .sidebarLi:hover {
@@ -117,8 +126,8 @@ li.submenu-bestellingenLi.afgerond:hover {
 
 .profile-picture {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 55px;
+  height: 55px;
   object-fit: cover;
   border: 2px solid $main_color_shadow;
 }
@@ -126,29 +135,31 @@ li.submenu-bestellingenLi.afgerond:hover {
 .sidebarUsername {
   float: right;
   position: relative;
-  right: 2.3rem;
-  top: 1.6rem;
+  right: 3rem;
+  top: 0.7rem;
   font-family: Roboto-Bold;
   margin: 0;
+  font-size: 1.2rem;
 }
 
 .adminVersie {
   float: right;
   position: relative;
-  right: -0.6rem;
-  top: 3rem;
+  top: 1.9rem;
   margin: 0;
   font-weight: 100;
-  font-family: Roboto-Regular;
+  font-family: Roboto-Italic;
   font-size: 0.9rem;
 }
 
 .sidebarProfilePicture {
-  padding: 1rem;
+  padding: 0.5rem;
   color: #fff;
+  padding-left: 0.5rem !important;
+  padding-right: 1.5rem !important;
   list-style-type: none;
   text-align: left;
-  border-bottom: 1px solid $main_color_shadow;
+  border-bottom: 1px solid #073A74;
 }
 
 .submenu-bestellingenLi {

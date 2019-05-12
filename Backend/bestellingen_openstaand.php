@@ -86,7 +86,6 @@
                     </a>
                 </li>
             </ul>
-
             <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="fietsen.php">
                     <div class="sidebarData">
@@ -123,7 +122,7 @@
                     </div>
                 </a>
             </li>
-            <li class="sidebarLi">
+            <li class="sidebarLi uitloggen">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
@@ -283,10 +282,5 @@
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/datatable/datatable_bestellingen_openstaand.js"></script>
         <script type="text/javascript"  src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <script>
-            $(document).ready(function() {
-
-            });
-        </script>
 </body>
 </html>

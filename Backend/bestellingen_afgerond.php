@@ -68,7 +68,7 @@
                     </div>
                 </a>
             </li>
-            <ul id="submenu-2" class="panel-collapse collapse panel-switch submenu-bestellingenUl" role="menu">
+            <ul id="submenu-2" class="panel-collapse collapse show panel-switch submenu-bestellingenUl" role="menu">
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
@@ -122,7 +122,7 @@
                     </div>
                 </a>
             </li>
-            <li class="sidebarLi">
+            <li class="sidebarLi uitloggen">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
@@ -262,12 +262,5 @@
     <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
     <script type="text/javascript" src="js/datatable/datatable_bestellingen_afgerond.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#submenu-2").toggle("slide");
-
-        });
-    </script>
-
 </body>
 </html>
