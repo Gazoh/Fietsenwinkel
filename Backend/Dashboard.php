@@ -17,14 +17,24 @@
     <title>Fietsenwinkel - Dashboard</title>
 </head>
 <body>
-<div class="wrapper">
-    <!--  Sidebar  -->
-    <div id="sidebar">
+<div id="wrapper" class="toggled">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <!-- Minified Menu -->
+        <a href="#menu-toggle" id="menu-toggle2">
+            <span><i class="fas fa-angle-right"></i></span>
+        </a>
+        <!-- Not Minified Menu -->
         <ul class="sidebarUl">
             <div class="sidebarProfilePicture">
                 <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
                 <h5 class="sidebarUsername">Admin</h5>
                 <p class="adminVersie">v0.0.1</p>
+                <div class="sidebarChevron">
+                    <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </div>
             </div>
             <li class="sidebarLi active">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
@@ -129,7 +139,7 @@
             </li>
         </ul>
     </div>
-    <!-- End of the sidebar-->
+    <!--   Hier eindigt de Not minified sidebar-->
     <!-- Navbar-->
     <nav class="navbar navbar-light bg-light justify-content-between">
         <h3 class="logo">Gebruikte Fietsen</h3>
@@ -203,13 +213,17 @@
             </div>
         </div>
     </div>
-</div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- Side Bar -->
-<script src="js/sidebar.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- Side Bar -->
+    <script src="js/sidebar.js"></script>
 </body>
 </html>

@@ -23,14 +23,24 @@
     <title>Fietsenwinkel - Bestellingen Afgerond</title>
 </head>
 <body>
-<div class="wrapper">
-    <!--  Sidebar  -->
-    <div id="sidebar">
+<div id="wrapper" class="toggled">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <!-- Minified Menu -->
+        <a href="#menu-toggle" id="menu-toggle2">
+            <span><i class="fas fa-angle-right"></i></span>
+        </a>
+        <!-- Not Minified Menu -->
         <ul class="sidebarUl">
             <div class="sidebarProfilePicture">
                 <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
                 <h5 class="sidebarUsername">Admin</h5>
                 <p class="adminVersie">v0.0.1</p>
+                <div class="sidebarChevron">
+                    <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                </div>
             </div>
             <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
@@ -133,7 +143,7 @@
             </li>
         </ul>
     </div>
-    <!-- End of the sidebar-->
+    <!--   Hier eindigt de Not minified sidebar-->
     <!-- Navbar-->
     <nav class="navbar navbar-light bg-light justify-content-between">
         <h3 class="logo">Gebruikte Fietsen</h3>
