@@ -1,6 +1,10 @@
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
+
+/* -------------------------------------------- */
+/*                    Roboto                    */
+/* -------------------------------------------- */
 @font-face {
   font-family: 'Roboto-Regular';
   font-style: normal;
@@ -34,4 +38,42 @@
   font-style: normal;
   font-weight: 500;
   src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format('truetype');
+}
+
+/* -------------------------------------------- */
+/*                    Poppins                   */
+/* -------------------------------------------- */
+@font-face {
+  font-family: 'Poppings-Regular';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppings-Italic';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Italic.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppings-Light';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Light.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppings-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppings-Bold';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Bold.ttf") format('truetype');
 }

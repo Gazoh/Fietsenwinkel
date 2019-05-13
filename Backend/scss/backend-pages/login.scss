@@ -1,25 +1,26 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0
-}
-
-.container-fluid.login {
-  height: 100%;
-  display: table;
-  width: 100%;
   padding: 0;
-  color: #000;
+  background-color: #eceef0;
+}
+.card-header-image {
+  height: 225px;
+  line-height: 225px;
+  background-repeat: no-repeat;
+  font-size: 2.3rem;
+  font-family: Poppings-Bold;
 }
 
-.row-fluid {
-  height: 100%;
-  display: table-cell;
-  vertical-align: middle;
+.border-radius07 {
+  border-radius: 0.7rem !important;
 }
 
+.border-radius-image {
+  border-top-right-radius: 0.7rem !important;
+  border-top-left-radius: 0.7rem !important;
+}
 
-.centering {
-  float: none;
-  margin: 0 auto;
+.full-width {
+  width: 100% !important;
 }
