@@ -68,8 +68,7 @@ $(document).ready(function () {
                 console.log("Email: " + oData[i][4]);
                 console.log("Telefoonnummer: " + oData[i][5]);
                 console.log("Gebruikersnaam: " + oData[i][6]);
-                console.log("Wachtwoord: " + oData[i][7]);
-                console.log("Rol: " + oData[i][8]);
+                console.log("Rol: " + oData[i][7]);
             }
         }
     });
