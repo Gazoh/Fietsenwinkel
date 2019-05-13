@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM users");
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -182,198 +186,34 @@
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Gebruikersnaam</th>
-                        <th>Wachtwoord</th>
                         <th>Rol</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                        <td>$320,800</td>
-                    </tr>
+                    <?php
+                    while (  $row =  mysqli_fetch_assoc($records)    )
+                    {
+                        $users[] = $row;
+                        foreach ($users as $user):
+                            ?>
+                            <tr>
+                                <td></td>
+                                <td><?php echo $user['id'] ?></td>
+                                <td><?php echo $user['first_name']?></td>
+                                <td><?php echo $user['last_name']?></td>
+                                <td><?php echo $user['email']?></td>
+                                <td><?php echo $user['phone']?></td>
+                                <td><?php echo $user['username']?></td>
+                                <td><?php if($user['role'] == 0)
+                                        {echo "Klant";}
+                                        elseif($user['role'] == 1)
+                                    {echo "Beheerder";}?>
+                                </td>
+                            </tr>
+
+                        <?php endforeach;
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
@@ -384,7 +224,6 @@
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Gebruikersnaam</th>
-                        <th>Wachtwoord</th>
                         <th>Rol</th>
                     </tr>
                     </tfoot>
