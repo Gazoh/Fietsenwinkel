@@ -165,48 +165,48 @@
         <div class="row widgets">
             <div class="col">
                 <div class="card text-white mb-3">
-                    <div class="card-body">
+                    <div class="card-body dashboard">
                         <div class="card-icons">
                             <i class="fas fa-users cardWidget"></i>
-                            <h1 class="card-title numbers">31</h1>
+                            <h1 class="card-title dashboard numbers">31</h1>
                         </div>
-                        <h3 class="card-title">Bezoekers</h3>
+                        <h3 class="card-title dashboard">Bezoekers</h3>
                         <p class="card-text">Op dit moment</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card text-white mb-3">
-                    <div class="card-body">
+                    <div class="card-body dashboard">
                         <div class="card-icons">
                             <i class="fas fa-box cardWidget"></i>
-                            <h1 class="card-title numbers">94</h1>
+                            <h1 class="card-title dashboard numbers">94</h1>
                         </div>
-                        <h3 class="card-title">Bestellingen</h3>
+                        <h3 class="card-title dashboard">Bestellingen</h3>
                         <p class="card-text">In de afgelopen week</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card text-white mb-3">
-                    <div class="card-body">
+                    <div class="card-body dashboard">
                         <div class="card-icons">
                             <i class="fas fa-star-half-alt cardWidget"></i>
-                            <h1 class="card-title numbers">16</h1>
+                            <h1 class="card-title dashboard numbers">16</h1>
                         </div>
-                        <h3 class="card-title">Reviews</h3>
+                        <h3 class="card-title dashboard">Reviews</h3>
                         <p class="card-text">In de afgelopen week</p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card text-white mb-3">
-                    <div class="card-body">
+                    <div class="card-body dashboard">
                         <div class="card-icons">
                             <i class="fas fa-money-bill-wave cardWidget"></i>
-                            <h1 class="card-title numbers">&euro; 6134</h1>
+                            <h1 class="card-title dashboard numbers">&euro; 6134</h1>
                         </div>
-                        <h3 class="card-title">Netto winst</h3>
+                        <h3 class="card-title dashboard">Netto winst</h3>
                         <p class="card-text">In de afgelopen week</p>
                     </div>
                 </div>
