@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
     <!--   Title -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-rating.css">
     <title>Fietsenwinkel - Fietsen</title>
 </head>
 <body>
