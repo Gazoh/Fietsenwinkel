@@ -199,7 +199,7 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
   position: relative;
   right: 3.4rem;
   top: 0.6rem;
-  font-family: Poppings-Bold;
+  font-family: Roboto-Bold;
   margin: 0;
 }
 
@@ -210,7 +210,7 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
   top: 1.9rem;
   margin: 0;
   font-weight: 100;
-  font-family: Poppings-Italic;
+  font-family: Roboto-Italic;
   font-size: 0.9rem;
 }
 
@@ -430,7 +430,7 @@ a#gebruikers_previous:hover {
 }
 
 thead {
-  font-family: Poppings-Medium;
+  font-family: Roboto-Medium;
 }
 
 .selectDatatable {
@@ -440,7 +440,7 @@ thead {
 
 .toevoegen {
   float: left !important;
-  font-family: Poppings-Medium;
+  font-family: Roboto-Medium;
   background-color: #177a17 !important;
   color: #fff !important;
   display: inline-block;
@@ -460,7 +460,7 @@ thead {
 
 div#gebruikers_filter {
   float: right !important;
-  font-family: Poppings-Bold !important;
+  font-family: Roboto-Bold !important;
 }
 
 #gebruikers_length {
@@ -502,7 +502,7 @@ div#gebruikers_filter {
 }
 
 h1.card-title.numbers {
-  font-family: Poppings-Bold;
+  font-family: Roboto-Bold;
 }
 
 .card-icons {
@@ -701,22 +701,22 @@ div#aanbiedingen_length {
 
 div#reviews_filter {
   float: right;
-  font-family: Poppings-Bold !important;
+  font-family: Roboto-Bold !important;
 }
 
 div#reviews_length {
   float: right;
-  font-family: Poppings-Bold !important;
+  font-family: Roboto-Bold !important;
 }
 
 div#nieuwsbrief_filter {
   float: right;
-  font-family: Poppings-Bold !important;
+  font-family: Roboto-Bold !important;
 }
 
 div#nieuwsbrief_length {
   float: right;
-  font-family: Poppings-Bold !important;
+  font-family: Roboto-Bold !important;
 }
 
 html, body {
@@ -731,7 +731,7 @@ html, body {
   line-height: 225px;
   background-repeat: no-repeat;
   font-size: 2.3rem;
-  font-family: Poppings-Bold;
+  font-family: Roboto-Bold;
 }
 
 .border-radius07 {
@@ -747,11 +747,32 @@ html, body {
   width: 100% !important;
 }
 
+.form-login {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.main-color {
+  background: #073f7f !important;
+  border-color: #073f7f !important;
+}
+
+.width300 {
+  width: 300px !important;
+}
+
+.login-button {
+  height: 50px;
+  font-family: Roboto-Bold;
+  letter-spacing: 0.05rem !important;
+  font-size: 0.85rem !important;
+}
+
 /* -------------------------------------------- */
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
 body {
-  font-family: Poppings-Regular;
+  font-family: Roboto-Regular;
   overflow-x: hidden;
 }
 

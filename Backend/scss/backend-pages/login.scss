@@ -9,7 +9,7 @@ html, body {
   line-height: 225px;
   background-repeat: no-repeat;
   font-size: 2.3rem;
-  font-family: Poppings-Bold;
+  font-family: Roboto-Bold;
 }
 
 .border-radius07 {
@@ -23,4 +23,25 @@ html, body {
 
 .full-width {
   width: 100% !important;
+}
+
+.form-login {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.main-color {
+  background: $main_color !important;
+  border-color: $main_color !important;
+}
+
+.width300 {
+  width: 300px !important;
+}
+
+.login-button {
+  height: 50px;
+  font-family: Roboto-Bold;
+  letter-spacing: 0.05rem !important;
+  font-size: 0.85rem !important;
 }
