@@ -22,7 +22,7 @@
                 <div class="card border-radius07">
                     <div class="card-header text-uppercase image-align-center card-header-image img-fluid text-white border-radius-image"
                          style="background-image: url('assets/img/login-bg.jpg')">
-                        LOGIN
+                        Nieuwe Wachtwoord
                     </div>
                     <form>
                         <div class="form-group form-login mt-30">
@@ -31,27 +31,11 @@
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group form-login">
-                            <div class="form-group bmd-form-group">
-                                <label class="bmd-label-floating">Wachtwoord</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-check form-login onthoud-mij">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="checked">
-                                Onthoud mij
-                                <span class="form-check-sign">
-                                   <span class="check"></span>
-                                </span>
-                            </label>
-                            <a href="wachtwoord_vergeten.php">
-                                <p class="float-right">Wachtwoord vergeten?</p>
-                            </a>
-                        </div>
                         <div class="text-center">
-                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit
-                            </button>
+                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Wachtwoord aanvragen</button>
+                            <a href="login.php">
+                                <h6 class="terugNaarInloggen">Terug naar inloggen</h6>
+                            </a>
                         </div>
                     </form>
                 </div>
