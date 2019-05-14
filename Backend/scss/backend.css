@@ -748,8 +748,8 @@ html, body {
 }
 
 .form-login {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 9rem !important;
+  padding-right: 9rem !important;
 }
 
 .main-color {
@@ -766,6 +766,15 @@ html, body {
   font-family: Roboto-Bold;
   letter-spacing: 0.05rem !important;
   font-size: 0.85rem !important;
+}
+
+.onthoud-mij {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
 }
 
 /* -------------------------------------------- */

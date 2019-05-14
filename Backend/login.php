@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
+    <title>Login - CMS</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 <body>
 <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center">
-        <form class="col-12">
+        <form class="col-10">
             <div class="form-group">
                 <div class="card border-radius07">
                     <div class="card-header text-uppercase image-align-center card-header-image img-fluid text-white border-radius-image"
@@ -25,7 +25,7 @@
                         LOGIN
                     </div>
                     <form>
-                        <div class="form-group form-login">
+                        <div class="form-group form-login mt-30">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">E-mail</label>
                                 <input type="text" class="form-control">
@@ -37,8 +37,21 @@
                                 <input type="text" class="form-control">
                             </div>
                         </div>
+                        <div class="form-check form-login onthoud-mij">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="checked">
+                                Onthoud mij
+                                <span class="form-check-sign">
+                                   <span class="check"></span>
+                                </span>
+                            </label>
+                            <a href="#">
+                                <p class="float-right">Wachtwoord vergeten?</p>
+                            </a>
+                        </div>
                         <div class="text-center">
-                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit</button>
+                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit
+                            </button>
                         </div>
                     </form>
                 </div>
