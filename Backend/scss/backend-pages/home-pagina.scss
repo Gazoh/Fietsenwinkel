@@ -9,7 +9,7 @@
   margin-top: 2rem;
 }
 
-.card-body {
+.card-body.dashboard {
   background-color: $main_color_shadow !important;
   border-radius: 6px;
   display: grid;
@@ -22,7 +22,7 @@
   border: none;
 }
 
-.card-title {
+.card-title.dashboard {
   float: right;
   margin-bottom: 0;
 }

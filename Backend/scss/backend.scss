@@ -19,6 +19,9 @@ $sidebar: #07356A;
 @import "backend-pages/aanbiedingen";
 @import "backend-pages/reviews";
 @import "backend-pages/nieuwsbrief";
+@import "backend-pages/login";
+@import "backend-pages/wachtwoord_vergeten";
+
 
 
 /* -------------------------------------------- */
@@ -26,83 +29,11 @@ $sidebar: #07356A;
 /* -------------------------------------------- */
 body {
   font-family: Roboto-Regular;
+  overflow-x: hidden;
 }
 
 .wrapper {
   position: relative;
   top: 0;
   height: 100vh;
-}
-
-
-
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
-
-#wrapper.toggled #menu-toggle2 {
-  display:none;
-  line-height: 40px;
-}
-
-#wrapper #menu-toggle2 {
-  width:100%;
-  display:block;
-  color: #999999;
-  background-color:#333;
-  height:100%;
-  padding-left:0.3em;
-  line-height: 40px;
-}
-
-#wrapper #menu-toggle2:hover {
-  color: #fff;
-  background: none;
-}
-
-.sidebar-brand {
-  background-color:#272727;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-#wrapper {
-  padding-left: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-  padding-left: 250px;
-}
-
-#sidebar-wrapper {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 20px;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #474747;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-  width: 250px;
-}
-
-#page-content-wrapper {
-  width: 100%;
-  position: absolute;
-  padding: 15px;
 }

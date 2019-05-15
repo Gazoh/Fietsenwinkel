@@ -6,6 +6,9 @@
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
+/* -------------------------------------------- */
+/*                    Roboto                    */
+/* -------------------------------------------- */
 @font-face {
   font-family: "Roboto-Regular";
   font-style: normal;
@@ -37,12 +40,47 @@
   src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
 }
 /* -------------------------------------------- */
+/*                    Poppins                   */
+/* -------------------------------------------- */
+@font-face {
+  font-family: "Poppings-Regular";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Italic";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Light";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Bold";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+/* -------------------------------------------- */
 /*                    SIDEBAR                   */
 /* -------------------------------------------- */
 #sidebar-wrapper {
   background: #073f7f !important;
   float: left;
   overflow: hidden;
+  height: 100vh;
+  width: 240px;
 }
 
 a {
@@ -179,8 +217,6 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
 }
 
 .sidebarChevron {
-  float: right;
-  position: relative;
   top: 1rem;
   left: 6.5rem;
   margin: 0;
@@ -222,26 +258,6 @@ ul#submenu-2 {
   width: 240px !important;
 }
 
-#wrapper.toggled #menu-toggle2 {
-  display: none;
-  line-height: 40px;
-}
-
-#wrapper #menu-toggle2 {
-  width: 100%;
-  display: block;
-  color: #999999;
-  background-color: #333;
-  height: 100%;
-  padding-left: 0.3em;
-  line-height: 40px;
-}
-
-#wrapper #menu-toggle2:hover {
-  color: #fff;
-  background: none;
-}
-
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
@@ -250,38 +266,25 @@ ul#submenu-2 {
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-  padding-left: 250px;
+.sidebarAnimation {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-#sidebar-wrapper {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 20px;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #474747;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.display {
+  display: none;
+  content: "";
+  position: absolute !important;
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  width: 250px;
-}
-
-#page-content-wrapper {
-  width: 100%;
-  position: absolute;
-  padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-  position: absolute;
-  margin-right: -250px;
+.clicked {
+  width: 80px !important;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 /* -------------------------------------------- */
@@ -333,7 +336,7 @@ a#gebruikers_previous:hover {
 }
 
 thead {
-  font-family: Roboto-Bold !important;
+  font-family: Roboto-Medium;
 }
 
 .selectDatatable {
@@ -382,7 +385,7 @@ div#gebruikers_filter {
   margin-top: 2rem;
 }
 
-.card-body {
+.card-body.dashboard {
   background-color: #073A74 !important;
   border-radius: 6px;
   display: grid;
@@ -395,7 +398,7 @@ div#gebruikers_filter {
   border: none;
 }
 
-.card-title {
+.card-title.dashboard {
   float: right;
   margin-bottom: 0;
 }
@@ -443,7 +446,7 @@ i.fas.fa-money-bill-wave.cardWidget {
 
 div#klanten_filter {
   float: right;
-  font-family: Roboto-Bold !important;
+  font-family: Poppings-Bold !important;
 }
 
 a#klanten_previous:hover {
@@ -529,7 +532,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
 }
 
 .uitvoeren {
-  font-family: Roboto-Medium;
+  font-family: "Poppings-Medium";
   background-color: #073A74 !important;
   color: #fff !important;
   display: inline-block;
@@ -549,7 +552,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
 
 select {
   height: 28px;
-  font-family: "Roboto-Medium";
+  font-family: "Poppings-Medium";
   margin-left: 5px;
   margin-right: 5px;
   border: 1px solid #ced4da;
@@ -622,87 +625,81 @@ div#nieuwsbrief_length {
   font-family: Roboto-Bold !important;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #eceef0;
+}
+
+.card-header-image {
+  height: 225px;
+  line-height: 225px;
+  background-repeat: no-repeat;
+  font-size: 2.3rem;
+  font-family: Roboto-Bold;
+}
+
+.border-radius07 {
+  border-radius: 0.7rem !important;
+}
+
+.border-radius-image {
+  border-top-right-radius: 0.7rem !important;
+  border-top-left-radius: 0.7rem !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.form-login {
+  padding-left: 9rem !important;
+  padding-right: 9rem !important;
+}
+
+.main-color {
+  background: #073f7f !important;
+  border-color: #073f7f !important;
+}
+
+.width300 {
+  width: 300px !important;
+}
+
+.login-button {
+  height: 50px;
+  font-family: Roboto-Bold;
+  letter-spacing: 0.05rem !important;
+  font-size: 0.85rem !important;
+}
+
+.onthoud-mij {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.terugNaarInloggen {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
 /* -------------------------------------------- */
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
 body {
   font-family: Roboto-Regular;
+  overflow-x: hidden;
 }
 
 .wrapper {
   position: relative;
   top: 0;
   height: 100vh;
-}
-
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
-#wrapper.toggled #menu-toggle2 {
-  display: none;
-  line-height: 40px;
-}
-
-#wrapper #menu-toggle2 {
-  width: 100%;
-  display: block;
-  color: #999999;
-  background-color: #333;
-  height: 100%;
-  padding-left: 0.3em;
-  line-height: 40px;
-}
-
-#wrapper #menu-toggle2:hover {
-  color: #fff;
-  background: none;
-}
-
-.sidebar-brand {
-  background-color: #272727;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-#wrapper {
-  padding-left: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-  padding-left: 250px;
-}
-
-#sidebar-wrapper {
-  z-index: 1000;
-  position: fixed;
-  left: 250px;
-  width: 20px;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  background: #474747;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-  width: 250px;
-}
-
-#page-content-wrapper {
-  width: 100%;
-  position: absolute;
-  padding: 15px;
 }
 
 /*# sourceMappingURL=backend.css.map */

@@ -1,0 +1,56 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #eceef0;
+}
+.card-header-image {
+  height: 225px;
+  line-height: 225px;
+  background-repeat: no-repeat;
+  font-size: 2.3rem;
+  font-family: Roboto-Bold;
+}
+
+.border-radius07 {
+  border-radius: 0.7rem !important;
+}
+
+.border-radius-image {
+  border-top-right-radius: 0.7rem !important;
+  border-top-left-radius: 0.7rem !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.form-login {
+  padding-left: 9rem !important;
+  padding-right: 9rem !important;
+}
+
+.main-color {
+  background: $main_color !important;
+  border-color: $main_color !important;
+}
+
+.width300 {
+  width: 300px !important;
+}
+
+.login-button {
+  height: 50px;
+  font-family: Roboto-Bold;
+  letter-spacing: 0.05rem !important;
+  font-size: 0.85rem !important;
+}
+
+.onthoud-mij {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
