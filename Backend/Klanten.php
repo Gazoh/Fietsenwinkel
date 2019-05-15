@@ -18,6 +18,8 @@
     <!--  Datatable  -->
     <link rel="stylesheet" href="css/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Klanten</title>
 </head>
@@ -76,9 +78,9 @@
                     </a>
                 </li>
                 <li class="submenu-bestellingenLi afgerond">
-                    <a href="bestellingen_openstaand.php">
+                    <a href="bestellingen_afgerond.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Afgerond</span>
                         </div>
                     </a>
@@ -146,9 +148,13 @@
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-user"></i></span>Account
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-user"></i></span>
+                Account
             </button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-question"></i></span>Help
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-question"></i></span>
+                Help
             </button>
         </form>
     </nav>
@@ -166,7 +172,7 @@
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="klanten" class="display" style="width:100%">
+                <table id="klanten" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>

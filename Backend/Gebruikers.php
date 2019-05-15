@@ -10,8 +10,7 @@ $records = $con->query("SELECT * FROM users");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
@@ -22,6 +21,8 @@ $records = $con->query("SELECT * FROM users");
     <!--  Datatable  -->
     <link rel="stylesheet" href="css/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Gebruikers</title>
 </head>
@@ -44,7 +45,7 @@ $records = $con->query("SELECT * FROM users");
                 </a>
             </li>
             <li class="sidebarLi active">
-                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -80,9 +81,9 @@ $records = $con->query("SELECT * FROM users");
                     </a>
                 </li>
                 <li class="submenu-bestellingenLi afgerond">
-                    <a href="bestellingen_openstaand.php">
+                    <a href="bestellingen_afgerond.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Afgerond</span>
                         </div>
                     </a>
@@ -150,9 +151,13 @@ $records = $con->query("SELECT * FROM users");
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-user"></i></span>Account
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-user"></i></span>
+                Account
             </button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-question"></i></span>Help
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-question"></i></span>
+                Help
             </button>
         </form>
     </nav>
@@ -161,7 +166,10 @@ $records = $con->query("SELECT * FROM users");
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="toevoegen" id="toevoegen"><span><i class="fas fa-plus"></i></span>Toevoegen</button>
+                <button class="toevoegen" id="toevoegen">
+                    <span class="pr-1"><i class="fas fa-plus"></i></span>
+                    Toevoegen
+                </button>
                 <div class="selectDatatable">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
@@ -172,7 +180,7 @@ $records = $con->query("SELECT * FROM users");
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="gebruikers" class="display" style="width:100%">
+                <table id="gebruikers" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>

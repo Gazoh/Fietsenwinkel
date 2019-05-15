@@ -18,6 +18,8 @@
     <!--  Datatable  -->
     <link rel="stylesheet" href="css/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Fietsen</title>
 </head>
@@ -31,7 +33,7 @@
                 <!--   <h5 class="sidebarUsername">Admin</h5>-->
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -78,7 +80,7 @@
                 <li class="submenu-bestellingenLi afgerond">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Afgerond</span>
                         </div>
                     </a>
@@ -104,7 +106,7 @@
                 </a>
             </li>
             <li class="sidebarLi active">
-                <a class="accordion-toggle collapsed toggle-switch" href="reviews.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-star-half-alt iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -146,9 +148,13 @@
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-user"></i></span>Account
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-user"></i></span>
+                Account
             </button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-question"></i></span>Help
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-question"></i></span>
+                Help
             </button>
         </form>
     </nav>
@@ -157,7 +163,10 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="toevoegen" id="toevoegen"><span><i class="fas fa-plus"></i></span>Toevoegen</button>
+                <button class="toevoegen" id="toevoegen">
+                    <span class="pr-1"><i class="fas fa-plus"></i></span>
+                    Toevoegen
+                </button>
                 <div class="selectDatatable">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
@@ -168,7 +177,7 @@
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="reviews" class="display" style="width:100%">
+                <table id="reviews" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>

@@ -102,7 +102,6 @@ a {
 }
 
 .uitloggen {
-  border-top: 1px solid #073A74;
   border-bottom: 0px !important;
   position: absolute;
   bottom: 0;
@@ -319,14 +318,6 @@ button.btn.btn-primary.nav-buttons {
   -webkit-text-fill-color: transparent;
 }
 
-i.fas.fa-user {
-  padding-right: 10px;
-}
-
-i.fas.fa-question {
-  padding-right: 10px;
-}
-
 /* ----------------------------------------------------------------------- */
 /*                              DATA TABLE                                 */
 /* ----------------------------------------------------------------------- */
@@ -464,10 +455,6 @@ a#klanten_previous:hover {
 
 a#klanten_next:hover {
   color: #fff !important;
-}
-
-button#Toevoegen {
-  display: none !important;
 }
 
 /* ----------------------------------------------------------------------- */

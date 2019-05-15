@@ -19,6 +19,8 @@
 
     <link rel="stylesheet" href="css/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Bestellingen Openstaand</title>
 </head>
@@ -32,7 +34,7 @@
                 <!--   <h5 class="sidebarUsername">Admin</h5>-->
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -58,7 +60,7 @@
                     </div>
                 </a>
             </li>
-            <li class="sidebarLi active" id="bestellingen" data-toggle="collapse" href="#submenu-2">
+            <li class="sidebarLi active" data-toggle="collapse" href="#submenu-2">
                 <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fa fa-box iconwidth"></i></span>
@@ -77,9 +79,9 @@
                     </a>
                 </li>
                 <li class="submenu-bestellingenLi afgerond">
-                    <a href="bestellingen_openstaand.php">
+                    <a href="bestellingen_afgerond.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Afgerond</span>
                         </div>
                     </a>
@@ -147,9 +149,13 @@
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-user"></i></span>Account
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-user"></i></span>
+                Account
             </button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button"><span><i class="fas fa-question"></i></span>Help
+            <button class="btn btn-primary nav-buttons ml-4" type="button">
+                <span class="pr-2"><i class="fas fa-question"></i></span>
+                Help
             </button>
         </form>
     </nav>
@@ -168,7 +174,7 @@
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="bestellingen" class="display" style="width:100%">
+                <table id="bestellingen" style="width:100%">
                     <thead>
                     <tr>
                         <td></td>
@@ -290,5 +296,25 @@
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/datatable/datatable_bestellingen_openstaand.js"></script>
         <script type="text/javascript"  src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+        <script>
+            $('#menu-toggle').click(function () {
+                if ($(window).width() >= 500) { //your chosen mobile res
+                    $('#sidebar-wrapper').toggleClass('clicked');
+                    $('.sidebar-title').toggleClass('display');
+                    $('.sidebarUsername').toggleClass('display')
+                } else {
+                    $('#sidebar-wrapper').animate({
+                        width: 'toggle'
+                    }, 350);
+                }
+                console.log($('#sidebar-wrapper').innerWidth());
+                if ($('#sidebar-wrapper').innerWidth() == 80) {
+                    $('.sidebar-title').removeClass('animated fadeIn');
+                    $('.sidebar-title').toggleClass('animated fadeIn');
+                    $('.sidebarUsername').removeClass('animated fadeIn');
+                    $('.sidebarUsername').toggleClass('animated fadeIn');
+                }
+            });
+        </script>
 </body>
 </html>
