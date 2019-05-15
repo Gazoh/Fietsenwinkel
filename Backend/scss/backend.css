@@ -405,6 +405,7 @@ div#gebruikers_filter {
 .card-title.dashboard {
   float: right;
   margin-bottom: 0;
+  margin-top: 0 !important;
 }
 
 .card-text {
