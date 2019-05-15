@@ -95,7 +95,8 @@ a {
 }
 
 .sidebarLi {
-  padding: 20px;
+  height: 65px;
+  line-height: 65px;
   font-size: 1rem;
   border-bottom: 1px solid #073A74;
 }
@@ -175,12 +176,10 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
   padding-bottom: 15px !important;
 }
 
-.sidebar-icon {
-  padding-right: 20px;
-}
-
 .sidebarData {
   color: #a2a3b7;
+  position: relative;
+  left: 23px;
 }
 
 .active {
@@ -200,7 +199,7 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
   float: right;
   position: relative;
   right: 3.4rem;
-  top: 0.6rem;
+  top: 1rem;
   font-family: Roboto-Bold;
   margin: 0;
 }
@@ -275,8 +274,14 @@ ul#submenu-2 {
 
 .display {
   display: none;
-  content: "";
-  position: absolute !important;
+}
+
+.displayShow {
+  display: contents;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .clicked {
@@ -285,6 +290,10 @@ ul#submenu-2 {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
 }
 
 /* -------------------------------------------- */
@@ -532,7 +541,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
 }
 
 .uitvoeren {
-  font-family: "Poppings-Medium";
+  font-family: "Roboto-Medium";
   background-color: #073A74 !important;
   color: #fff !important;
   display: inline-block;
@@ -552,7 +561,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
 
 select {
   height: 28px;
-  font-family: "Poppings-Medium";
+  font-family: "Roboto-Medium";
   margin-left: 5px;
   margin-right: 5px;
   border: 1px solid #ced4da;

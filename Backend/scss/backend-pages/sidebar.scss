@@ -21,7 +21,8 @@ a {
 }
 
 .sidebarLi {
-  padding: 20px;
+  height: 65px;
+  line-height: 65px;
   font-size: 1rem;
   border-bottom: 1px solid $main_color_shadow;
 }
@@ -111,12 +112,10 @@ li.submenu-bestellingenLi.afgerond:hover {
   padding-bottom: 15px !important;
 }
 
-.sidebar-icon {
-  padding-right: 20px;
-}
-
 .sidebarData {
   color: #a2a3b7;
+  position: relative;
+  left: 23px;
 }
 
 .active {
@@ -136,7 +135,7 @@ li.submenu-bestellingenLi.afgerond:hover {
   float: right;
   position: relative;
   right: 3.4rem;
-  top: 0.6rem;
+  top: 1rem;
   font-family: Roboto-Bold;
   margin: 0;
 }
@@ -211,8 +210,14 @@ ul#submenu-2 {
 
 .display {
   display: none;
-  content: "";
-  position: absolute !important;
+}
+
+.displayShow {
+  display: contents;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .clicked {
@@ -221,6 +226,10 @@ ul#submenu-2 {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
 }
 
 

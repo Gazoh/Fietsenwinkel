@@ -23,134 +23,126 @@
 </head>
 <body>
 <div class="wrapper">
-    <!--  Sidebar  -->
-    <div id="sidebar">
-        <div id="wrapper" class="toggled">
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <!-- Minified Menu -->
-                <a href="#menu-toggle" id="menu-toggle2">
-                    <span><i class="fas fa-angle-right"></i></span>
-                </a>
-                <!-- Not Minified Menu -->
-                <ul class="sidebarUl">
-                    <div class="sidebarProfilePicture">
-                        <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
-                        <h5 class="sidebarUsername">Admin</h5>
-                        <p class="adminVersie">v0.0.1</p>
-                        <div class="sidebarChevron">
-                            <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron">
-                                <i class="fas fa-chevron-left"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <li class="sidebarLi">
-                        <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
-                                <span class="sidebar-title">Home</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi">
-                        <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
-                                <span class="sidebar-title">Gebruikers</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi">
-                        <a class="accordion-toggle collapsed toggle-switch" href="klanten.php">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-users iconwidth"></i></span>
-                                <span class="sidebar-title">Klanten</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi" id="bestellingen" data-toggle="collapse" href="#submenu-2">
-                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fa fa-box iconwidth"></i></span>
-                                <span class="sidebar-title">Bestellingen</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <ul id="submenu-2" class="panel-collapse collapse panel-switch submenu-bestellingenUl" role="menu">
-                        <li class="submenu-bestellingenLi openstaand">
-                            <a href="bestellingen_openstaand.php">
-                                <div class="sidebarData">
-                            <span class="sidebar-icon bestellingen"><i
-                                        class="fas fa-times-circle iconwidthBestellingen"></i></span>
-                                    <span class="sidebar-title">Openstaand</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="submenu-bestellingenLi afgerond">
-                            <a href="bestellingen_afgerond.php">
-                                <div class="sidebarData">
-                            <span class="sidebar-icon bestellingen"><i
-                                        class="fas fa-check iconwidthBestellingen"></i></span>
-                                    <span class="sidebar-title">Afgerond</span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <li class="sidebarLi active">
-                        <a class="accordion-toggle collapsed toggle-switch" href="#">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-bicycle iconwidth"></i></span>
-                                <span class="sidebar-title">Fietsen</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi">
-                        <a class="accordion-toggle collapsed toggle-switch" href="aanbiedingen.php">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-tag iconwidth"></i></span>
-                                <span class="sidebar-title">Aanbiedingen</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi">
-                        <a class="accordion-toggle collapsed toggle-switch" href="reviews.php">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-star-half-alt iconwidth"></i></span>
-                                <span class="sidebar-title">Reviews</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi">
-                        <a class="accordion-toggle collapsed toggle-switch" href="nieuwsbrief.php">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-newspaper iconwidth"></i></span>
-                                <span class="sidebar-title">Nieuwsbrief</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="sidebarLi uitloggen">
-                        <a class="accordion-toggle collapsed toggle-switch" href="#">
-                            <div class="sidebarData">
-                                <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
-                                <span class="sidebar-title">Uitloggen</span>
-                                <b class="caret"></b>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="sidebarAnimation">
+        <ul class="sidebarUl">
+            <div class="sidebarProfilePicture">
+                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
+                <!--   <h5 class="sidebarUsername">Admin</h5>-->
             </div>
-            <!--   Hier eindigt de Not minified sidebar-->
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Home</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Gebruikers</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="Klanten.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-users iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Klanten</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi" id="bestellingen" data-toggle="collapse" href="#submenu-2">
+                <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fa fa-box iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Bestellingen</span>
+                    </div>
+                </a>
+            </li>
+            <ul id="submenu-2" class="panel-collapse collapse panel-switch submenu-bestellingenUl" role="menu">
+                <li class="submenu-bestellingenLi openstaand">
+                    <a href="bestellingen_openstaand.php">
+                        <div class="sidebarData">
+                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-title">Openstaand</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="submenu-bestellingenLi afgerond">
+                    <a href="bestellingen_openstaand.php">
+                        <div class="sidebarData">
+                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-title">Afgerond</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <li class="sidebarLi active">
+                <a class="accordion-toggle collapsed toggle-switch" href="fietsen.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fa fa-bicycle iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Fietsen</span>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="aanbiedingen.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-tag iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Aanbiedingen</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="reviews.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-star-half-alt iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Reviews</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi">
+                <a class="accordion-toggle collapsed toggle-switch" href="nieuwsbrief.php">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-newspaper iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Nieuwsbrief</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+            <li class="sidebarLi uitloggen">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                    <div class="sidebarData">
+                        <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
+                        <span class="pr-15"></span>
+                        <span class="sidebar-title">Uitloggen</span>
+                        <b class="caret"></b>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--   Hier eindigt de Not minified sidebar-->
     <!-- Navbar-->
     <nav class="navbar navbar-light bg-light justify-content-between">
-        <h3 class="logo">Gebruikte Fietsen</h3>
+        <div class="sidebarChevron">
+            <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </div>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -160,6 +152,7 @@
             </button>
         </form>
     </nav>
+    <!-- End of the navbar -->
     <!--   Datatable -->
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
