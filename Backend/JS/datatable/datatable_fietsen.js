@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#klanten').DataTable({
+    $('#fietsen').DataTable({
         responsive: true,
         // Kunnen selecteren van een persoon
         columnDefs: [{
@@ -31,8 +31,8 @@ $(document).ready(function () {
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
-            var oTable = $('#klanten').DataTable();
-            $('#klanten thead').on('click', 'tr', function () {
+            var oTable = $('#fietsen').DataTable();
+            $('#fietsen thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
                 var pos = oTable.row(this).index();
                 var row = oTable.row(pos).data();
@@ -58,6 +58,6 @@ $(document).ready(function () {
     });
 
     // Append Datatable toevoegen aan een id
-    $('#klanten_length').appendTo('#card-header');
-    $('#klanten_filter').appendTo('#card-header');
+    $('#fietsen_length').appendTo('#card-header');
+    $('#fietsen_filter').appendTo('#card-header');
 });

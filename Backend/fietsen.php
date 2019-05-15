@@ -57,7 +57,7 @@ $records = $con->query("SELECT * FROM bikes");
             <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="Klanten.php">
                     <div class="sidebarData">
-                        <span class="sidebar-icon"><i class="fas fa-users iconwidth"></i></span>
+                        <span class="sidebar-icon"><i class="fas fa-user-tie iconwidth"></i></span>
                         <span class="pr-15"></span>
                         <span class="sidebar-title">Klanten</span>
                     </div>
@@ -182,7 +182,7 @@ $records = $con->query("SELECT * FROM bikes");
                 <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="klanten" class="" style="width:100%">
+                <table id="fietsen" class="" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>

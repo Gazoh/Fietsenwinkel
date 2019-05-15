@@ -155,8 +155,12 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
 }
 
 .iconwidth {
-  font-size: 1.2rem;
-  width: 21.615px;
+  font-size: 1.2rem !important;
+  width: 24px !important;
+}
+
+.iconwidth::before {
+  width: 24px !important;
 }
 
 .iconwidthBestellingen {
@@ -242,7 +246,7 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
 
 .submenu-bestellingenLi {
   padding-bottom: 17px !important;
-  padding-left: 29px;
+  padding-left: 24px;
   padding-right: 29px;
   padding-top: 17px;
 }
@@ -446,7 +450,7 @@ i.fas.fa-money-bill-wave.cardWidget {
 
 div#klanten_filter {
   float: right;
-  font-family: Poppings-Bold !important;
+  font-family: Roboto-Bold !important;
 }
 
 a#klanten_previous:hover {
@@ -525,6 +529,16 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
   top: 55% !important;
   -ms-transform: translateY(-50%) !important;
   transform: translateY(-50%) !important;
+}
+
+#fietsen_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#fietsen_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
 }
 
 .uitvoeren {

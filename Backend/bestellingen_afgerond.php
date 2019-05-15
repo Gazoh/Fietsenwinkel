@@ -54,7 +54,7 @@
             <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="Klanten.php">
                     <div class="sidebarData">
-                        <span class="sidebar-icon"><i class="fas fa-users iconwidth"></i></span>
+                        <span class="sidebar-icon"><i class="fas fa-user-tie iconwidth"></i></span>
                         <span class="pr-15"></span>
                         <span class="sidebar-title">Klanten</span>
                     </div>
