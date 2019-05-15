@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van fietsen uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM bikes");
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -177,91 +181,37 @@
                         <th>Afbeelding</th>
                         <th>Naam</th>
                         <th>Merk</th>
-                        <th>Type</th>
                         <th>Frametype</th>
+                        <th>Framenummer</th>
                         <th>Kleur</th>
                         <th>Prijs</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td class="image-align-center">
-                            <img src="assets/img/fiets.png" class="img-thumbnail" width="100">
-                        </td>
-                        <td>Lorem ipsum 1032</td>
-                        <td>Gazelle</td>
-                        <td>Stadsfiets</td>
-                        <td>Damesfiets</td>
-                        <td>Rood</td>
-                        <td>&euro; 1087,-</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th></th>
-                        <th>ID</th>
-                        <th>Afbeelding</th>
-                        <th>Naam</th>
-                        <th>Merk</th>
-                        <th>Type</th>
-                        <th>Frametype</th>
-                        <th>Kleur</th>
-                        <th>Prijs</th>
-                    </tr>
+                    <?php
+                    while (  $row =  mysqli_fetch_assoc($records)    )
+                    {
+                        $bikes[] = $row;
+                        foreach ($bikes as $bike):
+                            ?>
+                            <tr>
+                                <th></th>
+                                <th><?php echo $bike['id']?></th>
+                                <th><?php echo $bike['image_path']?></th>
+                                <th><?php echo $bike['bikename']?></th>
+                                <th><?php echo $bike['brand']?></th>
+                                <th><?php if($bike['biketype'] == 0)
+                                        {echo "Damesfiets";}
+                                        elseif($bike['biketype'] == 1)
+                                    {echo "Herenfiets";}?></th>
+                                <th><?php echo $bike['framenumber'] ?></th>
+                                <th><?php echo $bike['color'] ?></th>
+                                <th><?php echo "&euro; " . $bike['selling_price'] ?></th>
+                            </tr>
+
+                        <?php endforeach;
+                    }
+                    ?>
                     </tfoot>
                 </table>
             </div>
