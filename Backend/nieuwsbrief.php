@@ -29,7 +29,7 @@
         <ul class="sidebarUl">
             <div class="sidebarProfilePicture">
                 <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
-                <!--   <h5 class="sidebarUsername">Admin</h5>-->
+                <h5 class="sidebarUsername">Admin</h5>
             </div>
             <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
@@ -168,7 +168,7 @@
                     <span class="mdc-button__label">Toevoegen</span>
                 </button>
                 <div class="selectDatatable mdc-button__label">
-                    <select class="form-control mdc-button form-data">
+                    <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
                         <option value="Bekijken" id="bekijken">Bekijken</option>
                         <option value="Aanpassen" id="aanpassen">Aanpassen</option>

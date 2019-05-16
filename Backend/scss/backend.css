@@ -156,7 +156,10 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
 
 .iconwidth {
   font-size: 1.2rem !important;
-  width: 24px !important;
+}
+
+.iconwidthCards {
+  font-size: 1.7rem !important;
 }
 
 .iconwidth::before {
@@ -200,9 +203,6 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
 
 .sidebarUsername {
   float: right;
-  position: relative;
-  right: 3.4rem;
-  top: 1rem;
   font-family: Roboto-Bold;
   margin: 0;
 }
@@ -404,19 +404,6 @@ i.fas.fa-users.cardWidget {
   width: 55px !important;
 }
 
-i.fas.fa-star-half-alt.cardWidget {
-  width: 55px !important;
-}
-
-i.fas.fa-box.cardWidget {
-  width: 55px !important;
-}
-
-i.fas.fa-money-bill-wave.cardWidget {
-  width: 55px !important;
-  float: left;
-}
-
 .foo-button {
   margin-right: 10px !important;
 }
@@ -430,7 +417,11 @@ i.fas.fa-money-bill-wave.cardWidget {
 }
 
 .mdc-card {
-  display: grid !important;
+  width: 100%;
+}
+
+.col {
+  margin-bottom: 10px;
 }
 
 /* ----------------------------------------------------------------------- */
@@ -751,6 +742,10 @@ body {
   position: relative;
   top: 0;
   height: 100vh;
+}
+
+.mt-6rem {
+  margin-top: 6rem !important;
 }
 
 :root {

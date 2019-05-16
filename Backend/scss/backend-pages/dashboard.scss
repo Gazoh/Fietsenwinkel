@@ -31,20 +31,6 @@ i.fas.fa-users.cardWidget {
 
 }
 
-i.fas.fa-star-half-alt.cardWidget {
-  width: 55px !important;
-
-}
-
-i.fas.fa-box.cardWidget {
-  width: 55px !important;
-}
-
-i.fas.fa-money-bill-wave.cardWidget {
-  width: 55px !important;
-  float: left;
-}
-
 .foo-button {
   margin-right: 10px !important;
 }
@@ -57,5 +43,9 @@ i.fas.fa-money-bill-wave.cardWidget {
 }
 
 .mdc-card {
-  display: grid !important;
+  width: 100%;
+}
+
+.col {
+  margin-bottom: 10px;
 }

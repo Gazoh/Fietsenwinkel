@@ -25,8 +25,10 @@
     <div id="sidebar-wrapper" class="sidebarAnimation">
         <ul class="sidebarUl">
             <div class="sidebarProfilePicture">
-                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
-                <!--   <h5 class="sidebarUsername">Admin</h5>-->
+                <div class="row align-items-center justify-content-center">
+                    <img src="Assets/img/profile-image-placeholder.png" class="profile-picture" alt="profile">
+                    <h5 class="sidebarUsername">Admin</h5>
+                </div>
             </div>
             <li class="sidebarLi active">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
@@ -170,11 +172,10 @@
         <div class="row widgets">
             <div class="col">
                 <div class="mdc-card text-white">
-                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
-                        <div class="card-icons">
-                            <i class="fas fa-user cardWidget"></i>
+                    <div class="card mdc-card__primary-action p-4 main-color" tabindex="0">
+                        <i class="fas fa-user cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">32</h1>
-                        </div>
+                        </i>
                         <div class="float-right">
                             <h3 class="card-title dashboard">Bezoekers</h3>
                         </div>
@@ -187,10 +188,9 @@
             <div class="col">
                 <div class="mdc-card text-white">
                     <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
-                        <div class="card-icons">
-                            <i class="fas fa-box cardWidget"></i>
+                        <i class="fas fa-box cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">94</h1>
-                        </div>
+                        </i>
                         <div class="float-right">
                             <h3 class="card-title dashboard">Bestellingen</h3>
                         </div>
@@ -203,10 +203,9 @@
             <div class="col">
                 <div class="mdc-card text-white">
                     <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
-                        <div class="card-icons">
-                            <i class="fas fa-star-half-alt cardWidget"></i>
+                        <i class="fas fa-star-half-alt cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">16</h1>
-                        </div>
+                        </i>
                         <div class="float-right">
                             <h3 class="card-title dashboard">Reviews</h3>
                         </div>
@@ -219,10 +218,9 @@
             <div class="col">
                 <div class="mdc-card text-white">
                     <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
-                        <div class="card-icons">
-                            <i class="fas fa-money-bill-wave cardWidget"></i>
+                        <i class="fas fa-money-bill-wave cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">&euro; 6134</h1>
-                        </div>
+                        </i>
                         <div class="float-right">
                             <h3 class="card-title dashboard">Netto winst</h3>
                         </div>
@@ -232,7 +230,15 @@
                     </div>
                 </div>
             </div>
+
         </div>
+        <!--<div class="mdc-card float-left mt-6rem ml-5">
+            <div class="card-header" id="card-header">
+                <h2 class="text-center">Apparaten</h2>
+                <h6 class="text-center">Gebruikt om de website te bezoeken</h6>
+            </div>
+            <canvas id="myChart" width="500" height="500"></canvas>
+        </div>-->
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -248,6 +254,9 @@
     <!-- Material -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="js/google-material/index.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/chart/chart.js"></script>
     <script>
         $('#menu-toggle').click(function () {
             if ($(window).width() >= 500) { //your chosen mobile res

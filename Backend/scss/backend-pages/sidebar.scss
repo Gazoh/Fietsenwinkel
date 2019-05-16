@@ -92,7 +92,10 @@ li.submenu-bestellingenLi.afgerond:hover {
 
 .iconwidth {
   font-size: 1.2rem !important;
-  width: 24px !important;
+}
+
+.iconwidthCards {
+  font-size: 1.7rem !important;
 }
 
 .iconwidth::before {
@@ -135,10 +138,10 @@ li.submenu-bestellingenLi.afgerond:hover {
 }
 
 .sidebarUsername {
+  //position: relative;
+  //right: 3.4rem;
+  //top: 1rem;
   float: right;
-  position: relative;
-  right: 3.4rem;
-  top: 1rem;
   font-family: Roboto-Bold;
   margin: 0;
 }
