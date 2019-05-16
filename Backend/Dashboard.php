@@ -169,50 +169,66 @@
     <div class="container-fluid body">
         <div class="row widgets">
             <div class="col">
-                <div class="mdc-card text-white mb-3">
-                    <div class="card-body dashboard">
+                <div class="mdc-card text-white">
+                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
                         <div class="card-icons">
-                            <i class="fas fa-users cardWidget"></i>
-                            <h1 class="card-title dashboard numbers">31</h1>
+                            <i class="fas fa-user cardWidget"></i>
+                            <h1 class="card-title dashboard numbers">32</h1>
                         </div>
-                        <h3 class="card-title dashboard">Bezoekers</h3>
-                        <p class="card-text">Op dit moment</p>
+                        <div class="float-right">
+                            <h3 class="card-title dashboard">Bezoekers</h3>
+                        </div>
+                        <div class="float-right">
+                            <p class="card-text">Op het moment</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white mb-3">
-                    <div class="card-body dashboard">
+                <div class="mdc-card text-white">
+                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
                         <div class="card-icons">
                             <i class="fas fa-box cardWidget"></i>
                             <h1 class="card-title dashboard numbers">94</h1>
                         </div>
-                        <h3 class="card-title dashboard">Bestellingen</h3>
-                        <p class="card-text">In de afgelopen week</p>
+                        <div class="float-right">
+                            <h3 class="card-title dashboard">Bestellingen</h3>
+                        </div>
+                        <div class="float-right">
+                            <p class="card-text">In de afgelopen week</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white mb-3">
-                    <div class="card-body dashboard">
+                <div class="mdc-card text-white">
+                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
                         <div class="card-icons">
                             <i class="fas fa-star-half-alt cardWidget"></i>
                             <h1 class="card-title dashboard numbers">16</h1>
                         </div>
-                        <h3 class="card-title dashboard">Reviews</h3>
-                        <p class="card-text">In de afgelopen week</p>
+                        <div class="float-right">
+                            <h3 class="card-title dashboard">Reviews</h3>
+                        </div>
+                        <div class="float-right">
+                            <p class="card-text">In de afgelopen week</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card text-white mb-3">
-                    <div class="card-body dashboard">
+                <div class="mdc-card text-white">
+                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
                         <div class="card-icons">
                             <i class="fas fa-money-bill-wave cardWidget"></i>
                             <h1 class="card-title dashboard numbers">&euro; 6134</h1>
                         </div>
-                        <h3 class="card-title dashboard">Netto winst</h3>
-                        <p class="card-text">In de afgelopen week</p>
+                        <div class="float-right">
+                            <h3 class="card-title dashboard">Netto winst</h3>
+                        </div>
+                        <div class="float-right">
+                            <p class="card-text">In de afgelopen week</p>
+                        </div>
                     </div>
                 </div>
             </div>

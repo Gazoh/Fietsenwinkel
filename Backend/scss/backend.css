@@ -3,33 +3,6 @@
 /*    sass --watch backend.scss:backend.css     */
 /*                    VARIABLEN                 */
 /* -------------------------------------------- */
-:root {
-  --mdc-theme-primary: #073f7f;
-  --mdc-theme-secondary: #018786;
-  --mdc-theme-background: #fff;
-  --mdc-theme-surface: #fff;
-  --mdc-theme-error: #b00020;
-  --mdc-theme-on-primary: #fff;
-  --mdc-theme-on-secondary: #fff;
-  --mdc-theme-on-surface: #000;
-  --mdc-theme-on-error: #fff;
-  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
-  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
-  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
-  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
-  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
-  --mdc-theme-text-primary-on-dark: white;
-  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
-  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
-  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
-  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
-}
-
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
@@ -377,22 +350,7 @@ thead {
 
 .toevoegen {
   float: left !important;
-  font-family: Roboto-Medium;
-  background-color: #177a17 !important;
-  color: #fff !important;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background: #1AAF00 !important;
 }
 
 div#gebruikers_filter {
@@ -416,23 +374,9 @@ div#gebruikers_filter {
   margin-top: 2rem;
 }
 
-.card-body.dashboard {
-  background-color: #073A74 !important;
-  border-radius: 6px;
-  display: grid;
-  text-align: right;
-}
-
-.card.text-white.mb-3 {
-  border-color: #073f7f;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  border: none;
-}
-
-.card-title.dashboard {
+.card-title {
   float: right;
   margin-bottom: 0;
-  margin-top: 0 !important;
 }
 
 .card-text {
@@ -444,28 +388,40 @@ h1.card-title.numbers {
 }
 
 .card-icons {
-  float: left;
-  font-size: 2.5rem;
+  font-size: 1.5em;
 }
 
 i.fas.fa-users.cardWidget {
   width: 55px !important;
-  float: left;
 }
 
 i.fas.fa-star-half-alt.cardWidget {
   width: 55px !important;
-  float: left;
 }
 
 i.fas.fa-box.cardWidget {
   width: 55px !important;
-  float: left;
 }
 
 i.fas.fa-money-bill-wave.cardWidget {
   width: 55px !important;
   float: left;
+}
+
+.foo-button {
+  margin-right: 10px !important;
+}
+
+.br-10 {
+  margin-right: 10px !important;
+}
+
+.cem {
+  height: 145px !important;
+}
+
+.mdc-card {
+  display: grid !important;
 }
 
 /* ----------------------------------------------------------------------- */
@@ -742,6 +698,33 @@ body {
 
 .form-inline {
   margin-bottom: 0 !important;
+}
+
+:root {
+  --mdc-theme-primary: #073f7f;
+  --mdc-theme-secondary: #018786;
+  --mdc-theme-background: #fff;
+  --mdc-theme-surface: #fff;
+  --mdc-theme-error: #b00020;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-secondary: #fff;
+  --mdc-theme-on-surface: #000;
+  --mdc-theme-on-error: #fff;
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
 }
 
 /*# sourceMappingURL=backend.css.map */

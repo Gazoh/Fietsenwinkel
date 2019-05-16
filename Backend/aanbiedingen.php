@@ -162,9 +162,10 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="toevoegen" id="toevoegen">
-                    <span class="pr-1"><i class="fas fa-plus"></i></span>
-                    Toevoegen
+                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded toevoegen" id="toevoegen">
+                    <i class="fas fa-plus"></i>
+                    <span class="pr-2"></span>
+                    <span class="mdc-button__label">Toevoegen</span>
                 </button>
                 <div class="selectDatatable">
                     <select class="form-control">

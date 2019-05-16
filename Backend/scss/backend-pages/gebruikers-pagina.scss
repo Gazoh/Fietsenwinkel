@@ -26,22 +26,7 @@ thead {
 
 .toevoegen {
   float: left !important;
-  font-family: Roboto-Medium;
-  background-color: #177a17 !important;
-  color: #fff !important;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  background: $succes !important;
 }
 
 div#gebruikers_filter {
@@ -52,4 +37,9 @@ div#gebruikers_filter {
 #gebruikers_length {
   float: right !important;
   height: 28px !important;
+}
+
+
+.demo-width-class {
+
 }
