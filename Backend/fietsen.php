@@ -8,10 +8,10 @@ $records = $con->query("SELECT * FROM bikes");
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Material -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
@@ -150,19 +150,19 @@ $records = $con->query("SELECT * FROM bikes");
             </a>
         </div>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button">
-                <span class="pr-2"><i class="fas fa-user"></i></span>
-                Account
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+                <i class="fas fa-user"></i>
+                <span class="pr-2"></span>
+                <span class="mdc-button__label">Account</span>
             </button>
-            <button class="btn btn-primary nav-buttons ml-4" type="button">
-                <span class="pr-2"><i class="fas fa-question"></i></span>
-                Help
+            <span class="mr-3"></span>
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+                <i class="fas fa-question"></i>
+                <span class="pr-2"></span>
+                <span class="mdc-button__label">Help</span>
             </button>
         </form>
     </nav>
-    <!-- End of the navbar -->
     <!--   Datatable -->
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
@@ -237,6 +237,10 @@ $records = $con->query("SELECT * FROM bikes");
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <!-- Side Bar -->
         <script src="js/sidebar.js"></script>
+        <!-- Material -->
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script src="js/google-material/index.js"></script>
+
         <script>
             $('#menu-toggle').click(function () {
                 if ($(window).width() >= 500) { //your chosen mobile res
