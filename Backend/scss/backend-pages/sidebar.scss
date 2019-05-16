@@ -31,7 +31,6 @@ a {
   border-bottom: 0px !important;
   position: absolute;
   bottom: 0;
-  width: 240px;
 }
 
 .sidebarLi:hover {
@@ -138,12 +137,9 @@ li.submenu-bestellingenLi.afgerond:hover {
 }
 
 .sidebarUsername {
-  //position: relative;
-  //right: 3.4rem;
-  //top: 1rem;
-  float: right;
   font-family: Roboto-Bold;
   margin: 0;
+  line-height: 2.7;
 }
 
 .adminVersie {
@@ -238,4 +234,17 @@ ul#submenu-2 {
   padding-right: 15px !important;
 }
 
+@media only screen and (max-width: 788px) {
+  #sidebar-wrapper {
+    background: #073f7f !important;
+    float: left;
+    overflow: hidden;
+    height: 100vh;
+    width: 0;
+  }
+
+  .sidebarUsername {
+    display: none !important;
+  }
+}
 

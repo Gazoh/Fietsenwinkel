@@ -5,13 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Material -->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -24,11 +22,8 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper" class="sidebarAnimation">
         <ul class="sidebarUl">
-            <div class="sidebarProfilePicture">
-                <div class="row align-items-center justify-content-center">
-                    <img src="Assets/img/profile-image-placeholder.png" class="profile-picture" alt="profile">
-                    <h5 class="sidebarUsername">Admin</h5>
-                </div>
+            <div class="sidebarProfilePicture ">
+                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture" alt="profile">
             </div>
             <li class="sidebarLi active">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
@@ -125,7 +120,7 @@
                     </div>
                 </a>
             </li>
-            <li class="sidebarLi uitloggen">
+            <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
