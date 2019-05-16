@@ -40,10 +40,6 @@ body {
   height: 100vh;
 }
 
-.form-inline {
-  margin-bottom: 0 !important;
-}
-
 :root {
   --mdc-theme-primary: #073f7f;
   --mdc-theme-secondary: #018786;
@@ -70,3 +66,5 @@ body {
   --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
 }
+
+

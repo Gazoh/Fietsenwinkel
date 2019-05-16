@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#klanten').DataTable({
         responsive: true,
+        "info": false,
         // Kunnen selecteren van een persoon
         columnDefs: [{
             orderable: false,
@@ -15,7 +16,13 @@ $(document).ready(function () {
         ],
         // Entries
         "oLanguage": {
-            "sLengthMenu": "_MENU_"
+            "sLengthMenu": "_MENU_",
+            "oPaginate": {
+                "sFirst": "Eerste pagina", // This is the link to the first page
+                "sPrevious": "Vorige", // This is the link to the previous page
+                "sNext": "Volgende", // This is the link to the next page
+                "sLast": "Laatste pagina" // This is the link to the last page
+            }
         },
         // Max lengte op 1 pagina
         "pageLength": 10,

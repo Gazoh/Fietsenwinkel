@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#gebruikers').DataTable({
         responsive: true,
+        "info": false,
         // Button
         buttons: [
             {
@@ -31,7 +32,13 @@ $(document).ready(function () {
         // Entries
         dom: 'lBfrtip',
         "oLanguage": {
-            "sLengthMenu": "_MENU_"
+            "sLengthMenu": "_MENU_",
+            "oPaginate": {
+                "sFirst": "Eerste pagina", // This is the link to the first page
+                "sPrevious": "Vorige", // This is the link to the previous page
+                "sNext": "Volgende", // This is the link to the next page
+                "sLast": "Laatste pagina" // This is the link to the last page
+            }
         },
         // Max lengte op 1 pagina
         "pageLength": 10,
@@ -72,6 +79,8 @@ $(document).ready(function () {
             }
         }
     });
+
+console.log($('#gebruikers_length').attr('name'));
 
     // Append Datatable toevoegen aan een id
     $('#gebruikers_length').appendTo('#card-header');

@@ -27,6 +27,7 @@ thead {
 .toevoegen {
   float: left !important;
   background: $succes !important;
+  height: 38px;
 }
 
 div#gebruikers_filter {
@@ -39,7 +40,6 @@ div#gebruikers_filter {
   height: 28px !important;
 }
 
-
-.demo-width-class {
-
+a#gebruikers_next:hover {
+  color: #fff !important;
 }

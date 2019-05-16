@@ -160,16 +160,20 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <div class="selectDatatable">
-                    <select class="form-control">
+                <div class="selectDatatable mdc-button__label">
+                    <select class="form-control mdc-button form-data">
                         <option value="" disabled selected id="opties">Opties</option>
                         <option value="Bekijken" id="bekijken">Bekijken</option>
+                        <option value="Aanpassen" id="aanpassen">Aanpassen</option>
+                        <option value="Verwijderen" id="verwijderen">Verwijderen</option>
                     </select>
                 </div>
-                <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
+                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded uitvoeren" id="uitvoeren">
+                    <span class="mdc-button__label">Uitvoeren</span>
+                </button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="bestellingen" style="width: 100%">
+                <table id="bestellingen" class="table-card" style="width: 100%">
                     <thead>
                     <tr>
                         <td></td>

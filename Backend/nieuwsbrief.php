@@ -167,18 +167,20 @@
                     <span class="pr-2"></span>
                     <span class="mdc-button__label">Toevoegen</span>
                 </button>
-                <div class="selectDatatable">
-                    <select class="form-control">
+                <div class="selectDatatable mdc-button__label">
+                    <select class="form-control mdc-button form-data">
                         <option value="" disabled selected id="opties">Opties</option>
-                        <option value="Bekijken" id="bekijken">Aanpassen</option>
+                        <option value="Bekijken" id="bekijken">Bekijken</option>
+                        <option value="Aanpassen" id="aanpassen">Aanpassen</option>
                         <option value="Verwijderen" id="verwijderen">Verwijderen</option>
-                        <option value="Verzenden" id="verzenden">Verzenden</option>
                     </select>
                 </div>
-                <button id="uitvoeren" class="uitvoeren">Uitvoeren</button>
+                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded uitvoeren" id="uitvoeren">
+                    <span class="mdc-button__label">Uitvoeren</span>
+                </button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="nieuwsbrief" style="width:100%">
+                <table id="nieuwsbrief" class="table-card" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>
