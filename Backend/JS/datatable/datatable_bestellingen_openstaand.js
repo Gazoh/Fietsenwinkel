@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('#bestellingen').DataTable({
         responsive: true,
         "info": false,
+        "sSearch": "your-text-here",
         // Kunnen selecteren van een persoon
         columnDefs: [{
             orderable: false,

@@ -227,7 +227,14 @@ i#chevron {
 
 .submenu-bestellingenLi {
   padding-bottom: 17px !important;
-  padding-left: 24px;
+  padding-left: 15px;
+  padding-right: 29px;
+  padding-top: 17px;
+}
+
+.submenu-bestellingenLi80 {
+  padding-bottom: 17px !important;
+  padding-left: 0px;
   padding-right: 29px;
   padding-top: 17px;
 }
@@ -286,6 +293,11 @@ ul#submenu-2 {
   font-size: 1.3rem;
 }
 
+@media only screen and (max-width: 970px) {
+  div#bestellingen_filter {
+    float: left !important;
+  }
+}
 @media only screen and (max-width: 788px) {
   #sidebar-wrapper {
     background: #073f7f !important;
@@ -293,6 +305,10 @@ ul#submenu-2 {
     overflow: hidden;
     height: 100vh;
     width: 0px;
+  }
+
+  .sidebar-title {
+    display: none;
   }
 
   .sidebarUsername {
@@ -472,7 +488,7 @@ a#klanten_next:hover {
 }
 
 div#bestellingen_filter {
-  float: right !important;
+  float: right;
   font-family: Roboto-Bold !important;
 }
 
