@@ -151,7 +151,7 @@
                 <span class="mdc-button__label">Help</span>
             </button>
         </div>
-        <div class="mdc-chip-set">
+        <div class="mdc-chip-set pl-2 pr-2">
             <div class="hiUser pr-1 pt-2">
                 <span class="hiNav">Hi, </span>
                 <span class="usernameNav" id="usernameNav"></span>
@@ -285,7 +285,8 @@
     <!-- Material -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="js/google-material/index.js"></script>
-    <!-- Global -->
-    <script src="js/global.js"></script>
+    <!-- Sidebar & Nav -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>

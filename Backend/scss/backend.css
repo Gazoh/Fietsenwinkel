@@ -420,16 +420,26 @@ i.fas.fa-users.cardWidget {
   margin-right: 10px !important;
 }
 
-.cem {
-  height: 145px !important;
-}
-
 .mdc-card {
   width: 100%;
 }
 
 .col {
   margin-bottom: 10px;
+}
+
+.mdc-chip-set:hover {
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #eceef0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #000;
+}
+
+.mdc-chip {
+  background: #1587d2;
+  color: #fff;
 }
 
 /* ----------------------------------------------------------------------- */

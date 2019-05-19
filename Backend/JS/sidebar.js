@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    /* -------------------------------------------- */
-    /*                    SIDEBAR                   */
-    /* -------------------------------------------- */
     // Bestellingen Tab active class aanzetten zodra je erop drukt
     $('#bestellingen').on('click', function () {
         $('#bestellingen').toggleClass("active");
@@ -31,22 +28,5 @@ $(document).ready(function () {
             $("#chevron").removeClass('fas fa-chevron-left').toggleClass('fas fa-chevron-right');
         }
     });
-    /* -------------------------------------------- */
-    /*                  END SIDEBAR                 */
-    /* -------------------------------------------- */
-
-    /* -------------------------------------------- */
-    /*                    NAV                       */
-    /* -------------------------------------------- */
-    // De eerste letter van de username
-    let username = "Cem";
-    $('#usernameNav').text(username);
-    $('#usernameFirstLetter').text(username.slice(0, 1));
-
-
-    /* -------------------------------------------- */
-    /*                    END NAV                   */
-    /* -------------------------------------------- */
-
 });
 

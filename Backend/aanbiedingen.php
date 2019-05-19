@@ -151,7 +151,7 @@
                 <span class="mdc-button__label">Help</span>
             </button>
         </div>
-        <div class="mdc-chip-set">
+        <div class="mdc-chip-set pl-2 pr-2">
             <div class="hiUser pr-1 pt-2">
                 <span class="hiNav">Hi, </span>
                 <span class="usernameNav" id="usernameNav"></span>
@@ -304,8 +304,9 @@
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/datatable/datatable_aanbiedingen.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!-- Global -->
-        <script type="text/javascript" src="js/global.js"></script>
+        <!-- Sidebar & Nav -->
+        <script src="js/sidebar.js"></script>
+        <script src="js/nav.js"></script>
         <!-- Material -->
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <script src="js/google-material/index.js"></script>
