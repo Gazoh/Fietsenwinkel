@@ -1,9 +1,6 @@
 var ctx = document.getElementById('myChart');
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
     type: 'pie',
-
-    // The data for our dataset
     data: {
         labels: ['Desktop', 'Mobiel', 'Tablet', 'Anders'],
         datasets: [{

@@ -26,9 +26,11 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper" class="sidebarAnimation">
         <ul class="sidebarUl">
-            <div class="sidebarProfilePicture">
-                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture">
-                <h5 class="sidebarUsername">Admin</h5>
+            <div class="sidebarProfilePicture pl-4 pr-4" id="sidebarProfilePicture">
+                <span class="logo sidebarUsername">FW</span>
+                <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron float-right">
+                    <i class="fas fa-chevron-left" id="chevron"></i>
+                </a>
             </div>
             <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
@@ -70,15 +72,15 @@
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
                     </a>
                 </li>
                 <li class="submenu-bestellingenLi afgerond active">
-                    <a href="bestellingen_afgerond.php">
+                    <a href="#">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Afgerond</span>
                         </div>
                     </a>
@@ -123,7 +125,7 @@
                     </div>
                 </a>
             </li>
-            <li class="sidebarLi uitloggen">
+            <li class="sidebarLi">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-sign-out-alt iconwidth"></i></span>
@@ -135,27 +137,31 @@
             </li>
         </ul>
     </div>
-    <!-- Navbar-->
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <div class="sidebarChevron">
-            <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron">
-                <i class="fas fa-chevron-left"></i>
-            </a>
-        </div>
-        <form class="form-inline">
+    <!--   Hier eindigt de Not minified sidebar-->
+    <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
+        <div class="justify-content-end">
             <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <span class="mr-3"></span>
             <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
             </button>
-        </form>
+        </div>
+        <div class="mdc-chip-set">
+            <div class="hiUser pr-1 pt-2">
+                <span class="hiNav">Hi, </span>
+                <span class="usernameNav" id="usernameNav"></span>
+            </div>
+            <div class="mdc-chip" tabindex="0">
+                <div class="mdc-chip__text usernameFirstLetter" id="usernameFirstLetter"></div>
+            </div>
+        </div>
     </nav>
+    <!-- End of the navbar -->
     <!--   Datatable -->
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
@@ -279,25 +285,7 @@
     <!-- Material -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="js/google-material/index.js"></script>
-    <script>
-        $('#menu-toggle').click(function () {
-            if ($(window).width() >= 500) { //your chosen mobile res
-                $('#sidebar-wrapper').toggleClass('clicked');
-                $('.sidebar-title').toggleClass('display');
-                $('.sidebarUsername').toggleClass('display')
-            } else {
-                $('#sidebar-wrapper').animate({
-                    width: 'toggle'
-                }, 350);
-            }
-            console.log($('#sidebar-wrapper').innerWidth());
-            if ($('#sidebar-wrapper').innerWidth() == 80) {
-                $('.sidebar-title').removeClass('animated fadeIn');
-                $('.sidebar-title').toggleClass('animated fadeIn');
-                $('.sidebarUsername').removeClass('animated fadeIn');
-                $('.sidebarUsername').toggleClass('animated fadeIn');
-            }
-        });
-    </script>
+    <!-- Global -->
+    <script src="js/global.js"></script>
 </body>
 </html>

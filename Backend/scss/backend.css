@@ -192,29 +192,9 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
   color: #fff;
 }
 
-.profile-picture {
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  object-fit: cover;
-  border: 2px solid #073A74;
-}
-
 .sidebarUsername {
   font-family: Roboto-Bold;
   margin: 0;
-  line-height: 2.7;
-}
-
-.adminVersie {
-  float: right;
-  position: relative;
-  right: 0.25rem;
-  top: 1.9rem;
-  margin: 0;
-  font-weight: 100;
-  font-family: Roboto-Italic;
-  font-size: 0.9rem;
 }
 
 .sidebarChevron {
@@ -233,14 +213,16 @@ li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
   color: #1587d2;
 }
 
+i#chevron {
+  line-height: 65px;
+}
+
 .sidebarProfilePicture {
-  padding: 0.5rem;
-  color: #fff;
-  padding-left: 0.9rem !important;
-  padding-right: 1.5rem !important;
-  list-style-type: none;
-  text-align: left;
+  height: 65px;
+  line-height: 65px;
+  font-size: 1rem;
   border-bottom: 1px solid #073A74;
+  color: #fff;
 }
 
 .submenu-bestellingenLi {
@@ -298,13 +280,19 @@ ul#submenu-2 {
   padding-right: 15px !important;
 }
 
+.logo {
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
 @media only screen and (max-width: 788px) {
   #sidebar-wrapper {
     background: #073f7f !important;
     float: left;
     overflow: hidden;
     height: 100vh;
-    width: 0;
+    width: 0px;
   }
 
   .sidebarUsername {
@@ -325,17 +313,25 @@ button.btn.btn-primary.nav-buttons {
   padding-right: 16px;
 }
 
-.logo {
-  font-family: Roboto-Bold;
-  text-transform: uppercase;
-  text-transform: uppercase;
-  background: linear-gradient(to right, #073f7f 0%, #4787d2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .form-inline {
   margin-bottom: 0 !important;
+}
+
+.nav {
+  height: 65px;
+}
+
+.hiNav {
+  font-size: 0.8rem;
+}
+
+.usernameNav {
+  font-size: 0.95rem;
+  font-family: Roboto-Bold;
+}
+
+.usernameFirstLetter {
+  font-family: Roboto-Bold;
 }
 
 /* ----------------------------------------------------------------------- */

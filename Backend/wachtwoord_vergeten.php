@@ -46,14 +46,14 @@
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <!--   Core JS Files   -->
-<script src="JS/core/popper.min.js" type="text/javascript"></script>
-<script src="JS/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-<script src="JS/plugins/moment.min.js"></script>
+<script src="js/plugins/popper.min.js" type="text/javascript"></script>
+<script src="js/plugins/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="js/plugins/moment.min.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="JS/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-<script src="JS/core/material-kit.js?v=2.0.5" type="text/javascript"></script>
+<script src="js/plugins/material-kit.js?v=2.0.5" type="text/javascript"></script>
 </body>
 </html>

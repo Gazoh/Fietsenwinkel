@@ -5,16 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Material -->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <title>Fietsenwinkel - Dashboard</title>
 </head>
 <body>
@@ -22,8 +25,11 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper" class="sidebarAnimation">
         <ul class="sidebarUl">
-            <div class="sidebarProfilePicture ">
-                <img src="Assets/img/profile-image-placeholder.png" class="profile-picture" alt="profile">
+            <div class="sidebarProfilePicture pl-4 pr-4" id="sidebarProfilePicture">
+                <span class="logo sidebarUsername">FW</span>
+                <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron float-right">
+                    <i class="fas fa-chevron-left" id="chevron"></i>
+                </a>
             </div>
             <li class="sidebarLi active">
                 <a class="accordion-toggle collapsed toggle-switch" href="#">
@@ -63,9 +69,9 @@
             </li>
             <ul id="submenu-2" class="panel-collapse collapse panel-switch submenu-bestellingenUl" role="menu">
                 <li class="submenu-bestellingenLi openstaand">
-                    <a href="bestellingen_openstaand.php">
+                    <a href="#">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i
+                            <span class="sidebar-icon pr-2"><i
                                         class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
@@ -74,8 +80,7 @@
                 <li class="submenu-bestellingenLi afgerond">
                     <a href="bestellingen_afgerond.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon"><i
-                                        class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i class="fa fa-check iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Afgerond</span>
                         </div>
                     </a>
@@ -133,26 +138,28 @@
         </ul>
     </div>
     <!--   Hier eindigt de Not minified sidebar-->
-    <!-- Navbar-->
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <div class="sidebarChevron">
-            <a href="#menu-toggle" id="menu-toggle" class="aSidebarChevron">
-                <i class="fas fa-chevron-left"></i>
-            </a>
-        </div>
-        <form class="form-inline">
+    <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
+        <div class="justify-content-end">
             <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <span class="mr-3"></span>
             <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
             </button>
-        </form>
+        </div>
+        <div class="mdc-chip-set">
+            <div class="hiUser pr-1 pt-2">
+                <span class="hiNav">Hi, </span>
+                <span class="usernameNav" id="usernameNav"></span>
+            </div>
+            <div class="mdc-chip" tabindex="0">
+                <div class="mdc-chip__text usernameFirstLetter" id="usernameFirstLetter"></div>
+            </div>
+        </div>
     </nav>
     <!-- End of the navbar -->
     <div class="pos-f-t">
@@ -225,53 +232,26 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <!--<div class="mdc-card float-left mt-6rem ml-5">
-            <div class="card-header" id="card-header">
-                <h2 class="text-center">Apparaten</h2>
-                <h6 class="text-center">Gebruikt om de website te bezoeken</h6>
-            </div>
-            <canvas id="myChart" width="500" height="500"></canvas>
-        </div>-->
+        <!-- <div class="col mdc-card float-left mt-6rem ml-5 float-right">
+             <div class="card-header" id="card-header">
+                 <h2 class="text-center">Apparaten</h2>
+                 <h6 class="text-center">Gebruikt om de website te bezoeken</h6>
+             </div>
+             <canvas id="myChart" width="200" height="200"></canvas>
+         </div>-->
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <script src="js/sidebar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Global -->
+    <script src="js/global.js"></script>
     <!-- Material -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="js/google-material/index.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/chart/chart.js"></script>
-    <script>
-        $('#menu-toggle').click(function () {
-            if ($(window).width() >= 500) { //your chosen mobile res
-                $('#sidebar-wrapper').toggleClass('clicked');
-                $('.sidebar-title').toggleClass('display');
-                $('.sidebarUsername').toggleClass('display')
-            } else {
-                $('#sidebar-wrapper').animate({
-                    width: 'toggle'
-                }, 350);
-            }
-            console.log($('#sidebar-wrapper').innerWidth());
-            if ($('#sidebar-wrapper').innerWidth() == 80) {
-                $('.sidebar-title').removeClass('animated fadeIn');
-                $('.sidebar-title').toggleClass('animated fadeIn');
-                $('.sidebarUsername').removeClass('animated fadeIn');
-                $('.sidebarUsername').toggleClass('animated fadeIn');
-            }
-        });
-    </script>
-
 </body>
 </html>
