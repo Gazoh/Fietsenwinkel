@@ -3,20 +3,18 @@ require_once("Controllers/dbconnect.php");
 // Ophalen van fietsen uit database en die in $records zetten om er later doorheen te loopen.
 $records = $con->query("SELECT * FROM bikes");
 ?>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
-          type='text/css' media='all'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Material -->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <!--  FontAwesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -26,7 +24,7 @@ $records = $con->query("SELECT * FROM bikes");
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Gebruikers</title>
+    <title>Fietsenwinkel - Aanbiedingen</title>
 </head>
 <body>
 <div id="wrapper" class="toggled">
@@ -94,7 +92,7 @@ $records = $con->query("SELECT * FROM bikes");
                 </li>
             </ul>
             <li class="sidebarLi active">
-                <a class="accordion-toggle collapsed toggle-switch" href="fietsen.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fa fa-bicycle iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -179,7 +177,7 @@ $records = $con->query("SELECT * FROM bikes");
                     <span class="mdc-button__label">Toevoegen</span>
                 </button>
                 <div class="selectDatatable mdc-button__label">
-                    <select class="form-control ">
+                    <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
                         <option value="Bekijken" id="bekijken">Bekijken</option>
                         <option value="Aanpassen" id="aanpassen">Aanpassen</option>
@@ -191,7 +189,7 @@ $records = $con->query("SELECT * FROM bikes");
                 </button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="gebruikers" class="table-card" style="width:100%">
+                <table id="fietsen" class="table-card" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>
@@ -199,8 +197,8 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Afbeelding</th>
                         <th>Naam</th>
                         <th>Merk</th>
+                        <th>Type</th>
                         <th>Frametype</th>
-                        <th>Framenummer</th>
                         <th>Kleur</th>
                         <th>Prijs</th>
                     </tr>
@@ -209,25 +207,24 @@ $records = $con->query("SELECT * FROM bikes");
                     <?php
                     while (  $row =  mysqli_fetch_array($records)    )
                     {
-                            ?>
-                            <tr>
-                                <th></th>
-                                <th><?php echo $row['id']?></th>
-                                <th><?php echo $row['image_path']?></th>
-                                <th><?php echo $row['bikename']?></th>
-                                <th><?php echo $row['brand']?></th>
-                                <th><?php if($row['biketype'] == 0)
-                                    {echo "Damesfiets";}
-                                    elseif($row['biketype'] == 1)
-                                    {echo "Herenfiets";}?></th>
-                                <th><?php echo $row['framenumber'] ?></th>
-                                <th><?php echo $row['color'] ?></th>
-                                <th><?php echo "&euro; " . $row['selling_price'] ?></th>
-                            </tr>
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['id']?></td>
+                            <td><?php echo $row['image_path']?></td>
+                            <td><?php echo $row['bikename']?></td>
+                            <td><?php echo $row['brand']?></td>
+                            <td><?php if($row['biketype'] == 0)
+                                {echo "Damesfiets";}
+                                elseif($row['biketype'] == 1)
+                                {echo "Herenfiets";}?></td>
+                            <td><?php echo $row['framenumber'] ?></td>
+                            <td><?php echo $row['color'] ?></td>
+                            <td><?php echo "&euro; " . $row['selling_price'] ?></td>
+                        </tr>
                         <?php
                     }
                     ?>
-
                     </tbody>
                     <tfoot>
                     <tr>
@@ -236,8 +233,8 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Afbeelding</th>
                         <th>Naam</th>
                         <th>Merk</th>
+                        <th>Type</th>
                         <th>Frametype</th>
-                        <th>Framenummer</th>
                         <th>Kleur</th>
                         <th>Prijs</th>
                     </tr>
@@ -254,7 +251,7 @@ $records = $con->query("SELECT * FROM bikes");
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="JS/datatable/datatable_fietsen.js"></script>
+        <script type="text/javascript" src="js/datatable/datatable_fietsen.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <!-- Sidebar & Nav -->
         <script src="js/sidebar.js"></script>
