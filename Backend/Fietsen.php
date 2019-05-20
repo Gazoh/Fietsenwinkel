@@ -207,26 +207,24 @@ $records = $con->query("SELECT * FROM bikes");
                     </thead>
                     <tbody>
                     <?php
-                    while (  $row =  mysqli_fetch_assoc($records)    )
+                    while (  $row =  mysqli_fetch_array($records)    )
                     {
-                        $bikes[] = $row;
-                        foreach ($bikes as $bike):
                             ?>
                             <tr>
                                 <th></th>
-                                <th><?php echo $bike['id']?></th>
-                                <th><?php echo $bike['image_path']?></th>
-                                <th><?php echo $bike['bikename']?></th>
-                                <th><?php echo $bike['brand']?></th>
-                                <th><?php if($bike['biketype'] == 0)
+                                <th><?php echo $row['id']?></th>
+                                <th><?php echo $row['image_path']?></th>
+                                <th><?php echo $row['bikename']?></th>
+                                <th><?php echo $row['brand']?></th>
+                                <th><?php if($row['biketype'] == 0)
                                     {echo "Damesfiets";}
-                                    elseif($bike['biketype'] == 1)
+                                    elseif($row['biketype'] == 1)
                                     {echo "Herenfiets";}?></th>
-                                <th><?php echo $bike['framenumber'] ?></th>
-                                <th><?php echo $bike['color'] ?></th>
-                                <th><?php echo "&euro; " . $bike['selling_price'] ?></th>
+                                <th><?php echo $row['framenumber'] ?></th>
+                                <th><?php echo $row['color'] ?></th>
+                                <th><?php echo "&euro; " . $row['selling_price'] ?></th>
                             </tr>
-                        <?php endforeach;
+                        <?php
                     }
                     ?>
 

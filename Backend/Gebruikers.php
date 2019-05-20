@@ -206,27 +206,26 @@ $records = $con->query("SELECT * FROM users");
                     </thead>
                     <tbody>
                     <?php
-                    while ($row = mysqli_fetch_assoc($records)) {
-                        $users[] = $row;
-                        foreach ($users as $user):
+                    while ($row = mysqli_fetch_array($records)) {
+
                             ?>
                             <tr>
                                 <td></td>
-                                <td><?php echo $user['id'] ?></td>
-                                <td><?php echo $user['first_name'] ?></td>
-                                <td><?php echo $user['last_name'] ?></td>
-                                <td><?php echo $user['email'] ?></td>
-                                <td><?php echo $user['phone'] ?></td>
-                                <td><?php echo $user['username'] ?></td>
-                                <td><?php if ($user['role'] == 0) {
+                                <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['first_name'] ?></td>
+                                <td><?php echo $row['last_name'] ?></td>
+                                <td><?php echo $row['email'] ?></td>
+                                <td><?php echo $row['phone'] ?></td>
+                                <td><?php echo $row['username'] ?></td>
+                                <td><?php if ($row['role'] == 0) {
                                         echo "Klant";
-                                    } elseif ($user['role'] == 1) {
+                                    } elseif ($row['role'] == 1) {
                                         echo "Beheerder";
                                     } ?>
                                 </td>
                             </tr>
 
-                        <?php endforeach;
+                        <?php
                     }
                     ?>
                     </tbody>
