@@ -17,10 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
     <!--  Datatable  -->
-    <link rel="stylesheet" href="css/select.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <link rel="stylesheet" href="css/Datatable/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Datatable/datatables.min.css"/>
     <!-- Animate.css -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Aanbiedingen</title>
 </head>
@@ -179,7 +179,20 @@
                Orange6
            </span>
         </header>
+        <div class="container-fluid">
+            <div class="image ml-4 mt-5">
+                <img src="assets/img/fiets1.jpg" class="responsive-image" width="700" alt=""/>
+                <div class="col-lg-6 col-sm-6 float-right container-data">
+                    <h2 class="productTitle bRoboto">Orange6</h2>
+                    <h3 class="iRoboto">Vrouwenfiets</h3>
+                    <p>Product description goes here.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                    <h1 class="bRoboto">&euro; 1087,-</h1>
+
+                </div> <!-- /col-sm-6 -->
+            </div>
+        </div>
     </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
