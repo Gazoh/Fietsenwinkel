@@ -1,7 +1,7 @@
 <?php
 require_once("Controllers/dbconnect.php");
-// Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
-$records = $con->query("SELECT * FROM users");
+// Ophalen van fietsen uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM bikes");
 ?>
 <html lang="en">
 <head>
@@ -49,7 +49,7 @@ $records = $con->query("SELECT * FROM users");
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -207,29 +207,29 @@ $records = $con->query("SELECT * FROM users");
                     </thead>
                     <tbody>
                     <?php
-                    while ($row = mysqli_fetch_assoc($records)) {
-                        $users[] = $row;
-                        foreach ($users as $user):
+                    while (  $row =  mysqli_fetch_assoc($records)    )
+                    {
+                        $bikes[] = $row;
+                        foreach ($bikes as $bike):
                             ?>
                             <tr>
-                                <td></td>
-                                <td><?php echo $user['id'] ?></td>
-                                <td><?php echo $user['first_name'] ?></td>
-                                <td><?php echo $user['last_name'] ?></td>
-                                <td><?php echo $user['email'] ?></td>
-                                <td><?php echo $user['phone'] ?></td>
-                                <td><?php echo $user['username'] ?></td>
-                                <td><?php if ($user['role'] == 0) {
-                                        echo "Klant";
-                                    } elseif ($user['role'] == 1) {
-                                        echo "Beheerder";
-                                    } ?>
-                                </td>
+                                <th></th>
+                                <th><?php echo $bike['id']?></th>
+                                <th><?php echo $bike['image_path']?></th>
+                                <th><?php echo $bike['bikename']?></th>
+                                <th><?php echo $bike['brand']?></th>
+                                <th><?php if($bike['biketype'] == 0)
+                                    {echo "Damesfiets";}
+                                    elseif($bike['biketype'] == 1)
+                                    {echo "Herenfiets";}?></th>
+                                <th><?php echo $bike['framenumber'] ?></th>
+                                <th><?php echo $bike['color'] ?></th>
+                                <th><?php echo "&euro; " . $bike['selling_price'] ?></th>
                             </tr>
-
                         <?php endforeach;
                     }
                     ?>
+
                     </tbody>
                     <tfoot>
                     <tr>
