@@ -1,7 +1,21 @@
 $(document).ready(function () {
-    $('#fietsen').DataTable({
+    $('#gebruikers').DataTable({
         responsive: true,
         "info": false,
+        // Button
+        buttons: [
+            {
+                text: '<span class="datatableIcon"><i class="fas fa-plus"></i></span>Toevoegen',
+                className: 'Toevoegen',
+                attr: {
+                    id: 'Toevoegen'
+                },
+                action: function (e, dt, node, config) {
+                    alert('Button activated');
+                }
+            }
+        ],
+
         // Kunnen selecteren van een persoon
         columnDefs: [{
             orderable: false,
@@ -14,7 +28,9 @@ $(document).ready(function () {
         },
         order: [[1, 'asc']
         ],
+
         // Entries
+        dom: 'lBfrtip',
         "oLanguage": {
             "sLengthMenu": "_MENU_",
             "oPaginate": {
@@ -35,6 +51,11 @@ $(document).ready(function () {
         elementClicked = true;
     });
 
+    // Toevoegen knop actie
+    $('#toevoegen').on('click', function () {
+        alert('test');
+    });
+
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
@@ -53,18 +74,15 @@ $(document).ready(function () {
                 console.log("Achternaam: " + oData[i][3]);
                 console.log("Email: " + oData[i][4]);
                 console.log("Telefoonnummer: " + oData[i][5]);
-                console.log("Adres: " + oData[i][6]);
-
+                console.log("Gebruikersnaam: " + oData[i][6]);
+                console.log("Rol: " + oData[i][7]);
             }
         }
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
+console.log($('#gebruikers_length').attr('name'));
 
     // Append Datatable toevoegen aan een id
-    $('#fietsen_length').appendTo('#card-header');
-    $('#fietsen_filter').appendTo('#card-header');
+    $('#gebruikers_length').appendTo('#card-header');
+    $('#gebruikers_filter').appendTo('#card-header');
 });

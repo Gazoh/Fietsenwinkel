@@ -1,22 +1,22 @@
 <?php
 require_once("Controllers/dbconnect.php");
-// Ophalen van fietsen uit database en die in $records zetten om er later doorheen te loopen.
-$records = $con->query("SELECT * FROM bikes");
+// Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM users");
 ?>
-<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Material -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
           type='text/css' media='all'>
+    <!-- Material -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -26,10 +26,10 @@ $records = $con->query("SELECT * FROM bikes");
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Fietsen</title>
+    <title>Fietsenwinkel - Gebruikers</title>
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper" class="toggled">
     <!-- Sidebar -->
     <div id="sidebar-wrapper" class="sidebarAnimation">
         <ul class="sidebarUl">
@@ -49,7 +49,7 @@ $records = $con->query("SELECT * FROM bikes");
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="#">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -94,7 +94,7 @@ $records = $con->query("SELECT * FROM bikes");
                 </li>
             </ul>
             <li class="sidebarLi active">
-                <a class="accordion-toggle collapsed toggle-switch" href="#">
+                <a class="accordion-toggle collapsed toggle-switch" href="fietsen.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fa fa-bicycle iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -179,7 +179,7 @@ $records = $con->query("SELECT * FROM bikes");
                     <span class="mdc-button__label">Toevoegen</span>
                 </button>
                 <div class="selectDatatable mdc-button__label">
-                    <select class="form-control">
+                    <select class="form-control ">
                         <option value="" disabled selected id="opties">Opties</option>
                         <option value="Bekijken" id="bekijken">Bekijken</option>
                         <option value="Aanpassen" id="aanpassen">Aanpassen</option>
@@ -191,7 +191,7 @@ $records = $con->query("SELECT * FROM bikes");
                 </button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="fietsen" class="table-card" style="width:100%">
+                <table id="gebruikers" class="table-card" style="width:100%">
                     <thead>
                     <tr>
                         <th></th>
@@ -207,28 +207,42 @@ $records = $con->query("SELECT * FROM bikes");
                     </thead>
                     <tbody>
                     <?php
-                    while (  $row =  mysqli_fetch_assoc($records)    )
-                    {
-                        $bikes[] = $row;
-                        foreach ($bikes as $bike):
+                    while ($row = mysqli_fetch_assoc($records)) {
+                        $users[] = $row;
+                        foreach ($users as $user):
                             ?>
                             <tr>
-                                <th></th>
-                                <th><?php echo $bike['id']?></th>
-                                <th><?php echo $bike['image_path']?></th>
-                                <th><?php echo $bike['bikename']?></th>
-                                <th><?php echo $bike['brand']?></th>
-                                <th><?php if($bike['biketype'] == 0)
-                                        {echo "Damesfiets";}
-                                        elseif($bike['biketype'] == 1)
-                                    {echo "Herenfiets";}?></th>
-                                <th><?php echo $bike['framenumber'] ?></th>
-                                <th><?php echo $bike['color'] ?></th>
-                                <th><?php echo "&euro; " . $bike['selling_price'] ?></th>
+                                <td></td>
+                                <td><?php echo $user['id'] ?></td>
+                                <td><?php echo $user['first_name'] ?></td>
+                                <td><?php echo $user['last_name'] ?></td>
+                                <td><?php echo $user['email'] ?></td>
+                                <td><?php echo $user['phone'] ?></td>
+                                <td><?php echo $user['username'] ?></td>
+                                <td><?php if ($user['role'] == 0) {
+                                        echo "Klant";
+                                    } elseif ($user['role'] == 1) {
+                                        echo "Beheerder";
+                                    } ?>
+                                </td>
                             </tr>
+
                         <?php endforeach;
                     }
                     ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Afbeelding</th>
+                        <th>Naam</th>
+                        <th>Merk</th>
+                        <th>Frametype</th>
+                        <th>Framenummer</th>
+                        <th>Kleur</th>
+                        <th>Prijs</th>
+                    </tr>
                     </tfoot>
                 </table>
             </div>
@@ -242,7 +256,7 @@ $records = $con->query("SELECT * FROM bikes");
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/datatable/datatable_fietsen.js"></script>
+        <script type="text/javascript" src="JS/datatable/datatable_fietsen.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <!-- Sidebar & Nav -->
         <script src="js/sidebar.js"></script>

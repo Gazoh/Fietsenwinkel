@@ -32,3 +32,18 @@ button.btn.btn-primary.nav-buttons {
 .usernameFirstLetter {
   font-family: Roboto-Bold;
 }
+
+
+.mdc-chip-set:hover {
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #eceef0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+}
+
+.mdc-chip {
+  background: $main_color_light;
+  color: #fff;
+}

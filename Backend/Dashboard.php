@@ -232,13 +232,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="col mdc-card float-left mt-6rem ml-5 float-right">
-             <div class="card-header" id="card-header">
-                 <h2 class="text-center">Apparaten</h2>
-                 <h6 class="text-center">Gebruikt om de website te bezoeken</h6>
-             </div>
-             <canvas id="myChart" width="200" height="200"></canvas>
-         </div>-->
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -251,8 +244,5 @@
     <!-- Material -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="js/google-material/index.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="js/chart/chart.js"></script>
 </body>
 </html>
