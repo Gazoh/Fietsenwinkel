@@ -17,12 +17,14 @@ $succes: #1AAF00;
 @import "backend-pages/klanten-pagina";
 @import "backend-pages/bestellingen_pagina";
 @import "backend-pages/fietsen";
+@import "backend-pages/fietsen_bekijken";
 @import "backend-pages/datatable";
 @import "backend-pages/aanbiedingen";
 @import "backend-pages/reviews";
 @import "backend-pages/nieuwsbrief";
 @import "backend-pages/login";
 @import "backend-pages/wachtwoord_vergeten";
+
 
 
 /* -------------------------------------------- */
@@ -42,6 +44,10 @@ body {
 
 .mt-6rem {
   margin-top: 6rem !important;
+}
+
+.bRoboto {
+Font-family: Roboto-Bold !important;
 }
 
 :root {

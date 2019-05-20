@@ -1,0 +1,43 @@
+.toolbar {
+  width: 100%;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+}
+
+.fietsnaam-title {
+  margin: 0px;
+  padding: 0;
+  color: #434349;
+  line-height: 40px;
+  font-size: 1rem;
+}
+
+.fietsentoolbar {
+  width: 90px;
+}
+
+.navigationPointer {
+  color: $main_color_light;
+  line-height: 40px;
+}
+
+.navigationStatus {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #959cb6 !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: list-item;
+}
+
+.paddingl-3 {
+  padding-left: 30px !important;
+}
+
+.navigationStatus:hover {
+  color: $main_color_light !important;
+}

@@ -335,6 +335,7 @@ button.btn.btn-primary.nav-buttons {
 
 .nav {
   height: 65px;
+  border-bottom: 1px solid #e1e1ef;
 }
 
 .hiNav {
@@ -567,6 +568,50 @@ a#fietsen_next:hover {
   color: #fff !important;
 }
 
+.toolbar {
+  width: 100%;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+}
+
+.fietsnaam-title {
+  margin: 0px;
+  padding: 0;
+  color: #434349;
+  line-height: 40px;
+  font-size: 1rem;
+}
+
+.fietsentoolbar {
+  width: 90px;
+}
+
+.navigationPointer {
+  color: #1587d2;
+  line-height: 40px;
+}
+
+.navigationStatus {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #959cb6 !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: list-item;
+}
+
+.paddingl-3 {
+  padding-left: 30px !important;
+}
+
+.navigationStatus:hover {
+  color: #1587d2 !important;
+}
+
 select {
   height: 38px !important;
   margin-left: 5px;
@@ -701,7 +746,7 @@ a#nieuwsbrief_next:hover {
   color: #fff !important;
 }
 
-html, body {
+.login {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -780,6 +825,10 @@ body {
 
 .mt-6rem {
   margin-top: 6rem !important;
+}
+
+.bRoboto {
+  Font-family: Roboto-Bold !important;
 }
 
 :root {

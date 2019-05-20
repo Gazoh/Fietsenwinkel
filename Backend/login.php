@@ -14,7 +14,7 @@
     <link href="css/material-kit/material-kit.css?v=2.0.5" rel="stylesheet"/>
 
 </head>
-<body>
+<body class="login">
 <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center">
         <form class="col-10">
