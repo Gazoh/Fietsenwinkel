@@ -58,6 +58,10 @@ $(document).ready(function () {
                 console.log("Prijs: " + oData[i][8]);
             }
         }
+
+        if ($('#bekijken:selected').val() && elementClicked) {
+            $("body").load("/Fietsenwinkel/Backend/fietsen_bekijken.php");
+        }
     });
 
     // Toevoegen knop actie
