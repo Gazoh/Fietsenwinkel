@@ -174,7 +174,7 @@
                   Fietsen
               </a>
            </span>
-            <span class="float-right navigationPointer"><i class="fas fa-caret-right"></i></span>
+            <span class="float-right"><i class="fas fa-caret-right navigationPointer"></i></span>
             <span class="mdc-toolbar__title float-right fietsnaam-title bRoboto pr-3">
                Orange6
            </span>
@@ -182,7 +182,7 @@
         <div class="container-fluid">
             <div class="image ml-4 mt-5">
                 <img src="assets/img/fiets1.jpg" class="responsive-image" width="700" alt=""/>
-                <div class="col-lg-6 col-sm-6 float-right container-data">
+                <div class="col-lg-7 col-md-7 col-sm-7 float-right container-data">
                     <h2 class="productTitle bRoboto">Orange6</h2>
                     <h3 class="iRoboto">Vrouwenfiets</h3>
                     <p>Product description goes here.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
