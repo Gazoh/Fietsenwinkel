@@ -194,7 +194,7 @@
                         sem. Nulla consequat massa quis enim.</p>
                     <h4 class="iRoboto afgeprijsd ">&euro; 1267,-</h4>
                     <h2 class="bRoboto prijs ">&euro; 1087,-</h2>
-                    <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account float-right mt-3" id="specificaties" data-toggle="modal" data-target="#mymodal">
+                    <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account float-right mt-3 mb-5" id="specificaties" data-toggle="modal" data-target="#mymodal">
                         <span class="mdc-button__label">Specificaties</span>
                     </button>
                 </div>
@@ -240,7 +240,7 @@
                             </ul>
                         </div>
                         <div class="modal-footer">
-                            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account float-right sluit" data-dismiss="modal">
+                            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account float-right sluit" data-dismiss="modal">
                                 <span class="mdc-button__label">Sluit</span>
                             </button>
                         </div>
