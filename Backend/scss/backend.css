@@ -365,6 +365,15 @@ button.btn.btn-primary.nav-buttons {
   color: #fff;
 }
 
+@media only screen and (max-width: 480px) {
+  #account {
+    display: none !important;
+  }
+
+  #help {
+    display: none !important;
+  }
+}
 /* ----------------------------------------------------------------------- */
 /*                              DATA TABLE                                 */
 /* ----------------------------------------------------------------------- */
@@ -443,10 +452,10 @@ i.fas.fa-users.cardWidget {
   width: 55px !important;
 }
 
+/*
 .foo-button {
   margin-right: 10px !important;
-}
-
+}*/
 .br-10 {
   margin-right: 10px !important;
 }
@@ -568,6 +577,10 @@ a#fietsen_next:hover {
   color: #fff !important;
 }
 
+.gebruikers {
+  margin: 0;
+}
+
 .toolbar {
   width: 100%;
   background: #fff;
@@ -613,12 +626,94 @@ a#fietsen_next:hover {
 }
 
 .image {
-  float: left !important;
+  float: left;
+}
+
+.fiets-image {
+  width: 100%;
 }
 
 .container-data {
   position: relative;
-  top: 90px;
+  top: 120px;
+}
+
+.prijs {
+  color: #073f7f;
+}
+
+.afgeprijsd {
+  color: #e1e1ef;
+  text-decoration: line-through;
+}
+
+@media only screen and (max-width: 1329px) {
+  .container-data {
+    top: 0px !important;
+  }
+
+  .fiets-image {
+    height: 100%;
+  }
+
+  .image {
+    float: none !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .data-fiets {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container-data {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+.ulSpecificaties {
+  list-style-type: none;
+  padding: 0;
+}
+
+th.table-specificaties {
+  font-family: Roboto-Italic;
+}
+
+li.list-group-item {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+ul.list-group {
+  width: 100%;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.0892857143em;
+}
+
+.id {
+  border-top: none !important;
+}
+
+.sluit {
+  width: 100% !important;
+}
+
+#specificaties {
+  width: 100%;
 }
 
 select {
@@ -821,9 +916,10 @@ a#nieuwsbrief_next:hover {
 /* -------------------------------------------- */
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
-body {
+body, html {
   font-family: Roboto-Regular;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .wrapper {

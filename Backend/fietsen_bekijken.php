@@ -144,12 +144,12 @@
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded" id="account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded" id="help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -180,41 +180,98 @@
            </span>
         </header>
         <div class="container-fluid">
-            <div class="image ml-4 mt-5">
-                <img src="assets/img/fiets1.jpg" class="responsive-image" width="700" alt=""/>
-                <div class="col-lg-7 col-md-7 col-sm-7 float-right container-data">
+            <div class="image mt-5">
+                <img class="fiets-image" src="assets/img/fiets1.jpg" width="" alt=""/>
+            </div>
+            <div class="row data-fiets">
+                <div class="col-sm"></div>
+                <div class="col-lg-9 col-md-9 col-md-4 container-data float-right">
                     <h2 class="productTitle bRoboto">Orange6</h2>
-                    <h3 class="iRoboto">Vrouwenfiets</h3>
-                    <p>Product description goes here.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                    <h1 class="bRoboto">&euro; 1087,-</h1>
-
-                </div> <!-- /col-sm-6 -->
+                    <h3 class="iRoboto">Damesfiets</h3>
+                    <p>Product description goes here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+                        montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                        sem. Nulla consequat massa quis enim.</p>
+                    <h4 class="iRoboto afgeprijsd ">&euro; 1267,-</h4>
+                    <h2 class="bRoboto prijs ">&euro; 1087,-</h2>
+                    <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account float-right mt-3" id="specificaties" data-toggle="modal" data-target="#mymodal">
+                        <span class="mdc-button__label">Specificaties</span>
+                    </button>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+            <!-- Specificaties Dialog-->
+            <div class="modal fade" id="mymodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="bRoboto specificaties">Specificaties</h3>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group">
+                                <li class="list-group-item id">
+                                    <span class="list-data bRoboto">ID</span>
+                                    <span class="float-right">1</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="list-data bRoboto">Naam</span>
+                                    <span class="float-right">Orange6</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="list-data bRoboto">Merk</span>
+                                    <span class="float-right">Gazelle</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="list-data bRoboto">Type</span>
+                                    <span class="float-right">Vouwfiets</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="list-data bRoboto">Frametype</span>
+                                    <span class="float-right">Damesfiets</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="list-data bRoboto">Kleur</span>
+                                    <span class="float-right">Grijs</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="list-data bRoboto">Conditie</span>
+                                    <span class="float-right">Lichtelijk beschadigd</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account float-right sluit" data-dismiss="modal">
+                                <span class="mdc-button__label">Sluit</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <!-- Datatable -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-    <script type="text/javascript" src="js/datatable/datatable_fietsen.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-    <!-- Sidebar & Nav -->
-    <script src="js/sidebar.js"></script>
-    <script src="js/nav.js"></script>
-    <!-- Material -->
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="js/google-material/index.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Datatable -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+<script type="text/javascript" src="js/datatable/datatable_fietsen.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+<!-- Sidebar & Nav -->
+<script src="js/sidebar.js"></script>
+<script src="js/nav.js"></script>
+<!-- Material -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="js/google-material/index.js"></script>
 </body>
 </html>

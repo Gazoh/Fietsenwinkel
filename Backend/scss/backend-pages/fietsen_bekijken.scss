@@ -1,3 +1,7 @@
+.gebruikers {
+  margin: 0;
+}
+
 .toolbar {
   width: 100%;
   background: #fff;
@@ -43,11 +47,94 @@
 }
 
 .image {
-  float: left !important;
+  float: left;
+}
+
+.fiets-image {
+  width: 100%;
 }
 
 .container-data {
   position: relative;
-  top: 90px;
+  top: 120px;
 }
 
+.prijs {
+  color: $main_color;
+}
+
+.afgeprijsd {
+  color: #e1e1ef;
+  text-decoration: line-through;
+}
+
+@media only screen and (max-width: 1329px) {
+  .container-data {
+    top: 0px !important;
+  }
+
+  .fiets-image {
+    height: 100%;
+  }
+
+  .image {
+    float: none !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .data-fiets {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container-data {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.ulSpecificaties {
+  list-style-type: none;
+  padding: 0;
+}
+
+th.table-specificaties {
+  font-family: Roboto-Italic;
+}
+
+li.list-group-item {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+ul.list-group {
+  width: 100%;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: .0892857143em;
+}
+
+.id {
+  border-top: none !important;
+}
+
+.sluit {
+  width: 100% !important;
+}
+
+#specificaties {
+width: 100%;
+}

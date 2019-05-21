@@ -140,12 +140,12 @@
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>

@@ -31,9 +31,10 @@ $succes: #1AAF00;
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
 
-body {
+body, html {
   font-family: Roboto-Regular;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .wrapper {
