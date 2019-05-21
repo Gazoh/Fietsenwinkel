@@ -50,8 +50,7 @@
                             </a>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit
-                            </button>
+                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit</button>
                         </div>
                     </form>
                 </div>

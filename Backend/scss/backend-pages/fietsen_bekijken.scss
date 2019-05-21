@@ -105,9 +105,7 @@ th.table-specificaties {
 }
 
 li.list-group-item {
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
+  border: none;
 }
 
 ul.list-group {
@@ -127,6 +125,11 @@ ul.list-group {
   letter-spacing: .0892857143em;
 }
 
+.modal-content {
+  border: none !important;
+  box-shadow: 0px 9px 29px 3px rgba(0, 0, 0, 0.31);
+}
+
 .id {
   border-top: none !important;
 }
@@ -136,5 +139,6 @@ ul.list-group {
 }
 
 #specificaties {
-width: 100%;
+  width: 100%;
 }
+
