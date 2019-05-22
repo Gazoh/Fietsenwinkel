@@ -1,4 +1,31 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+
+session_start();
+if (isset($_SESSION['loginstatus'])) {
+    $loginstatus = $_SESSION['loginstatus'];
+}
+// Check if remember me cookie is on.
+if (isset($_COOKIE['rememberMe'])) {
+    $token = $_COOKIE['rememberMe'];
+    $sql = "SELECT * FROM users WHERE remember_me = '$token'";
+
+    $result = mysqli_query($con, $sql);
+
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $count = mysqli_num_rows($result);
+
+    if ($count > 0) {
+        if ($token == $row['remember_me']) {
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['last_name'] = $row['last_name'];
+            header("Location: dashboard.php");
+
+        }
+    }
+}
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -14,32 +41,32 @@
     <link href="css/material-kit/material-kit.css?v=2.0.5" rel="stylesheet"/>
 
 </head>
-<body>
+<body class="login">
 <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center">
-        <form class="col-10">
+        <div class="col-10">
             <div class="form-group">
                 <div class="card border-radius07">
                     <div class="card-header text-uppercase image-align-center card-header-image img-fluid text-white border-radius-image"
                          style="background-image: url('assets/img/login-bg.jpg')">
                         LOGIN
                     </div>
-                    <form>
+                    <form action="Controllers/login.php" method="POST">
                         <div class="form-group form-login mt-30">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">E-mail</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="emailInput" class="form-control">
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Wachtwoord</label>
-                                <input type="text" class="form-control">
+                                <input type="password" name="passwordInput" class="form-control">
                             </div>
                         </div>
                         <div class="form-check form-login onthoud-mij">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="checked">
+                                <input class="form-check-input" type="checkbox" name="rememberMe">
                                 Onthoud mij
                                 <span class="form-check-sign">
                                    <span class="check"></span>
@@ -50,13 +77,13 @@
                             </a>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit
+                            <button type="submit" name="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <!-- JQuery -->

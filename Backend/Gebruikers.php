@@ -21,10 +21,10 @@ $records = $con->query("SELECT * FROM users");
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
     <!--  Datatable  -->
-    <link rel="stylesheet" href="css/select.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <link rel="stylesheet" href="css/Datatable/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Datatable/datatables.min.css"/>
     <!-- Animate.css -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Gebruikers</title>
 </head>
@@ -147,12 +147,12 @@ $records = $con->query("SELECT * FROM users");
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -206,27 +206,26 @@ $records = $con->query("SELECT * FROM users");
                     </thead>
                     <tbody>
                     <?php
-                    while ($row = mysqli_fetch_assoc($records)) {
-                        $users[] = $row;
-                        foreach ($users as $user):
+                    while ($row = mysqli_fetch_array($records)) {
+
                             ?>
                             <tr>
                                 <td></td>
-                                <td><?php echo $user['id'] ?></td>
-                                <td><?php echo $user['first_name'] ?></td>
-                                <td><?php echo $user['last_name'] ?></td>
-                                <td><?php echo $user['email'] ?></td>
-                                <td><?php echo $user['phone'] ?></td>
-                                <td><?php echo $user['username'] ?></td>
-                                <td><?php if ($user['role'] == 0) {
+                                <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['first_name'] ?></td>
+                                <td><?php echo $row['last_name'] ?></td>
+                                <td><?php echo $row['email'] ?></td>
+                                <td><?php echo $row['phone'] ?></td>
+                                <td><?php echo $row['username'] ?></td>
+                                <td><?php if ($row['role'] == 0) {
                                         echo "Klant";
-                                    } elseif ($user['role'] == 1) {
+                                    } elseif ($row['role'] == 1) {
                                         echo "Beheerder";
                                     } ?>
                                 </td>
                             </tr>
 
-                        <?php endforeach;
+                        <?php
                     }
                     ?>
                     </tbody>
@@ -245,6 +244,7 @@ $records = $con->query("SELECT * FROM users");
                 </table>
             </div>
         </div>
+    </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

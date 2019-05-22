@@ -17,10 +17,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
     <!--  Datatable  -->
-    <link rel="stylesheet" href="css/select.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <link rel="stylesheet" href="css/Datatable/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Datatable/datatables.min.css"/>
     <!-- Animate.css -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
     <title>Fietsenwinkel - Klanten</title>
 </head>
@@ -143,12 +143,12 @@
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -291,6 +291,7 @@
                 </table>
             </div>
         </div>
+    </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

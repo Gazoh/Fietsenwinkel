@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 mei 2019 om 13:27
+-- Gegenereerd op: 20 mei 2019 om 13:06
 -- Serverversie: 10.1.35-MariaDB
 -- PHP-versie: 7.2.9
 
@@ -30,7 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bikes` (
   `id` int(11) NOT NULL,
+  `image_path` varchar(255) COLLATE utf8_bin NOT NULL,
   `brand` varchar(50) COLLATE utf8_bin NOT NULL,
+  `color` varchar(50) COLLATE utf8_bin NOT NULL,
   `framenumber` varchar(50) COLLATE utf8_bin NOT NULL,
   `damaged` tinyint(4) NOT NULL,
   `bikename` text COLLATE utf8_bin NOT NULL,
@@ -38,6 +40,13 @@ CREATE TABLE `bikes` (
   `gears` int(11) NOT NULL,
   `selling_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `bikes`
+--
+
+INSERT INTO `bikes` (`id`, `image_path`, `brand`, `color`, `framenumber`, `damaged`, `bikename`, `biketype`, `gears`, `selling_price`) VALUES
+(1, '', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, 555.5);
 
 -- --------------------------------------------------------
 
@@ -130,7 +139,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `bikes`
 --
 ALTER TABLE `bikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `orders`

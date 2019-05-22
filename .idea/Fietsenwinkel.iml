@@ -5,5 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="paper" />
+    <orderEntry type="module" module-name="login" />
+    <orderEntry type="module" module-name="iwantfoodnow" />
   </component>
 </module>

@@ -14,22 +14,20 @@ $records = $con->query("SELECT * FROM bikes");
     <!-- Material -->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
-          type='text/css' media='all'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
     <!--  Datatable  -->
-    <link rel="stylesheet" href="css/select.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    <link rel="stylesheet" href="css/Datatable/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Datatable/datatables.min.css"/>
     <!-- Animate.css -->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Fietsen</title>
+    <title>Fietsenwinkel - Aanbiedingen</title>
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper" class="toggled">
     <!-- Sidebar -->
     <div id="sidebar-wrapper" class="sidebarAnimation">
         <ul class="sidebarUl">
@@ -147,12 +145,12 @@ $records = $con->query("SELECT * FROM bikes");
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -199,40 +197,52 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Afbeelding</th>
                         <th>Naam</th>
                         <th>Merk</th>
+                        <th>Type</th>
                         <th>Frametype</th>
-                        <th>Framenummer</th>
                         <th>Kleur</th>
                         <th>Prijs</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
-                    while (  $row =  mysqli_fetch_assoc($records)    )
+                    while (  $row =  mysqli_fetch_array($records)    )
                     {
-                        $bikes[] = $row;
-                        foreach ($bikes as $bike):
-                            ?>
-                            <tr>
-                                <th></th>
-                                <th><?php echo $bike['id']?></th>
-                                <th><?php echo $bike['image_path']?></th>
-                                <th><?php echo $bike['bikename']?></th>
-                                <th><?php echo $bike['brand']?></th>
-                                <th><?php if($bike['biketype'] == 0)
-                                        {echo "Damesfiets";}
-                                        elseif($bike['biketype'] == 1)
-                                    {echo "Herenfiets";}?></th>
-                                <th><?php echo $bike['framenumber'] ?></th>
-                                <th><?php echo $bike['color'] ?></th>
-                                <th><?php echo "&euro; " . $bike['selling_price'] ?></th>
-                            </tr>
-                        <?php endforeach;
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['id']?></td>
+                            <td><?php echo $row['image_path']?></td>
+                            <td><?php echo $row['bikename']?></td>
+                            <td><?php echo $row['brand']?></td>
+                            <td><?php if($row['biketype'] == 0)
+                                {echo "Damesfiets";}
+                                elseif($row['biketype'] == 1)
+                                {echo "Herenfiets";}?></td>
+                            <td><?php echo $row['framenumber'] ?></td>
+                            <td><?php echo $row['color'] ?></td>
+                            <td><?php echo "&euro; " . $row['selling_price'] ?></td>
+                        </tr>
+                        <?php
                     }
                     ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Afbeelding</th>
+                        <th>Naam</th>
+                        <th>Merk</th>
+                        <th>Type</th>
+                        <th>Frametype</th>
+                        <th>Kleur</th>
+                        <th>Prijs</th>
+                    </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
+    </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

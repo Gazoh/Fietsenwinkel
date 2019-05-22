@@ -17,6 +17,7 @@ $succes: #1AAF00;
 @import "backend-pages/klanten-pagina";
 @import "backend-pages/bestellingen_pagina";
 @import "backend-pages/fietsen";
+@import "backend-pages/fietsen_bekijken";
 @import "backend-pages/datatable";
 @import "backend-pages/aanbiedingen";
 @import "backend-pages/reviews";
@@ -25,13 +26,15 @@ $succes: #1AAF00;
 @import "backend-pages/wachtwoord_vergeten";
 
 
+
 /* -------------------------------------------- */
 /*                    CONTAINER                 */
 /* -------------------------------------------- */
 
-body {
+body, html {
   font-family: Roboto-Regular;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .wrapper {
@@ -43,6 +46,19 @@ body {
 .mt-6rem {
   margin-top: 6rem !important;
 }
+
+.bRoboto {
+Font-family: Roboto-Bold !important;
+}
+
+.iRoboto {
+  Font-family: Roboto-Italic !important;
+}
+
+.mRoboto {
+  Font-family: Roboto-Medium !important;
+}
+
 
 :root {
   --mdc-theme-primary: #073f7f;

@@ -1,0 +1,144 @@
+.gebruikers {
+  margin: 0;
+}
+
+.toolbar {
+  width: 100%;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+}
+
+.fietsnaam-title {
+  margin: 0px;
+  padding: 0;
+  color: #434349;
+  line-height: 40px;
+  font-size: 1rem;
+}
+
+.fietsentoolbar {
+  width: 90px;
+}
+
+.navigationPointer {
+  color: $main_color_light;
+  line-height: 40px;
+}
+
+.navigationStatus {
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #959cb6 !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: list-item;
+}
+
+.paddingl-3 {
+  padding-left: 30px !important;
+}
+
+.navigationStatus:hover {
+  color: $main_color_light !important;
+}
+
+.image {
+  float: left;
+}
+
+.fiets-image {
+  width: 100%;
+}
+
+.container-data {
+  position: relative;
+  top: 120px;
+}
+
+.prijs {
+  color: $main_color;
+}
+
+.afgeprijsd {
+  color: #e1e1ef;
+  text-decoration: line-through;
+}
+
+@media only screen and (max-width: 1329px) {
+  .container-data {
+    top: 0px !important;
+  }
+
+  .fiets-image {
+    height: 100%;
+  }
+
+  .image {
+    float: none !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .data-fiets {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container-data {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.ulSpecificaties {
+  list-style-type: none;
+  padding: 0;
+}
+
+th.table-specificaties {
+  font-family: Roboto-Italic;
+}
+
+li.list-group-item {
+  border: none;
+}
+
+ul.list-group {
+  width: 100%;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: .0892857143em;
+}
+
+.modal-content {
+  border: none !important;
+  box-shadow: 0px 9px 29px 3px rgba(0, 0, 0, 0.31);
+}
+
+.id {
+  border-top: none !important;
+}
+
+.sluit {
+  width: 100% !important;
+}
+
+#specificaties {
+  width: 100%;
+}
+

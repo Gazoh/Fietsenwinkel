@@ -27,6 +27,16 @@ $(document).ready(function () {
         // Max lengte op 1 pagina
         "pageLength": 10,
         "lengthMenu": [[10, 25, 50], [10, 25, 50]],
+
+        "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            if (aData[8] == "Actief") {
+                $('td:eq(8)', nRow).css('color', '#388E3C');
+                $('td:eq(8)', nRow).css('font-family', 'Roboto-Bold');
+            } else if (aData[8] == "Niet actief") {
+                $('td:eq(8)', nRow).css('color', '#D32F2F');
+                $('td:eq(8)', nRow).css('font-family', 'Roboto-Bold');
+            }
+        }
     });
 
     // Data ophalen van persoon op de datatabel
@@ -38,6 +48,7 @@ $(document).ready(function () {
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
+
             var oTable = $('#fietsen').DataTable();
             $('#fietsen thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
@@ -45,17 +56,20 @@ $(document).ready(function () {
                 var row = oTable.row(pos).data();
                 console.log(row);
             });
-            var oData = oTable.rows('.selected').data();
 
+            var oData = oTable.rows('.selected').data();
             for (var i = 0; i < oData.length; i++) {
                 console.log("ID: " + oData[i][1]);
-                console.log("Voornaam: " + oData[i][2]);
-                console.log("Achternaam: " + oData[i][3]);
-                console.log("Email: " + oData[i][4]);
-                console.log("Telefoonnummer: " + oData[i][5]);
-                console.log("Adres: " + oData[i][6]);
-
+                console.log("Afbeelding: " + oData[i][2]);
+                console.log("Naam: " + oData[i][3]);
+                console.log("Merk: " + oData[i][4]);
+                console.log("Type: " + oData[i][5]);
+                console.log("Frametype: " + oData[i][6]);
+                console.log("Kleur: " + oData[i][7]);
+                console.log("Prijs: " + oData[i][8]);
             }
+        } else if ($('#bekijken:selected').val() && elementClicked) {
+            $("body").load( "/fietsenwinkel/backend/fietsen_bekijken.php" );
         }
     });
 
