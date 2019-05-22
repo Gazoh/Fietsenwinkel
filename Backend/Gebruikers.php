@@ -21,7 +21,7 @@ $records = $con->query("SELECT * FROM users");
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
     <!--  Datatable  -->
-    <link rel="stylesheet" href="css/Datatable/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/Datatable/select.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/Datatable/datatables.min.css"/>
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
@@ -40,7 +40,7 @@ $records = $con->query("SELECT * FROM users");
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -58,7 +58,7 @@ $records = $con->query("SELECT * FROM users");
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Klanten.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="klanten.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user-tie iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -254,13 +254,13 @@ $records = $con->query("SELECT * FROM users");
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/datatable/datatable_gebruikers.js"></script>
+        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_gebruikers.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <!-- Sidebar & Nav -->
-        <script src="js/sidebar.js"></script>
-        <script src="js/nav.js"></script>
+        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
+        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
         <!-- Material -->
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="js/google-material/index.js"></script>
+        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
 </body>
 </html>

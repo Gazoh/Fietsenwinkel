@@ -7,12 +7,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Material -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
           type='text/css' media='all'>
+    <!-- Material -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -36,7 +36,7 @@
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -45,7 +45,7 @@
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -54,7 +54,7 @@
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Klanten.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="klanten.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user-tie iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -182,7 +182,7 @@
                 </button>
             </div>
             <div id="datatable-card" class="card-body-table">
-                <table id="bestellingen" class="table-card" style="width:100%">
+                <table id="bestellingen-openstaand" class="table-card" style="width:100%">
                     <thead>
                     <tr>
                         <td></td>
@@ -294,27 +294,22 @@
             </div>
         </div>
     </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
-        <!-- Datatable -->
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/datatable/datatable_bestellingen_openstaand.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!-- Material -->
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="js/google-material/index.js"></script>
-        <!-- Sidebar & Nav -->
-        <script src="js/sidebar.js"></script>
-        <script src="js/nav.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="JS/datatable/datatable_bestellingen_openstaand.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+    <!-- Material -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="JS/google-material/index.js"></script>
+    <!-- Sidebar & Nav -->
+    <script src="JS/sidebar.js"></script>
+    <script src="JS/nav.js"></script>
 </body>
 </html>

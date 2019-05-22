@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="scss/backend.css">
     <!-- Material Kit CSS -->
     <link href="css/material-kit/material-kit.css?v=2.0.5" rel="stylesheet"/>
-
 </head>
 <body>
 <div class="container h-100">
@@ -27,43 +26,43 @@
                         <div class="form-group form-login mt-30">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Invite code</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="inviteCode" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Voornaam</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="firstNameInput" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Achternaam</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="lastNameInput" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Telefoonnummer</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="phoneInput" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Gebruikersnaam</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="usernameInput" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Wachtwoord</label>
-                                <input type="password" class="form-control">
+                                <input type="password" name="passwordInput" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
-                                <label class="bmd-label-floating disabled">E-mail</label>
-                                <input type="email" class="form-control">
+                                <label class="bmd-label-floating disabled">Herhaal wachtwoord</label>
+                                <input type="password" name="repasswordInput" class="form-control" required>
                             </div>
                         </div>
                         <div class="text-center">
@@ -78,14 +77,14 @@
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <!--   Core JS Files   -->
-<script src="js/plugins/popper.min.js" type="text/javascript"></script>
-<script src="js/plugins/bootstrap-material-design.min.js" type="text/javascript"></script>
-<script src="js/plugins/moment.min.js"></script>
+<script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/plugins/popper.min.js" type="text/javascript"></script>
+<script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/plugins/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/plugins/moment.min.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/plugins/nouislider.min.js" type="text/javascript"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-<script src="js/plugins/material-kit.js?v=2.0.5" type="text/javascript"></script>
+<script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/plugins/material-kit.js?v=2.0.5" type="text/javascript"></script>
 </body>
 </html>

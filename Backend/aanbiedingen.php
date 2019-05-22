@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--  FontAwesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
+          type='text/css' media='all'>
     <!-- Material -->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -33,7 +36,7 @@
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -42,7 +45,7 @@
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -51,7 +54,7 @@
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Klanten.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="klanten.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user-tie iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -303,13 +306,13 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/datatable/datatable_aanbiedingen.js"></script>
+        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_aanbiedingen.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <!-- Sidebar & Nav -->
-        <script src="js/sidebar.js"></script>
-        <script src="js/nav.js"></script>
+        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
+        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
         <!-- Material -->
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="js/google-material/index.js"></script>
+        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
 </body>
 </html>

@@ -1,8 +1,21 @@
 $(document).ready(function () {
-    $('#bestellingen').DataTable({
+    $('#bestellingen-openstaand').DataTable({
         responsive: true,
         "info": false,
-        "sSearch": "your-text-here",
+        // Button
+        buttons: [
+            {
+                text: '<span class="datatableIcon"><i class="fas fa-plus"></i></span>Toevoegen',
+                className: 'Toevoegen',
+                attr: {
+                    id: 'Toevoegen'
+                },
+                action: function (e, dt, node, config) {
+                    alert('Button activated');
+                }
+            }
+        ],
+
         // Kunnen selecteren van een persoon
         columnDefs: [{
             orderable: false,
@@ -15,7 +28,9 @@ $(document).ready(function () {
         },
         order: [[1, 'asc']
         ],
+
         // Entries
+        dom: 'lBfrtip',
         "oLanguage": {
             "sLengthMenu": "_MENU_",
             "oPaginate": {
@@ -28,19 +43,6 @@ $(document).ready(function () {
         // Max lengte op 1 pagina
         "pageLength": 10,
         "lengthMenu": [[10, 25, 50], [10, 25, 50]],
-
-        "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-            if (aData[7] == "Betaald") {
-                $('td:eq(7)', nRow).css('color', '#388E3C');
-                $('td:eq(7)', nRow).css('font-family', 'Roboto-Bold');
-            } else if (aData[7] == "In behandeling") {
-                $('td:eq(7)', nRow).css('color', '#F57C00');
-                $('td:eq(7)', nRow).css('font-family', 'Roboto-Bold');
-            } else if (aData[7] == "Niet Betaald") {
-                $('td:eq(7)', nRow).css('color', '#D32F2F');
-                $('td:eq(7)', nRow).css('font-family', 'Roboto-Bold');
-            }
-        }
     });
 
     // Data ophalen van persoon op de datatabel
@@ -49,8 +51,38 @@ $(document).ready(function () {
         elementClicked = true;
     });
 
-// Append Datatable toevoegen aan een id
-    $('#bestellingen_length').appendTo('#card-header');
-    $('#bestellingen_filter').appendTo('#card-header');
+    // Toevoegen knop actie
+    $('#toevoegen').on('click', function () {
+        alert('test');
+    });
 
+// Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
+    $('#uitvoeren').on('click', function () {
+        if ($('#aanpassen:selected').val() && elementClicked) {
+            var oTable = $('#bestellingen-openstaand').DataTable();
+            $('#bestellingen-openstaand thead').on('click', 'tr', function () {
+                $(this).toggleClass('selected');
+                var pos = oTable.row(this).index();
+                var row = oTable.row(pos).data();
+                console.log(row);
+            });
+            var oData = oTable.rows('.selected').data();
+
+            for (var i = 0; i < oData.length; i++) {
+                console.log("ID: " + oData[i][1]);
+                console.log("Voornaam: " + oData[i][2]);
+                console.log("Achternaam: " + oData[i][3]);
+                console.log("Email: " + oData[i][4]);
+                console.log("Telefoonnummer: " + oData[i][5]);
+                console.log("Gebruikersnaam: " + oData[i][6]);
+                console.log("Rol: " + oData[i][7]);
+            }
+        }
+    });
+
+    console.log($('#bestellingen-openstaand_length').attr('name'));
+
+    // Append Datatable toevoegen aan een id
+    $('#bestellingen-openstaand_length').appendTo('#card-header');
+    $('#bestellingen-openstaand_filter').appendTo('#card-header');
 });
