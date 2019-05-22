@@ -1,0 +1,63 @@
+/* -------------------------------------------- */
+/*                BODY WIDGETS                  */
+/* -------------------------------------------- */
+.row.widgets {
+  margin: 0px;
+}
+
+.container-fluid.body {
+  margin-top: 2rem;
+}
+
+.card-title {
+  float: right;
+  margin-bottom: 0;
+}
+
+.card-text {
+  float: right;
+}
+
+h1.card-title.numbers {
+  font-family: Roboto-Bold;
+}
+
+.card-icons {
+  font-size: 1.5em;
+}
+
+i.fas.fa-users.cardWidget {
+  width: 55px !important;
+
+}
+
+.foo-button {
+  margin-right: 10px !important;
+}
+
+.br-10 {
+  margin-right: 10px !important;
+}
+
+
+.mdc-card {
+  width: 100%;
+}
+
+.col {
+  margin-bottom: 10px;
+}
+
+.mdc-chip-set:hover {
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #eceef0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #000;
+}
+
+.mdc-chip {
+  background: $main_color_light;
+  color: #fff;
+}

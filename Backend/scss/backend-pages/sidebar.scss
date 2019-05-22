@@ -1,0 +1,256 @@
+/* -------------------------------------------- */
+/*                    SIDEBAR                   */
+/* -------------------------------------------- */
+#sidebar-wrapper {
+  background: $main_color !important;
+  float: left;
+  overflow: hidden;
+  height: 100vh;
+  width: 240px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.sidebarUl {
+  padding: 0px;
+  overflow: hidden;
+  height: 100% !important;
+  display: inline;
+}
+
+.sidebarLi {
+  height: 65px;
+  line-height: 65px;
+  font-size: 1rem;
+  border-bottom: 1px solid $main_color_shadow;
+}
+
+.uitloggen {
+  border-bottom: 0px !important;
+  position: absolute;
+  bottom: 0;
+}
+
+.sidebarLi:hover {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+}
+
+li.submenu-bestellingenLi.openstaand:hover {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+
+  .sidebar-title {
+    color: #fff;
+  }
+}
+
+li.submenu-bestellingenLi.afgerond:hover {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+
+  .sidebar-title {
+    color: #fff;
+  }
+}
+
+.active {
+  background: $main_color_shadow;
+
+  .sidebarData {
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    color: $main_color_light;
+  }
+}
+
+.iconwidth {
+  font-size: 1.2rem !important;
+}
+
+.iconwidthCards {
+  font-size: 1.7rem !important;
+}
+
+.iconwidth::before {
+  width: 24px !important;
+}
+
+.iconwidthBestellingen {
+  font-size: 1rem;
+}
+
+.bestellingen {
+  padding-left: 13px;
+}
+
+.openstaand {
+  padding-top: 15px !important;
+}
+
+.afgerond {
+  padding-bottom: 15px !important;
+}
+
+.sidebarData {
+  color: #a2a3b7;
+  position: relative;
+  left: 29px;
+}
+
+.active {
+  background: $sidebar !important;
+  color: #fff;
+}
+
+.sidebarUsername {
+  font-family: Roboto-Bold;
+  margin: 0;
+}
+
+.sidebarChevron {
+  top: 1rem;
+  left: 6.5rem;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #c3c5e2b8;
+}
+
+.aSidebarChevron {
+  color: #c3c5e2b8;
+}
+
+.aSidebarChevron:hover {
+  color: #1587d2;
+}
+
+i#chevron {
+  line-height: 65px;
+}
+
+.sidebarProfilePicture {
+  height: 65px;
+  line-height: 65px;
+  font-size: 1rem;
+  border-bottom: 1px solid $main_color_shadow;
+  color: #fff;
+}
+
+.submenu-bestellingenLi {
+  padding-bottom: 17px !important;
+  padding-left: 15px;
+  padding-right: 29px;
+  padding-top: 17px;
+}
+
+.submenu-bestellingenLi80 {
+  padding-bottom: 17px !important;
+  padding-left: 0px;
+  padding-right: 29px;
+  padding-top: 17px;
+}
+
+.submenu-bestellingenUl {
+  list-style: none !important;
+  padding-left: 0px;
+}
+
+ul#submenu-2 {
+  width: 240px !important;
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.sidebarAnimation {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.display {
+  display: none;
+}
+
+.displayShow {
+  display: contents;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.clicked {
+  width: 80px !important;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
+}
+
+.logo {
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 970px) {
+  div#bestellingen_filter {
+    float: left !important;
+  }
+
+}
+
+@media only screen and (max-width: 788px) {
+  #sidebar-wrapper {
+    background: $main_color !important;
+    float: left;
+    overflow: hidden;
+    height: 100vh;
+    width: 0px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebarUsername {
+    display: none !important;
+  }
+}
+

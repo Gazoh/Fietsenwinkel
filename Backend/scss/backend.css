@@ -1,0 +1,812 @@
+@charset "UTF-8";
+/* -------------------------------------------- */
+/*    sass --watch backend.scss:backend.css     */
+/*                    VARIABLEN                 */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*                    FONTS                     */
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+/*                    Roboto                    */
+/* -------------------------------------------- */
+@font-face {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Roboto/Roboto-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+/* -------------------------------------------- */
+/*                    Poppins                   */
+/* -------------------------------------------- */
+@font-face {
+  font-family: "Poppings-Regular";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Italic";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Light";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppings-Bold";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+/* -------------------------------------------- */
+/*                    SIDEBAR                   */
+/* -------------------------------------------- */
+#sidebar-wrapper {
+  background: #073f7f !important;
+  float: left;
+  overflow: hidden;
+  height: 100vh;
+  width: 240px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.sidebarUl {
+  padding: 0px;
+  overflow: hidden;
+  height: 100% !important;
+  display: inline;
+}
+
+.sidebarLi {
+  height: 65px;
+  line-height: 65px;
+  font-size: 1rem;
+  border-bottom: 1px solid #073A74;
+}
+
+.uitloggen {
+  border-bottom: 0px !important;
+  position: absolute;
+  bottom: 0;
+}
+
+.sidebarLi:hover {
+  background: #073A74;
+}
+.sidebarLi:hover .sidebarData {
+  color: #fff;
+}
+.sidebarLi:hover .sidebar-icon {
+  color: #1587d2;
+}
+
+li.submenu-bestellingenLi.openstaand:hover {
+  background: #073A74;
+}
+li.submenu-bestellingenLi.openstaand:hover .sidebarData {
+  color: #fff;
+}
+li.submenu-bestellingenLi.openstaand:hover .sidebar-icon {
+  color: #1587d2;
+}
+li.submenu-bestellingenLi.openstaand:hover .sidebar-title {
+  color: #fff;
+}
+
+li.submenu-bestellingenLi.afgerond:hover {
+  background: #073A74;
+}
+li.submenu-bestellingenLi.afgerond:hover .sidebarData {
+  color: #fff;
+}
+li.submenu-bestellingenLi.afgerond:hover .sidebar-icon {
+  color: #1587d2;
+}
+li.submenu-bestellingenLi.afgerond:hover .sidebar-title {
+  color: #fff;
+}
+
+.active {
+  background: #073A74;
+}
+.active .sidebarData {
+  color: #fff;
+}
+.active .sidebar-icon {
+  color: #1587d2;
+}
+
+.iconwidth {
+  font-size: 1.2rem !important;
+}
+
+.iconwidthCards {
+  font-size: 1.7rem !important;
+}
+
+.iconwidth::before {
+  width: 24px !important;
+}
+
+.iconwidthBestellingen {
+  font-size: 1rem;
+}
+
+.bestellingen {
+  padding-left: 13px;
+}
+
+.openstaand {
+  padding-top: 15px !important;
+}
+
+.afgerond {
+  padding-bottom: 15px !important;
+}
+
+.sidebarData {
+  color: #a2a3b7;
+  position: relative;
+  left: 29px;
+}
+
+.active {
+  background: #07356A !important;
+  color: #fff;
+}
+
+.sidebarUsername {
+  font-family: Roboto-Bold;
+  margin: 0;
+}
+
+.sidebarChevron {
+  top: 1rem;
+  left: 6.5rem;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #c3c5e2b8;
+}
+
+.aSidebarChevron {
+  color: #c3c5e2b8;
+}
+
+.aSidebarChevron:hover {
+  color: #1587d2;
+}
+
+i#chevron {
+  line-height: 65px;
+}
+
+.sidebarProfilePicture {
+  height: 65px;
+  line-height: 65px;
+  font-size: 1rem;
+  border-bottom: 1px solid #073A74;
+  color: #fff;
+}
+
+.submenu-bestellingenLi {
+  padding-bottom: 17px !important;
+  padding-left: 15px;
+  padding-right: 29px;
+  padding-top: 17px;
+}
+
+.submenu-bestellingenLi80 {
+  padding-bottom: 17px !important;
+  padding-left: 0px;
+  padding-right: 29px;
+  padding-top: 17px;
+}
+
+.submenu-bestellingenUl {
+  list-style: none !important;
+  padding-left: 0px;
+}
+
+ul#submenu-2 {
+  width: 240px !important;
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.sidebarAnimation {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.display {
+  display: none;
+}
+
+.displayShow {
+  display: contents;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.clicked {
+  width: 80px !important;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
+}
+
+.logo {
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 970px) {
+  div#bestellingen_filter {
+    float: left !important;
+  }
+}
+@media only screen and (max-width: 788px) {
+  #sidebar-wrapper {
+    background: #073f7f !important;
+    float: left;
+    overflow: hidden;
+    height: 100vh;
+    width: 0px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebarUsername {
+    display: none !important;
+  }
+}
+/* -------------------------------------------- */
+/*                    NAV                       */
+/* -------------------------------------------- */
+nav.navbar.navbar-light.bg-light.justify-content-between {
+  height: 72px;
+}
+
+button.btn.btn-primary.nav-buttons {
+  background-color: #073f7f;
+  border-color: #073f7f;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.form-inline {
+  margin-bottom: 0 !important;
+}
+
+.nav {
+  height: 65px;
+}
+
+.hiNav {
+  font-size: 0.8rem;
+}
+
+.usernameNav {
+  font-size: 0.95rem;
+  font-family: Roboto-Bold;
+}
+
+.usernameFirstLetter {
+  font-family: Roboto-Bold;
+}
+
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+.card-body-table {
+  padding: 18px;
+}
+
+.card.text-black.mb-5.mt-5 {
+  margin-right: 30px;
+  margin-left: 30px;
+  width: 100%;
+}
+
+a#gebruikers_previous:hover {
+  color: #fff !important;
+}
+
+thead {
+  font-family: Roboto-Medium;
+}
+
+.selectDatatable {
+  float: left;
+  margin-right: 20px;
+}
+
+.toevoegen {
+  float: left !important;
+  background: #1AAF00 !important;
+  height: 38px;
+}
+
+div#gebruikers_filter {
+  float: right !important;
+  font-family: Roboto-Bold !important;
+}
+
+#gebruikers_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+a#gebruikers_next:hover {
+  color: #fff !important;
+}
+
+/* -------------------------------------------- */
+/*                BODY WIDGETS                  */
+/* -------------------------------------------- */
+.row.widgets {
+  margin: 0px;
+}
+
+.container-fluid.body {
+  margin-top: 2rem;
+}
+
+.card-title {
+  float: right;
+  margin-bottom: 0;
+}
+
+.card-text {
+  float: right;
+}
+
+h1.card-title.numbers {
+  font-family: Roboto-Bold;
+}
+
+.card-icons {
+  font-size: 1.5em;
+}
+
+i.fas.fa-users.cardWidget {
+  width: 55px !important;
+}
+
+.foo-button {
+  margin-right: 10px !important;
+}
+
+.br-10 {
+  margin-right: 10px !important;
+}
+
+.mdc-card {
+  width: 100%;
+}
+
+.col {
+  margin-bottom: 10px;
+}
+
+.mdc-chip-set:hover {
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #eceef0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #000;
+}
+
+.mdc-chip {
+  background: #1587d2;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#klanten_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#klanten_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#klanten_previous:hover {
+  color: #fff !important;
+}
+
+a#klanten_next:hover {
+  color: #fff !important;
+}
+
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#bestellingen_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#bestellingen_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#bestellingen_previous:hover {
+  color: #fff !important;
+}
+
+a#bestellingen_next:hover {
+  color: #fff !important;
+}
+
+td.betaald {
+  color: green !important;
+}
+
+.dropd:hover {
+  color: #fff;
+}
+
+.dropdown-right {
+  float: right;
+  line-height: 2.4;
+  font-size: 0.9rem;
+}
+
+.dropdown-down {
+  float: right;
+  line-height: 2.4;
+  font-size: 0.9rem;
+}
+
+.image-align-center {
+  text-align: center !important;
+}
+
+table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before {
+  content: " ";
+  margin-top: -6px;
+  margin-left: -6px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 0;
+  position: absolute !important;
+  top: 55% !important;
+  -ms-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+}
+
+table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after {
+  content: "✔";
+  margin-top: -11px;
+  margin-left: -4px;
+  text-align: center;
+  text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+  position: absolute !important;
+  top: 55% !important;
+  -ms-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+}
+
+#fietsen_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#fietsen_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#fietsen_previous:hover {
+  color: #fff !important;
+}
+
+a#fietsen_next:hover {
+  color: #fff !important;
+}
+
+select {
+  height: 38px !important;
+  margin-left: 5px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: #073A74 !important;
+  color: #fff !important;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.875rem !important;
+  line-height: inherit;
+  font-weight: 500;
+  letter-spacing: 0.0892857143em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 8px 0 8px;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 64px;
+  border: none;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+input[type=search] {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-left: 10px;
+  height: 38px;
+}
+
+a.paginate_button:hover {
+  background: #073A74 !important;
+  border-color: #073A74 !important;
+}
+
+a.paginate_button.current {
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  background: #073A74 !important;
+  color: #fff !important;
+}
+
+.data {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+a.paginate_button.current {
+  color: #fff !important;
+}
+
+.dropdown-toggle {
+  float: right;
+  line-height: 2.2;
+}
+
+.uitvoeren {
+  height: 38px;
+}
+
+.table-card {
+  letter-spacing: 0.0892857143em !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  font-family: Roboto, sans-serif !important;
+  border: none !important;
+  outline: none !important;
+}
+
+div#aanbiedingen_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#aanbiedingen_length {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#aanbiedingen_previous:hover {
+  color: #fff !important;
+}
+
+a#aanbiedingen_next:hover {
+  color: #fff !important;
+}
+
+div#reviews_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#reviews_length {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#reviews_previous:hover {
+  color: #fff !important;
+}
+
+a#reviews_next:hover {
+  color: #fff !important;
+}
+
+div#nieuwsbrief_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+div#nieuwsbrief_length {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#nieuwsbrief_previous:hover {
+  color: #fff !important;
+}
+
+a#nieuwsbrief_next:hover {
+  color: #fff !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #eceef0;
+}
+
+.card-header-image {
+  height: 225px;
+  line-height: 225px;
+  background-repeat: no-repeat;
+  font-size: 2.3rem;
+  font-family: Roboto-Bold;
+}
+
+.border-radius07 {
+  border-radius: 0.7rem !important;
+}
+
+.border-radius-image {
+  border-top-right-radius: 0.7rem !important;
+  border-top-left-radius: 0.7rem !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.form-login {
+  padding-left: 9rem !important;
+  padding-right: 9rem !important;
+}
+
+.main-color {
+  background: #073f7f !important;
+  border-color: #073f7f !important;
+}
+
+.width300 {
+  width: 300px !important;
+}
+
+.login-button {
+  height: 50px;
+  font-family: Roboto-Bold;
+  letter-spacing: 0.05rem !important;
+  font-size: 0.85rem !important;
+}
+
+.onthoud-mij {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.terugNaarInloggen {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* -------------------------------------------- */
+/*                    CONTAINER                 */
+/* -------------------------------------------- */
+body {
+  font-family: Roboto-Regular;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+  height: 100vh;
+}
+
+.mt-6rem {
+  margin-top: 6rem !important;
+}
+
+:root {
+  --mdc-theme-primary: #073f7f;
+  --mdc-theme-secondary: #018786;
+  --mdc-theme-background: #fff;
+  --mdc-theme-surface: #fff;
+  --mdc-theme-error: #b00020;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-secondary: #fff;
+  --mdc-theme-on-surface: #000;
+  --mdc-theme-on-error: #fff;
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+}
+
+/*# sourceMappingURL=backend.css.map */

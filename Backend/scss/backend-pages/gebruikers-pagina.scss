@@ -1,0 +1,45 @@
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+.card-body-table {
+  padding: 18px;
+}
+
+.card.text-black.mb-5.mt-5 {
+  margin-right: 30px;
+  margin-left: 30px;
+  width: 100%;
+}
+
+a#gebruikers_previous:hover {
+  color: #fff !important;
+}
+
+thead {
+  font-family: Roboto-Medium;
+}
+
+.selectDatatable {
+  float: left;
+  margin-right: 20px;
+}
+
+.toevoegen {
+  float: left !important;
+  background: $succes !important;
+  height: 38px;
+}
+
+div#gebruikers_filter {
+  float: right !important;
+  font-family: Roboto-Bold !important;
+}
+
+#gebruikers_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+a#gebruikers_next:hover {
+  color: #fff !important;
+}

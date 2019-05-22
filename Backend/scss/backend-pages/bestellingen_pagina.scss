@@ -1,0 +1,38 @@
+/* ----------------------------------------------------------------------- */
+/*                              DATA TABLE                                 */
+/* ----------------------------------------------------------------------- */
+#bestellingen_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#bestellingen_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#bestellingen_previous:hover {
+  color: #fff !important;
+}
+a#bestellingen_next:hover {
+  color: #fff !important;
+}
+td.betaald {
+  color: green !important;
+}
+
+.dropd:hover {
+  color: #fff;
+}
+
+.dropdown-right {
+  float: right;
+  line-height: 2.4;
+  font-size: 0.9rem;
+}
+
+.dropdown-down {
+  float: right;
+  line-height: 2.4;
+  font-size: 0.9rem;
+}
