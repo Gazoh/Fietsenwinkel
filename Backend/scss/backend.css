@@ -6,71 +6,35 @@
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
-/* -------------------------------------------- */
-/*                    Roboto                    */
-/* -------------------------------------------- */
 @font-face {
   font-family: "Roboto-Regular";
   font-style: normal;
   font-weight: normal;
-  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  src: url("../Assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Italic";
   font-style: normal;
   font-weight: normal;
-  src: url("../assets/fonts/Roboto/Roboto-Italic.ttf") format("truetype");
+  src: url("../Assets/fonts/Roboto/Roboto-Italic.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Thin";
   font-style: normal;
   font-weight: normal;
-  src: url("../assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  src: url("../Assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Bold";
   font-style: normal;
   font-weight: bold;
-  src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  src: url("../Assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Medium";
   font-style: normal;
   font-weight: 500;
-  src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
-}
-/* -------------------------------------------- */
-/*                    Poppins                   */
-/* -------------------------------------------- */
-@font-face {
-  font-family: "Poppings-Regular";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Poppings-Italic";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/Poppins/Poppins-Italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Poppings-Light";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Poppings-Medium";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Poppings-Bold";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  src: url("../Assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
 }
 /* -------------------------------------------- */
 /*                    SIDEBAR                   */
@@ -407,7 +371,7 @@ thead {
 }
 
 div#gebruikers_filter {
-  float: right !important;
+  float: right;
   font-family: Roboto-Bold !important;
 }
 
@@ -420,6 +384,45 @@ a#gebruikers_next:hover {
   color: #fff !important;
 }
 
+@media only screen and (max-width: 1107px) {
+  div#gebruikers_filter {
+    display: none;
+  }
+}
+@media only screen and (max-width: 856px) {
+  #gebruikers_length {
+    display: none;
+  }
+}
+@media only screen and (max-width: 788px) {
+  #gebruikers_length {
+    display: block;
+  }
+}
+@media only screen and (max-width: 616px) {
+  #gebruikers_length {
+    display: none !important;
+  }
+}
+.iconLabel {
+  display: none;
+}
+
+@media only screen and (max-width: 548px) {
+  .uitvoeren {
+    display: none;
+  }
+
+  .iconLabel {
+    display: block;
+  }
+
+  .iconLabel:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "";
+  }
+}
 /* -------------------------------------------- */
 /*                BODY WIDGETS                  */
 /* -------------------------------------------- */
@@ -492,21 +495,39 @@ a#klanten_next:hover {
 /* ----------------------------------------------------------------------- */
 /*                              DATA TABLE                                 */
 /* ----------------------------------------------------------------------- */
-#bestellingen_length {
+#bestellingen-openstaand_length {
   float: right !important;
   height: 28px !important;
 }
 
-div#bestellingen_filter {
+div#bestellingen-openstaand_filter {
   float: right;
   font-family: Roboto-Bold !important;
 }
 
-a#bestellingen_previous:hover {
+a#bestellingen-openstaand_previous:hover {
   color: #fff !important;
 }
 
-a#bestellingen_next:hover {
+a#bestellingen-openstaand_next:hover {
+  color: #fff !important;
+}
+
+#bestellingen-afgerond_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#bestellingen-afgerond_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#bestellingen-afgerond_previous:hover {
+  color: #fff !important;
+}
+
+a#bestellingen-afgerond_next:hover {
   color: #fff !important;
 }
 

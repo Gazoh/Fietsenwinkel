@@ -80,9 +80,8 @@ $(document).ready(function () {
         }
     });
 
-console.log($('#gebruikers_length').attr('name'));
-
     // Append Datatable toevoegen aan een id
     $('#gebruikers_length').appendTo('#card-header');
     $('#gebruikers_filter').appendTo('#card-header');
+
 });

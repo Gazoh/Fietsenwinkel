@@ -1,22 +1,42 @@
 /* ----------------------------------------------------------------------- */
 /*                              DATA TABLE                                 */
 /* ----------------------------------------------------------------------- */
-#bestellingen_length {
+#bestellingen-openstaand_length {
   float: right !important;
   height: 28px !important;
 }
 
-div#bestellingen_filter {
+div#bestellingen-openstaand_filter {
   float: right;
   font-family: Roboto-Bold !important;
 }
 
-a#bestellingen_previous:hover {
+a#bestellingen-openstaand_previous:hover {
   color: #fff !important;
 }
-a#bestellingen_next:hover {
+
+a#bestellingen-openstaand_next:hover {
   color: #fff !important;
 }
+
+#bestellingen-afgerond_length {
+  float: right !important;
+  height: 28px !important;
+}
+
+div#bestellingen-afgerond_filter {
+  float: right;
+  font-family: Roboto-Bold !important;
+}
+
+a#bestellingen-afgerond_previous:hover {
+  color: #fff !important;
+}
+
+a#bestellingen-afgerond_next:hover {
+  color: #fff !important;
+}
+
 td.betaald {
   color: green !important;
 }

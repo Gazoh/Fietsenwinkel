@@ -69,7 +69,7 @@ $(document).ready(function () {
                 console.log("Prijs: " + oData[i][8]);
             }
         } else if ($('#bekijken:selected').val() && elementClicked) {
-            $("body").load( "/fietsenwinkel/backend/fietsen_bekijken.php" );
+            $("body").load( "/fietsenwinkel/Backend/fietsen_bekijken.php" );
         }
     });
 
