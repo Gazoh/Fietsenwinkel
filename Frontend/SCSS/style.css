@@ -63,10 +63,49 @@
 }
 
 #nieuwsbrief {
-  background-color: #073f7f;
+  background-color: #1587d2;
 }
 
 .inschrijven {
+  margin: 0 !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#service {
+  background-color: #1587d2;
+  height: 100%;
+}
+
+.service-ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+#copyright {
+  background-color: #bababa4a;
+}
+
+.copyright-text {
+  color: #a1a1a1;
+}
+
+/* MODIFICATIE VAN DE INPUT FIELD VAN MATERIAL IO*/
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: #fff;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #fff;
+}
+
+label.mdc-floating-label {
+  color: #fff !important;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
   color: #fff !important;
 }
 
