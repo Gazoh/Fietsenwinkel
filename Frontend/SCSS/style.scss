@@ -1,10 +1,19 @@
+/* -----------------------
+          MAIN CSS
+----------------------- */
 $main_color: #073f7f;
 $main_color_shadow: #073A74;
 $main_color_light: #1587d2;
 $sidebar: #07356A;
 $succes: #1AAF00;
 
-@import "index";
+@import "pagina/index";
+@import "pagina/herenfietsen";
+@import "pagina/herenfietsen_detail";
+@import "pagina/damesfietsen";
+@import "pagina/damesfietsen_detail";
+@import "pagina/kinderfietsen";
+@import "pagina/kinderfietsen_detail";
 
 :root {
   --mdc-theme-primary: #073f7f !important;
