@@ -1,0 +1,137 @@
+.container-fluid {
+  padding: 0 !important;
+}
+
+.image {
+  max-height: 100%;
+  width: 132px;
+}
+
+.fontSize1-2rem {
+  font-size: 1.2rem;
+}
+
+.account {
+  height: 40px;
+}
+
+.nav-item {
+  font-size: 1.1rem;
+}
+
+.alert {
+  border-radius: 0 !important;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.image-responsive {
+  background-image: url("../assets/img/background.jpg");
+  width: 100%;
+  height: 500px;
+  background-position: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.full-image {
+  position: relative;
+  top: 30%;
+}
+
+.bespaar {
+  font-size: 1.6rem;
+}
+
+#voordeel {
+  background-color: #073f7f;
+  border-radius: 7px;
+}
+
+.oudeprijs {
+  text-decoration: line-through;
+}
+
+#datum {
+  font-size: 0.8rem;
+}
+
+#nieuwsbrief {
+  background-color: #073f7f;
+}
+
+.inschrijven {
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 1074px) {
+  .gebruikteFiets {
+    float: left !important;
+  }
+
+  .alert {
+    height: 75px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #navbar-buttons-top {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 381px) {
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 627px) {
+  #alert {
+    display: none !important;
+  }
+}
+:root {
+  --mdc-theme-primary: #073f7f !important;
+  --mdc-theme-secondary: #018786;
+  --mdc-theme-background: #fff;
+  --mdc-theme-surface: #fff;
+  --mdc-theme-error: #b00020;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-secondary: #fff;
+  --mdc-theme-on-surface: #000;
+  --mdc-theme-on-error: #fff;
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+}
+
+.main-color {
+  color: #073f7f;
+}
+
+.main-color-light {
+  color: #1587d2;
+}
+
+/*# sourceMappingURL=style.css.map */

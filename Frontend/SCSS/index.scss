@@ -1,0 +1,107 @@
+.container-fluid {
+  padding: 0 !important;
+}
+
+.image {
+  max-height: 100%;
+  width: 132px;
+}
+
+.fontSize1-2rem {
+  font-size: 1.2rem;
+}
+
+.account {
+  height: 40px;
+}
+
+.nav-item {
+  font-size: 1.1rem;
+}
+
+.alert {
+  border-radius: 0 !important;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.image-responsive {
+  background-image: url("../assets/img/background.jpg");
+  width: 100%;
+  height: 500px;
+  background-position: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.full-image {
+  position: relative;
+  top: 30%;
+}
+
+.bespaar {
+  font-size: 1.6rem;
+}
+
+#voordeel {
+  background-color: $main_color;
+  border-radius: 7px;
+}
+
+.oudeprijs {
+  text-decoration: line-through;
+}
+
+#datum {
+font-size: 0.8rem;
+}
+
+#nieuwsbrief {
+  background-color: $main_color;
+}
+
+.inschrijven {
+  color: #fff !important;
+}
+
+// Media Queries Mobile
+@media only screen and (max-width: 1074px) {
+  .gebruikteFiets {
+    float: left !important;
+  }
+
+  .alert {
+    height: 75px;
+  }
+}
+
+// Media Queries Mobile
+@media only screen and (max-width: 992px) {
+  #navbar-buttons-top {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 381px) {
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// Alert weghalen
+@media only screen and (max-width: 627px) {
+  #alert {
+    display: none !important;
+  }
+}
