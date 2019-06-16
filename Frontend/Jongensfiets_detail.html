@@ -5,7 +5,7 @@
 
 
     <title></title>
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
         body{
@@ -148,10 +148,10 @@
             width: 100%;
         }
 
-        .content_top {
-            float: left;
-            width: 100%;
-        }
+        /*.content_top {*/
+        /*float: left;*/
+        /*width: 100%;*/
+        /*}*/
 
         .content_mid {
             float: left;
@@ -187,6 +187,10 @@
             width: 400px;
             height: 400px;
             margin-left: 100px;
+        }
+
+        .prijs_info {
+            float: left;
         }
 
         .prijs_info_top {
@@ -255,134 +259,155 @@
 </div>
 <div class="content">
     <div class="content_top">
-        <img src="img/bike_boys.png" class="fiets_afbeelding">
-        <div class="prijs_info_top">
-            <p class="head"><strong>Lorem</strong> ipsum adiscing elit ligula eros<br>
-                vestibulum mi</p>
-            <p class="schade">Onbeschadigd</p>
-            <p><s>&euro;1276,-</s><br>&euro;1087,-</p>
-            <button class="winkelwagen_button">In Winkelwagen</button>
-        </div>
-        <div class="prijs_info_bottom">
-            <ul class="checks_ul">
-                <li class="checks"><strong>Gratis</strong> verzenden</li>
-                <li class="checks">Tot <strong>14 dagen</strong> ruilen en retourneren</li>
-                <li class="checks">Niet goed = <strong>geld terug</strong></li>
-                <li class="checks"><strong>Klantenbeoordeling 9.1 uit 7532 reviews</strong></li>
-            </ul>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="img/bike_boys.png" class="fiets_afbeelding">
+            </div>
+            <div class="col-sm-6">
+                <div class="prijs_info">
+                    <div class="prijs_info_top">
+                        <p class="head"><strong>Lorem</strong> ipsum adiscing elit ligula eros<br>
+                            vestibulum mi</p>
+                        <p class="schade">Onbeschadigd</p>
+                        <p><s>&euro;1276,-</s><br>&euro;1087,-</p>
+                        <button class="winkelwagen_button">In Winkelwagen</button>
+                    </div>
+
+                    <div class="prijs_info_bottom">
+                        <ul class="checks_ul">
+                            <li class="checks"><strong>Gratis</strong> verzenden</li>
+                            <li class="checks">Tot <strong>14 dagen</strong> ruilen en retourneren</li>
+                            <li class="checks">Niet goed = <strong>geld terug</strong></li>
+                            <li class="checks"><strong>Klantenbeoordeling 9.1 uit 7532 reviews</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="content_mid">
-        <p><strong>Productomschrijving</strong></p>
-        <p>
-            Lorem ipsum dolor sit amet, nec rutrum elit. Nullam ex enim, porttitor at turpis sed, volutpat finibus erat. Nunc ac tortor quam.<br>
-            Pellentesque eros augue, tempus sed bibendum vel, rhoncus vel orci. Vestibulum ante ipsum primis in faucibus orci luctus et<br>
-            ultrices posuere cubilia Curae; Cras elementum nisl sollicitudin leo suscipit rutrum. Nunc magna ex, fermentum ut pulvinar, iaculis<br>
-            sit amet risus. Nam ullamcorper bibendum tellus non vestibulum. Vestibulum sed diam quam. Sed ut metus ipsum. Vestibulum<br>
-            velit mi, congue a orci eget, consectetur mattis quam. Nunc dignissim turpis ac luctus commodo. Cras luctus lacus a nisi vestibulum<br>
-            porttitor. Praesent id tempor odio. Ut feugiat euismod ipsum sit amet tincidunt. Proin dui enim, fermentum vitae nisl in, eleifend<br>
-            efficitur eros. Nulla erat libero, varius convallis leo sit amet, porta sodales felis. Donec vel lacus libero. Nunc gravida turpis non<br>
-            urna vulputate ornare. Duis cursus massa maximus, ornare erat pharetra, placerat arcu.
-        </p>
-    </div>
-    <div class="content_bottom">
-        <p><strong>Specificaties</strong></p>
-        <table class="specificaties" cellspacing="0">
-            <tr>
-                <th class="table_grey">Lorum ipsum</th>
-                <td class="table_grey">Lorem ipsum dolor</td>
-            </tr>
-            <tr>
-                <th class="table_white">Lorum ipsum dolor</th>
-                <td class="table_white">Lorem ipsum dolor sit amet porttitor at</td>
-            </tr>
-            <tr>
-                <th class="table_grey">Lorum</th>
-                <td class="table_grey">Lorem ipsum dolor sit amet</td>
-            </tr>
-            <tr>
-                <th class="table_white">Lorum ipsum</th>
-                <td class="table_white">Lorem ipsum dolor sit</td>
-            </tr>
-            <tr>
-                <th class="table_grey">Lorum ipsum dolor</th>
-                <td class="table_grey">Lorem ipsum</td>
-            </tr>
-            <tr>
-                <th class="table_white">Lorum ipsum</th>
-                <td class="table_white">Lorem ipsum dolor sit amet</td>
-            </tr>
-            <tr>
-                <th class="table_grey">Lorum ipsum</th>
-                <td class="table_grey">Lorem ipsum dolor</td>
-            </tr>
-            <tr>
-                <th class="table_white">Lorum</th>
-                <td class="table_white">Lorem ipsum dolor sit amet porttitor at</td>
-            </tr>
-        </table>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="content_mid">
+                <p><strong>Productomschrijving</strong></p>
+                <p>
+                    Lorem ipsum dolor sit amet, nec rutrum elit. Nullam ex enim, porttitor at turpis sed, volutpat finibus erat. Nunc ac tortor quam.<br>
+                    Pellentesque eros augue, tempus sed bibendum vel, rhoncus vel orci. Vestibulum ante ipsum primis in faucibus orci luctus et<br>
+                    ultrices posuere cubilia Curae; Cras elementum nisl sollicitudin leo suscipit rutrum. Nunc magna ex, fermentum ut pulvinar, iaculis<br>
+                    sit amet risus. Nam ullamcorper bibendum tellus non vestibulum. Vestibulum sed diam quam. Sed ut metus ipsum. Vestibulum<br>
+                    velit mi, congue a orci eget, consectetur mattis quam. Nunc dignissim turpis ac luctus commodo. Cras luctus lacus a nisi vestibulum<br>
+                    porttitor. Praesent id tempor odio. Ut feugiat euismod ipsum sit amet tincidunt. Proin dui enim, fermentum vitae nisl in, eleifend<br>
+                    efficitur eros. Nulla erat libero, varius convallis leo sit amet, porta sodales felis. Donec vel lacus libero. Nunc gravida turpis non<br>
+                    urna vulputate ornare. Duis cursus massa maximus, ornare erat pharetra, placerat arcu.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
-<div class="nieuwsbrief_linkjes">
-    <p class="nieuwsbrief_head">Nieuwsbrief</p>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit duis eu max.<br>
-        In blandit, eros eget vestibulum mollis, purus nunc conse<br>
-        egestasant magna. Fusce suscipit mi et dolor iaculis.
-    </p>
-    <input type="email" placeholder="E-mailadres">
-    <button class="nieuwsbrief_button">Inschrijven</button>
-    <hr>
-    <table align="center">
+<div class="content_bottom">
+    <p><strong>Specificaties</strong></p>
+    <table class="specificaties" cellspacing="0">
         <tr>
-            <th>Klantenservice</th>
-            <th>Bestellen en betalen</th>
-            <th>Populaire merken</th>
-            <th>Over ons</th>
+            <th class="table_grey">Lorum ipsum</th>
+            <td class="table_grey">Lorem ipsum dolor</td>
         </tr>
         <tr>
-            <td>Contact</td>
-            <td>Bestellen</td>
-            <td>Gazelle</td>
-            <td>Gebruikte Fietsen BV</td>
+            <th class="table_white">Lorum ipsum dolor</th>
+            <td class="table_white">Lorem ipsum dolor sit amet porttitor at</td>
         </tr>
         <tr>
-            <td>Garantie</td>
-            <td>Betaling</td>
-            <td>Scott</td>
-            <td>Lorem ipsum dolor xx</td>
+            <th class="table_grey">Lorum</th>
+            <td class="table_grey">Lorem ipsum dolor sit amet</td>
         </tr>
         <tr>
-            <td>Onderhoud</td>
-            <td>Verzenden & bezorging</td>
-            <td>Cortina</td>
-            <td>xxxx xx Lorem</td>
+            <th class="table_white">Lorum ipsum</th>
+            <td class="table_white">Lorem ipsum dolor sit</td>
         </tr>
         <tr>
-            <td>Reparatie</td>
-            <td>Retouren</td>
-            <td>Batavus</td>
-            <td>Nederland</td>
+            <th class="table_grey">Lorum ipsum dolor</th>
+            <td class="table_grey">Lorem ipsum</td>
         </tr>
         <tr>
-            <td>Fietsverzekering</td>
-            <td>Leasen</td>
-            <td>Stromer</td>
-            <td></td>
+            <th class="table_white">Lorum ipsum</th>
+            <td class="table_white">Lorem ipsum dolor sit amet</td>
         </tr>
         <tr>
-            <td>Privacy verklaring</td>
-            <td>Financieren</td>
-            <td></td>
-            <td>Tel nr: +31 (0)12 345 6789</td>
+            <th class="table_grey">Lorum ipsum</th>
+            <td class="table_grey">Lorem ipsum dolor</td>
         </tr>
         <tr>
-            <td>Algemene voorwaarden</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th class="table_white">Lorum</th>
+            <td class="table_white">Lorem ipsum dolor sit amet porttitor at</td>
         </tr>
     </table>
+</div>
+<div class="nieuwsbrief_linkjes">
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="nieuwsbrief_head">Nieuwsbrief</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit duis eu max.<br>
+                In blandit, eros eget vestibulum mollis, purus nunc conse<br>
+                egestasant magna. Fusce suscipit mi et dolor iaculis.
+            </p>
+            <input type="email" placeholder="E-mailadres">
+            <button class="nieuwsbrief_button">Inschrijven</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <table align="center">
+                <tr>
+                    <th>Klantenservice</th>
+                    <th>Bestellen en betalen</th>
+                    <th>Populaire merken</th>
+                    <th>Over ons</th>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>Bestellen</td>
+                    <td>Gazelle</td>
+                    <td>Gebruikte Fietsen BV</td>
+                </tr>
+                <tr>
+                    <td>Garantie</td>
+                    <td>Betaling</td>
+                    <td>Scott</td>
+                    <td>Lorem ipsum dolor xx</td>
+                </tr>
+                <tr>
+                    <td>Onderhoud</td>
+                    <td>Verzenden & bezorging</td>
+                    <td>Cortina</td>
+                    <td>xxxx xx Lorem</td>
+                </tr>
+                <tr>
+                    <td>Reparatie</td>
+                    <td>Retouren</td>
+                    <td>Batavus</td>
+                    <td>Nederland</td>
+                </tr>
+                <tr>
+                    <td>Fietsverzekering</td>
+                    <td>Leasen</td>
+                    <td>Stromer</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Privacy verklaring</td>
+                    <td>Financieren</td>
+                    <td></td>
+                    <td>Tel nr: +31 (0)12 345 6789</td>
+                </tr>
+                <tr>
+                    <td>Algemene voorwaarden</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 <div class="footer">
     <p class="copyright">Copyright &copy; 2018 Gebruikte Fietsen</p>
