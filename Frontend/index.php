@@ -18,7 +18,9 @@ if (!isset($_SESSION['first_name'])) {
     <!-- Eigen CSS-->
     <link rel="stylesheet" href="scss/style.css">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
+          type='text/css' media='all'>
     <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>Gebruikte fietsen</title>
@@ -112,7 +114,7 @@ if (!isset($_SESSION['first_name'])) {
                         <p class="text-center">2 Artikelen in winkelwagen</p>
                         <div class="row">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
-                                    type="button" id="CancelButtonDropdown">
+                                    type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
                         </div>
@@ -223,7 +225,8 @@ if (!isset($_SESSION['first_name'])) {
                 </div>
                 <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
                 <p class="datum text-white">XX-XX-XXXX</p>
-                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
+                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                    ultrices diam
                     non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
                     euismod
                     consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
@@ -237,7 +240,8 @@ if (!isset($_SESSION['first_name'])) {
                 </div>
                 <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
                 <p class="datum text-white">XX-XX-XXXX</p>
-                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
+                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                    ultrices diam
                     non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
                     euismod
                     consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
@@ -251,7 +255,8 @@ if (!isset($_SESSION['first_name'])) {
                 </div>
                 <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
                 <p class="datum text-white">XX-XX-XXXX</p>
-                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
+                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                    ultrices diam
                     non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
                     euismod
                     consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
@@ -360,13 +365,14 @@ if (!isset($_SESSION['first_name'])) {
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title w-100 text-center bRoboto" id="account">Account</h5>
+                <h5 class="modal-title w-100 text-center bRoboto" id="account">Inloggen</h5>
             </div>
             <div class="modal-body bg-light">
                 <form action="Controllers/login.php" method="POST">
                     <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
                         <i class="fas fa-user mdc-text-field__icon userIcon"></i>
-                        <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off" spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                        <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off"
+                               spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
                         <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                             <div class="mdc-notched-outline__leading"></div>
                             <div class="mdc-notched-outline__notch" style="">
@@ -377,7 +383,8 @@ if (!isset($_SESSION['first_name'])) {
                     </div>
                     <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
                         <i class="fas fa-key mdc-text-field__icon userIcon"></i>
-                        <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off" spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                        <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off"
+                               spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
                         <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                             <div class="mdc-notched-outline__leading"></div>
                             <div class="mdc-notched-outline__notch" style="">
@@ -386,51 +393,71 @@ if (!isset($_SESSION['first_name'])) {
                             <div class="mdc-notched-outline__trailing"></div>
                         </div>
                     </div>
-
-
-                    <!--<div class="text-center">
-                        <button type="submit" name="submit" class="btn btn-primary">Inloggen</button>
-                        <br>
-                        of
-                        <br>
-                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-                                data-target="#registreerModal">Registreren
-                        </button>
-                    </div>-->
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                        type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                        data-target="#registreerModal">
+                    Registeren
+                </button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                        type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    Inloggen
+                </button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Registreren Modal -->
-<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle"
-     aria-hidden="true">
+<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registreerModalTitle">Registreer</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title w-100 text-center bRoboto" id="account">Registreren</h5>
             </div>
             <div class="modal-body">
                 <form action="Controllers/register.php" method="POST">
-                    <label class="bmd-label-floating">E-mail</label>
-                    <input type="email" name="emailInput" class="form-control">
-                    <label class="bmd-label-floating">Wachtwoord</label>
-                    <input type="password" name="passwordInput" class="form-control">
-                    <div class="text-center">
-                        <button type="submit" name="submit" class="btn btn-primary">Registreren</button>
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
+                        <i class="fas fa-user mdc-text-field__icon userIcon"></i>
+                        <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off"
+                               spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                        <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch" style="">
+                                <label for="demo-mdc-text-field" class="mdc-floating-label" style="">E-mail</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
+                        <i class="fas fa-key mdc-text-field__icon userIcon"></i>
+                        <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off"
+                               spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                        <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch" style="">
+                                <label for="demo-mdc-text-field" class="mdc-floating-label" style="">Wachtwoord</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
                     </div>
                 </form>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" type="submit" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
+                    Terug
+                </button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                        type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                        data-target="#registreerModal">
+                    Registeren
+                </button>
             </div>
         </div>
     </div>
