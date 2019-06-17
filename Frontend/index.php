@@ -14,13 +14,11 @@ if (!isset($_SESSION['first_name'])) {
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <!-- Material.io -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!-- Eigen CSS-->
     <link rel="stylesheet" href="scss/style.css">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
-          type='text/css' media='all'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
     <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>Gebruikte fietsen</title>
@@ -217,15 +215,15 @@ if (!isset($_SESSION['first_name'])) {
     </div>
     <!-- Review -->
     <div class="p-5" id="review">
-        <h1 class="text-center main-color h2 bRoboto">Vele gingen u al voor</h1>
+        <h1 class="text-center text-white h2 bRoboto">Vele gingen u al voor</h1>
         <div class="row pt-4">
             <div class="col-lg-4 review">
                 <div class="star">
                     <img class="float-right" src="assets/img/4_sterren.png" alt="sterren">
                 </div>
-                <h1 class="h3 m-0">Lorem Ipsum</h1>
-                <p class="datum">XX-XX-XXXX</p>
-                <p class="review-persoon">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
+                <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
+                <p class="datum text-white">XX-XX-XXXX</p>
+                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
                     non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
                     euismod
                     consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
@@ -237,9 +235,9 @@ if (!isset($_SESSION['first_name'])) {
                 <div class="star">
                     <img class="float-right" src="assets/img/5_sterren.png" alt="sterren">
                 </div>
-                <h1 class="h3 m-0">Lorem Ipsum</h1>
-                <p class="datum">XX-XX-XXXX</p>
-                <p class="review-persoon">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
+                <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
+                <p class="datum text-white">XX-XX-XXXX</p>
+                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
                     non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
                     euismod
                     consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
@@ -251,9 +249,9 @@ if (!isset($_SESSION['first_name'])) {
                 <div class="star">
                     <img class="float-right" src="assets/img/3_sterren.png" alt="sterren">
                 </div>
-                <h1 class="h3 m-0">Lorem Ipsum</h1>
-                <p class="datum">XX-XX-XXXX</p>
-                <p class="review-persoon">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
+                <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
+                <p class="datum text-white">XX-XX-XXXX</p>
+                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices diam
                     non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
                     euismod
                     consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
@@ -268,8 +266,8 @@ if (!isset($_SESSION['first_name'])) {
         <div class="row">
             <div class="col"></div>
             <div class="text-center col-lg-6">
-                <h1 class="text-white h2 bRoboto">Nieuwsbrief</h1>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dignissim
+                <h1 class="h2 bRoboto main-color">Nieuwsbrief</h1>
+                <p class="main-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dignissim
                     ligula, eget porta erat. Sed egestas quam ut purus dignissim malesuada. Nulla
                     molestie, ipsum eu sollicitudin convallis, nibh tortor tempor ligula, quis mattis massa tellus ut
                     purus. Vestibulum ante ipsum primis in faucibus
@@ -298,8 +296,8 @@ if (!isset($_SESSION['first_name'])) {
     <div class="p-5 pt-0 d-flex justify-content-center" id="service">
         <div class="row">
             <div class="col" id="klanten_service">
-                <p class="pl-3 bRoboto text-white lead m-2">Klantenservice</p>
-                <ul class="service-ul text-white">
+                <p class="pl-3 bRoboto lead m-2 main-color-light">Klantenservice</p>
+                <ul class="service-ul main-color">
                     <li class="service-li">Contact</li>
                     <li class="service-li">Garantie</li>
                     <li class="service-li">Onderhoud</li>
@@ -310,8 +308,8 @@ if (!isset($_SESSION['first_name'])) {
                 </ul>
             </div>
             <div class="col" id="bestellen_betalen">
-                <p class="pl-3 bRoboto text-white lead m-2">Bestellen en betalen</p>
-                <ul class="service-ul text-white">
+                <p class="pl-3 bRoboto lead m-2 main-color-light">Bestellen en betalen</p>
+                <ul class="service-ul main-color">
                     <li class="service-li">Bestellen</li>
                     <li class="service-li">Betaling</li>
                     <li class="service-li">Verzenden & Bezorging</li>
@@ -321,8 +319,8 @@ if (!isset($_SESSION['first_name'])) {
                 </ul>
             </div>
             <div class="col" id="merken">
-                <p class="pl-3 bRoboto text-white lead m-2">Populaire merken</p>
-                <ul class="service-ul text-white">
+                <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
+                <ul class="service-ul main-color">
                     <li class="service-li">Gazelle</li>
                     <li class="service-li">Scott</li>
                     <li class="service-li">Cortina</li>
@@ -331,8 +329,8 @@ if (!isset($_SESSION['first_name'])) {
                 </ul>
             </div>
             <div class="col" id="over_ons">
-                <p class="pl-3 bRoboto text-white lead m-2">Populaire merken</p>
-                <ul class="service-ul text-white">
+                <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
+                <ul class="service-ul main-color">
                     <li class="service-li">Gebruikte Fietsen BV</li>
                     <li class="service-li">Lorem ipsum dolor xx</li>
                     <li class="service-li">xxxx xx Lorem</li>
@@ -343,7 +341,7 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Footer -->
-    <div class="p-3 pl-4" id="copyright-footer">
+    <div class="p-3 pl-4 bg-light" id="copyright-footer">
         <p class="m-0 copyright-text float-left copy-right">Copyright &copy; 2019 Gebruikte Fietsen</p>
         <div class="row float-right copyright-kopjes pl-5">
             <a class="text-decoration-none" href="#"><p class="copyright-text main-color-light bRoboto">Privacy</p></a>
@@ -356,25 +354,41 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
 </div>
-
 <!-- Account Modal -->
 <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Login of registreer</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title w-100 text-center bRoboto" id="account">Account</h5>
             </div>
-            <div class="modal-body">
+            <div class="modal-body bg-light">
                 <form action="Controllers/login.php" method="POST">
-                    <label class="bmd-label-floating">E-mail</label>
-                    <input type="email" name="emailInput" class="form-control">
-                    <label class="bmd-label-floating">Wachtwoord</label>
-                    <input type="password" name="passwordInput" class="form-control">
-                    <div class="text-center">
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
+                        <i class="fas fa-user mdc-text-field__icon userIcon"></i>
+                        <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off" spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                        <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch" style="">
+                                <label for="demo-mdc-text-field" class="mdc-floating-label" style="">E-mail</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
+                        <i class="fas fa-key mdc-text-field__icon userIcon"></i>
+                        <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off" spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                        <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch" style="">
+                                <label for="demo-mdc-text-field" class="mdc-floating-label" style="">Wachtwoord</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+
+
+                    <!--<div class="text-center">
                         <button type="submit" name="submit" class="btn btn-primary">Inloggen</button>
                         <br>
                         of
@@ -382,7 +396,7 @@ if (!isset($_SESSION['first_name'])) {
                         <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
                                 data-target="#registreerModal">Registreren
                         </button>
-                    </div>
+                    </div>-->
                 </form>
             </div>
             <div class="modal-footer">
@@ -435,10 +449,10 @@ if (!isset($_SESSION['first_name'])) {
 <!-- Slick Slider -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="js/slick/slick_slider.js"></script>
+<!-- Main -->
+<script type="text/javascript" src="js/Main.js"></script>
 <!-- Material.io -->
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="js/material/material.js"></script>
-<!-- Main -->
-<script type="text/javascript" src="js/Main.js"></script>
 </body>
 </html>

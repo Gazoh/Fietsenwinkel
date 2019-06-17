@@ -65,7 +65,7 @@
   font-size: 0.8rem;
 }
 
-#nieuwsbrief {
+#review {
   background-color: $main_color_light;
 }
 
@@ -77,9 +77,6 @@
   box-shadow: none;
 }
 
-#service {
-  background-color: $main_color_light;
-}
 
 .service-ul {
   list-style-type: none;
@@ -98,32 +95,9 @@
   color: #a1a1a1;
 }
 
-
-/* MODIFICATIE VAN DE INPUT FIELD VAN MATERIAL IO*/
-
-// Border
-.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-  border-color: #fff;
+.userIcon {
+  top: 18px !important;
 }
-
-// Input color
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-  color: #fff;
-}
-
-// Label
-label.mdc-floating-label {
-  color: #fff !important;
-}
-
-
-// Focus input
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-  color: #fff !important;
-}
-
-// --------
-
 
 // Media Queries Mobile
 @media only screen and (max-width: 1074px) {

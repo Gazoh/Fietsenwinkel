@@ -2,4 +2,6 @@
     return new mdc.ripple.MDCRipple(el);
 });
 
-mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
+[].map.call(document.querySelectorAll('.mdc-text-field'), function (el) {
+    return new mdc.textField.MDCTextField(el);
+});
