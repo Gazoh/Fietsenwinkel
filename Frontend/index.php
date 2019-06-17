@@ -1,4 +1,7 @@
-<!doctype html>
+<?php
+session_start();
+
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -60,10 +63,19 @@
                 </li>
             </ul>
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2">
+                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2" data-toggle="modal" data-target="#accountModal">
                     <i class="fas fa-user"></i>
                     <span class="pr-2"></span>
-                    <span class="mdc-button__label">Account</span>
+                    <?php if($_SESSION['first_name'] != ""){
+                        echo "<span class=\"mdc-button__label\">";
+                        echo $_SESSION['first_name'];
+                        echo "</span>";
+                    }
+                    elseif(!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "")
+                    {
+                        echo "<span class=\"mdc-button__label\">Account</span>";
+                    }?>
+
                 </button>
                 <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account">
                     <i class="fas fa-shopping-bag fontSize1-2rem"></i>
@@ -296,6 +308,67 @@
             <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bold">Cookies</p></a>
             <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bold">FAQ</p></a>
             <a class="text-decoration-none" href="#"><p class="pl-3 pr-5 copyright-text main-color-light bold">Terms of use</p></a>
+        </div>
+    </div>
+</div>
+
+<!-- Account Modal -->
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Login of registreer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="Controllers/login.php" method="POST">
+                    <label class="bmd-label-floating">E-mail</label>
+                    <input type="email" name="emailInput" class="form-control">
+                    <label class="bmd-label-floating">Wachtwoord</label>
+                    <input type="password" name="passwordInput" class="form-control">
+                    <div class="text-center">
+                        <button type="submit" name="submit" class="btn btn-primary">Inloggen</button>
+                        <br>
+                        of
+                        <br>
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registreerModal">Registreren</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Registreren Modal -->
+<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registreerModalTitle">Registreer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="Controllers/register.php" method="POST">
+                    <label class="bmd-label-floating">E-mail</label>
+                    <input type="email" name="emailInput" class="form-control">
+                    <label class="bmd-label-floating">Wachtwoord</label>
+                    <input type="password" name="passwordInput" class="form-control">
+                    <div class="text-center">
+                        <button type="submit" name="submit" class="btn btn-primary">Registreren</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+            </div>
         </div>
     </div>
 </div>
