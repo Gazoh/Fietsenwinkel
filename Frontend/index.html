@@ -72,7 +72,7 @@
         </div>
     </nav>
     <!-- Alert -->
-    <div class="alert alert-dark" role="alert" id="alert">
+    <div class="alert" role="alert" id="alert">
         <div class="text-black">
             <div>
                 <div class="float-left mr-3">
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div>
-                <img class="w-100" src="assets/img/bike.png"  alt="fiets">
+                <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
                 <p class="main-color-light mb-2">Onbeschadigd</p>
                 <div>
@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div>
-                <img class="w-100" src="assets/img/bike.png"  alt="fiets">
+                <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
                 <p class="main-color-light mb-2">Onbeschadigd</p>
                 <div>
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div>
-                <img class="w-100" src="assets/img/bike.png"  alt="fiets">
+                <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
                 <p class="main-color-light mb-2">Onbeschadigd</p>
                 <div>
@@ -142,7 +142,7 @@
                 </div>
             </div>
             <div>
-                <img class="w-100" src="assets/img/bike.png"  alt="fiets">
+                <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
                 <p class="main-color-light mb-2">Onbeschadigd</p>
                 <div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div>
-                <img class="w-100" src="assets/img/bike.png"  alt="fiets">
+                <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
                 <p class="main-color-light mb-2">Onbeschadigd</p>
                 <div>
@@ -242,8 +242,8 @@
     </div>
     <!-- Service -->
     <div class="p-4 d-flex justify-content-center" id="service">
-
-            <div id="klanten_service">
+        <div class="row">
+            <div class="col" id="klanten_service">
                 <p class="pl-3 bold text-white lead m-2">Klantenservice</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Contact</li>
@@ -255,7 +255,7 @@
                     <li class="service-li">Algemene voorwaarden</li>
                 </ul>
             </div>
-            <div id="bestellen_betalen">
+            <div class="col" id="bestellen_betalen">
                 <p class="pl-3 bold text-white lead m-2">Bestellen en betalen</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Bestellen</li>
@@ -266,7 +266,7 @@
                     <li class="service-li">Financieren</li>
                 </ul>
             </div>
-            <div id="merken">
+            <div class="col" id="merken">
                 <p class="pl-3 bold text-white lead m-2">Populaire merken</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Gazelle</li>
@@ -276,7 +276,7 @@
                     <li class="service-li">Stromer</li>
                 </ul>
             </div>
-            <div id="over_ons">
+            <div class="col" id="over_ons">
                 <p class="pl-3 bold text-white lead m-2">Populaire merken</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Gebruikte Fietsen BV</li>
@@ -286,24 +286,26 @@
                     <li class="service-li">Tel nr: +31 (0)12 345 6789</li>
                 </ul>
             </div>
-
+        </div>
     </div>
     <!-- Footer -->
     <div class="p-3 pl-4" id="copyright-footer">
-        <p class="m-0 copyright-text float-left">Copyright &copy; 2019 Gebruikte Fietsen</p>
-        <div class="row float-right">
-            <a class="text-decoration-none" href="#"><p class="copyright-text">Privacy</p></a>
-            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text">Cookies</p></a>
-            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text">FAQ</p></a>
-            <a class="text-decoration-none" href="#"><p class="pl-3 pr-5 copyright-text">Terms of use</p></a>
+        <p class="m-0 copyright-text float-left copy-right">Copyright &copy; 2019 Gebruikte Fietsen</p>
+        <div class="row float-right copyright-kopjes pl-5">
+            <a class="text-decoration-none" href="#"><p class="copyright-text main-color-light bold">Privacy</p></a>
+            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bold">Cookies</p></a>
+            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bold">FAQ</p></a>
+            <a class="text-decoration-none" href="#"><p class="pl-3 pr-5 copyright-text main-color-light bold">Terms of use</p></a>
         </div>
     </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <!-- Slick Slider -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="js/slick/slick_slider.js"></script>

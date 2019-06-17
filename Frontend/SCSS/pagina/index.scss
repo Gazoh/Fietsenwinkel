@@ -161,3 +161,18 @@ label.mdc-floating-label {
     display: none !important;
   }
 }
+
+// Footer
+// Alert weghalen
+@media only screen and (max-width: 635px) {
+ .copyright-kopjes {
+   float: none !important;
+   justify-content: center;
+   margin-top: 0.5rem;
+ }
+
+  .copy-right {
+    float: none !important;
+    text-align: center !important;
+  }
+}
