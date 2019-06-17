@@ -28,7 +28,7 @@ if (!isset($_SESSION['first_name'])) {
 <body>
 <div class="container-fluid">
     <!--  Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">
             <img class="image" src="assets/img/logo.png" width="" alt="logo">
         </a>
@@ -64,8 +64,10 @@ if (!isset($_SESSION['first_name'])) {
                     <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
                 </li>
             </ul>
+            <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2" data-toggle="modal" data-target="#accountModal">
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account mr-2"
+                        data-toggle="modal" data-target="#accountModal">
                     <i class="fas fa-user"></i>
                     <span class="pr-2"></span>
                     <?php if ($_SESSION['first_name'] != "") {
@@ -73,64 +75,94 @@ if (!isset($_SESSION['first_name'])) {
                         echo $_SESSION['first_name'];
                         echo "</span>";
                     } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
-                        echo "<span class=\"mdc-button__label\">Account</span>";
+                        echo "<span class='mdc-button__label rRoboto'>Account</span>";
                     } ?>
-
                 </button>
                 <div class="dropdown float-right">
-                    <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account"
+                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                        <i class="fas fa-shopping-bag fontSize1-2rem"></i>
+                        <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
-                    <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
-                        <img src="assets/img/bike.png" width="60">
-                        <div class="float-right">
-                            <div class="m-0 pt-3 bold">Lorem Ipsum Text</div>
-                            <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                    <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
+                        <div class="order">
+                            <div class="float-left pt-4">
+                                <i class="fas fa-times pr-4"></i>
+                            </div>
+                            <img src="assets/img/bike.png" width="60">
+                            <div class="float-right">
+                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                            </div>
                         </div>
+                        <hr>
+                        <div class="order">
+                            <div class="float-left pt-4">
+                                <i class="fas fa-times pr-4"></i>
+                            </div>
+                            <img src="assets/img/bike.png" width="60">
+                            <div class="float-right">
+                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
+                            <p>&euro; 3758,-</p>
+                        </div>
+                        <hr>
+                        <p class="text-center">2 Artikelen in winkelwagen</p>
+                        <div class="row">
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
+                                    type="button" id="CancelButtonDropdown">
+                                Bestellen
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </nav>
     <!-- Alert -->
-    <div class="alert" role="alert" id="alert">
+    <div class="alert bg-light" role="alert" id="alert">
         <div class="text-black">
             <div>
                 <div class="float-left mr-3">
-                    <span class="bold">Ruim assortiment</span> met de beste A merken
+                    <span class="bRoboto">Ruim assortiment</span> met de beste A merken
                 </div>
                 <div class="float-left mr-3">
-                    Tot <span class="bold">14 dagen</span> ruilen en retourneren
+                    Tot <span class="bRoboto">14 dagen</span> ruilen en retourneren
                 </div>
                 <div class="float-left gratisVerzenden mr-3">
-                    <span class="bold">Gratis verzenden</span>
+                    <span class="bRoboto">Gratis verzenden</span>
                 </div>
                 <div class="float-right main-color gebruikteFiets">
-                    <span class="bold">Op een gebruikte fiets moet je het leren!</span>
+                    <span class="bRoboto">Op een gebruikte fiets moet je het leren!</span>
                 </div>
             </div>
         </div>
     </div>
     <!-- Full Image Width -->
     <div class="image-responsive text-center">
-        <h1 class="text-white full-image bold">Bekijk hier onze dag aanbiedingen</h1>
+        <h1 class="text-white full-image bRoboto">Bekijk hier onze dag aanbiedingen</h1>
         <p class="text-white full-image bespaar light">Bespaar tot wel 20%</p>
         <div class="full-image">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account mt-4" type="button">
+            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account mt-4 bRoboto"
+                    type="button">
                 Dagaanbiedingen
             </button>
         </div>
     </div>
     <!-- Nieuwe Collectie -->
-    <div class="p-4" id="nieuwe-collectie">
-        <h1 class="text-center main-color h2 bold">Nieuwe Collectie</h1>
+    <div class="p-5" id="nieuwe-collectie">
+        <h1 class="text-center main-color h2 bRoboto">Nieuwe Collectie</h1>
         <div class="slick-buttons"></div>
         <div class="slick-slider">
             <div>
                 <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2">Onbeschadigd</p>
+                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
                 <div>
                     <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
                     <p class="prijs main-color h3">&euro; 1087,-</p>
@@ -139,7 +171,7 @@ if (!isset($_SESSION['first_name'])) {
             <div>
                 <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2">Onbeschadigd</p>
+                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
                 <div>
                     <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
                     <p class="prijs main-color h3">&euro; 1087,-</p>
@@ -148,7 +180,7 @@ if (!isset($_SESSION['first_name'])) {
             <div>
                 <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2">Onbeschadigd</p>
+                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
                 <div>
                     <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
                     <p class="prijs main-color h3">&euro; 1087,-</p>
@@ -157,7 +189,7 @@ if (!isset($_SESSION['first_name'])) {
             <div>
                 <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2">Onbeschadigd</p>
+                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
                 <div>
                     <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
                     <p class="prijs main-color h3">&euro; 1087,-</p>
@@ -166,7 +198,7 @@ if (!isset($_SESSION['first_name'])) {
             <div>
                 <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2">Onbeschadigd</p>
+                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
                 <div>
                     <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
                     <p class="prijs main-color h3">&euro; 1087,-</p>
@@ -175,7 +207,7 @@ if (!isset($_SESSION['first_name'])) {
             <div>
                 <img class="w-100" src="assets/img/bike.png" alt="fiets">
                 <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2">Onbeschadigd</p>
+                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
                 <div>
                     <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
                     <p class="prijs main-color h3">&euro; 1087,-</p>
@@ -184,8 +216,8 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Review -->
-    <div class="p-4" id="review">
-        <h1 class="text-center main-color h2 bold">Vele gingen u al voor</h1>
+    <div class="p-5" id="review">
+        <h1 class="text-center main-color h2 bRoboto">Vele gingen u al voor</h1>
         <div class="row pt-4">
             <div class="col-lg-4 review">
                 <div class="star">
@@ -232,11 +264,11 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Nieuwsbrief -->
-    <div class="p-4" id="nieuwsbrief">
+    <div class="p-5" id="nieuwsbrief">
         <div class="row">
             <div class="col"></div>
             <div class="text-center col-lg-6">
-                <h1 class="text-white h2 bold">Nieuwsbrief</h1>
+                <h1 class="text-white h2 bRoboto">Nieuwsbrief</h1>
                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dignissim
                     ligula, eget porta erat. Sed egestas quam ut purus dignissim malesuada. Nulla
                     molestie, ipsum eu sollicitudin convallis, nibh tortor tempor ligula, quis mattis massa tellus ut
@@ -263,10 +295,10 @@ if (!isset($_SESSION['first_name'])) {
         </form>
     </div>
     <!-- Service -->
-    <div class="p-4 pt-0 d-flex justify-content-center" id="service">
+    <div class="p-5 pt-0 d-flex justify-content-center" id="service">
         <div class="row">
             <div class="col" id="klanten_service">
-                <p class="pl-3 bold text-white lead m-2">Klantenservice</p>
+                <p class="pl-3 bRoboto text-white lead m-2">Klantenservice</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Contact</li>
                     <li class="service-li">Garantie</li>
@@ -278,7 +310,7 @@ if (!isset($_SESSION['first_name'])) {
                 </ul>
             </div>
             <div class="col" id="bestellen_betalen">
-                <p class="pl-3 bold text-white lead m-2">Bestellen en betalen</p>
+                <p class="pl-3 bRoboto text-white lead m-2">Bestellen en betalen</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Bestellen</li>
                     <li class="service-li">Betaling</li>
@@ -289,7 +321,7 @@ if (!isset($_SESSION['first_name'])) {
                 </ul>
             </div>
             <div class="col" id="merken">
-                <p class="pl-3 bold text-white lead m-2">Populaire merken</p>
+                <p class="pl-3 bRoboto text-white lead m-2">Populaire merken</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Gazelle</li>
                     <li class="service-li">Scott</li>
@@ -299,7 +331,7 @@ if (!isset($_SESSION['first_name'])) {
                 </ul>
             </div>
             <div class="col" id="over_ons">
-                <p class="pl-3 bold text-white lead m-2">Populaire merken</p>
+                <p class="pl-3 bRoboto text-white lead m-2">Populaire merken</p>
                 <ul class="service-ul text-white">
                     <li class="service-li">Gebruikte Fietsen BV</li>
                     <li class="service-li">Lorem ipsum dolor xx</li>
@@ -314,16 +346,20 @@ if (!isset($_SESSION['first_name'])) {
     <div class="p-3 pl-4" id="copyright-footer">
         <p class="m-0 copyright-text float-left copy-right">Copyright &copy; 2019 Gebruikte Fietsen</p>
         <div class="row float-right copyright-kopjes pl-5">
-            <a class="text-decoration-none" href="#"><p class="copyright-text main-color-light bold">Privacy</p></a>
-            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bold">Cookies</p></a>
-            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bold">FAQ</p></a>
-            <a class="text-decoration-none" href="#"><p class="pl-3 pr-5 copyright-text main-color-light bold">Terms of use</p></a>
+            <a class="text-decoration-none" href="#"><p class="copyright-text main-color-light bRoboto">Privacy</p></a>
+            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bRoboto">Cookies</p>
+            </a>
+            <a class="text-decoration-none" href="#"><p class="pl-3 copyright-text main-color-light bRoboto">FAQ</p></a>
+            <a class="text-decoration-none" href="#"><p class="pl-3 pr-5 copyright-text main-color-light bRoboto">Terms
+                    of
+                    use</p></a>
         </div>
     </div>
 </div>
 
 <!-- Account Modal -->
-<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -343,7 +379,9 @@ if (!isset($_SESSION['first_name'])) {
                         <br>
                         of
                         <br>
-                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registreerModal">Registreren</button>
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                                data-target="#registreerModal">Registreren
+                        </button>
                     </div>
                 </form>
             </div>
@@ -355,7 +393,8 @@ if (!isset($_SESSION['first_name'])) {
 </div>
 
 <!-- Registreren Modal -->
-<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle" aria-hidden="true">
+<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -384,10 +423,14 @@ if (!isset($_SESSION['first_name'])) {
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <!-- Slick Slider -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

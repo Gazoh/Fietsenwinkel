@@ -14,6 +14,7 @@ $succes: #1AAF00;
 @import "pagina/damesfietsen_detail";
 @import "pagina/kinderfietsen";
 @import "pagina/kinderfietsen_detail";
+@import "fonts";
 
 :root {
   --mdc-theme-primary: #073f7f !important;
@@ -48,4 +49,29 @@ $succes: #1AAF00;
 
 .main-color-light {
   color: $main_color_light;
+}
+
+body, html {
+  font-family: Roboto-Regular !important;
+  height: 100%;
+}
+
+.bRoboto {
+  Font-family: Roboto-Bold !important;
+}
+
+.iRoboto {
+  Font-family: Roboto-Italic !important;
+}
+
+.mRoboto {
+  Font-family: Roboto-Medium !important;
+}
+
+.rRoboto {
+  Font-family: Roboto-Regular !important;
+}
+
+.fontSize1rem {
+  font-size: 1rem !important;
 }
