@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM customers");
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -195,87 +199,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>#91234</td>
-                        <td>Kaas</td>
-                        <td>Hans</td>
-                        <td>cem@gazoh.net</td>
-                        <td>0618475093</td>
-                        <td>lmaostraat 19, 8233 GD Zevenaar</td>
-                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_array($records)) {
+
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['first_name'] ?></td>
+                            <td><?php echo $row['last_name'] ?></td>
+                            <td><?php echo $row['email'] ?></td>
+                            <td><?php echo $row['phone'] ?></td>
+                            <td><?php echo $row['adress'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
