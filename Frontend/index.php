@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['first_name'])){
+if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
 ?>
@@ -68,20 +68,28 @@ if(!isset($_SESSION['first_name'])){
                 <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2" data-toggle="modal" data-target="#accountModal">
                     <i class="fas fa-user"></i>
                     <span class="pr-2"></span>
-                    <?php if($_SESSION['first_name'] != ""){
+                    <?php if ($_SESSION['first_name'] != "") {
                         echo "<span class=\"mdc-button__label\">";
                         echo $_SESSION['first_name'];
                         echo "</span>";
-                    }
-                    elseif(!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "")
-                    {
+                    } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                         echo "<span class=\"mdc-button__label\">Account</span>";
-                    }?>
+                    } ?>
 
                 </button>
-                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account">
-                    <i class="fas fa-shopping-bag fontSize1-2rem"></i>
-                </button>
+                <div class="dropdown float-right">
+                    <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                        <i class="fas fa-shopping-bag fontSize1-2rem"></i>
+                    </button>
+                    <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+                        <img src="assets/img/bike.png" width="60">
+                        <div class="float-right">
+                            <div class="m-0 pt-3 bold">Lorem Ipsum Text</div>
+                            <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -255,7 +263,7 @@ if(!isset($_SESSION['first_name'])){
         </form>
     </div>
     <!-- Service -->
-    <div class="p-4 d-flex justify-content-center" id="service">
+    <div class="p-4 pt-0 d-flex justify-content-center" id="service">
         <div class="row">
             <div class="col" id="klanten_service">
                 <p class="pl-3 bold text-white lead m-2">Klantenservice</p>

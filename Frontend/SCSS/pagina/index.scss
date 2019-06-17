@@ -79,7 +79,6 @@
 
 #service {
   background-color: $main_color_light;
-  height: 100%;
 }
 
 .service-ul {
@@ -165,14 +164,28 @@ label.mdc-floating-label {
 // Footer
 // Alert weghalen
 @media only screen and (max-width: 635px) {
- .copyright-kopjes {
-   float: none !important;
-   justify-content: center;
-   margin-top: 0.5rem;
- }
+  .copyright-kopjes {
+    float: none !important;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
 
   .copy-right {
     float: none !important;
     text-align: center !important;
   }
+}
+
+// Dropdown Cart
+.dropdown-menu {
+  left: -186px !important;
+  width: 250px;
+}
+
+.shopping-bedrag {
+  font-size: 0.9rem;
+}
+
+.slick-slide {
+  height: auto !important;
 }

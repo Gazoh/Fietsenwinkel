@@ -82,7 +82,6 @@
 
 #service {
   background-color: #1587d2;
-  height: 100%;
 }
 
 .service-ul {
@@ -160,6 +159,19 @@ label.mdc-floating-label {
     text-align: center !important;
   }
 }
+.dropdown-menu {
+  left: -186px !important;
+  width: 250px;
+}
+
+.shopping-bedrag {
+  font-size: 0.9rem;
+}
+
+.slick-slide {
+  height: auto !important;
+}
+
 /* -----------------------
      HERENFIETSEN CSS
 ----------------------- */
