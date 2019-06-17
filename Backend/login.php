@@ -76,10 +76,14 @@ if (isset($_COOKIE['rememberMe'])) {
                             </a>
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="submit" class="btn main-color width300 mb-4 btn-round login-button">Submit
+                            <button type="submit" name="submit" class="btn main-color width300 mb-4 btn-round login-button">Inloggen
                             </button>
                         </div>
                     </form>
+                    <div class="text-center">
+                        <button type="button" id="activatebutton" class="btn main-color width300 mb-4 btn-round login-button">Activeer account
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 20 mei 2019 om 13:06
+-- Gegenereerd op: 17 jun 2019 om 10:58
 -- Serverversie: 10.1.35-MariaDB
 -- PHP-versie: 7.2.9
 
@@ -46,7 +46,84 @@ CREATE TABLE `bikes` (
 --
 
 INSERT INTO `bikes` (`id`, `image_path`, `brand`, `color`, `framenumber`, `damaged`, `bikename`, `biketype`, `gears`, `selling_price`) VALUES
-(1, '', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, 555.5);
+(1, 'kanker', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, 555.5),
+(2, 'KAULO', 'Batavus', 'White', 'GZ465846', 1, 'Kk snelle batavus', 1, 7, 745.5);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) COLLATE utf8_bin NOT NULL,
+  `first_name` varchar(30) COLLATE utf8_bin NOT NULL,
+  `last_name` varchar(30) COLLATE utf8_bin NOT NULL,
+  `adress` varchar(60) COLLATE utf8_bin NOT NULL,
+  `city` varchar(45) COLLATE utf8_bin NOT NULL,
+  `zip_code` varchar(6) COLLATE utf8_bin NOT NULL,
+  `email` varchar(60) COLLATE utf8_bin NOT NULL,
+  `email_verified` tinyint(1) NOT NULL,
+  `phone` varchar(11) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `remember_me` varchar(80) COLLATE utf8_bin NOT NULL,
+  `last_login` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `discount_codes`
+--
+
+CREATE TABLE `discount_codes` (
+  `id` int(11) NOT NULL,
+  `code` varchar(40) COLLATE utf8_bin NOT NULL,
+  `amount` double NOT NULL,
+  `is_valid` tinyint(1) NOT NULL,
+  `creation_date` datetime NOT NULL,
+  `expiry_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `discount_codes`
+--
+
+INSERT INTO `discount_codes` (`id`, `code`, `amount`, `is_valid`, `creation_date`, `expiry_date`) VALUES
+(1, 'KORTING50', 50, 1, '2019-06-13 15:34:02', '2019-06-22 13:18:17');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) COLLATE utf8_bin NOT NULL,
+  `first_name` varchar(30) COLLATE utf8_bin NOT NULL,
+  `last_name` varchar(30) COLLATE utf8_bin NOT NULL,
+  `adress` varchar(60) COLLATE utf8_bin NOT NULL,
+  `city` varchar(45) COLLATE utf8_bin NOT NULL,
+  `zip_code` varchar(6) COLLATE utf8_bin NOT NULL,
+  `email` varchar(60) COLLATE utf8_bin NOT NULL,
+  `email_verified` tinyint(1) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `invite_code` varchar(40) COLLATE utf8_bin NOT NULL,
+  `register_date` datetime NOT NULL,
+  `remember_me` varchar(80) COLLATE utf8_bin NOT NULL,
+  `last_login` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `employees`
+--
+
+INSERT INTO `employees` (`id`, `username`, `first_name`, `last_name`, `adress`, `city`, `zip_code`, `email`, `email_verified`, `phone`, `password`, `invite_code`, `register_date`, `remember_me`, `last_login`) VALUES
+(1, 'batubeyogullari', 'Batuhan', 'Beyogullari', '', '', '', 'batubeyogullari@gmail.com', 0, 640149721, '$2y$10$ZQmFwgmWmxnF2Qwa5JOmRuBHuP4lSPHV1qhI6fiLz2WXNhS6a4g0C', '', '2019-06-13 14:56:35', 'd3564f32823d8885704b35818529d5bd', '2019-06-13 14:58:06');
 
 -- --------------------------------------------------------
 
@@ -74,34 +151,6 @@ CREATE TABLE `order_bikes` (
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) COLLATE utf8_bin NOT NULL,
-  `role` int(11) NOT NULL,
-  `first_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `last_name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `phone` varchar(11) COLLATE utf8_bin NOT NULL,
-  `email` varchar(75) COLLATE utf8_bin NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
-  `email_verified` tinyint(4) NOT NULL,
-  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `register_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `remember_me` varchar(255) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
-
-INSERT INTO `users` (`id`, `username`, `role`, `first_name`, `last_name`, `phone`, `email`, `password`, `email_verified`, `last_login`, `register_date`, `remember_me`) VALUES
-(1, 'bthbygl', 1, 'Batu', 'Beyogullari', '0640149721', 'bthbygl@icloud.com', '', 1, '2019-05-13 11:17:53', '2019-05-13 11:03:26', '');
-
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -110,6 +159,24 @@ INSERT INTO `users` (`id`, `username`, `role`, `first_name`, `last_name`, `phone
 -- Indexen voor tabel `bikes`
 --
 ALTER TABLE `bikes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `discount_codes`
+--
+ALTER TABLE `discount_codes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `employees`
+--
+ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -126,12 +193,6 @@ ALTER TABLE `order_bikes`
   ADD KEY `bikeid` (`bikeid`);
 
 --
--- Indexen voor tabel `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -139,6 +200,24 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `bikes`
 --
 ALTER TABLE `bikes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT voor een tabel `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `discount_codes`
+--
+ALTER TABLE `discount_codes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT voor een tabel `employees`
+--
+ALTER TABLE `employees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -146,12 +225,6 @@ ALTER TABLE `bikes`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

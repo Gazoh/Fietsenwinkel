@@ -1,0 +1,1677 @@
+/* -----------------------
+          MAIN CSS
+----------------------- */
+/* -----------------------
+          INDEX CSS
+----------------------- */
+.container-fluid {
+  padding: 0 !important;
+}
+
+.image {
+  max-height: 100%;
+  width: 132px;
+}
+
+.fontSize1-2rem {
+  font-size: 1.2rem;
+}
+
+.account {
+  height: 40px;
+}
+
+.nav-item {
+  font-size: 1.1rem;
+}
+
+.alert {
+  border-radius: 0 !important;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.image-responsive {
+  background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  width: 100%;
+  height: 500px;
+  background-position: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.full-image {
+  position: relative;
+  top: 30%;
+}
+
+.bespaar {
+  font-size: 1.6rem;
+}
+
+#voordeel {
+  background-color: #073f7f;
+  border-radius: 7px;
+}
+
+.oudeprijs {
+  text-decoration: line-through;
+}
+
+#datum {
+  font-size: 0.8rem;
+}
+
+#nieuwsbrief {
+  background-color: #1587d2;
+}
+
+.inschrijven {
+  margin: 0 !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#service {
+  background-color: #1587d2;
+  height: 100%;
+}
+
+.service-ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.service-li {
+  float: none;
+}
+
+#copyright {
+  background-color: #bababa4a;
+}
+
+.copyright-text {
+  color: #a1a1a1;
+}
+
+/* MODIFICATIE VAN DE INPUT FIELD VAN MATERIAL IO*/
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: #fff;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #fff;
+}
+
+label.mdc-floating-label {
+  color: #fff !important;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 1074px) {
+  .gebruikteFiets {
+    float: left !important;
+  }
+
+  .alert {
+    height: 75px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #navbar-buttons-top {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 381px) {
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 627px) {
+  #alert {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 635px) {
+  .copyright-kopjes {
+    float: none !important;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .copy-right {
+    float: none !important;
+    text-align: center !important;
+  }
+}
+/* -----------------------
+     HERENFIETSEN CSS
+----------------------- */
+body {
+  font-family: "Segoe UI";
+}
+
+.header {
+  float: left;
+  /*margin-bottom: 19px;*/
+}
+
+.headerTop {
+  float: left;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+.headerBottom {
+  float: left;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #EBEBEB;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin-right: 35px;
+}
+
+ul {
+  margin-top: 0px;
+}
+
+.login {
+  float: right;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 25px;
+  background-color: white;
+  border: solid 1px #888888;
+  background: url(img/login.png) no-repeat left center;
+  padding-left: 25px;
+}
+
+.shoppingcart {
+  float: right;
+  background-image: url("img/winkelwagen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #888888;
+}
+
+.search {
+  float: right;
+  width: 500px;
+  height: 20px;
+  background: url(img/search_icon.png) no-repeat right center;
+  border: solid 1px #888888;
+}
+
+.header_bottom_left {
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_bottom_right {
+  float: right;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  color: #073F7F;
+}
+
+.nieuwsbrief_linkjes {
+  float: left;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  background-color: #073F7F;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  width: 200px;
+}
+
+hr {
+  width: 80%;
+}
+
+.nieuwsbrief_button {
+  background-color: #1587D2;
+  border: none;
+  color: white;
+}
+
+.nieuwsbrief_head {
+  font-size: 30px;
+}
+
+.footer {
+  float: left;
+  background-color: #EBEBEB;
+  width: 100%;
+  height: 50px;
+  color: #949494;
+}
+
+.footer_right {
+  float: right;
+  margin-top: 16px;
+}
+
+.copyright {
+  float: left;
+}
+
+.specs {
+  float: left;
+  width: 20%;
+  border-right: solid 1px #707070;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.specs_heads {
+  color: #073F7F;
+  font-size: 30px;
+}
+
+.prijs_slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 2px;
+  outline: none;
+  background-color: #073F7F;
+}
+
+.prijs_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #073F7F;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.content {
+  float: left;
+  width: 70%;
+}
+
+.nav_top {
+  width: 100%;
+  background-color: #EBEBEB;
+  height: 40px;
+  float: left;
+  padding-right: 10px;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.totaal {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 30px;
+}
+
+.sorteren {
+  float: left;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 30px;
+}
+
+.sorteren_tekst {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tonen {
+  float: left;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tonen_tekst {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.pagination {
+  float: right;
+  border: none;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.pagination_arrow {
+  float: right;
+  border: none;
+  background-image: url("img/pagination.png");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.head {
+  margin-left: 30px;
+  margin-top: 30px;
+  color: #073F7F;
+  font-size: 40px;
+}
+
+.fietsen {
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.fiets {
+  width: 250px;
+  padding-right: 20px;
+}
+
+.productBlock {
+  padding: 3%;
+}
+
+.innerProductBlock {
+  width: 250px;
+  padding: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Segoe UI";
+}
+
+.header {
+  float: left;
+  /*margin-bottom: 19px;*/
+}
+
+.headerTop {
+  float: left;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+.headerBottom {
+  float: left;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #EBEBEB;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin-right: 35px;
+}
+
+ul {
+  margin-top: 0px;
+}
+
+.login {
+  float: right;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 25px;
+  background-color: white;
+  border: solid 1px #888888;
+  background: url(img/login.png) no-repeat left center;
+  padding-left: 25px;
+}
+
+.shoppingcart {
+  float: right;
+  background-image: url("img/winkelwagen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #888888;
+}
+
+.search {
+  float: right;
+  width: 500px;
+  height: 20px;
+  background: url(img/search_icon.png) no-repeat right center;
+  border: solid 1px #888888;
+}
+
+.header_bottom_left {
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_bottom_right {
+  float: right;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  color: #073F7F;
+}
+
+.nieuwsbrief_linkjes {
+  float: left;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  background-color: #073F7F;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  width: 200px;
+}
+
+hr {
+  width: 80%;
+}
+
+.nieuwsbrief_button {
+  background-color: #1587D2;
+  border: none;
+  color: white;
+}
+
+.nieuwsbrief_head {
+  font-size: 30px;
+}
+
+.footer {
+  float: left;
+  background-color: #EBEBEB;
+  width: 100%;
+  height: 50px;
+  color: #949494;
+}
+
+.footer_right {
+  float: right;
+  margin-top: 16px;
+}
+
+.copyright {
+  float: left;
+}
+
+.content {
+  float: left;
+  width: 100%;
+}
+
+/*.content_top {*/
+/*float: left;*/
+/*width: 100%;*/
+/*}*/
+.content_mid {
+  float: left;
+  width: 100%;
+  padding-left: 100px;
+}
+
+.content_bottom {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  padding-left: 100px;
+}
+
+.specificaties {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.table_grey {
+  background-color: #EBEBEB;
+  border: none;
+  width: 300px;
+}
+
+.table_white {
+  border: none;
+  width: 300px;
+}
+
+.fiets_afbeelding {
+  float: left;
+  width: 400px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+.prijs_info {
+  float: left;
+}
+
+.prijs_info_top {
+  float: right;
+  margin-right: 100px;
+  border-bottom: solid 1px #707070;
+}
+
+.prijs_info_bottom {
+  float: right;
+  margin-right: 100px;
+}
+
+.head {
+  font-size: 35px;
+}
+
+.schade {
+  color: #1587D2;
+}
+
+.winkelwagen_button {
+  background-color: #1587D2;
+  border: none;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.checks {
+  list-style-image: url("img/check.png");
+  float: none;
+  margin-right: 0px;
+}
+
+.checks_ul {
+  margin-top: 10px;
+  margin-right: 230px;
+}
+
+body {
+  font-family: "Segoe UI";
+}
+
+.header {
+  float: left;
+  /*margin-bottom: 19px;*/
+}
+
+.headerTop {
+  float: left;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+.headerBottom {
+  float: left;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #EBEBEB;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin-right: 35px;
+}
+
+ul {
+  margin-top: 0px;
+}
+
+.login {
+  float: right;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 25px;
+  background-color: white;
+  border: solid 1px #888888;
+  background: url(img/login.png) no-repeat left center;
+  padding-left: 25px;
+}
+
+.shoppingcart {
+  float: right;
+  background-image: url("img/winkelwagen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #888888;
+}
+
+.search {
+  float: right;
+  width: 500px;
+  height: 20px;
+  background: url(img/search_icon.png) no-repeat right center;
+  border: solid 1px #888888;
+}
+
+.header_bottom_left {
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_bottom_right {
+  float: right;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  color: #073F7F;
+}
+
+.nieuwsbrief_linkjes {
+  float: left;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  background-color: #073F7F;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  width: 200px;
+}
+
+hr {
+  width: 80%;
+}
+
+.nieuwsbrief_button {
+  background-color: #1587D2;
+  border: none;
+  color: white;
+}
+
+.nieuwsbrief_head {
+  font-size: 30px;
+}
+
+.footer {
+  float: left;
+  background-color: #EBEBEB;
+  width: 100%;
+  height: 50px;
+  color: #949494;
+}
+
+.footer_right {
+  float: right;
+  margin-top: 16px;
+}
+
+.copyright {
+  float: left;
+}
+
+.specs {
+  float: left;
+  width: 20%;
+  border-right: solid 1px #707070;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.specs_heads {
+  color: #073F7F;
+  font-size: 30px;
+}
+
+.prijs_slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 2px;
+  outline: none;
+  background-color: #073F7F;
+}
+
+.prijs_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #073F7F;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.content {
+  float: left;
+  width: 70%;
+}
+
+.nav_top {
+  width: 100%;
+  background-color: #EBEBEB;
+  height: 40px;
+  float: left;
+  padding-right: 10px;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.totaal {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 30px;
+}
+
+.sorteren {
+  float: left;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 30px;
+}
+
+.sorteren_tekst {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tonen {
+  float: left;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tonen_tekst {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.pagination {
+  float: right;
+  border: none;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.pagination_arrow {
+  float: right;
+  border: none;
+  background-image: url("img/pagination.png");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.head {
+  margin-left: 30px;
+  margin-top: 30px;
+  color: #073F7F;
+  font-size: 40px;
+}
+
+.fietsen {
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.fiets {
+  width: 250px;
+  padding-right: 20px;
+}
+
+.productBlock {
+  padding: 3%;
+}
+
+.innerProductBlock {
+  width: 250px;
+  padding: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Segoe UI";
+}
+
+.header {
+  float: left;
+  /*margin-bottom: 19px;*/
+}
+
+.headerTop {
+  float: left;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+.headerBottom {
+  float: left;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #EBEBEB;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin-right: 35px;
+}
+
+ul {
+  margin-top: 0px;
+}
+
+.login {
+  float: right;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 25px;
+  background-color: white;
+  border: solid 1px #888888;
+  background: url(img/login.png) no-repeat left center;
+  padding-left: 25px;
+}
+
+.shoppingcart {
+  float: right;
+  background-image: url("img/winkelwagen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #888888;
+}
+
+.search {
+  float: right;
+  width: 500px;
+  height: 20px;
+  background: url(img/search_icon.png) no-repeat right center;
+  border: solid 1px #888888;
+}
+
+.header_bottom_left {
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_bottom_right {
+  float: right;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  color: #073F7F;
+}
+
+.nieuwsbrief_linkjes {
+  float: left;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  background-color: #073F7F;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  width: 200px;
+}
+
+hr {
+  width: 80%;
+}
+
+.nieuwsbrief_button {
+  background-color: #1587D2;
+  border: none;
+  color: white;
+}
+
+.nieuwsbrief_head {
+  font-size: 30px;
+}
+
+.footer {
+  float: left;
+  background-color: #EBEBEB;
+  width: 100%;
+  height: 50px;
+  color: #949494;
+}
+
+.footer_right {
+  float: right;
+  margin-top: 16px;
+}
+
+.copyright {
+  float: left;
+}
+
+.content {
+  float: left;
+  width: 100%;
+}
+
+/*.content_top {*/
+/*float: left;*/
+/*width: 100%;*/
+/*}*/
+.content_mid {
+  float: left;
+  width: 100%;
+  padding-left: 100px;
+}
+
+.content_bottom {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  padding-left: 100px;
+}
+
+.specificaties {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.table_grey {
+  background-color: #EBEBEB;
+  border: none;
+  width: 300px;
+}
+
+.table_white {
+  border: none;
+  width: 300px;
+}
+
+.fiets_afbeelding {
+  float: left;
+  width: 400px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+.prijs_info {
+  float: left;
+}
+
+.prijs_info_top {
+  float: right;
+  margin-right: 100px;
+  border-bottom: solid 1px #707070;
+}
+
+.prijs_info_bottom {
+  float: right;
+  margin-right: 100px;
+}
+
+.head {
+  font-size: 35px;
+}
+
+.schade {
+  color: #1587D2;
+}
+
+.winkelwagen_button {
+  background-color: #1587D2;
+  border: none;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.checks {
+  list-style-image: url("img/check.png");
+  float: none;
+  margin-right: 0px;
+}
+
+.checks_ul {
+  margin-top: 10px;
+  margin-right: 230px;
+}
+
+body {
+  font-family: "Segoe UI";
+}
+
+.header {
+  float: left;
+  /*margin-bottom: 19px;*/
+}
+
+.headerTop {
+  float: left;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+.headerBottom {
+  float: left;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #EBEBEB;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin-right: 35px;
+}
+
+ul {
+  margin-top: 0px;
+}
+
+.login {
+  float: right;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 25px;
+  background-color: white;
+  border: solid 1px #888888;
+  background: url(img/login.png) no-repeat left center;
+  padding-left: 25px;
+}
+
+.shoppingcart {
+  float: right;
+  background-image: url("img/winkelwagen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #888888;
+}
+
+.search {
+  float: right;
+  width: 500px;
+  height: 20px;
+  background: url(img/search_icon.png) no-repeat right center;
+  border: solid 1px #888888;
+}
+
+.header_bottom_left {
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_bottom_right {
+  float: right;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  color: #073F7F;
+}
+
+.nieuwsbrief_linkjes {
+  float: left;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  background-color: #073F7F;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  width: 200px;
+}
+
+hr {
+  width: 80%;
+}
+
+.nieuwsbrief_button {
+  background-color: #1587D2;
+  border: none;
+  color: white;
+}
+
+.nieuwsbrief_head {
+  font-size: 30px;
+}
+
+.footer {
+  float: left;
+  background-color: #EBEBEB;
+  width: 100%;
+  height: 50px;
+  color: #949494;
+}
+
+.footer_right {
+  float: right;
+  margin-top: 16px;
+}
+
+.copyright {
+  float: left;
+}
+
+.specs {
+  float: left;
+  width: 20%;
+  border-right: solid 1px #707070;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.specs_heads {
+  color: #073F7F;
+  font-size: 30px;
+}
+
+.prijs_slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 2px;
+  outline: none;
+  background-color: #073F7F;
+}
+
+.prijs_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #073F7F;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.content {
+  float: left;
+  width: 70%;
+}
+
+.nav_top {
+  width: 100%;
+  background-color: #EBEBEB;
+  height: 40px;
+  float: left;
+  padding-right: 10px;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.totaal {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 30px;
+}
+
+.sorteren {
+  float: left;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 30px;
+}
+
+.sorteren_tekst {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tonen {
+  float: left;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.tonen_tekst {
+  float: left;
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.pagination {
+  float: right;
+  border: none;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.pagination_arrow {
+  float: right;
+  border: none;
+  background-image: url("img/pagination.png");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.head {
+  margin-left: 30px;
+  margin-top: 30px;
+  color: #073F7F;
+  font-size: 40px;
+}
+
+.fietsen {
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.fiets {
+  width: 250px;
+  padding-right: 20px;
+}
+
+.productBlock {
+  padding: 3%;
+}
+
+.innerProductBlock {
+  width: 250px;
+  padding: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Segoe UI";
+}
+
+.header {
+  float: left;
+  /*margin-bottom: 19px;*/
+}
+
+.headerTop {
+  float: left;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+.headerBottom {
+  float: left;
+  margin-top: 0px;
+  width: 100%;
+  background-color: #EBEBEB;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  float: left;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  margin-right: 35px;
+}
+
+ul {
+  margin-top: 0px;
+}
+
+.login {
+  float: right;
+  margin-right: 5px;
+  margin-left: 5px;
+  height: 25px;
+  background-color: white;
+  border: solid 1px #888888;
+  background: url(img/login.png) no-repeat left center;
+  padding-left: 25px;
+}
+
+.shoppingcart {
+  float: right;
+  background-image: url("img/winkelwagen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #888888;
+}
+
+.search {
+  float: right;
+  width: 500px;
+  height: 20px;
+  background: url(img/search_icon.png) no-repeat right center;
+  border: solid 1px #888888;
+}
+
+.header_bottom_left {
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_bottom_right {
+  float: right;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  color: #073F7F;
+}
+
+.nieuwsbrief_linkjes {
+  float: left;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  background-color: #073F7F;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  width: 200px;
+}
+
+hr {
+  width: 80%;
+}
+
+.nieuwsbrief_button {
+  background-color: #1587D2;
+  border: none;
+  color: white;
+}
+
+.nieuwsbrief_head {
+  font-size: 30px;
+}
+
+.footer {
+  float: left;
+  background-color: #EBEBEB;
+  width: 100%;
+  height: 50px;
+  color: #949494;
+}
+
+.footer_right {
+  float: right;
+  margin-top: 16px;
+}
+
+.copyright {
+  float: left;
+}
+
+.content {
+  float: left;
+  width: 100%;
+}
+
+/*.content_top {*/
+/*float: left;*/
+/*width: 100%;*/
+/*}*/
+.content_mid {
+  float: left;
+  width: 100%;
+  padding-left: 100px;
+}
+
+.content_bottom {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  padding-left: 100px;
+}
+
+.specificaties {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.table_grey {
+  background-color: #EBEBEB;
+  border: none;
+  width: 300px;
+}
+
+.table_white {
+  border: none;
+  width: 300px;
+}
+
+.fiets_afbeelding {
+  float: left;
+  width: 400px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+.prijs_info {
+  float: left;
+}
+
+.prijs_info_top {
+  float: right;
+  margin-right: 100px;
+  border-bottom: solid 1px #707070;
+}
+
+.prijs_info_bottom {
+  float: right;
+  margin-right: 100px;
+}
+
+.head {
+  font-size: 35px;
+}
+
+.schade {
+  color: #1587D2;
+}
+
+.winkelwagen_button {
+  background-color: #1587D2;
+  border: none;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.checks {
+  list-style-image: url("img/check.png");
+  float: none;
+  margin-right: 0px;
+}
+
+.checks_ul {
+  margin-top: 10px;
+  margin-right: 230px;
+}
+
+:root {
+  --mdc-theme-primary: #073f7f !important;
+  --mdc-theme-secondary: #018786;
+  --mdc-theme-background: #fff;
+  --mdc-theme-surface: #fff;
+  --mdc-theme-error: #b00020;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-secondary: #fff;
+  --mdc-theme-on-surface: #000;
+  --mdc-theme-on-error: #fff;
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+}
+
+.main-color {
+  color: #073f7f;
+}
+
+.main-color-light {
+  color: #1587d2;
+}
+
+/*# sourceMappingURL=style.css.map */

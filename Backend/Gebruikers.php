@@ -1,7 +1,7 @@
 <?php
 require_once("Controllers/dbconnect.php");
 // Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
-$records = $con->query("SELECT * FROM users");
+$records = $con->query("SELECT * FROM employees");
 ?>
 <html lang="en">
 <head>
@@ -201,7 +201,6 @@ $records = $con->query("SELECT * FROM users");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Gebruikersnaam</th>
-                        <th>Rol</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -217,12 +216,6 @@ $records = $con->query("SELECT * FROM users");
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
                                 <td><?php echo $row['username'] ?></td>
-                                <td><?php if ($row['role'] == 0) {
-                                        echo "Klant";
-                                    } elseif ($row['role'] == 1) {
-                                        echo "Beheerder";
-                                    } ?>
-                                </td>
                             </tr>
 
                         <?php
@@ -238,7 +231,6 @@ $records = $con->query("SELECT * FROM users");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Gebruikersnaam</th>
-                        <th>Rol</th>
                     </tr>
                     </tfoot>
                 </table>

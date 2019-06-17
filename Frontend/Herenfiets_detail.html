@@ -1,262 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-
-
-    <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-        body{
-            font-family: "Segoe UI";
-        }
-
-        .header {
-            float: left;
-            /*margin-bottom: 19px;*/
-        }
-
-        .headerTop {
-            float: left;
-            margin-bottom: 0px;
-            width: 100%;
-            height: 30px;
-            font-size: 20px;
-        }
-
-        .headerBottom {
-            float: left;
-            margin-top: 0px;
-            width: 100%;
-            background-color: #EBEBEB;
-            font-size: 18px;
-        }
-
-        .logo {
-            float: left;
-        }
-
-        .nav {
-            float: left;
-        }
-
-        li {
-            list-style-type: none;
-            float: left;
-            margin-right: 35px;
-        }
-
-        ul {
-            margin-top: 0px;
-        }
-
-        .login {
-            float: right;
-            margin-right: 5px;
-            margin-left: 5px;
-            height: 25px;
-            background-color: white;
-            border: solid 1px #888888;
-            background: url(img/login.png) no-repeat left center;
-            padding-left: 25px;
-        }
-
-        .shoppingcart {
-            float: right;
-            background-image: url("img/winkelwagen.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 25px;
-            width: 25px;
-            border: solid 1px #888888;
-        }
-
-        .search {
-            float: right;
-            width: 500px;
-            height: 20px;
-            background: url(img/search_icon.png) no-repeat right center;
-            border: solid 1px #888888;
-        }
-
-        .header_bottom_left {
-            float: left;
-            margin-right: 20px;
-            margin-top: 4px;
-            margin-bottom: 4px;
-        }
-        .header_top_right {
-            float: right;
-        }
-
-        .header_bottom_right {
-            float: right;
-            margin-top: 4px;
-            margin-bottom: 4px;
-            margin-right: 10px;
-            color: #073F7F;
-        }
-
-        .nieuwsbrief_linkjes {
-            float: left;
-            width: 100%;
-            text-align: center;
-            align-content: center;
-            background-color: #073F7F;
-            color: white;
-        }
-
-        td, th {
-            text-align: left;
-            width: 200px;
-        }
-
-        hr {
-            width: 80%;
-        }
-
-        .nieuwsbrief_button {
-            background-color: #1587D2;
-            border: none;
-            color: white;
-        }
-
-        .nieuwsbrief_head {
-            font-size: 30px;
-        }
-
-        .footer {
-            float: left;
-            background-color: #EBEBEB;
-            width: 100%;
-            height: 50px;
-            color: #949494;
-        }
-
-        .footer_right {
-            float: right;
-            margin-top: 16px;
-        }
-
-        .copyright {
-            float: left;
-        }
-
-        .content {
-            float: left;
-            width: 100%;
-        }
-
-        /*.content_top {*/
-        /*float: left;*/
-        /*width: 100%;*/
-        /*}*/
-
-        .content_mid {
-            float: left;
-            width: 100%;
-            padding-left: 100px;
-        }
-
-        .content_bottom {
-            float: left;
-            width: 100%;
-            margin-bottom: 40px;
-            padding-left: 100px;
-        }
-
-        .specificaties {
-            padding-right: 0px;
-            padding-left: 0px;
-        }
-
-        .table_grey {
-            background-color: #EBEBEB;
-            border: none;
-            width: 300px;
-        }
-
-        .table_white {
-            border: none;
-            width: 300px;
-        }
-
-        .fiets_afbeelding {
-            float: left;
-            width: 400px;
-            height: 400px;
-            margin-left: 100px;
-        }
-
-        .prijs_info {
-            float: left;
-        }
-
-        .prijs_info_top {
-            float: right;
-            margin-right: 100px;
-            border-bottom: solid 1px #707070;
-        }
-
-        .prijs_info_bottom {
-            float: right;
-            margin-right: 100px;
-        }
-
-        .head {
-            font-size: 35px;
-        }
-
-        .schade {
-            color: #1587D2;
-        }
-
-        .winkelwagen_button {
-            background-color: #1587D2;
-            border: none;
-            float: right;
-            margin-bottom: 10px;
-        }
-
-        .checks {
-            list-style-image: url('img/check.png');
-            float: none;
-            margin-right: 0px;
-        }
-
-        .checks_ul {
-            margin-top: 10px;
-            margin-right: 230px;
-        }
-    </style>
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <!-- Material.io -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <!-- Eigen CSS-->
+    <link rel="stylesheet" href="scss/style.css">
+    <!--  FontAwesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <title>Gebruikte fietsen</title>
 </head>
-
 <body>
-<div class="header">
-    <div class="headerTop">
-        <a href="index.html"><img src="img/logo.png" class="logo" height="35" width="100"></a>
-        <!--<div class="logo">-->
-        <!--</div>-->
-        <ul class="nav">
-            <li><a href="Damesfietsen.html">Damesfietsen</a></li>
-            <li><a href="Herenfietsen.html">Herenfietsen</a></li>
-            <li><a href="Kinderfietsen.html">Kinderfietsen</a></li>
-        </ul>
-        <div class="header_top_right">
-            <button class="shoppingcart"></button>
-            <button class="login">Inloggen</button>
-            <input type="text" placeholder="Search" class="search">
+<div class="container-fluid">
+    <!--  Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img class="image" src="assets/img/logo.png" width="" alt="logo">
+        </a>
+        <div id="navbar-buttons">
+            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                    type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fontSize1-2rem"></i>
+            </button>
+            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                    type="button"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-user fontSize1-2rem"></i>
+            </button>
+            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                    type="button"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-shopping-bag fontSize1-2rem"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Damesfietsen.html">Damesfietsen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Herenfietsen.html">Herenfietsen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
+                </li>
+            </ul>
+            <div class="navbar-buttons-top" id="navbar-buttons-top">
+                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2">
+                    <i class="fas fa-user"></i>
+                    <span class="pr-2"></span>
+                    <span class="mdc-button__label">Account</span>
+                </button>
+                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account">
+                    <i class="fas fa-shopping-bag fontSize1-2rem"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Alert -->
+    <div class="alert alert-dark" role="alert" id="alert">
+        <div class="text-black">
+            <div>
+                <div class="float-left mr-3">
+                    <span class="bold">Ruim assortiment</span> met de beste A merken
+                </div>
+                <div class="float-left mr-3">
+                    Tot <span class="bold">14 dagen</span> ruilen en retourneren
+                </div>
+                <div class="float-left gratisVerzenden mr-3">
+                    <span class="bold">Gratis verzenden</span>
+                </div>
+                <div class="float-right main-color gebruikteFiets">
+                    <span class="bold">Op een gebruikte fiets moet je het leren!</span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="headerBottom">
-        <p class="header_bottom_left"><strong>Ruim assortiment</strong> met de beste A merken</p>
-        <p class="header_bottom_left">Tot <strong>14 dagen</strong> ruilen en retourneren</p>
-        <p class="header_bottom_left"><strong>Gratis</strong> verzenden</p>
-        <p class="header_bottom_right">Op een gebruikte fiets moet je het leren!</p>
-    </div>
-</div>
 <div class="content">
     <div class="content_top">
         <div class="row">
@@ -420,5 +251,15 @@
         </ul>
     </div>
 </div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Material.io -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="js/material/material.js"></script>
+<!-- Main -->
+<script type="text/javascript" src="js/Main.js"></script>
 </body>
 </html>
