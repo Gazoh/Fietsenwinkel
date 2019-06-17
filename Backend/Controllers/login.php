@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
     {
         $rememberme = "off";
     }
-    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $sql = "SELECT * FROM employees WHERE email = '$email'";
 
     $result = mysqli_query($con,$sql);
 
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])) {
         {
             session_start();
             $date = date("Y-m-d H:i:s");
-            $sql = "UPDATE users SET last_login = '$date' WHERE email = '$email'";
+            $sql = "UPDATE employees SET last_login = '$date' WHERE email = '$email'";
             if($con->query($sql) === TRUE)
             {
                 $_SESSION['first_name'] = $row['first_name'];
@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
                     $token = substr($str, 0, 10);
                     $token = md5($token);
                     setcookie("rememberMe", "$token", time()+3600); // Set Remember me cookie with the hashed token for 1 hour.
-                    $sql = "UPDATE users SET remember_me = '$token' WHERE email = '$email'";
+                    $sql = "UPDATE employees SET remember_me = '$token' WHERE email = '$email'";
                     if($con->query($sql) === TRUE)
                     {
                         header('Location: ../dashboard.php');
@@ -64,7 +64,7 @@ if(isset($_POST['submit'])) {
                     $token = substr($str, 0, 10);
                     $token = md5($token);
                     setcookie("rememberMe", "$token", time()+2592000); // Set Remember me cookie with the hashed token for 1 month
-                    $sql = "UPDATE users SET remember_me = '$token' WHERE email = '$email'";
+                    $sql = "UPDATE employees SET remember_me = '$token' WHERE email = '$email'";
                     if($con->query($sql) === TRUE)
                     {
                         header('Location: ../dashboard.php');

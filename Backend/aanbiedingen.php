@@ -1,5 +1,8 @@
-<!doctype html>
-<html lang="en">
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM discount_codes");
+?><html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -192,105 +195,41 @@
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Korting</th>
-                        <th>Titel</th>
-                        <th>Onderwerp</th>
+                        <th>Kortingscode</th>
+                        <th>Bedrag</th>
+                        <th>Geldig</th>
                         <th>Van</th>
                         <th>Tot</th>
-                        <th>Korting op</th>
-                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Niet actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Actief</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>25%</td>
-                        <td>Loremipsum</td>
-                        <td>Molestie</td>
-                        <td>20-3-2019</td>
-                        <td>27-3-2019</td>
-                        <td>Imperdiet</td>
-                        <td>Actief</td>
-                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_array($records)) {
+
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['code'] ?></td>
+                            <td>€ <?php echo $row['amount'] ?></td>
+                            <td><?php if($row['is_valid'] == 1){echo "Geldig";}
+                            elseif($row['is_valid'] == 0){echo "Ongeldig";}?></td>
+                            <td><?php echo $row['creation_date'] ?></td>
+                            <td><?php echo $row['expiry_date'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Korting</th>
-                        <th>Titel</th>
-                        <th>Onderwerp</th>
+                        <th>Kortingscode</th>
+                        <th>Bedrag</th>
+                        <th>Geldig</th>
                         <th>Van</th>
                         <th>Tot</th>
-                        <th>Korting op</th>
-                        <th>Status</th>
                     </tr>
                     </tfoot>
                 </table>

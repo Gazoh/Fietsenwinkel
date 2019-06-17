@@ -59,13 +59,11 @@ $(document).ready(function () {
 
             for (var i = 0; i < oData.length; i++) {
                 console.log("ID: " + oData[i][1]);
-                console.log("Korting: " + oData[i][2]);
-                console.log("Titel: " + oData[i][3]);
-                console.log("Onderwerp: " + oData[i][4]);
+                console.log("Code: " + oData[i][2]);
+                console.log("Bedrag: " + oData[i][3]);
+                console.log("Geldig: " + oData[i][4]);
                 console.log("Van: " + oData[i][5]);
                 console.log("Tot: " + oData[i][6]);
-                console.log("Korting op: " + oData[i][7]);
-                console.log("Status: " + oData[i][8]);
             }
         }
     });
