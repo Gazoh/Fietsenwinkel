@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if(!isset($_SESSION['first_name'])){
+    $_SESSION['first_name'] = "";
+}
 ?>
 <html lang="en">
 <head>
