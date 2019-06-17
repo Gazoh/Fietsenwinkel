@@ -10,8 +10,17 @@
   padding-right: 10rem;
 }
 
-@media only screen and (max-width: 859px) {
+.display-inherit {
+  display: inherit !important;
+}
+
+@media only screen and (max-width: 925px) {
   .bike {
     text-align: center !important;
+    padding: 0 !important;
+  }
+
+  .header {
+    display: none;
   }
 }

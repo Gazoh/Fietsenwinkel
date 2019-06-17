@@ -33,6 +33,10 @@ if (!isset($_SESSION['first_name'])) {
         </a>
         <div id="navbar-buttons">
             <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                    type="button" id="header-list">
+                <i class="fas fa-list fontSize1-2rem"></i>
+            </button>
+            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
                     type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars fontSize1-2rem"></i>
@@ -509,6 +513,12 @@ if (!isset($_SESSION['first_name'])) {
                 </div>
             </div>
         </div>
+        <div class="pt-4">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100" type="button">
+                Aanpassen
+            </button>
+        </div>
+
     </div>
     <!-- Fietsen   -->
     <div id="fietsen">

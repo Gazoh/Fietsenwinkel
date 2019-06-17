@@ -26,6 +26,7 @@
   border-radius: 0 !important;
   height: 50px;
   margin-bottom: 0;
+  width: 100%;
 }
 
 .image-responsive {
@@ -117,7 +118,11 @@
   }
 }
 
-@media only screen and (max-width: 381px) {
+.navbar {
+width: 100%;
+}
+
+@media only screen and (max-width: 448px) {
   .navbar-brand {
     display: none;
   }
@@ -125,6 +130,7 @@
   .navbar {
     display: flex;
     justify-content: center;
+    background-color: #f8f9fa!important;
   }
 }
 
