@@ -1,0 +1,17 @@
+.checkbox-type-fietsen {
+  display: block !important;
+}
+
+.mdc-slider__pin-value-marker {
+  font-size: .575rem !important;
+}
+
+.onbeschadigt {
+  padding-right: 10rem;
+}
+
+@media only screen and (max-width: 859px) {
+  .bike {
+    text-align: center !important;
+  }
+}

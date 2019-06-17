@@ -8,12 +8,7 @@ $sidebar: #07356A;
 $succes: #1AAF00;
 
 @import "pagina/index";
-@import "pagina/herenfietsen";
-@import "pagina/herenfietsen_detail";
-@import "pagina/damesfietsen";
-@import "pagina/damesfietsen_detail";
-@import "pagina/kinderfietsen";
-@import "pagina/kinderfietsen_detail";
+@import "pagina/fietsen_pagina";
 @import "fonts";
 
 .main-color {
@@ -47,4 +42,12 @@ body, html {
 
 .fontSize1rem {
   font-size: 1rem !important;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.color-light {
+  color: rgba(0,0,0,.5) !important;
 }
