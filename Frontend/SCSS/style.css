@@ -190,7 +190,7 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .header {
+  div#mobile-header {
     display: none;
   }
 
@@ -211,11 +211,6 @@
 
   div#filter-header {
     display: none;
-  }
-}
-@media only screen and (min-width: 992px) {
-  div#mobile-header {
-    display: none !important;
   }
 }
 /* -------------------------------------------- */
