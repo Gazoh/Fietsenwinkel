@@ -908,10 +908,10 @@ svg.mdc-button__icon {
 }
 
 .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background {
-    border-color: #018786;
-    border-color: var(--mdc-theme-secondary, #018786);
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786)
+    border-color: #1587d2;
+    border-color: var(--mdc-theme-secondary, #1587d2);
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 @-webkit-keyframes mdc-checkbox-fade-in-background-0 {
@@ -920,10 +920,10 @@ svg.mdc-button__icon {
         background-color: transparent
     }
     50% {
-        border-color: #018786;
-        border-color: var(--mdc-theme-secondary, #018786);
-        background-color: #018786;
-        background-color: var(--mdc-theme-secondary, #018786)
+        border-color: #1587d2;
+        border-color: var(--mdc-theme-secondary, #1587d2);
+        background-color: #1587d2;
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -933,19 +933,19 @@ svg.mdc-button__icon {
         background-color: transparent
     }
     50% {
-        border-color: #018786;
-        border-color: var(--mdc-theme-secondary, #018786);
-        background-color: #018786;
-        background-color: var(--mdc-theme-secondary, #018786)
+        border-color: #1587d2;
+        border-color: var(--mdc-theme-secondary, #1587d2);
+        background-color: #1587d2;
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
 @-webkit-keyframes mdc-checkbox-fade-out-background-0 {
     0%, 80% {
-        border-color: #018786;
-        border-color: var(--mdc-theme-secondary, #018786);
-        background-color: #018786;
-        background-color: var(--mdc-theme-secondary, #018786)
+        border-color: #1587d2;
+        border-color: var(--mdc-theme-secondary, #1587d2);
+        background-color: #1587d2;
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
     100% {
         border-color: rgba(0, 0, 0, .54);
@@ -955,10 +955,10 @@ svg.mdc-button__icon {
 
 @keyframes mdc-checkbox-fade-out-background-0 {
     0%, 80% {
-        border-color: #018786;
-        border-color: var(--mdc-theme-secondary, #018786);
-        background-color: #018786;
-        background-color: var(--mdc-theme-secondary, #018786)
+        border-color: #1587d2;
+        border-color: var(--mdc-theme-secondary, #1587d2);
+        background-color: #1587d2;
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
     100% {
         border-color: rgba(0, 0, 0, .54);
@@ -985,12 +985,12 @@ svg.mdc-button__icon {
 }
 
 .mdc-checkbox__background::before {
-    background-color: #018786
+    background-color: #1587d2
 }
 
 @supports not (-ms-ime-align: auto) {
     .mdc-checkbox__background::before {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -1270,12 +1270,12 @@ svg.mdc-button__icon {
 }
 
 .mdc-checkbox::before, .mdc-checkbox::after {
-    background-color: #018786
+    background-color: #1587d2
 }
 
 @supports not (-ms-ime-align: auto) {
     .mdc-checkbox::before, .mdc-checkbox::after {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -2363,7 +2363,7 @@ svg.mdc-button__icon {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
-    background-color: #018786;
+    background-color: #1587d2;
     color: #fff;
     color: var(--mdc-theme-on-secondary, #fff)
 }
@@ -2399,7 +2399,7 @@ svg.mdc-button__icon {
 
 @supports not (-ms-ime-align: auto) {
     .mdc-fab {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -5065,22 +5065,22 @@ a.mdc-list-item {
 }
 
 .mdc-radio .mdc-radio__native-control:enabled:checked + .mdc-radio__background .mdc-radio__outer-circle {
-    border-color: #018786;
-    border-color: var(--mdc-theme-secondary, #018786)
+    border-color: #1587d2;
+    border-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-radio .mdc-radio__native-control:enabled + .mdc-radio__background .mdc-radio__inner-circle {
-    border-color: #018786;
-    border-color: var(--mdc-theme-secondary, #018786)
+    border-color: #1587d2;
+    border-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-radio .mdc-radio__background::before {
-    background-color: #018786
+    background-color: #1587d2
 }
 
 @supports not (-ms-ime-align: auto) {
     .mdc-radio .mdc-radio__background::before {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -5277,12 +5277,12 @@ a.mdc-list-item {
 }
 
 .mdc-radio::before, .mdc-radio::after {
-    background-color: #018786
+    background-color: #1587d2
 }
 
 @supports not (-ms-ime-align: auto) {
     .mdc-radio::before, .mdc-radio::after {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -5463,12 +5463,12 @@ a.mdc-list-item {
 }
 
 .mdc-ripple-surface--accent::before, .mdc-ripple-surface--accent::after {
-    background-color: #018786
+    background-color: #1587d2
 }
 
 @supports not (-ms-ime-align: auto) {
     .mdc-ripple-surface--accent::before, .mdc-ripple-surface--accent::after {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -6321,8 +6321,8 @@ a.mdc-list-item {
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__track {
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786)
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__track-container {
@@ -6330,25 +6330,25 @@ a.mdc-list-item {
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__track-marker::after, .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__track-marker-container::after {
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786)
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__thumb {
-    fill: #018786;
-    fill: var(--mdc-theme-secondary, #018786);
-    stroke: #018786;
-    stroke: var(--mdc-theme-secondary, #018786)
+    fill: #1587d2;
+    fill: var(--mdc-theme-secondary, #1587d2);
+    stroke: #1587d2;
+    stroke: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__focus-ring {
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786)
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__pin {
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786)
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-slider:not(.mdc-slider--disabled) .mdc-slider__pin {
@@ -6773,17 +6773,17 @@ a.mdc-list-item {
 }
 
 .mdc-switch.mdc-switch--checked .mdc-switch__track {
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786);
-    border-color: #018786;
-    border-color: var(--mdc-theme-secondary, #018786)
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2);
+    border-color: #1587d2;
+    border-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-switch.mdc-switch--checked .mdc-switch__thumb {
-    background-color: #018786;
-    background-color: var(--mdc-theme-secondary, #018786);
-    border-color: #018786;
-    border-color: var(--mdc-theme-secondary, #018786)
+    background-color: #1587d2;
+    background-color: var(--mdc-theme-secondary, #1587d2);
+    border-color: #1587d2;
+    border-color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-switch:not(.mdc-switch--checked) .mdc-switch__track {
@@ -6995,12 +6995,12 @@ a.mdc-list-item {
 }
 
 .mdc-switch__thumb-underlay::before, .mdc-switch__thumb-underlay::after {
-    background-color: #018786
+    background-color: #1587d2
 }
 
 @supports not (-ms-ime-align: auto) {
     .mdc-switch__thumb-underlay::before, .mdc-switch__thumb-underlay::after {
-        background-color: var(--mdc-theme-secondary, #018786)
+        background-color: var(--mdc-theme-secondary, #1587d2)
     }
 }
 
@@ -7272,8 +7272,8 @@ a.mdc-list-item {
 }
 
 .mdc-tab-indicator .mdc-tab-indicator__content--icon {
-    color: #018786;
-    color: var(--mdc-theme-secondary, #018786)
+    color: #1587d2;
+    color: var(--mdc-theme-secondary, #1587d2)
 }
 
 .mdc-tab-indicator .mdc-tab-indicator__content--icon {
@@ -8876,7 +8876,7 @@ a.mdc-list-item {
 
 :root {
     --mdc-theme-primary: #073f7f !important;
-    --mdc-theme-secondary: #018786;
+    --mdc-theme-secondary: #1587d2;
     --mdc-theme-background: #fff;
     --mdc-theme-surface: #fff;
     --mdc-theme-error: #b00020;
@@ -8907,8 +8907,8 @@ a.mdc-list-item {
 }
 
 .mdc-theme--secondary {
-    color: #018786 !important;
-    color: var(--mdc-theme-secondary, #018786) !important
+    color: #1587d2 !important;
+    color: var(--mdc-theme-secondary, #1587d2) !important
 }
 
 .mdc-theme--background {
@@ -9027,8 +9027,8 @@ a.mdc-list-item {
 }
 
 .mdc-theme--secondary-bg {
-    background-color: #018786 !important;
-    background-color: var(--mdc-theme-secondary, #018786) !important
+    background-color: #1587d2 !important;
+    background-color: var(--mdc-theme-secondary, #1587d2) !important
 }
 
 .mdc-toolbar {

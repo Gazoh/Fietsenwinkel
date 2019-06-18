@@ -62,7 +62,7 @@ if (!isset($_SESSION['first_name'])) {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account mr-2"
+                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
                         data-toggle="modal" data-target="#accountModal">
                     <i class="fas fa-user"></i>
                     <span class="pr-2"></span>
@@ -75,7 +75,7 @@ if (!isset($_SESSION['first_name'])) {
                     } ?>
                 </button>
                 <div class="dropdown float-right">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account"
+                    <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                             type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                         <i class="fas fa-shopping-bag fontSize1rem"></i>

@@ -28,500 +28,501 @@ if (!isset($_SESSION['first_name'])) {
 <div class="container-fluid">
     <!-- Mobile Header Filter   -->
     <div id="mobile-header" class="header float-left p-5">
-            <!-- Type Fietsen -->
-            <div id="type-fietsen">
-                <p class="h2 bRoboto main-color type-fiets">Type fiets</p>
-                <hr>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Elektrische fietsen</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Stadsfietsen</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Racefietsen</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Vouwfietsen</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Mountainbikes</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Tandems</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Schoolfietsen</label>
-                </div>
-            </div>
-            <!-- Frame type -->
-            <div id="frametype">
-                <p class="h2 bRoboto main-color pt-5">Frametype</p>
-                <hr>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Damesfieten</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Herenfietsen</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Kinderfietsen</label>
-                </div>
-            </div>
-            <!-- Merk -->
-            <div id="merk">
-                <p class="h2 bRoboto main-color pt-5">Merk</p>
-                <hr>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Gazelle</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Scott</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Cortina</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Batavus</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Stromer</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Abus</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Target</label>
-                </div>
-            </div>
-            <!-- Kleur -->
-            <div id="kleur">
-                <p class="h2 bRoboto main-color pt-5">Kleur</p>
-                <hr>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Groen</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Blauw</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Rood</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Geel</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Wit</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Grijs</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Bruin</label>
-                </div>
-                <div class="mdc-form-field d-block">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
-                        <div class="mdc-checkbox__background">
-                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                                <path class="mdc-checkbox__checkmark-path" fill="none"
-                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                            </svg>
-                            <div class="mdc-checkbox__mixedmark"></div>
-                        </div>
-                    </div>
-                    <label for="checkbox-1">Zwart</label>
-                </div>
-            </div>
-            <!-- Kleur -->
-            <div id="prijs">
-                <p class="h2 bRoboto main-color pt-5">Prijs</p>
-                <hr>
-                <div class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
-                     aria-valuemin="359" aria-valuemax="5489" aria-valuenow="0" aria-label="Select Value">
-                    <div class="mdc-slider__track-container">
-                        <div class="mdc-slider__track"></div>
-                    </div>
-                    <div class="mdc-slider__thumb-container">
-                        <div class="mdc-slider__pin">
-                            <span class="mdc-slider__pin-value-marker"></span>
-                        </div>
-                        <svg class="mdc-slider__thumb" width="21" height="21">
-                            <circle cx="10.5" cy="10.5" r="7.875"></circle>
+        <!-- Type Fietsen -->
+        <div id="type-fietsen">
+            <p class="h2 bRoboto main-color type-fiets">Type fiets</p>
+            <hr>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
                         </svg>
-                        <div class="mdc-slider__focus-ring"></div>
+                        <div class="mdc-checkbox__mixedmark"></div>
                     </div>
                 </div>
+                <label for="checkbox-1">Elektrische fietsen</label>
             </div>
-            <div class="pt-4">
-                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100" type="button">
-                    Aanpassen
-                </button>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Stadsfietsen</label>
             </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Racefietsen</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Vouwfietsen</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Mountainbikes</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Tandems</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Schoolfietsen</label>
+            </div>
+        </div>
+        <!-- Frame type -->
+        <div id="frametype">
+            <p class="h2 bRoboto main-color pt-5">Frametype</p>
+            <hr>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Damesfieten</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Herenfietsen</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Kinderfietsen</label>
+            </div>
+        </div>
+        <!-- Merk -->
+        <div id="merk">
+            <p class="h2 bRoboto main-color pt-5">Merk</p>
+            <hr>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Gazelle</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Scott</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Cortina</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Batavus</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Stromer</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Abus</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Target</label>
+            </div>
+        </div>
+        <!-- Kleur -->
+        <div id="kleur">
+            <p class="h2 bRoboto main-color pt-5">Kleur</p>
+            <hr>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Groen</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Blauw</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Rood</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Geel</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Wit</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Grijs</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Bruin</label>
+            </div>
+            <div class="mdc-form-field d-block">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1"/>
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="checkbox-1">Zwart</label>
+            </div>
+        </div>
+        <!-- Kleur -->
+        <div id="prijs">
+            <p class="h2 bRoboto main-color pt-5">Prijs</p>
+            <hr>
+            <div class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
+                 aria-valuemin="359" aria-valuemax="5489" aria-valuenow="0" aria-label="Select Value">
+                <div class="mdc-slider__track-container">
+                    <div class="mdc-slider__track"></div>
+                </div>
+                <div class="mdc-slider__thumb-container">
+                    <div class="mdc-slider__pin">
+                        <span class="mdc-slider__pin-value-marker"></span>
+                    </div>
+                    <svg class="mdc-slider__thumb" width="21" height="21">
+                        <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                    </svg>
+                    <div class="mdc-slider__focus-ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-4">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100" type="button">
+                Aanpassen
+            </button>
         </div>
     </div>
-    <!--  Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <img class="image" src="assets/img/logo.png" width="" alt="logo">
-        </a>
-        <div id="navbar-buttons">
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button" id="header-list">
-                <i class="fas fa-list fontSize1-2rem"></i>
+</div>
+<!--  Nav -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img class="image" src="assets/img/logo.png" width="" alt="logo">
+    </a>
+    <div id="navbar-buttons">
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button" id="header-list">
+            <i class="fas fa-list fontSize1-2rem"></i>
+        </button>
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fontSize1-2rem"></i>
+        </button>
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-user fontSize1-2rem"></i>
+        </button>
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-shopping-bag fontSize1-2rem"></i>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Damesfietsen<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Herenfietsen.html">Herenfietsen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
+            </li>
+        </ul>
+        <!-- Nav Buttons / Shopping cart -->
+        <div class="navbar-buttons-top" id="navbar-buttons-top">
+            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
+                    data-toggle="modal" data-target="#accountModal">
+                <i class="fas fa-user"></i>
+                <span class="pr-2"></span>
+                <?php if ($_SESSION['first_name'] != "") {
+                    echo "<span class=\"mdc-button__label\">";
+                    echo $_SESSION['first_name'];
+                    echo "</span>";
+                } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
+                    echo "<span class='mdc-button__label rRoboto'>Account</span>";
+                } ?>
             </button>
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars fontSize1-2rem"></i>
-            </button>
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-user fontSize1-2rem"></i>
-            </button>
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-shopping-bag fontSize1-2rem"></i>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Damesfietsen<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Herenfietsen.html">Herenfietsen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
-                </li>
-            </ul>
-            <!-- Nav Buttons / Shopping cart -->
-            <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account mr-2"
-                        data-toggle="modal" data-target="#accountModal">
-                    <i class="fas fa-user"></i>
-                    <span class="pr-2"></span>
-                    <?php if ($_SESSION['first_name'] != "") {
-                        echo "<span class=\"mdc-button__label\">";
-                        echo $_SESSION['first_name'];
-                        echo "</span>";
-                    } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
-                        echo "<span class='mdc-button__label rRoboto'>Account</span>";
-                    } ?>
+            <div class="dropdown float-right">
+                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
+                        type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                    <i class="fas fa-shopping-bag fontSize1rem"></i>
                 </button>
-                <div class="dropdown float-right">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account"
-                            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                        <i class="fas fa-shopping-bag fontSize1rem"></i>
-                    </button>
-                    <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
+                <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
+                    <div class="order">
+                        <div class="float-left pt-4">
+                            <i class="fas fa-times pr-4"></i>
                         </div>
-                        <hr>
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
+                        <img src="assets/img/bike.png" width="60">
+                        <div class="float-right">
+                            <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                            <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
                         </div>
-                        <hr>
-                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
-                            <p>&euro; 3758,-</p>
+                    </div>
+                    <hr>
+                    <div class="order">
+                        <div class="float-left pt-4">
+                            <i class="fas fa-times pr-4"></i>
                         </div>
-                        <hr>
-                        <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
-                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
-                                    type="button" id="bestellenDropdown">
-                                Bestellen
-                            </button>
+                        <img src="assets/img/bike.png" width="60">
+                        <div class="float-right">
+                            <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                            <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
                         </div>
+                    </div>
+                    <hr>
+                    <div class="pt-1 text-center bRoboto" id="totaalbedrag">
+                        <p>&euro; 3758,-</p>
+                    </div>
+                    <hr>
+                    <p class="text-center">2 Artikelen in winkelwagen</p>
+                    <div class="row">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
+                                type="button" id="bestellenDropdown">
+                            Bestellen
+                        </button>
+                    </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Alert -->
-    <div class="alert bg-light" role="alert" id="alert">
-        <div class="text-black">
-            <div>
-                <div class="float-left mr-3">
-                    <span class="bRoboto">Ruim assortiment</span> met de beste A merken
-                </div>
-                <div class="float-left mr-3">
-                    Tot <span class="bRoboto">14 dagen</span> ruilen en retourneren
-                </div>
-                <div class="float-left gratisVerzenden mr-3">
-                    <span class="bRoboto">Gratis verzenden</span>
-                </div>
-                <div class="float-right main-color gebruikteFiets">
-                    <span class="bRoboto">Op een gebruikte fiets moet je het leren!</span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Header Filter -->
-    <div id="filter-header" class="header float-left p-5">
+</nav>
+<!-- Alert -->
+<div class="alert bg-light" role="alert" id="alert">
+    <div class="text-black">
+        <div>
+            <div class="float-left mr-3">
+                <span class="bRoboto">Ruim assortiment</span> met de beste A merken
+            </div>
+            <div class="float-left mr-3">
+                Tot <span class="bRoboto">14 dagen</span> ruilen en retourneren
+            </div>
+            <div class="float-left gratisVerzenden mr-3">
+                <span class="bRoboto">Gratis verzenden</span>
+            </div>
+            <div class="float-right main-color gebruikteFiets">
+                <span class="bRoboto">Op een gebruikte fiets moet je het leren!</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header Filter -->
+<div class="body-fietsen p-5">
+    <div id="filter-header" class="header float-left pb-5">
         <!-- Type Fietsen -->
         <div id="type-fietsen">
             <p class="h2 bRoboto main-color type-fiets">Type fiets</p>
@@ -1000,6 +1001,7 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
