@@ -21,7 +21,8 @@ $succes: #1AAF00;
 
 body, html {
   font-family: Roboto-Regular !important;
-  height: 100%;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .bRoboto {
@@ -51,3 +52,4 @@ body, html {
 .color-light {
   color: rgba(0,0,0,.5) !important;
 }
+

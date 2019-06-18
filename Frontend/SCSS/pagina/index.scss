@@ -111,15 +111,8 @@
   }
 }
 
-// Media Queries Mobile
-@media only screen and (max-width: 992px) {
-  #navbar-buttons-top {
-    display: none !important;
-  }
-}
-
 .navbar {
-width: 100%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 448px) {
@@ -130,7 +123,7 @@ width: 100%;
   .navbar {
     display: flex;
     justify-content: center;
-    background-color: #f8f9fa!important;
+    background-color: #f8f9fa !important;
   }
 }
 

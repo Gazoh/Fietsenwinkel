@@ -111,11 +111,6 @@
     height: 75px;
   }
 }
-@media only screen and (max-width: 992px) {
-  #navbar-buttons-top {
-    display: none !important;
-  }
-}
 .navbar {
   width: 100%;
 }
@@ -177,14 +172,50 @@
   display: inherit !important;
 }
 
-@media only screen and (max-width: 925px) {
-  .bike {
-    text-align: center !important;
-    padding: 0 !important;
-  }
+#fietsen {
+  text-align: center;
+}
 
+.showFilter {
+  display: inherit !important;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.showFilter .mdc-form-field.d-block {
+  color: #fff !important;
+}
+.showFilter .type-fiets {
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 992px) {
   .header {
     display: none;
+  }
+
+  #fietsen {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .fietsen {
+    width: 100%;
+  }
+
+  .navbar-buttons-top {
+    display: none;
+  }
+
+  div#filter-header {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  div#mobile-header {
+    display: none !important;
   }
 }
 /* -------------------------------------------- */
@@ -230,7 +261,8 @@
 
 body, html {
   font-family: Roboto-Regular !important;
-  height: 100%;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .bRoboto {
