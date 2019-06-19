@@ -902,7 +902,7 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Fietsen   -->
-    <div class="row fietsen p-4 text-center">
+    <div class="row fietsen p-4 text-center w-100">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
             <a href="damesfiets_detail.html">
                 <a href="kinderfiets_detail.php">

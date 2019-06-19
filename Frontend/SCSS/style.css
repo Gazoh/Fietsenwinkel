@@ -109,6 +109,7 @@
 
   .alert {
     height: 75px;
+    width: 100%;
   }
 }
 .navbar {
@@ -124,6 +125,7 @@
     display: flex;
     justify-content: center;
     background-color: #f8f9fa !important;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 627px) {
@@ -214,6 +216,15 @@
     justify-content: center;
   }
 }
+.image-detail {
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.winkelwagen {
+  background-color: #1587d2 !important;
+}
+
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
@@ -302,6 +313,10 @@ body, html {
   position: absolute;
   left: 0;
   top: 9px;
+}
+
+.succes {
+  color: #1AAF00;
 }
 
 /*# sourceMappingURL=style.css.map */

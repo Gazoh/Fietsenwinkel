@@ -29,3 +29,7 @@ $('.slick-buttons').append($('.slick-prev'), $('.slick-next'));
 // Classes toevoegen aan de buttons
 $('.slick-prev').addClass('foo-button mdc-button mdc-button--dense mdc-ripple-upgraded');
 $('.slick-next').addClass('foo-button mdc-button mdc-button--dense mdc-ripple-upgraded float-right');
+
+// Previous en Next text veranderen naar Vorige en Volgende
+$(".slick-prev").html('Vorige');
+$(".slick-next").html('Volgende');

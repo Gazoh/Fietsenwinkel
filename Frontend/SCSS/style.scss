@@ -9,7 +9,9 @@ $succes: #1AAF00;
 
 @import "pagina/index";
 @import "pagina/fietsen_pagina";
+@import "pagina/detail_pagina";
 @import "fonts";
+
 
 .main-color {
   color: $main_color;
@@ -66,4 +68,8 @@ body, html {
   position: absolute;
   left: 0;
   top: 9px;
+}
+
+.succes {
+  color: $succes;
 }
