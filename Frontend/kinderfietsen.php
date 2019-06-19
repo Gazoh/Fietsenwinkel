@@ -982,6 +982,108 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
     </div>
+    <!-- Account Modal -->
+    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100 text-center bRoboto" id="account">Inloggen</h5>
+                </div>
+                <div class="modal-body bg-light">
+                    <form action="Controllers/login.php" method="POST">
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
+                            <i class="fas fa-user mdc-text-field__icon userIcon"></i>
+                            <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off"
+                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch" style="">
+                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">E-mail</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
+                            <i class="fas fa-key mdc-text-field__icon userIcon"></i>
+                            <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off"
+                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch" style="">
+                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">Wachtwoord</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                            type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                            data-target="#registreerModal">
+                        Registeren
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                            type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        Inloggen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registreren Modal -->
+    <div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100 text-center bRoboto" id="account">Registreren</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="Controllers/register.php" method="POST">
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
+                            <i class="fas fa-user mdc-text-field__icon userIcon"></i>
+                            <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off"
+                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch" style="">
+                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">E-mail</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
+                            <i class="fas fa-key mdc-text-field__icon userIcon"></i>
+                            <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off"
+                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
+                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch" style="">
+                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">Wachtwoord</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
+                        Terug
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                            type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                            data-target="#registreerModal">
+                        Registeren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
