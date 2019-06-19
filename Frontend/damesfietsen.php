@@ -403,7 +403,6 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
 </div>
-</div>
 <!--  Nav -->
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">
@@ -1027,10 +1026,5 @@ if (!isset($_SESSION['first_name'])) {
 <script src="js/material/material.js"></script>
 <!-- Main -->
 <script type="text/javascript" src="js/Main.js"></script>
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
 </body>
 </html>
