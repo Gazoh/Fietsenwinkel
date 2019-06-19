@@ -1,9 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -14,87 +11,84 @@
     <link rel="stylesheet" href="scss/style.css">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
-    <!-- Slick Slider -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <title>Gebruikte fietsen</title>
+    <title>Heren Fietsen</title>
 </head>
 <body>
-<div class="container-fluid">
-    <!--  Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img class="image" src="assets/img/logo.png" width="" alt="logo">
-        </a>
-        <div id="navbar-buttons">
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars fontSize1-2rem"></i>
+<!--  Nav -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img class="image" src="assets/img/logo.png" width="" alt="logo">
+    </a>
+    <div id="navbar-buttons">
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fontSize1-2rem"></i>
+        </button>
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-user fontSize1-2rem"></i>
+        </button>
+        <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                type="button"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-shopping-bag fontSize1-2rem"></i>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Damesfietsen.html">Damesfietsen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Herenfietsen.html">Herenfietsen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
+            </li>
+        </ul>
+        <div class="navbar-buttons-top" id="navbar-buttons-top">
+            <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2">
+                <i class="fas fa-user"></i>
+                <span class="pr-2"></span>
+                <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-user fontSize1-2rem"></i>
-            </button>
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account">
                 <i class="fas fa-shopping-bag fontSize1-2rem"></i>
             </button>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Damesfietsen.html">Damesfietsen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Herenfietsen.html">Herenfietsen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
-                </li>
-            </ul>
-            <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account mr-2">
-                    <i class="fas fa-user"></i>
-                    <span class="pr-2"></span>
-                    <span class="mdc-button__label">Account</span>
-                </button>
-                <button class="foo-button mdc-button mdc-button--outlined mdc-ripple-upgraded account">
-                    <i class="fas fa-shopping-bag fontSize1-2rem"></i>
-                </button>
+    </div>
+</nav>
+<!-- Alert -->
+<div class="alert alert-dark" role="alert" id="alert">
+    <div class="text-black">
+        <div>
+            <div class="float-left mr-3">
+                <span class="bold">Ruim assortiment</span> met de beste A merken
             </div>
-        </div>
-    </nav>
-    <!-- Alert -->
-    <div class="alert alert-dark" role="alert" id="alert">
-        <div class="text-black">
-            <div>
-                <div class="float-left mr-3">
-                    <span class="bold">Ruim assortiment</span> met de beste A merken
-                </div>
-                <div class="float-left mr-3">
-                    Tot <span class="bold">14 dagen</span> ruilen en retourneren
-                </div>
-                <div class="float-left gratisVerzenden mr-3">
-                    <span class="bold">Gratis verzenden</span>
-                </div>
-                <div class="float-right main-color gebruikteFiets">
-                    <span class="bold">Op een gebruikte fiets moet je het leren!</span>
-                </div>
+            <div class="float-left mr-3">
+                Tot <span class="bold">14 dagen</span> ruilen en retourneren
+            </div>
+            <div class="float-left gratisVerzenden mr-3">
+                <span class="bold">Gratis verzenden</span>
+            </div>
+            <div class="float-right main-color gebruikteFiets">
+                <span class="bold">Op een gebruikte fiets moet je het leren!</span>
             </div>
         </div>
     </div>
+</div>
 <div class="content">
     <div class="content_top">
         <div class="row">
-            <div class="col-sm-6">
-                <img src="img/bike_men.png" class="fiets_afbeelding">
+            <div class="col-12 col-sm-12 col-md- col-lg-6">
+                <img src="img/bike_women.png" class="fiets_afbeelding">
             </div>
-            <div class="col-sm-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                 <div class="prijs_info">
                     <div class="prijs_info_top">
                         <p class="head"><strong>Lorem</strong> ipsum adiscing elit ligula eros<br>
@@ -103,7 +97,6 @@
                         <p><s>&euro;1276,-</s><br>&euro;1087,-</p>
                         <button class="winkelwagen_button">In Winkelwagen</button>
                     </div>
-
                     <div class="prijs_info_bottom">
                         <ul class="checks_ul">
                             <li class="checks"><strong>Gratis</strong> verzenden</li>

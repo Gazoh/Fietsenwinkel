@@ -21,7 +21,7 @@ if (!isset($_SESSION['first_name'])) {
     =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type=' text/css' media='all'>
     <!-- Animate CSS -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css"/>
-    <title>Dames Fietsen</title>
+    <title>Heren Fietsen</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -439,14 +439,14 @@ if (!isset($_SESSION['first_name'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="damesfietsen.php">Damesfietsen</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Damesfietsen<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Herenfietsen<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="herenfietsen.php">Herenfietsen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Kinderfietsen.php">Kinderfietsen</a>
+                    <a class="nav-link" href="kinderfietsen.php">Kinderfietsen</a>
                 </li>
             </ul>
             <!-- Nav Buttons / Shopping cart -->
@@ -904,8 +904,8 @@ if (!isset($_SESSION['first_name'])) {
     <!-- Fietsen   -->
     <div class="row fietsen p-4">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-            <a href="damesfiets_detail.html">
-                <img src="assets/img/bike_girls.png" class="img-thumbnail">
+            <a href="herenfietsen_detail.php">
+                <img src="assets/img/bike_men.png" class="img-thumbnail">
             </a>
             <div class="bike-information">
                 <div class="h5">
@@ -923,7 +923,9 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <img src="assets/img/bike_girls.png" class="img-thumbnail">
+            <a href="herenfietsen_detail.php">
+                <img src="assets/img/bike_men.png" class="img-thumbnail">
+            </a>
             <div class="bike-information">
                 <div class="h5">
                     <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
@@ -940,7 +942,9 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <img src="assets/img/bike_girls.png" class="img-thumbnail">
+            <a href="herenfietsen_detail.php">
+                <img src="assets/img/bike_men.png" class="img-thumbnail">
+            </a>
             <div class="bike-information">
                 <div class="h5">
                     <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
@@ -957,7 +961,9 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <img src="assets/img/bike_girls.png" class="img-thumbnail">
+            <a href="herenfietsen_detail.php">
+                <img src="assets/img/bike_men.png" class="img-thumbnail">
+            </a>
             <div class="bike-information">
                 <div class="h5">
                     <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula

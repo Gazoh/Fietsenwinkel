@@ -56,10 +56,10 @@ if (!isset($_SESSION['first_name'])) {
                     <a class="nav-link" href="Damesfietsen.php">Damesfietsen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Herenfietsen.html">Herenfietsen</a>
+                    <a class="nav-link" href="Herenfietsen.php">Herenfietsen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Kinderfietsen.html">Kinderfietsen</a>
+                    <a class="nav-link" href="Kinderfietsen.php">Kinderfietsen</a>
                 </li>
             </ul>
             <!-- Nav Buttons / Shopping cart -->
