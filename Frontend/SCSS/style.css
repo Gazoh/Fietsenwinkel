@@ -164,6 +164,10 @@
   font-size: 0.575rem !important;
 }
 
+.img-thumbnail {
+  border: 0 !important;
+}
+
 .onbeschadigt {
   padding-right: 10rem;
 }
@@ -188,17 +192,6 @@
     display: none;
   }
 
-  #fietsen {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  .fietsen {
-    width: 100%;
-  }
-
   .navbar-buttons-top {
     display: none;
   }
@@ -210,6 +203,15 @@
 @media only screen and (min-width: 992px) {
   #mobile-header {
     display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bike {
+    text-align: center !important;
+  }
+
+  .fietsen {
+    justify-content: center;
   }
 }
 /* -------------------------------------------- */
