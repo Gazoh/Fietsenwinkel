@@ -297,4 +297,11 @@ body, html {
   border-radius: 0 !important;
 }
 
+.dismiss-button {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
 /*# sourceMappingURL=style.css.map */

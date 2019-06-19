@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Batu
- * Date: 17/06/2019
- * Time: 11:35
- */
-require_once("dbconnect.php");
+once("dbconnect.php");
 session_start();
 if(isset($_POST['submit'])) {
     // Verkrijgen van de data vanuit de login form en toewijzen aan variabelen
