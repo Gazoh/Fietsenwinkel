@@ -902,7 +902,7 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Fietsen   -->
-    <div class="row fietsen p-4">
+    <div class="row fietsen p-4 text-center">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
             <a href="damesfiets_detail.html">
                 <a href="kinderfiets_detail.php">
@@ -988,98 +988,97 @@ if (!isset($_SESSION['first_name'])) {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
+                            data-dismiss="modal" aria-label="Close" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <h5 class="modal-title w-100 text-center bRoboto" id="account">Inloggen</h5>
                 </div>
                 <div class="modal-body bg-light">
                     <form action="Controllers/login.php" method="POST">
-                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
-                            <i class="fas fa-user mdc-text-field__icon userIcon"></i>
-                            <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off"
-                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
-                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-text-field mdc-text-field--outlined w-100">
+                            <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input"
+                                   required>
+                            <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch" style="">
-                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">E-mail</label>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">E-mail</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
-                            <i class="fas fa-key mdc-text-field__icon userIcon"></i>
-                            <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off"
-                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
-                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-text-field mdc-text-field--outlined w-100 mt-3 mb-3">
+                            <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
+                                   required>
+                            <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch" style="">
-                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">Wachtwoord</label>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">Password</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
+                        </div>
+                        <div id="modal-buttons" class="float-right">
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler mr-1"
+                                    type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                                    data-target="#registreerModal">
+                                Registeren
+                            </button>
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                                    type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                Inloggen
+                            </button>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
-                            data-target="#registreerModal">
-                        Registeren
-                    </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        Inloggen
-                    </button>
                 </div>
             </div>
         </div>
     </div>
     <!-- Registreren Modal -->
-    <div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle" aria-hidden="true">
+    <div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle"
+         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
+                            data-dismiss="modal" aria-label="Close" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <h5 class="modal-title w-100 text-center bRoboto" id="account">Registreren</h5>
                 </div>
                 <div class="modal-body">
                     <form action="Controllers/register.php" method="POST">
-                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100">
-                            <i class="fas fa-user mdc-text-field__icon userIcon"></i>
-                            <input class="mdc-text-field__input" autocorrect="on" type="email" autocomplete="off"
-                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
-                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-text-field mdc-text-field--outlined w-100">
+                            <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch" style="">
-                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">E-mail</label>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">E-mail</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon w-100 mt-3">
-                            <i class="fas fa-key mdc-text-field__icon userIcon"></i>
-                            <input class="mdc-text-field__input" autocorrect="on" type="password" autocomplete="off"
-                                   spellcheck="false" id="demo-mdc-text-field" required maxlength="524288">
-                            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                        <div class="mdc-text-field mdc-text-field--outlined w-100 mt-3">
+                            <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch" style="">
-                                    <label for="demo-mdc-text-field" class="mdc-floating-label" style="">Wachtwoord</label>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">Password</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
-                        Terug
-                    </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
-                            data-target="#registreerModal">
-                        Registeren
-                    </button>
+                    <div id="modal-buttons" class="float-right">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
+                            Terug
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            Registreren
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

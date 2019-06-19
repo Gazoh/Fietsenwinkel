@@ -1,5 +1,5 @@
 <?php
-once("dbconnect.php");
+require_once("dbconnect.php");
 session_start();
 if(isset($_POST['submit'])) {
     // Verkrijgen van de data vanuit de login form en toewijzen aan variabelen

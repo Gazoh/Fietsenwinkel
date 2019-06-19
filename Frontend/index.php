@@ -10,7 +10,8 @@ if (!isset($_SESSION['first_name'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <!-- Material.io -->
     <link href="css/Material/material-components-web.min.css" rel="stylesheet">
@@ -18,7 +19,8 @@ if (!isset($_SESSION['first_name'])) {
     <link rel="stylesheet" href="scss/style.css">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
+    =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='
+    text/css' media='all'>
     <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>Gebruikte fietsen</title>
@@ -362,12 +364,17 @@ if (!isset($_SESSION['first_name'])) {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
+                            data-dismiss="modal" aria-label="Close" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <h5 class="modal-title w-100 text-center bRoboto" id="account">Inloggen</h5>
                 </div>
                 <div class="modal-body bg-light">
                     <form action="Controllers/login.php" method="POST">
                         <div class="mdc-text-field mdc-text-field--outlined w-100">
-                            <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input" required>
+                            <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input"
+                                   required>
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
@@ -376,8 +383,9 @@ if (!isset($_SESSION['first_name'])) {
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
-                        <div class="mdc-text-field mdc-text-field--outlined w-100 mt-3">
-                            <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input" required>
+                        <div class="mdc-text-field mdc-text-field--outlined w-100 mt-3 mb-3">
+                            <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
+                                   required>
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
@@ -386,36 +394,32 @@ if (!isset($_SESSION['first_name'])) {
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
-                        <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account mt-4 float-right" type="submit" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
-                            Inloggen
-                        </button>
-                        <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account mt-4 mr-2 float-right" type="submit">
-                            Registreren
-                        </button>
+                        <div id="modal-buttons" class="float-right">
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler mr-1"
+                                    type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                                    data-target="#registreerModal">
+                                Registeren
+                            </button>
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                                    type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                Inloggen
+                            </button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
-                            data-target="#registreerModal">
-                        Registeren
-                    </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        Inloggen
-                    </button>
                 </div>
             </div>
         </div>
     </div>
     <!-- Registreren Modal -->
-    <div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle" aria-hidden="true">
+    <div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle"
+         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button" data-dismiss="modal" aria-label="Close" type="button">
+                    <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
+                            data-dismiss="modal" aria-label="Close" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h5 class="modal-title w-100 text-center bRoboto" id="account">Registreren</h5>
@@ -423,7 +427,7 @@ if (!isset($_SESSION['first_name'])) {
                 <div class="modal-body">
                     <form action="Controllers/register.php" method="POST">
                         <div class="mdc-text-field mdc-text-field--outlined w-100">
-                            <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input" required>
+                            <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
@@ -433,7 +437,7 @@ if (!isset($_SESSION['first_name'])) {
                             </div>
                         </div>
                         <div class="mdc-text-field mdc-text-field--outlined w-100 mt-3">
-                            <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input" required>
+                            <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input">
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
@@ -442,13 +446,15 @@ if (!isset($_SESSION['first_name'])) {
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
-                        <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account mt-4 float-right" type="submit" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
+                    </form>
+                    <div id="modal-buttons" class="float-right">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
                             Terug
                         </button>
-                        <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account mt-4 mr-2 float-right" type="submit">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             Registreren
                         </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
