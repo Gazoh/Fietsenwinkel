@@ -145,14 +145,22 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
     </div>
+    <!-- Winkelwagen -->
     <div id="winkelwagen">
         <p class="h1 d-flex justify-content-center mt-4 bRoboto">Winkel wagen</p>
         <hr class="w-50">
-        <div class="row p-5">
-            <div>
-                <img src="assets/img/bike.png" class="winkelwagen-image">
-                <p>Lorem ipsum adiscing elit ligula eros vestibulum mi</p>
+        <div class="row p-3 bg-light w-100 m-0">
+            <div class="col-xl-2 float-right">
+                <img src="assets/img/bike_detail.png" class="float-left winkelwagen-image">
+                <p class="bRoboto d-block justify-content-center text-center m-0">Berenfiets kaas</p>
+                <p class="main-color-light d-block justify-content-center text-center">Onbeschadigd</p>
             </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto pl-2 m-0">Merk</p>
+                <p class="bRoboto">Gazelle</p>
+            </div>
+            <div class="vr my-auto"></div>
         </div>
     </div>
 </div>
