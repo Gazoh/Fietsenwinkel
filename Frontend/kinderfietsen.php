@@ -21,7 +21,7 @@ if (!isset($_SESSION['first_name'])) {
     =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type=' text/css' media='all'>
     <!-- Animate CSS -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css"/>
-    <title>Kinder Fietsen</title>
+    <title>Dames Fietsen</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -415,10 +415,6 @@ if (!isset($_SESSION['first_name'])) {
         </a>
         <div id="navbar-buttons">
             <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
-                    type="button" id="header-list" data-toggle="modal" data-target="#mobileFilter">
-                <i class="fas fa-list fontSize1-2rem"></i>
-            </button>
-            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
                     type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars fontSize1-2rem"></i>
@@ -443,7 +439,7 @@ if (!isset($_SESSION['first_name'])) {
                     <a class="nav-link" href="damesfietsen.php">Damesfietsen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="herenfietsen.php">Herenfietsen</a>
+                    <a class="nav-link" href="Herenfietsen.php">Herenfietsen</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Kinderfietsen<span class="sr-only">(current)</span></a>
@@ -497,12 +493,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <hr>
                         <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
+                        <a href="winkelwagen.php">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
                                     type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -902,30 +898,9 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Fietsen   -->
-    <div class="row fietsen p-4 text-center w-100">
+    <div class="row fietsen p-4 text-center">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-            <a href="damesfiets_detail.html">
-                <a href="kinderfiets_detail.php">
-                    <img src="assets/img/bike_boys.png" class="img-thumbnail">
-                </a>
-            </a>
-            <div class="bike-information">
-                <div class="h5">
-                    <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
-                    <div class="d-block h6 pt-2 main-color-light bRoboto">
-                        <span class="Onbeschadigd">Onbeschadigd</span>
-                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
-                           title="Voordeel &euro; 189,-"></i></span>
-                    </div>
-                    <span class="d-block color-light iRoboto font-italic line-through">&euro; 1276,-</span>
-                </div>
-                <div class="h3">
-                    <span class="bRoboto mt-5 main-color">&euro; 1087,-</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <a href="kinderfiets_detail.php">
+            <a href="damesfietsen_detail.php">
                 <img src="assets/img/bike_boys.png" class="img-thumbnail">
             </a>
             <div class="bike-information">
@@ -944,9 +919,7 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <a href="kinderfiets_detail.php">
-                <img src="assets/img/bike_boys.png" class="img-thumbnail">
-            </a>
+            <img src="assets/img/bike_boys.png" class="img-thumbnail">
             <div class="bike-information">
                 <div class="h5">
                     <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
@@ -963,9 +936,24 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <a href="kinderfiets_detail.php">
-                <img src="assets/img/bike_boys.png" class="img-thumbnail">
-            </a>
+            <img src="assets/img/bike_boys.png" class="img-thumbnail">
+            <div class="bike-information">
+                <div class="h5">
+                    <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
+                    <div class="d-block h6 pt-2 main-color-light bRoboto">
+                        <span class="Onbeschadigd">Onbeschadigd</span>
+                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
+                           title="Voordeel &euro; 189,-"></i></span>
+                    </div>
+                    <span class="d-block color-light iRoboto font-italic line-through">&euro; 1276,-</span>
+                </div>
+                <div class="h3">
+                    <span class="bRoboto mt-5 main-color">&euro; 1087,-</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
+            <img src="assets/img/bike_boys.png" class="img-thumbnail">
             <div class="bike-information">
                 <div class="h5">
                     <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
@@ -1042,7 +1030,7 @@ if (!isset($_SESSION['first_name'])) {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
+                    <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
                             data-dismiss="modal" aria-label="Close" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>
