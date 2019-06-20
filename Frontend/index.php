@@ -223,46 +223,38 @@ if (!isset($_SESSION['first_name'])) {
                 <div class="star">
                     <img class="float-right" src="assets/img/4_sterren.png" alt="sterren">
                 </div>
-                <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
-                <p class="datum text-white">XX-XX-XXXX</p>
-                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                    ultrices diam
-                    non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
-                    euismod
-                    consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
-                    tempus. Sed tristique efficitur accumsan. Suspendisse ante tortor, porta non purus
-                    sed,
-                    ornare finibus sapien. Curabitur bibendum gravida nisi, vel varius dui aliquam eget.</p>
+                <h1 class="h3 m-0 text-white">Een fiets van chocolade!</h1>
+                <p class="datum text-white">10-01-2019</p>
+                <p class="review-persoon text-white">
+                    Ik had 3 fietsen bestelt, maar ik kreeg er maar 2 binnen op de lever datum!
+                    Nadat ik contact had opgenomen met de service kreeg ik de volgende dag de fiets binnen, met een sorry pakket!
+                    Dit is netjes behandeld en de fiets chocolaatjes waren zeer lekker!
+                </p>
             </div>
             <div class="col-lg-4 review">
                 <div class="star">
                     <img class="float-right" src="assets/img/5_sterren.png" alt="sterren">
                 </div>
-                <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
-                <p class="datum text-white">XX-XX-XXXX</p>
-                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                    ultrices diam
-                    non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
-                    euismod
-                    consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
-                    tempus. Sed tristique efficitur accumsan. Suspendisse ante tortor, porta non purus
-                    sed,
-                    ornare finibus sapien. Curabitur bibendum gravida nisi, vel varius dui aliquam eget.</p>
+                <h1 class="h3 m-0 text-white">Beste service!</h1>
+                <p class="datum text-white">10-06-2019</p>
+                <p class="review-persoon text-white">
+                    Ik had een fiets bestelt die over 2 weken  zou binnenkomen.
+                    Ik werd de dag er na gebeld dat die al binnen was en dat ze hem graag vandaag nog zouden leveren!
+                    De fiets werd zoals afgesproken om 14:30 geleverd!
+                    Wat een  top service!
+                </p>
             </div>
             <div class="col-lg-4 review">
                 <div class="star">
                     <img class="float-right" src="assets/img/3_sterren.png" alt="sterren">
                 </div>
-                <h1 class="h3 m-0 text-white">Lorem Ipsum</h1>
-                <p class="datum text-white">XX-XX-XXXX</p>
-                <p class="review-persoon text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                    ultrices diam
-                    non erat maximus, maximus dapibus magna suscipit. Maecenas at pharetra augue. Nam
-                    euismod
-                    consectetur nibh, et lacinia enim tincidunt eget. Fusce tincidunt elit facilisis dolor auctor
-                    tempus. Sed tristique efficitur accumsan. Suspendisse ante tortor, porta non purus
-                    sed,
-                    ornare finibus sapien. Curabitur bibendum gravida nisi, vel varius dui aliquam eget.</p>
+                <h1 class="h3 m-0 text-white">Service probleem is net opgelost</h1>
+                <p class="datum text-white">31-04-2019</p>
+                <p class="review-persoon text-white">
+                    De fiets kwam 2 dagen te laat met een briefje er op geplakt en een kras!
+                    De fiets werkt goed en ze zijn speciaal langsgekomen om de kras weg te halen ook al was die ontstaan tijdens tijdens de bezorging!
+                    De service kan nog beter maar ik zou hier zo meer fieten bestellen!
+                </p>
             </div>
         </div>
     </div>
@@ -272,11 +264,10 @@ if (!isset($_SESSION['first_name'])) {
             <div class="col"></div>
             <div class="text-center col-lg-6">
                 <h1 class="h2 bRoboto main-color">Nieuwsbrief</h1>
-                <p class="main-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non dignissim
-                    ligula, eget porta erat. Sed egestas quam ut purus dignissim malesuada. Nulla
-                    molestie, ipsum eu sollicitudin convallis, nibh tortor tempor ligula, quis mattis massa tellus ut
-                    purus. Vestibulum ante ipsum primis in faucibus
-                    orci luctus et ultrices posuere cubilia Curae; Duis mi massa, posuere nec turpis ac, malesuada.</p>
+                <p class="main-color">
+                    Schrijf u ook in voor onze nieuwsbrief! blijf altijd up to date met de laatste nieuwtjes, feitjes en acties bij ons!
+                    Ook als u zich inschrijft bij ons krijgt u korting of een fietsers starters pakket bij uw eerst volgende bestelling!
+                </p>
             </div>
             <div class="col"></div>
         </div>
@@ -337,8 +328,8 @@ if (!isset($_SESSION['first_name'])) {
                 <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
                 <ul class="service-ul main-color">
                     <li class="service-li">Gebruikte Fietsen BV</li>
-                    <li class="service-li">Lorem ipsum dolor xx</li>
-                    <li class="service-li">xxxx xx Lorem</li>
+                    <li class="service-li">fietsstraat 111</li>
+                    <li class="service-li">1078 GV Amsterdam</li>
                     <li class="service-li">Nederland</li>
                     <li class="service-li">Tel nr: +31 (0)12 345 6789</li>
                 </ul>
