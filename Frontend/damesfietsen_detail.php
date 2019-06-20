@@ -115,12 +115,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <hr>
                         <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
+                        <a href="winkelwagen.php">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
                                     type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@ if (!isset($_SESSION['first_name'])) {
                     dui consectetur finibus sit amet ut metus. Phasellus consectetur rhoncus faucibus.</p>
             </div>
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 float-left">
-                <table  class="table table-striped">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th scope="col">#</th>

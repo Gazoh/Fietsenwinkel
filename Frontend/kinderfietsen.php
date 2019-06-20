@@ -497,12 +497,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <hr>
                         <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
+                        <a href="winkelwagen.php">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
                                     type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

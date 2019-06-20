@@ -115,12 +115,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <hr>
                         <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
+                        <a href="winkelwagen.php">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
                                     type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -142,88 +142,6 @@ if (!isset($_SESSION['first_name'])) {
                 <div class="float-right main-color gebruikteFiets">
                     <span class="bRoboto">Op een gebruikte fiets moet je het leren!</span>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="content pt-3">
-        <div class="row justify-content-center w-100">
-            <div class="col-xl-5 col-lg-10 col-md-10 col-sm-10 col-10">
-                <img src="assets/img/bike_detail.png" class="img-thumbnail image-detail">
-            </div>
-            <div class="col-xl-6 col-lg-10 col-md-10 col-sm-10 col-10 h-100 my-auto p-3">
-                <p class="h4"><span class="bRoboto">Lorem</span> ipsum adiscing elit ligula eros vestibulum mi</p>
-                <p class="h6 main-color-light">Licht beschadigd</p>
-                <p class="mt-4 h4 color-light iRoboto font-italic line-through">&euro; 1276,-</p>
-                <div class="w-100">
-                    <p class="h3 main-color bRoboto float-left">&euro; 1087,-</p>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account bRoboto winkelwagen ml-5"
-                            type="button" id="bestellenDropdown">
-                        In Winkelwagen
-                    </button>
-                </div>
-                <hr class="w-100">
-                <div id="check">
-                    <div class="mb-2" id="gratis-verzenden">
-                        <i class="fas fa-check-circle mr-2 succes"></i>
-                        <span class="bRoboto">Gratis </span>verzenden
-                    </div>
-                    <div class="mb-2" id="ruilen-retourneren">
-                        <i class="fas fa-check-circle mr-2 succes"></i>
-                        tot <span class="bRoboto">14 dagen </span> ruilen en retourneren
-                    </div>
-                    <div class="mb-2" id="geld-terug">
-                        <i class="fas fa-check-circle mr-2 succes"></i>
-                        Niet goed = <span class="bRoboto">geld terug </span>
-                    </div>
-                    <div id="klanten-beoordeling">
-                        <i class="fas fa-check-circle mr-2 succes"></i>
-                        <span class="bRoboto">Klantenbeoordeling 9.1 uit 7532 reviews</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 mt-4 float-left" id="product-omschrijving">
-                <p class="h2 bRoboto">Productomschrijving</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis mi nec mi laoreet efficitur.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae interdum ex, et mattis libero.
-                    Nullam convallis, justo sed feugiat varius, risus nibh faucibus ante, a venenatis leo turpis ut
-                    urna. Nam faucibus, eros vitae accumsan cursus, magna odio pellentesque urna, et gravida sapien
-                    mauris non risus. Vivamus porta quis sem quis aliquet. Suspendisse at porttitor orci. Class aptent
-                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vel faucibus
-                    neque. Nam quis orci sit amet est pretium hendrerit. Mauris scelerisque pulvinar eleifend. Nullam
-                    ullamcorper ut orci nec dictum. Maecenas suscipit ipsum et eros mattis ultrices. Cras eget libero id
-                    dui consectetur finibus sit amet ut metus. Phasellus consectetur rhoncus faucibus.</p>
-            </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 float-left">
-                <table  class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>

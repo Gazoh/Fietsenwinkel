@@ -112,13 +112,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <hr>
                         <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
+                        <a href="winkelwagen.php">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
                                     type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
-                        </div>
-
+                        </a>
                     </div>
                 </div>
             </div>
@@ -448,10 +447,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                     </form>
                     <div id="modal-buttons" class="float-right">
-                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
                             Terug
                         </button>
-                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
                             Registreren
                         </button>
                     </div>

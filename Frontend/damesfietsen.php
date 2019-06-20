@@ -493,13 +493,12 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <hr>
                         <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
+                        <a href="winkelwagen.php">
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
                                     type="button" id="bestellenDropdown">
                                 Bestellen
                             </button>
-                        </div>
-
+                        </a>
                     </div>
                 </div>
             </div>
@@ -901,7 +900,7 @@ if (!isset($_SESSION['first_name'])) {
     <!-- Fietsen   -->
     <div class="row fietsen p-4 text-center">
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-            <a href="damesfiets_detail.html">
+            <a href="damesfietsen_detail.php">
                 <img src="assets/img/bike_girls.png" class="img-thumbnail">
             </a>
             <div class="bike-information">
