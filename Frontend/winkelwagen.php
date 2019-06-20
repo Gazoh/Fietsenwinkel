@@ -60,8 +60,8 @@ if (!isset($_SESSION['first_name'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="damesfietsen.php">Damesfietsen</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Herenfietsen<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="herenfietsen.php">Herenfietsen</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kinderfietsen.php">Kinderfietsen</a>
@@ -142,6 +142,16 @@ if (!isset($_SESSION['first_name'])) {
                 <div class="float-right main-color gebruikteFiets">
                     <span class="bRoboto">Op een gebruikte fiets moet je het leren!</span>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="winkelwagen">
+        <p class="h1 d-flex justify-content-center mt-4 bRoboto">Winkel wagen</p>
+        <hr class="w-50">
+        <div class="row p-5">
+            <div>
+                <img src="assets/img/bike.png" class="winkelwagen-image">
+                <p>Lorem ipsum adiscing elit ligula eros vestibulum mi</p>
             </div>
         </div>
     </div>
