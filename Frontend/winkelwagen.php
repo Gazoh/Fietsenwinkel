@@ -149,7 +149,7 @@ if (!isset($_SESSION['first_name'])) {
     <div id="winkelwagen">
         <p class="h1 d-flex justify-content-center mt-4 bRoboto">Winkel wagen</p>
         <hr class="w-50">
-        <div class="row p-3 bg-light w-100 m-0">
+        <div class="row p-2 bg-light w-100 m-0 justify-content-center">
             <div class="col-xl-2 float-right">
                 <img src="assets/img/bike_detail.png" class="float-left winkelwagen-image">
                 <p class="bRoboto d-block justify-content-center text-center m-0">Berenfiets kaas</p>
@@ -157,10 +157,38 @@ if (!isset($_SESSION['first_name'])) {
             </div>
             <div class="vr my-auto"></div>
             <div class="brand pl-5 pr-5 h-100 my-auto">
-                <p class="iRoboto pl-2 m-0">Merk</p>
-                <p class="bRoboto">Gazelle</p>
+                <p class="iRoboto m-0 text-center">Merk</p>
+                <p class="bRoboto text-center">Gazelle</p>
             </div>
             <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Color</p>
+                <p class="bRoboto text-center">Black</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Framenummer</p>
+                <p class="bRoboto text-center">GZ0316026</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Versnellingen</p>
+                <p class="bRoboto text-center   ">7</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Prijs</p>
+                <p class="bRoboto text-center main-color-light">&euro; 745,-</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <button class="foo-button mdc-button mdc-button--label mdc-ripple-upgraded account navbar-toggler mr-1"
+                        type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                        data-target="#registreerModal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
