@@ -1,10 +1,12 @@
 <?php
 require_once("dbconnect.php");
 session_start();
+debug_to_console("Kaas is slecht");
 if(isset($_POST['submit'])) {
     // Verkrijgen van de data vanuit de login form en toewijzen aan variabelen
     $email = $_POST['emailInput'];
     $password = $_POST['passwordInput'];
+    debug_to_console("Kaas is goed");
     if(isset($_POST['rememberMe']))
     {
         $rememberme = $_POST['rememberMe'];
