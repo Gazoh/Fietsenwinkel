@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM newsletter");
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -198,33 +202,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>210</td>
-                        <td>Lorem ipsum</td>
-                        <td>Duis condimentum</td>
-                        <td>314</td>
-                        <td>---</td>
-                        <td>In de wacht</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>210</td>
-                        <td>Lorem ipsum</td>
-                        <td>Duis condimentum</td>
-                        <td>314</td>
-                        <td>--</td>
-                        <td>Concept</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>210</td>
-                        <td>Lorem ipsum</td>
-                        <td>Duis condimentum</td>
-                        <td>314</td>
-                        <td>13-3-2019</td>
-                        <td>Verzonden</td>
-                    </tr>
+                        <?php
+                        while ($row = mysqli_fetch_array($records))
+                        {
+                            ?>
+                            <tr>
+                                <td></td>
+                                <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['title'] ?></td>
+                                <td><?php echo $row['description'] ?></td>
+                                <td><?php echo $row['receivers'] ?></td>
+                                <td><?php echo $row['date_sent'] ?></td>
+                                <td><?php echo $row['status'] ?></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
                     </tbody>
                     <tfoot>
                     <tr>
