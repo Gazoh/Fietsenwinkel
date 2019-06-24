@@ -196,7 +196,6 @@ $records = $con->query("SELECT * FROM newsletter");
                         <th>ID</th>
                         <th>Titel</th>
                         <th>Onderwerp</th>
-                        <th>Ontvangers</th>
                         <th>Verzonden</th>
                         <th>Status</th>
                     </tr>
@@ -224,7 +223,6 @@ $records = $con->query("SELECT * FROM newsletter");
                         <th>ID</th>
                         <th>Titel</th>
                         <th>Onderwerp</th>
-                        <th>Ontvangers</th>
                         <th>Verzonden</th>
                         <th>Status</th>
                     </tr>
