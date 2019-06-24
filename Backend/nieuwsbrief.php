@@ -211,7 +211,13 @@ $records = $con->query("SELECT * FROM newsletter");
                                 <td><?php echo $row['title'] ?></td>
                                 <td><?php echo $row['description'] ?></td>
                                 <td><?php echo $row['date_sent'] ?></td>
-                                <td><?php echo $row['status'] ?></td>
+                                <?php if($row['status'] == 0)
+                                    {
+                                        echo "<td style='color: orangered'>Concept</td>";
+                                    } elseif ($row['status'] == 1)
+                                {
+                                    echo  "<td style='color: green'>Verstuurd</td>";
+                                }?>
                             </tr>
                             <?php
                         }
