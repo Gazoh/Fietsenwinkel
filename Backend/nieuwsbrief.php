@@ -211,7 +211,6 @@ $records = $con->query("SELECT * FROM newsletter");
                                 <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['title'] ?></td>
                                 <td><?php echo $row['description'] ?></td>
-                                <td><?php echo $row['receivers'] ?></td>
                                 <td><?php echo $row['date_sent'] ?></td>
                                 <td><?php echo $row['status'] ?></td>
                             </tr>
