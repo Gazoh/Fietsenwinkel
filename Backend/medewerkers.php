@@ -355,10 +355,10 @@ $records = $con->query("SELECT * FROM employees");
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help" data-dismiss="modal">
+                    <button type="button" data-dismiss="modal" class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
                         <span class="mdc-button__label">Sluiten</span>
                     </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error" data-dismiss="modal" type="submit" name="submit">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error" type="submit" name="submit" form="addMedewerker">
                         <span class="mdc-button__label">Opslaan</span>
                     </button>
                 </div>
