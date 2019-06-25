@@ -43,11 +43,11 @@
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="Gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="medewerkers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
-                        <span class="sidebar-title">Gebruikers</span>
+                        <span class="sidebar-title">Medewerkers</span>
                     </div>
                 </a>
             </li>
@@ -167,11 +167,6 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded toevoegen" id="toevoegen">
-                    <i class="fas fa-plus"></i>
-                    <span class="pr-2"></span>
-                    <span class="mdc-button__label">Toevoegen</span>
-                </button>
                 <div class="selectDatatable mdc-button__label">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>

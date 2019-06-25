@@ -47,11 +47,11 @@ $records = $con->query("SELECT * FROM bikes");
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="medewerkers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
-                        <span class="sidebar-title">Gebruikers</span>
+                        <span class="sidebar-title">Medewerkers</span>
                     </div>
                 </a>
             </li>

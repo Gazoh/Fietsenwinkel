@@ -50,7 +50,7 @@ $records = $con->query("SELECT * FROM employees");
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
-                        <span class="sidebar-title">Gebruikers</span>
+                        <span class="sidebar-title">Medewerkers</span>
                     </div>
                 </a>
             </li>

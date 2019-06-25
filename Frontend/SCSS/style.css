@@ -328,4 +328,16 @@ body, html {
   color: #1AAF00;
 }
 
+.w-70 {
+  width: 70% !important;
+}
+
+.w-15 {
+  width: 15% !important;
+}
+
+.w-82 {
+  width: 82% !important;
+}
+
 /*# sourceMappingURL=style.css.map */
