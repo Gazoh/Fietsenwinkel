@@ -988,9 +988,9 @@ if (!isset($_SESSION['first_name'])) {
                     </button>
                     <h5 class="modal-title w-100 text-center bRoboto" id="account">Registreren</h5>
                 </div>
-                <div class="modal-body bg-light">
+                <div class="modal-body p-4">
                     <form action="Controllers/register.php" method="POST" id="registreerForm">
-                        <div class="row justify-content-center pt-2">
+                        <div class="row justify-content-center">
                             <div class="mdc-text-field mdc-text-field--outlined mr-2">
                                 <input type="text" name="firstNameInput" id="tf-outlined" class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
@@ -1011,9 +1011,7 @@ if (!isset($_SESSION['first_name'])) {
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="mdc-text-field mdc-text-field--outlined w-72 mr-2 mt-2">
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
                                 <input type="text" name="adressInput" id="tf-outlined" class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
@@ -1023,8 +1021,9 @@ if (!isset($_SESSION['first_name'])) {
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="mdc-text-field mdc-text-field--outlined w-15 mt-2">
-                                <input type="text" name="houseNumberInput" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="houseNumberInput" id="tf-outlined"
+                                       class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -1033,72 +1032,76 @@ if (!isset($_SESSION['first_name'])) {
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="mdc-text-field mdc-text-field--outlined mr-2 mt-2">
-                                    <input type="text" name="zipCodeInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">Postcode</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="zipCodeInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Postcode</label>
                                     </div>
-                                </div>
-                                <div class="mdc-text-field mdc-text-field--outlined mt-2">
-                                    <input type="text" name="cityInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">Stad</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
-                                    </div>
-                                </div>
-                                <div class="mdc-text-field mdc-text-field--outlined mt-2 w-82">
-                                    <input type="text" name="phoneInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">Telefoonnummer</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
-                                    </div>
-                                </div>
-                                <div class="mdc-text-field mdc-text-field--outlined mt-2 w-100 w-82">
-                                    <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">E-mail</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
-                                    </div>
-                                </div>
-                                <div class="mdc-text-field mdc-text-field--outlined mt-2 w-82">
-                                    <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">Password</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
-                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="cityInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Stad</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="phoneInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Telefoonnummer</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined w-91 mt-2">
+                                <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input"
+                                       required>
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">E-mail</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined w-91 mt-2">
+                                <input type="text" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
+                                       required minlength="6">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Wachtwoord</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
-            </div>
-            <div class="modal-footer w-100">
-                <div id="modal-buttons" class="float-right">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler" aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal" data-target="#accountModal">
-                        Terug
-                    </button>
-                    <button type="submit" name="submit" form="registreerForm" class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            aria-controls="navbarSupportedContent" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        Registreren
-                    </button>
+                <div class="modal-footer w-100">
+                    <div id="modal-buttons" class="float-right">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                                data-target="#accountModal">
+                            Terug
+                        </button>
+                        <button type="submit" name="submit" form="registreerForm"
+                                class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            Registreren
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

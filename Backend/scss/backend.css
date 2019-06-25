@@ -351,7 +351,7 @@ button.btn.btn-primary.nav-buttons {
   width: 100%;
 }
 
-a#gebruikers_previous:hover {
+a#medewerkers_previous:hover {
   color: #fff !important;
 }
 
@@ -370,37 +370,37 @@ thead {
   height: 38px;
 }
 
-div#gebruikers_filter {
+div#medewerkers_filter {
   float: right;
   font-family: Roboto-Bold !important;
 }
 
-#gebruikers_length {
+#medewerkers_length {
   float: right !important;
   height: 28px !important;
 }
 
-a#gebruikers_next:hover {
+a#medewerkers_next:hover {
   color: #fff !important;
 }
 
 @media only screen and (max-width: 1107px) {
-  div#gebruikers_filter {
+  div#medewerkers_filter {
     display: none;
   }
 }
 @media only screen and (max-width: 856px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: none;
   }
 }
 @media only screen and (max-width: 788px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: block;
   }
 }
 @media only screen and (max-width: 616px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: none !important;
   }
 }
@@ -713,7 +713,7 @@ ul.list-group {
 .modal-body {
   display: flex;
   justify-content: center;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .modal-header {
@@ -993,6 +993,10 @@ body, html {
   --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+}
+
+.w-91 {
+  width: 91% !important;
 }
 
 /*# sourceMappingURL=backend.css.map */

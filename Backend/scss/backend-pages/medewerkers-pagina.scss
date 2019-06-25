@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-a#gebruikers_previous:hover {
+a#medewerkers_previous:hover {
   color: #fff !important;
 }
 
@@ -30,40 +30,40 @@ thead {
   height: 38px;
 }
 
-div#gebruikers_filter {
+div#medewerkers_filter {
   float: right;
   font-family: Roboto-Bold !important;
 }
 
-#gebruikers_length {
+#medewerkers_length {
   float: right !important;
   height: 28px !important;
 }
 
-a#gebruikers_next:hover {
+a#medewerkers_next:hover {
   color: #fff !important;
 }
 
 @media only screen and (max-width: 1107px) {
-  div#gebruikers_filter {
+  div#medewerkers_filter {
     display: none;
   }
 }
 
 @media only screen and (max-width: 856px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: none;
   }
 }
 
 @media only screen and (max-width: 788px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: block;
   }
 }
 
 @media only screen and (max-width: 616px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: none !important;
   }
 }

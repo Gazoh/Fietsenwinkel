@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#gebruikers').DataTable({
+    $('#medewerkers').DataTable({
         responsive: true,
         "info": false,
         // Button
@@ -51,16 +51,11 @@ $(document).ready(function () {
         elementClicked = true;
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
-
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
-            var oTable = $('#gebruikers').DataTable();
-            $('#gebruikers thead').on('click', 'tr', function () {
+            var oTable = $('#medewerkers').DataTable();
+            $('#medewerkers thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
                 var pos = oTable.row(this).index();
                 var row = oTable.row(pos).data();
@@ -74,13 +69,13 @@ $(document).ready(function () {
                 console.log("Achternaam: " + oData[i][3]);
                 console.log("Email: " + oData[i][4]);
                 console.log("Telefoonnummer: " + oData[i][5]);
-                console.log("Gebruikersnaam: " + oData[i][6]);
+                console.log("medewerkersnaam: " + oData[i][6]);
             }
         }
     });
 
     // Append Datatable toevoegen aan een id
-    $('#gebruikers_length').appendTo('#card-header');
-    $('#gebruikers_filter').appendTo('#card-header');
+    $('#medewerkers_length').appendTo('#card-header');
+    $('#medewerkers_filter').appendTo('#card-header');
 
 });
