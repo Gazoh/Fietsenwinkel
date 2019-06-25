@@ -1,6 +1,6 @@
 <?php
 require_once("Controllers/dbconnect.php");
-$sql = "SELECT * FROM bikes WHERE biketype='2'";
+$sql = "SELECT * FROM bikes WHERE biketype='1'";
 $res = mysqli_query($con, $sql);
 session_start();
 if (!isset($_SESSION['first_name'])) {
@@ -912,7 +912,7 @@ if (!isset($_SESSION['first_name'])) {
         <?php
         while ($r = mysqli_fetch_assoc($res)) { ?>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-                <a href="damesfietsen_detail.php">
+                <a href="herenfietsen_detail.php">
                     <img src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>" class="img-thumbnail">
                 </a>
                 <div class="bike-information">
@@ -926,7 +926,6 @@ if (!isset($_SESSION['first_name'])) {
                                 } ?></span>
                         </div>
                     </div>
-                    GIT PULL
                     <div class="h3">
                         <span class="bRoboto mt-5 main-color"><?php echo '&euro;' . $r['selling_price'] ?></span>
                     </div>

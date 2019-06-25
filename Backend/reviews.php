@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van fietsen uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM reviews r
+INNER JOIN customers c
+ON  r.user_id = c.id");
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -22,7 +28,7 @@
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Fietsen</title>
+    <title>Fietsenwinkel - Reviews</title>
 </head>
 <body>
 <div id="wrapper" class="toggled">
@@ -170,12 +176,6 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded toevoegen" id="toevoegen"
-                        data-toggle="modal" data-target="#toevoegenModal">
-                    <i class="fas fa-plus"></i>
-                    <span class="pr-2"></span>
-                    <span class="mdc-button__label">Toevoegen</span>
-                </button>
                 <div class="selectDatatable mdc-button__label">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
@@ -194,140 +194,72 @@
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
+                        <th>Klant</th>
+                        <th>Fiets ID</th>
                         <th>Klant ID</th>
                         <th>Beoordeling</th>
+                        <th>Titel</th>
+                        <th>Beschrijving</th>
                         <th>Datum</th>
-                        <th>Zichtbaarheid op website</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>Lorem</td>
-                        <td>Loremipsum</td>
-                        <td>123</td>
-                        <td>4 STERREN</td>
-                        <td>27-3-2019</td>
-                        <td>Zichtbaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>Lorem</td>
-                        <td>Loremipsum</td>
-                        <td>123</td>
-                        <td>5 STERRREN</td>
-                        <td>27-3-2019</td>
-                        <td>Niet zichtbaar</td>
-                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_array($records)) {
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['review_id'] ?></td>
+                            <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
+                            <td><?php echo $row['bike_id'] ?></td>
+                            <td><?php echo $row['user_id'] ?></td>
+                            <td><?php echo $row['rating'] ?></td>
+                            <td><?php echo $row['title'] ?></td>
+                            <td><?php echo $row['description'] ?></td>
+                            <td><?php echo $row['post_date'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
+                        <th>Klant</th>
+                        <th>Fiets ID</th>
                         <th>Klant ID</th>
                         <th>Beoordeling</th>
+                        <th>Titel</th>
+                        <th>Beschrijving</th>
                         <th>Datum</th>
-                        <th>Zichtbaarheid op website</th>
                     </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
     </div>
-    <!-- Toevoegen Modal -->
-    <div class="modal fade" id="toevoegenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <!-- Delete Bike -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Review toevoegen</h5>
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
                 </div>
-                <div class="modal-body p-4">
-                    <!-- Voornaam & Achternaam -->
-                    <div class="row justify-content-center">
-                        <div class="mdc-text-field mdc-text-field--outlined mr-2">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Voornaam</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Achternaam</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="email" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Klant ID</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="number" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Beoordeling</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="date" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"></label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field-helper-line">
-                            <div class="mdc-text-field-helper-text">Datum</div>
-                        </div>
-                        <div class="mdc-select mdc-text-field--outlined mt-2 w-91">
-                            <input type="hidden" name="enhanced-select">
-                            <i class="mdc-select__dropdown-icon"></i>
-                            <div id="demo-selected-text" class="mdc-select__selected-text" role="button"
-                                 aria-haspopup="listbox" aria-labelledby="demo-label demo-selected-text">
-                            </div>
-                            <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
-                                <ul class="mdc-list">
-                                    <li class="mdc-list-item" data-value="grains" role="option">
-                                        Zichtbaar
-                                    </li>
-                                    <li class="mdc-list-item" data-value="grains" role="option">
-                                        Niet Zichtbaar
-                                    </li>
-                                </ul>
-                            </div>
-                            <span id="demo-label" class="mdc-floating-label mdc-floating-label--float-above">Zichtbaarheid</span>
-                            <div class="mdc-line-ripple"></div>
-                        </div>
-                    </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                    <button type="button" class="btn btn-primary">Opslaan</button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" id="deleteReview">
+                        <span class="mdc-button__label">Verwijderen</span>
+                    </button>
                 </div>
             </div>
         </div>
