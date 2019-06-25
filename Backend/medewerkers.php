@@ -23,7 +23,7 @@ $records = $con->query("SELECT * FROM employees");
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Gebruikers</title>
+    <title>Fietsenwinkel - Medewerkers</title>
 </head>
 <body>
 <div id="wrapper" class="toggled">

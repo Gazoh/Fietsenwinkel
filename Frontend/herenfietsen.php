@@ -989,7 +989,6 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Registreren Modal -->
-    <  <!-- Registreren Modal -->
     <div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
