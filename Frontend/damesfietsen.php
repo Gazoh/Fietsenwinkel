@@ -1,6 +1,6 @@
 <?php
 require_once("Controllers/dbconnect.php");
-$sql = "SELECT * FROM bikes WHERE biketype='1'";
+$sql = "SELECT * FROM bikes WHERE biketype='0'";
 $res = mysqli_query($con, $sql);
 session_start();
 if (!isset($_SESSION['first_name'])) {

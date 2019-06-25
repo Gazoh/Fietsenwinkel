@@ -202,10 +202,10 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Afbeelding</th>
                         <th>Merk</th>
                         <th>Kleur</th>
-                        <th>Frametype</th>
+                        <th>Framenummer</th>
                         <th>Beschadigd</th>
                         <th>Naam</th>
-                        <th>Fietsmerk</th>
+                        <th>Type</th>
                         <th>Versnellingen</th>
                         <th>Prijs</th>
                     </tr>
@@ -246,10 +246,10 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Afbeelding</th>
                         <th>Merk</th>
                         <th>Kleur</th>
-                        <th>Frametype</th>
+                        <th>Framenummer</th>
                         <th>Beschadigd</th>
                         <th>Naam</th>
-                        <th>Fietsmerk</th>
+                        <th>Type</th>
                         <th>Versnellingen</th>
                         <th>Prijs</th>
                     </tr>
