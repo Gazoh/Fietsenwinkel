@@ -69,8 +69,14 @@ $(document).ready(function () {
                 console.log("Achternaam: " + oData[i][3]);
                 console.log("Email: " + oData[i][4]);
                 console.log("Telefoonnummer: " + oData[i][5]);
-                console.log("medewerkersnaam: " + oData[i][6]);
+                console.log("Gebruikersnaam: " + oData[i][6]);
+                console.log("Adres: " + oData[i][7]);
+                console.log("Stad: " + oData[i][8]);
+                console.log("Postcode: " + oData[i][9]);
+                console.log("Email verified: " + oData[i][10]);
             }
+        } else  if ($('#verwijderen:selected').val() && elementClicked) {
+            $('#deleteModal').modal('show');
         }
     });
 

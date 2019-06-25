@@ -9,17 +9,17 @@ if (isset($_POST['submit'])) {
     $phone = $_POST['phoneInput'];
     $username = $_POST['usernameInput'];
     $password = $_POST['passwordInput'];
-    $adress = $_POST['adresInput'];
-    $housenumber = $_POST['housenumberInput'];
-    $postal = $_POST['postalInput'];
+    $zipcode = $_POST['zipcodeInput'];
+    $city = $_POST['cityInput'];
     $date = date("Y-m-d H:i:s");
+    $adress = $_POST['adressInput'];
     $password = stripslashes($password);
     $hashedpw = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO employees(username) VALUES ('$username');";
+    $sql = "INSERT INTO employees(username, first_name, last_name, city, zip_code, email, email_verified, phone, password, adress) VALUES ('$username', '$firstname', '$lastname', '$city', '$zipcode', '$email', 0, '$phone', '$password', '$adress');";
     if ($con->query($sql) === TRUE) {
         {
-            header('Location: ../');
+            header('Location: ../medewerkers.php');
         }
     }
 }

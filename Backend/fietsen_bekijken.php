@@ -34,7 +34,7 @@
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="index.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>

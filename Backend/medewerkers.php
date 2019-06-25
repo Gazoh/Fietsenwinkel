@@ -40,7 +40,7 @@ $records = $con->query("SELECT * FROM employees");
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="index.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -206,12 +206,14 @@ $records = $con->query("SELECT * FROM employees");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Gebruikersnaam</th>
+                        <th>Adres</th>
+                        <th>Stad</th>
+                        <th>Postcode</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
                     while ($row = mysqli_fetch_array($records)) {
-
                         ?>
                         <tr>
                             <td></td>
@@ -221,8 +223,10 @@ $records = $con->query("SELECT * FROM employees");
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['phone'] ?></td>
                             <td><?php echo $row['username'] ?></td>
+                            <td><?php echo $row['adress'] ?></td>
+                            <td><?php echo $row['city'] ?></td>
+                            <td><?php echo $row['zip_code'] ?></td>
                         </tr>
-
                         <?php
                     }
                     ?>
@@ -236,6 +240,9 @@ $records = $con->query("SELECT * FROM employees");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Gebruikersnaam</th>
+                        <th>Adres</th>
+                        <th>Stad</th>
+                        <th>Postcode</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -314,30 +321,28 @@ $records = $con->query("SELECT * FROM employees");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="row justify-content-center mt-2">
-                                <div class="mdc-text-field mdc-text-field--outlined mr-2">
-                                    <input type="text" name="adressInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">Adres</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="adressInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Adres + Huisnummer</label>
                                     </div>
-                                </div>
-                                <div class="mdc-text-field mdc-text-field--outlined">
-                                    <input type="text" name="housenumberInput" id="tf-outlined" class="mdc-text-field__input">
-                                    <div class="mdc-notched-outline">
-                                        <div class="mdc-notched-outline__leading"></div>
-                                        <div class="mdc-notched-outline__notch">
-                                            <label for="tf-outlined" class="mdc-floating-label">Huisnummer</label>
-                                        </div>
-                                        <div class="mdc-notched-outline__trailing"></div>
-                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                                <input type="text" name="postalInput" id="tf-outlined" class="mdc-text-field__input">
+                                <input type="text" name="cityInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Stad</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="zipcodeInput" id="tf-outlined" class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -350,8 +355,34 @@ $records = $con->query("SELECT * FROM employees");
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                    <button type="submit" class="btn btn-primary" form="addMedewerker">Opslaan</button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help" data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error" data-dismiss="modal" type="submit" name="submit">
+                        <span class="mdc-button__label">Opslaan</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Delete User -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON" class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help" data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error" data-dismiss="modal">
+                        <span class="mdc-button__label">Verwijderen</span>
+                    </button>
                 </div>
             </div>
         </div>
