@@ -381,14 +381,16 @@ $records = $con->query("SELECT * FROM employees");
                         ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
-                            data-dismiss="modal">
-                        <span class="mdc-button__label">Sluiten</span>
-                    </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
-                            type="submit" name="submit" id="deleteMedewerker">
-                        <span class="mdc-button__label">Verwijderen</span>
-                    </button>
+                    <form>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                data-dismiss="modal">
+                            <span class="mdc-button__label">Sluiten</span>
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                type="submit" name="submit" id="deleteMedewerker">
+                            <span class="mdc-button__label">Verwijderen</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
