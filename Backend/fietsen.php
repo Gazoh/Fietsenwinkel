@@ -13,9 +13,11 @@ $records = $con->query("SELECT * FROM bikes");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
+          type='text/css' media='all'>
     <!-- Material -->
-       <link href="css/Material/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -25,7 +27,7 @@ $records = $con->query("SELECT * FROM bikes");
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Aanbiedingen</title>
+    <title>Fietsenwinkel - Fietsen</title>
 </head>
 <body>
 <div id="wrapper" class="toggled">
@@ -199,11 +201,13 @@ $records = $con->query("SELECT * FROM bikes");
                         <th></th>
                         <th>ID</th>
                         <th>Afbeelding</th>
-                        <th>Naam</th>
                         <th>Merk</th>
-                        <th>Type</th>
-                        <th>Frametype</th>
                         <th>Kleur</th>
+                        <th>Frametype</th>
+                        <th>Beschadigd</th>
+                        <th>Naam</th>
+                        <th>Fietsmerk</th>
+                        <th>Versnellingen</th>
                         <th>Prijs</th>
                     </tr>
                     </thead>
@@ -215,15 +219,21 @@ $records = $con->query("SELECT * FROM bikes");
                             <td></td>
                             <td><?php echo $row['id'] ?></td>
                             <td><?php echo $row['image_path'] ?></td>
-                            <td><?php echo $row['bikename'] ?></td>
                             <td><?php echo $row['brand'] ?></td>
+                            <td><?php echo $row['color'] ?></td>
+                            <td><?php echo $row['framenumber'] ?></td>
+                            <td><?php if ($row['damaged'] == 1) {
+                                    echo "Beschadigd";
+                                } else if ($row['damaged'] == 0) {
+                                    echo "Niet beschadigd";
+                                } ?></td>
+                            <td><?php echo $row['bikename'] ?></td>
                             <td><?php if ($row['biketype'] == 0) {
                                     echo "Damesfiets";
                                 } elseif ($row['biketype'] == 1) {
                                     echo "Herenfiets";
                                 } ?></td>
-                            <td><?php echo $row['framenumber'] ?></td>
-                            <td><?php echo $row['color'] ?></td>
+                            <td><?php echo $row['gears'] ?></td>
                             <td><?php echo "&euro; " . $row['selling_price'] ?></td>
                         </tr>
                         <?php
@@ -235,11 +245,13 @@ $records = $con->query("SELECT * FROM bikes");
                         <th></th>
                         <th>ID</th>
                         <th>Afbeelding</th>
-                        <th>Naam</th>
                         <th>Merk</th>
-                        <th>Type</th>
-                        <th>Frametype</th>
                         <th>Kleur</th>
+                        <th>Frametype</th>
+                        <th>Beschadigd</th>
+                        <th>Naam</th>
+                        <th>Fietsmerk</th>
+                        <th>Versnellingen</th>
                         <th>Prijs</th>
                     </tr>
                     </tfoot>
@@ -256,98 +268,125 @@ $records = $con->query("SELECT * FROM bikes");
                     <h5 class="modal-title" id="exampleModalLabel">Fiets toevoegen</h5>
                 </div>
                 <div class="modal-body p-4">
-                    <!-- Voornaam & Achternaam -->
-                    <div class="row justify-content-center">
-                        <div class="mdc-text-field mdc-text-field--outlined mr-2">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Naam</label>
+                    <form action="Controllers/fiets_toevoegen.php" method="POST" id="fietsenToevoegen">
+                        <!-- Voornaam & Achternaam -->
+                        <div class="row justify-content-center">
+                            <div class="mdc-text-field mdc-text-field--outlined mr-2">
+                                <input type="text" name="bikenameInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Fietsnaam</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
-                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                <input type="text" name="brandInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Merk</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="typeInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Type</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="frametypeInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Frametype</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="custom-control custom-checkbox mr-5 mt-3">
+                                <input type="checkbox" class="custom-control-input" id="beschadigd">
+                                <label class="custom-control-label" for="beschadigd">Beschadigd</label>
+                            </div>
+                            <div class="custom-control custom-checkbox mt-3">
+                                <input type="checkbox" class="custom-control-input" id="nietbeschadigd">
+                                <label class="custom-control-label" for="nietbeschadigd">Niet beschadigd</label>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="colorInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Kleur</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="gearsInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Versnellingen</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="priceInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Prijs</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mdc-text-field mdc-text-field--outlined">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Merk</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="email" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Type</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Frametype</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Kleur</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Prijs</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                    <button type="button" class="btn btn-primary">Opslaan</button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            type="submit" name="submit" form="fietsenToevoegen">
+                        <span class="mdc-button__label">Toevoegen</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <!-- Datatable -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-    <script type="text/javascript" src="JS/datatable/datatable_fietsen.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-    <!-- Sidebar & Nav -->
-    <script src="JS/sidebar.js"></script>
-    <script src="JS/nav.js"></script>
-    <!-- Material -->
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="JS/google-material/index.js"></script>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Datatable -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+<script type="text/javascript" src="JS/datatable/datatable_fietsen.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+<!-- Sidebar & Nav -->
+<script src="JS/sidebar.js"></script>
+<script src="JS/nav.js"></script>
+<!-- Material -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="JS/google-material/index.js"></script>
 </body>
 </html>

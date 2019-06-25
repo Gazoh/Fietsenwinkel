@@ -231,6 +231,31 @@ $records = $con->query("SELECT * FROM customers");
             </div>
         </div>
     </div>
+    <!-- Delete User -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" id="deleteKlant">
+                        <span class="mdc-button__label">Verwijderen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

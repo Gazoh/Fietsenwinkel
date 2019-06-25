@@ -12,3 +12,8 @@
 [].map.call(document.querySelectorAll('.mdc-select'), function (el) {
     return new mdc.select.MDCSelect(el);
 });
+
+// Checkbox
+[].map.call(document.querySelectorAll('.mdc-checkbox'), function (el) {
+    return new mdc.checkbox.MDCCheckbox(el);
+});

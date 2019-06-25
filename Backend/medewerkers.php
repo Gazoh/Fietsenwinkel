@@ -356,12 +356,12 @@ $records = $con->query("SELECT * FROM employees");
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal"
-                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
                         <span class="mdc-button__label">Sluiten</span>
                     </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
                             type="submit" name="submit" form="addMedewerker">
-                        <span class="mdc-button__label">Opslaan</span>
+                        <span class="mdc-button__label">Toevoegen</span>
                     </button>
                 </div>
             </div>
@@ -381,7 +381,7 @@ $records = $con->query("SELECT * FROM employees");
                         ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help"
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
                             data-dismiss="modal">
                         <span class="mdc-button__label">Sluiten</span>
                     </button>
@@ -393,7 +393,6 @@ $records = $con->query("SELECT * FROM employees");
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -55,8 +55,13 @@ $(document).ready(function () {
                 console.log("Telefoonnummer: " + oData[i][5]);
                 console.log("Adres: " + oData[i][6]);
             }
+        } else if ($('#verwijderen:selected').val()) {
+            console.log('hi');
         }
+
     });
+
+
 
     // Append Datatable toevoegen aan een id
     $('#klanten_length').appendTo('#card-header');
