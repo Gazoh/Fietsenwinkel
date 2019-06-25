@@ -10,16 +10,23 @@ if (isset($_POST['submit'])) {
     $color = $_POST['colorInput'];
     $gears = $_POST['gearsInput'];
     $price = $_POST['priceInput'];
-    $damaged = $_POST['damagedInput'];
+    debug_to_console($_POST['damaged']);
+    if($_POST['damaged'] == 1)
+    {
+        $damaged = 1;
+    } elseif ($_POST['damaged'] == 0)
+    {
+        $damaged = 0;
+    }
 
-    $sql = "INSERT INTO bikes(bikename, brand, framenumber, color, damaged, gears, selling_price, damaged) VALUES('$bikenameInput', '$brand', '$frametype', '$color', 1, '$gears', '$price', '$damaged')";
+    $sql = "INSERT INTO bikes(bikename, brand, framenumber, color, gears, selling_price, damaged) VALUES('$bikenameInput', '$brand', '$frametype', '$color', '$gears', '$price', '$damaged')";
 
     if ($con->query($sql) === TRUE) {
         {
             header('Location: ../fietsen.php');
         }
     } else {
-        echo 'wrong';
+        echo mysqli_errno($con) . ": " . mysqli_error($con) . "\n";
     }
 
 }

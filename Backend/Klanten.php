@@ -232,7 +232,7 @@ $records = $con->query("SELECT * FROM customers");
             </div>
         </div>
     </div>
-    <!-- Delete User -->
+    <!-- Delete Customer -->
     <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
