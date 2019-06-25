@@ -395,6 +395,90 @@ $records = $con->query("SELECT * FROM employees");
             </div>
         </div>
     </div>
+    <!-- Bijwerken Modal -->
+    <div class="modal fade" id="bijwerkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Medewerker Bijwerken</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <form action="Controllers/medewerker_toevoegen.php" method="POST" id="addMedewerker">
+                        <!-- Voornaam & Achternaam -->
+                        <div class="row justify-content-center">
+                            <div class="mdc-text-field mr-2 mt-2">
+                                <input type="text" name="firstnameInput" id="firstnameInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Voornaam
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2">
+                                <input type="text" name="lastnameInput" id="lastnameInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Achternaam
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="emailInput" id="emailInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Email
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="phoneInput" id="phoneInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Telefoonnummer
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="usernameInput" id="usernameInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Username
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="adressInput" id="adressInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Adres + Huisnummer
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="cityInput" id="cityInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Stad
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="zipcodeInput" id="zipcodeInput" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Postcode
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            type="submit" name="submit" form="addMedewerker">
+                        <span class="mdc-button__label">Toevoegen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -54,6 +54,7 @@ $(document).ready(function () {
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
+            $('#bijwerkenModal').modal('show');
             var oTable = $('#medewerkers').DataTable();
             $('#medewerkers thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
@@ -74,11 +75,20 @@ $(document).ready(function () {
                 console.log("Stad: " + oData[i][8]);
                 console.log("Postcode: " + oData[i][9]);
                 console.log("Email verified: " + oData[i][10]);
+
+                $('#firstnameInput').attr('value', oData[i][2]);
+                $('#lastnameInput').attr('value', oData[i][3]);
+                $('#emailInput').attr('value', oData[i][4]);
+                $('#phoneInput').attr('value', oData[i][5]);
+                $('#usernameInput').attr('value', oData[i][6]);
+                $('#adressInput').attr('value', oData[i][7]);
+                $('#cityInput').attr('value', oData[i][8]);
+                $('#zipcodeInput').attr('value', oData[i][9]);
             }
+
         } else if ($('#verwijderen:selected').val() && elementClicked) {
             $('#deleteModal').modal('show');
         }
-
         $('#deleteMedewerker').on('click', function () {
             var oTable = $('#medewerkers').DataTable();
             var oData = oTable.rows('.selected').data();
