@@ -46,10 +46,6 @@ $(document).ready(function () {
         elementClicked = true;
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
 
     // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {

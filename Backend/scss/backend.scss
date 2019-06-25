@@ -89,3 +89,14 @@ Font-family: Roboto-Bold !important;
 .w-91 {
   width: 91% !important;
 }
+
+
+.main-color {
+  background: $main_color !important;
+  border-color: $main_color !important;
+}
+
+.main-color-light {
+  background-color: $main_color_light !important;
+  border-color: $main_color_light !important;
+}

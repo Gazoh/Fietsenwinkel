@@ -7,3 +7,8 @@
 [].map.call(document.querySelectorAll('.mdc-text-field'), function (el) {
     return new mdc.textField.MDCTextField(el);
 });
+
+// Select
+[].map.call(document.querySelectorAll('.mdc-select'), function (el) {
+    return new mdc.select.MDCSelect(el);
+});

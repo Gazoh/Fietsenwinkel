@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
-          type='text/css' media='all'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
     <!-- Material -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -140,12 +138,12 @@
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -174,7 +172,7 @@
         <div class="row widgets">
             <div class="col">
                 <div class="mdc-card text-white">
-                    <div class="card mdc-card__primary-action p-4 main-color" tabindex="0">
+                    <div class="card mdc-card__primary-action p-4 main-color-light" tabindex="0">
                         <i class="fas fa-user cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">32</h1>
                         </i>
@@ -189,7 +187,7 @@
             </div>
             <div class="col">
                 <div class="mdc-card text-white">
-                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
+                   <div class="card mdc-card__primary-action p-4 main-color-light" tabindex="0">
                         <i class="fas fa-box cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">94</h1>
                         </i>
@@ -204,7 +202,7 @@
             </div>
             <div class="col">
                 <div class="mdc-card text-white">
-                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
+                   <div class="card mdc-card__primary-action p-4 main-color-light" tabindex="0">
                         <i class="fas fa-star-half-alt cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">16</h1>
                         </i>
@@ -219,7 +217,7 @@
             </div>
             <div class="col">
                 <div class="mdc-card text-white">
-                    <div class="mdc-card__primary-action p-4 main-color" tabindex="0">
+                   <div class="card mdc-card__primary-action p-4 main-color-light" tabindex="0">
                         <i class="fas fa-money-bill-wave cardWidget float-right iconwidthCards">
                             <h1 class="card-title dashboard numbers">&euro; 6134</h1>
                         </i>

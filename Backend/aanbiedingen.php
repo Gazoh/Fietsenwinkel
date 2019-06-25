@@ -2,7 +2,8 @@
 require_once("Controllers/dbconnect.php");
 // Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
 $records = $con->query("SELECT * FROM discount_codes");
-?><html lang="en">
+?>
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,7 +16,7 @@ $records = $con->query("SELECT * FROM discount_codes");
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
           type='text/css' media='all'>
     <!-- Material -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -48,11 +49,11 @@ $records = $con->query("SELECT * FROM discount_codes");
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="medewerkers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
-                        <span class="sidebar-title">Gebruikers</span>
+                        <span class="sidebar-title">Medewerkers</span>
                     </div>
                 </a>
             </li>
@@ -78,7 +79,8 @@ $records = $con->query("SELECT * FROM discount_codes");
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon pr-2"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i
+                                        class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
                     </a>
@@ -172,7 +174,8 @@ $records = $con->query("SELECT * FROM discount_codes");
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded toevoegen" id="toevoegen">
+                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded toevoegen" id="toevoegen"
+                        data-toggle="modal" data-target="#toevoegenModal">
                     <i class="fas fa-plus"></i>
                     <span class="pr-2"></span>
                     <span class="mdc-button__label">Toevoegen</span>
@@ -212,8 +215,11 @@ $records = $con->query("SELECT * FROM discount_codes");
                             <td><?php echo $row['id'] ?></td>
                             <td><?php echo $row['code'] ?></td>
                             <td>€ <?php echo $row['amount'] ?></td>
-                            <td><?php if($row['is_valid'] == 1){echo "Geldig";}
-                            elseif($row['is_valid'] == 0){echo "Ongeldig";}?></td>
+                            <td><?php if ($row['is_valid'] == 1) {
+                                    echo "Geldig";
+                                } elseif ($row['is_valid'] == 0) {
+                                    echo "Ongeldig";
+                                } ?></td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['expiry_date'] ?></td>
                         </tr>
@@ -236,22 +242,115 @@ $records = $con->query("SELECT * FROM discount_codes");
             </div>
         </div>
     </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- Datatable -->
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_aanbiedingen.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!-- Sidebar & Nav -->
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
-        <!-- Material -->
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
+    <!-- Toevoegen Modal -->
+    <div class="modal fade" id="toevoegenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aanbiedingen toevoegen</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mdc-text-field--outlined mr-2">
+                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">Kortingscode</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">Bedrag</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="email" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">Geldig</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="date" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label"></label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text">Geldig vanaf</div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="date" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label"></label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text">Geldig Tot</div>
+                        </div>
+
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label">Prijs</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary">Opslaan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="JS/datatable/datatable_aanbiedingen.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+    <!-- Sidebar & Nav -->
+    <script src="JS/sidebar.js"></script>
+    <script src="JS/nav.js"></script>
+    <!-- Material -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="JS/google-material/index.js"></script>
 </body>
 </html>

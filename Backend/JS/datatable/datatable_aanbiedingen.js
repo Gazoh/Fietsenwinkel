@@ -68,10 +68,6 @@ $(document).ready(function () {
         }
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
 
     // Append Datatable toevoegen aan een id
     $('#aanbiedingen_length').appendTo('#card-header');

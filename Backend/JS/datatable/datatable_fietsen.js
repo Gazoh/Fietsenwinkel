@@ -73,11 +73,6 @@ $(document).ready(function () {
         }
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
-
     // Append Datatable toevoegen aan een id
     $('#fietsen_length').appendTo('#card-header');
     $('#fietsen_filter').appendTo('#card-header');

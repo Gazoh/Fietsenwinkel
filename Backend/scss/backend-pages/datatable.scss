@@ -2,7 +2,7 @@ select {
   height: 38px !important;
   margin-left: 5px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: $main_color_shadow !important;
+  background-color: $main_color_light;
   color: #fff !important;
   font-family: Roboto,sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -29,6 +29,14 @@ select {
   overflow: hidden;
   vertical-align: middle;
   border-radius: 4px;
+}
+
+.form-control {
+  background-color: $main_color_light !important;
+}
+
+.mdc-select__native-control {
+  background-color: none !important;
 }
 
 input[type="search"] {
@@ -67,6 +75,7 @@ a.paginate_button.current {
 
 .uitvoeren {
   height: 38px;
+  background-color: $main_color_light !important;
 }
 
 .table-card {
@@ -76,4 +85,8 @@ a.paginate_button.current {
   font-family: Roboto,sans-serif !important;
   border: none !important;
   outline: none !important;
+}
+
+.mdc-select__menu.mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
+  z-index: 9999 !important;
 }
