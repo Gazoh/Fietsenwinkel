@@ -231,6 +231,32 @@ $records = $con->query("SELECT * FROM customers");
             </div>
         </div>
     </div>
+    <!-- Delete User -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet
+                        ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help"
+                            data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" id="deleteKlant">
+                        <span class="mdc-button__label">Verwijderen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -240,13 +266,13 @@ $records = $con->query("SELECT * FROM customers");
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_klanten.js"></script>
+        <script type="text/javascript" src="JS/datatable/datatable_klanten.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
         <!-- Sidebar & Nav -->
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
+        <script src="JS/sidebar.js"></script>
+        <script src="JS/nav.js"></script>
         <!-- Material -->
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
+        <script src="JS/google-material/index.js"></script>
 </body>
 </html>

@@ -55,8 +55,23 @@ $(document).ready(function () {
                 console.log("Telefoonnummer: " + oData[i][5]);
                 console.log("Adres: " + oData[i][6]);
             }
+        } else if ($('#verwijderen:selected').val() && elementClicked) {
+            $('#deleteModal').modal('show');
         }
     });
+
+    $('#deleteKlant').on('click', function () {
+        var oTable = $('#klanten').DataTable();
+        var oData = oTable.rows('.selected').data();
+        for (var i = 0; i < oData.length; i++) {
+            console.log("ID: " + oData[i][1]);
+
+            $.post("http://localhost/fietsenwinkel/Backend/Controllers/klant_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                console.log(data);
+            });
+        }
+    })
+
 
     // Append Datatable toevoegen aan een id
     $('#klanten_length').appendTo('#card-header');
