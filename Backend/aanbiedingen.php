@@ -252,80 +252,106 @@ $records = $con->query("SELECT * FROM discount_codes");
                 </div>
                 <div class="modal-body p-4">
                     <!-- Voornaam & Achternaam -->
-                    <div class="row justify-content-center">
-                        <div class="mdc-text-field mdc-text-field--outlined mr-2">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Kortingscode</label>
+                    <form action="Controllers/aanbieding_toevoegen.php" method="POST" id="aanbiedingenToevoegen">
+                        <div class="row justify-content-center">
+                            <div class="mdc-text-field mdc-text-field--outlined mr-2">
+                                <input type="text" name="codeInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Kortingscode</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
-                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                <input type="text" name="amountInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Bedrag</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="validInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Geldig</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="date" name="creationdateInput" id="tf-outlined"
+                                       class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label"></label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field-helper-line">
+                                <div class="mdc-text-field-helper-text">Geldig vanaf</div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="date" name="expirydateInput" id="tf-outlined"
+                                       class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label"></label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field-helper-line">
+                                <div class="mdc-text-field-helper-text">Geldig Tot</div>
                             </div>
                         </div>
-                        <div class="mdc-text-field mdc-text-field--outlined">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Bedrag</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
+                        <div class="modal-footer">
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                    data-dismiss="modal">
+                                <span class="mdc-button__label">Sluiten</span>
+                            </button>
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                    type="submit" name="submit" form="aanbiedingenToevoegen">
+                                <span class="mdc-button__label">Toevoegen</span>
+                            </button>
                         </div>
-
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="email" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Geldig</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="date" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"></label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field-helper-line">
-                            <div class="mdc-text-field-helper-text">Geldig vanaf</div>
-                        </div>
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="date" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"></label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                        <div class="mdc-text-field-helper-line">
-                            <div class="mdc-text-field-helper-text">Geldig Tot</div>
-                        </div>
-
-                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
-                            <div class="mdc-notched-outline">
-                                <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label">Prijs</label>
-                                </div>
-                                <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete User -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet
+                        ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                    <button type="button" class="btn btn-primary">Opslaan</button>
+                    <form>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                data-dismiss="modal">
+                            <span class="mdc-button__label">Sluiten</span>
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                type="submit" name="submit" id="deleteAanbieding">
+                            <span class="mdc-button__label">Verwijderen</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -344,7 +370,7 @@ $records = $con->query("SELECT * FROM discount_codes");
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-    <script type="text/javascript" src="JS/datatable/datatable_aanbiedingen.js"></script>
+    <script type="text/javascript" src="JS/datatable/datatable_aanbiedingen.js  "></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     <!-- Sidebar & Nav -->
     <script src="JS/sidebar.js"></script>
