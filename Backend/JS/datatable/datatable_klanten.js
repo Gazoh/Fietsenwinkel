@@ -55,8 +55,9 @@ $(document).ready(function () {
                 console.log("Telefoonnummer: " + oData[i][5]);
                 console.log("Adres: " + oData[i][6]);
             }
-        } else if ($('#verwijderen:selected').val()) {
-            console.log('hi');
+        } else if($('#verwijderen:selected').val() && elementClicked)
+        {
+            $('#deleteModal').modal('show');
         }
 
     });

@@ -189,8 +189,7 @@ $records = $con->query("SELECT * FROM bikes");
                         <option value="Verwijderen" id="verwijderen">Verwijderen</option>
                     </select>
                 </div>
-                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded uitvoeren" id="uitvoeren"
-                        data-toggle="modal" data-target="#toevoegenModal">
+                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded uitvoeren" id="uitvoeren">
                     <span class="mdc-button__label">Uitvoeren</span>
                 </button>
             </div>
@@ -311,13 +310,13 @@ $records = $con->query("SELECT * FROM bikes");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="custom-control custom-checkbox mr-5 mt-3">
-                                <input type="checkbox" class="custom-control-input" id="beschadigd">
-                                <label class="custom-control-label" for="beschadigd">Beschadigd</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mt-3">
-                                <input type="checkbox" class="custom-control-input" id="nietbeschadigd">
-                                <label class="custom-control-label" for="nietbeschadigd">Niet beschadigd</label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="damaged" value="0" autocomplete="off" checked> Onbeschadigd
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="damaged" value="1" autocomplete="off"> Beschadigd
+                                </label>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
                                 <input type="text" name="colorInput" id="tf-outlined" class="mdc-text-field__input">
@@ -360,6 +359,32 @@ $records = $con->query("SELECT * FROM bikes");
                     <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
                             type="submit" name="submit" form="fietsenToevoegen">
                         <span class="mdc-button__label">Toevoegen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Bike -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" id="deleteBike">
+                        <span class="mdc-button__label">Verwijderen</span>
                     </button>
                 </div>
             </div>
