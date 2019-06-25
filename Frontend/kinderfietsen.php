@@ -1,4 +1,7 @@
 <?php
+require_once("Controllers/dbconnect.php");
+$sql = "SELECT * FROM bikes WHERE biketype='3'";
+$res = mysqli_query($con, $sql);
 session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
@@ -899,76 +902,25 @@ if (!isset($_SESSION['first_name'])) {
     </div>
     <!-- Fietsen   -->
     <div class="row fietsen p-4 text-center">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-            <a href="damesfietsen_detail.php">
-                <img src="assets/img/bike_boys.png" class="img-thumbnail">
-            </a>
-            <div class="bike-information">
-                <div class="h5">
-                    <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
-                    <div class="d-block h6 pt-2 main-color-light bRoboto">
-                        <span class="Onbeschadigd">Onbeschadigd</span>
-                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
-                           title="Voordeel &euro; 189,-"></i></span>
+        <?php
+        while($r = mysqli_fetch_assoc($res)){ ?>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
+                <a href="damesfietsen_detail.php">
+                    <img src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>" class="img-thumbnail">
+                </a>
+                <div class="bike-information">
+                    <div class="h5">
+                        <span class="bRoboto"><?php echo $r['bikename']?></span>
+                        <div class="d-block h6 pt-2 main-color-light bRoboto">
+                            <span class="Onbeschadigd"><?php if($r['damaged'] == 1){echo "Onbeschadigd";}else{echo "Beschadigd";} ?></span>
+                        </div>
                     </div>
-                    <span class="d-block color-light iRoboto font-italic line-through">&euro; 1276,-</span>
-                </div>
-                <div class="h3">
-                    <span class="bRoboto mt-5 main-color">&euro; 1087,-</span>
+                    <div class="h3">
+                        <span class="bRoboto mt-5 main-color"><?php echo '&euro;'.$r['selling_price']?></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <img src="assets/img/bike_boys.png" class="img-thumbnail">
-            <div class="bike-information">
-                <div class="h5">
-                    <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
-                    <div class="d-block h6 pt-2 main-color-light bRoboto">
-                        <span class="Onbeschadigd">Onbeschadigd</span>
-                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
-                           title="Voordeel &euro; 189,-"></i></span>
-                    </div>
-                    <span class="d-block color-light iRoboto font-italic line-through">&euro; 1276,-</span>
-                </div>
-                <div class="h3">
-                    <span class="bRoboto mt-5 main-color">&euro; 1087,-</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <img src="assets/img/bike_boys.png" class="img-thumbnail">
-            <div class="bike-information">
-                <div class="h5">
-                    <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
-                    <div class="d-block h6 pt-2 main-color-light bRoboto">
-                        <span class="Onbeschadigd">Onbeschadigd</span>
-                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
-                           title="Voordeel &euro; 189,-"></i></span>
-                    </div>
-                    <span class="d-block color-light iRoboto font-italic line-through">&euro; 1276,-</span>
-                </div>
-                <div class="h3">
-                    <span class="bRoboto mt-5 main-color">&euro; 1087,-</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike ">
-            <img src="assets/img/bike_boys.png" class="img-thumbnail">
-            <div class="bike-information">
-                <div class="h5">
-                    <span class="bRoboto">Lorem </span>ipsum adiscing elit ligula
-                    <div class="d-block h6 pt-2 main-color-light bRoboto">
-                        <span class="Onbeschadigd">Onbeschadigd</span>
-                        <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top"
-                           title="Voordeel &euro; 189,-"></i></span>
-                    </div>
-                    <span class="d-block color-light iRoboto font-italic line-through">&euro; 1276,-</span>
-                </div>
-                <div class="h3">
-                    <span class="bRoboto mt-5 main-color">&euro; 1087,-</span>
-                </div>
-            </div>
-        </div>
+        <?php }?>
     </div>
     <!-- Account Modal -->
     <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"

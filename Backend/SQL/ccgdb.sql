@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 17 jun 2019 om 10:58
+-- Gegenereerd op: 24 jun 2019 om 12:48
 -- Serverversie: 10.1.35-MariaDB
 -- PHP-versie: 7.2.9
 
@@ -61,6 +61,7 @@ CREATE TABLE `customers` (
   `first_name` varchar(30) COLLATE utf8_bin NOT NULL,
   `last_name` varchar(30) COLLATE utf8_bin NOT NULL,
   `adress` varchar(60) COLLATE utf8_bin NOT NULL,
+  `house_number` varchar(4) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `zip_code` varchar(6) COLLATE utf8_bin NOT NULL,
   `email` varchar(60) COLLATE utf8_bin NOT NULL,
@@ -71,6 +72,15 @@ CREATE TABLE `customers` (
   `remember_me` varchar(80) COLLATE utf8_bin NOT NULL,
   `last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `customers`
+--
+
+INSERT INTO `customers` (`id`, `username`, `first_name`, `last_name`, `adress`, `house_number`, `city`, `zip_code`, `email`, `email_verified`, `phone`, `password`, `register_date`, `remember_me`, `last_login`) VALUES
+(1, '', 'Batuhan', 'Beyogullari', '', '', '', '', 'bthbygl@icloud.com', 0, '', '$2y$10$bxFgnpia2XRgmMr1bBBrW.GkLSpO8YsnnI7i0x79Unft2ydcz5epG', '2019-06-17 11:51:54', '4699f5c3bba7c92ce7bf71d88bf1089f', '2019-06-21 09:05:33'),
+(2, '', 'Cem', 'Serin', '', '', '', '', 'cem@gazoh.net', 0, '', '$2y$10$bJ0nHIyd.Y8wP/nwavihC.8LPQHHvn.gq6SJjcPzhrCcr.bjHaWUa', '2019-06-17 11:52:30', '3f264076a6b7081503549f129dc8c11f', '2019-06-17 12:54:54'),
+(4, 'Bthbygl', 'Batu', 'Bey', 'Van Beethovenstraat', ' 26', 'Zevenaar', '6904EM', 'batubeyogullari@gmail.com', 0, '', '$2y$10$EqeWGkhpfp8wd1hmpA2dTO9AHi3SIVxulKit8QWj3zKDKuFiPgThu', '2019-06-21 09:20:17', '1074475ab310924c23a2ab27619131ee', '2019-06-21 09:30:03');
 
 -- --------------------------------------------------------
 
@@ -123,7 +133,28 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `username`, `first_name`, `last_name`, `adress`, `city`, `zip_code`, `email`, `email_verified`, `phone`, `password`, `invite_code`, `register_date`, `remember_me`, `last_login`) VALUES
-(1, 'batubeyogullari', 'Batuhan', 'Beyogullari', '', '', '', 'batubeyogullari@gmail.com', 0, 640149721, '$2y$10$ZQmFwgmWmxnF2Qwa5JOmRuBHuP4lSPHV1qhI6fiLz2WXNhS6a4g0C', '', '2019-06-13 14:56:35', 'd3564f32823d8885704b35818529d5bd', '2019-06-13 14:58:06');
+(1, 'batubeyogullari', 'Batuhan', 'Beyogullari', '', '', '', 'batubeyogullari@gmail.com', 0, 640149721, '$2y$10$ZQmFwgmWmxnF2Qwa5JOmRuBHuP4lSPHV1qhI6fiLz2WXNhS6a4g0C', '', '2019-06-13 14:56:35', '0a1efd5a6c4fcca3bd21402453e1431f', '2019-06-24 12:38:10');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `id` int(11) NOT NULL,
+  `title` varchar(60) COLLATE utf8_bin NOT NULL,
+  `description` varchar(10000) COLLATE utf8_bin NOT NULL,
+  `date_sent` datetime NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `title`, `description`, `date_sent`, `status`) VALUES
+(1, 'Testbericht', 'eerste bericht test', '2019-06-24 12:43:28', 0);
 
 -- --------------------------------------------------------
 
@@ -180,6 +211,12 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexen voor tabel `orders`
 --
 ALTER TABLE `orders`
@@ -206,7 +243,7 @@ ALTER TABLE `bikes`
 -- AUTO_INCREMENT voor een tabel `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `discount_codes`
@@ -218,6 +255,12 @@ ALTER TABLE `discount_codes`
 -- AUTO_INCREMENT voor een tabel `employees`
 --
 ALTER TABLE `employees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT voor een tabel `newsletter`
+--
+ALTER TABLE `newsletter`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

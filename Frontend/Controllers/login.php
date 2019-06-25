@@ -40,6 +40,7 @@ if(isset($_POST['submit'])) {
             {
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['last_name'] = $row['last_name'];
+                $_SESSION['loginstatus'] = 1;
                 if($rememberme == "off")
                 {
                     $str = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789";
