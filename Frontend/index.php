@@ -439,7 +439,7 @@ if (!isset($_SESSION['first_name'])) {
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="mdc-text-field mdc-text-field--outlined w-70 mr-2 mt-2">
+                            <div class="mdc-text-field mdc-text-field--outlined w-72 mr-2 mt-2">
                                 <input type="text" name="adressInput" id="tf-outlined" class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
