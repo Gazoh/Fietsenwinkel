@@ -16,7 +16,7 @@ $records = $con->query("SELECT * FROM customers");
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
           type='text/css' media='all'>
     <!-- Material -->
-       <link href="css/Material/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -79,7 +79,8 @@ $records = $con->query("SELECT * FROM customers");
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon pr-2"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i
+                                        class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
                     </a>
@@ -241,37 +242,45 @@ $records = $con->query("SELECT * FROM customers");
                 <div class="modal-body p-5 row">
                     <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
                          class="img-thumbnail no-border justify-content-center" width="75">
-                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet
+                        ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
-                            data-dismiss="modal">
-                        <span class="mdc-button__label">Sluiten</span>
-                    </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
-                            type="submit" name="submit" id="deleteKlant">
-                        <span class="mdc-button__label">Verwijderen</span>
-                    </button>
+                    <form>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                data-dismiss="modal">
+                            <span class="mdc-button__label">Sluiten</span>
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                type="submit" name="submit" id="deleteKlant">
+                            <span class="mdc-button__label">Verwijderen</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- Datatable -->
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_klanten.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!-- Sidebar & Nav -->
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
-        <!-- Material -->
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="JS/datatable/datatable_klanten.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+    <!-- Sidebar & Nav -->
+    <script src="JS/sidebar.js"></script>
+    <script src="JS/nav.js"></script>
+    <!-- Material -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="JS/google-material/index.js"></script>
 </body>
 </html>
