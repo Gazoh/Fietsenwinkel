@@ -258,7 +258,7 @@ $records = $con->query("SELECT * FROM employees");
                     <h5 class="modal-title" id="exampleModalLabel">Medewerker toevoegen</h5>
                 </div>
                 <div class="modal-body p-4">
-                    <form action="Controllers/medewerkers_toevoegen.php" method="POST" id="addMedewerker">
+                    <form action="Controllers/medewerker_toevoegen.php" method="POST" id="addMedewerker">
                         <!-- Voornaam & Achternaam -->
                         <div class="row justify-content-center">
                             <div class="mdc-text-field mdc-text-field--outlined mr-2">
@@ -355,17 +355,19 @@ $records = $con->query("SELECT * FROM employees");
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" data-dismiss="modal" class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
                         <span class="mdc-button__label">Sluiten</span>
                     </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error" type="submit" name="submit" form="addMedewerker">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" form="addMedewerker">
                         <span class="mdc-button__label">Opslaan</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-<!-- Delete User -->
+    <!-- Delete User -->
     <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -373,20 +375,25 @@ $records = $con->query("SELECT * FROM employees");
                     <h5 class="modal-title">Weet je het zeker?</h5>
                 </div>
                 <div class="modal-body p-5 row">
-                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON" class="img-thumbnail no-border justify-content-center" width="75">
-                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet
+                        ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help" data-dismiss="modal">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help"
+                            data-dismiss="modal">
                         <span class="mdc-button__label">Sluiten</span>
                     </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error" data-dismiss="modal">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" id="deleteMedewerker">
                         <span class="mdc-button__label">Verwijderen</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

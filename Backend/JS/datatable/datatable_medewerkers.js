@@ -75,13 +75,27 @@ $(document).ready(function () {
                 console.log("Postcode: " + oData[i][9]);
                 console.log("Email verified: " + oData[i][10]);
             }
-        } else  if ($('#verwijderen:selected').val() && elementClicked) {
+        } else if ($('#verwijderen:selected').val() && elementClicked) {
             $('#deleteModal').modal('show');
         }
+
+        $('#deleteMedewerker').on('click', function () {
+            var oTable = $('#medewerkers').DataTable();
+            var oData = oTable.rows('.selected').data();
+            for (var i = 0; i < oData.length; i++) {
+                console.log("ID: " + oData[i][1]);
+
+                $.post("http://localhost/fietsenwinkel/Backend/Controllers/medewerker_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                    console.log(data);
+                });
+            }
+        })
+
     });
 
     // Append Datatable toevoegen aan een id
     $('#medewerkers_length').appendTo('#card-header');
     $('#medewerkers_filter').appendTo('#card-header');
+
 
 });
