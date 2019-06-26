@@ -1,4 +1,7 @@
 <?php
+require_once("Controllers/dbconnect.php");
+$sql = "SELECT * FROM bikes LIMIT 4";
+$res = mysqli_query($con, $sql);
 session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
@@ -158,60 +161,62 @@ if (!isset($_SESSION['first_name'])) {
         <h1 class="text-center main-color h2 bRoboto">Nieuwe Collectie</h1>
         <div class="slick-buttons"></div>
         <div class="slick-slider">
-            <div>
-                <img class="w-100" src="assets/img/bike.png" alt="fiets">
-                <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
+            <?php
+                while($r = mysqli_fetch_assoc($res)){ ?>
                 <div>
-                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
-                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>
+                    <img class="w-100" src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>">
+                    <p class="m-0"><?php echo $r['bikename'] ?></p>
+                    <p class="main-color-light mb-2 bRoboto"><?php if($r['damaged'] == 1){echo "Onbeschadigd";}else{echo "Beschadigd";}?></p>
+                    <div>
+                        <p class="prijs main-color h3 bRoboto"><?php echo '&euro;'.$r['selling_price']?></p>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <img class="w-100" src="assets/img/bike.png" alt="fiets">
-                <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
-                <div>
-                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
-                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>
-                </div>
-            </div>
-            <div>
-                <img class="w-100" src="assets/img/bike.png" alt="fiets">
-                <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
-                <div>
-                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
-                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>
-                </div>
-            </div>
-            <div>
-                <img class="w-100" src="assets/img/bike.png" alt="fiets">
-                <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
-                <div>
-                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
-                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>
-                </div>
-            </div>
-            <div>
-                <img class="w-100" src="assets/img/bike.png" alt="fiets">
-                <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
-                <div>
-                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
-                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>
-                </div>
-            </div>
-            <div>
-                <img class="w-100" src="assets/img/bike.png" alt="fiets">
-                <p class="m-0">Lorem ipsum adiscing elit ligula</p>
-                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>
-                <div>
-                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>
-                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>
-                </div>
-            </div>
+            <?php }?>
+<!--            <div>-->
+<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
+<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
+<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
+<!--                <div>-->
+<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
+<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
+<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
+<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
+<!--                <div>-->
+<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
+<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
+<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
+<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
+<!--                <div>-->
+<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
+<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
+<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
+<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
+<!--                <div>-->
+<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
+<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
+<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
+<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
+<!--                <div>-->
+<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
+<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
     <!-- Review -->
@@ -264,7 +269,7 @@ if (!isset($_SESSION['first_name'])) {
             <div class="text-center col-lg-6">
                 <h1 class="h2 bRoboto main-color">Nieuwsbrief</h1>
                 <p class="main-color">
-                    Schrijf u ook in voor onze nieuwsbrief! blijf altijd up to date met de laatste nieuwtjes, feitjes en acties bij ons!
+                    Schrijf u ook in voor onze nieuwsbrief! Blijf altijd up to date met de laatste nieuwtjes, feitjes en acties bij ons!
                     Ook als u zich inschrijft bij ons krijgt u korting of een fietsers starters pakket bij uw eerst volgende bestelling!
                 </p>
             </div>
