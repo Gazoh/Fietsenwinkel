@@ -912,7 +912,7 @@ if (!isset($_SESSION['first_name'])) {
                     <div class="h5">
                         <span class="bRoboto"><?php echo $r['bikename']?></span>
                         <div class="d-block h6 pt-2 main-color-light bRoboto">
-                            <span class="Onbeschadigd"><?php if($r['damaged'] == 1){echo "Onbeschadigd";}else{echo "Beschadigd";} ?></span>
+                            <span class="Onbeschadigd"><?php if($r['damaged'] == 1){echo "Onbeschadigd";}else{echo "Beschadigd";}?></span>
                         </div>
                     </div>
                     <div class="h3">
