@@ -30,7 +30,7 @@ $(document).ready(function () {
     });
 
     // Data ophalen van persoon op de datatabel
-    var elementClicked;
+    let elementClicked;
     $('td:first-child').on('click', function () {
         elementClicked = true;
     });
@@ -38,30 +38,58 @@ $(document).ready(function () {
     // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
-            var oTable = $('#klanten').DataTable();
+            $('#aanpassenModal').modal('show');
+            let oTable = $('#klanten').DataTable();
             $('#klanten thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
-                var pos = oTable.row(this).index();
-                var row = oTable.row(pos).data();
+                let pos = oTable.row(this).index();
+                let row = oTable.row(pos).data();
                 console.log(row);
             });
-            var oData = oTable.rows('.selected').data();
+            let oData = oTable.rows('.selected').data();
 
-            for (var i = 0; i < oData.length; i++) {
-                console.log("ID: " + oData[i][1]);
-                console.log("Voornaam: " + oData[i][2]);
-                console.log("Achternaam: " + oData[i][3]);
-                console.log("Email: " + oData[i][4]);
-                console.log("Telefoonnummer: " + oData[i][5]);
-                console.log("Adres: " + oData[i][6]);
+            for (let i = 0; i < oData.length; i++) {
+                $('#firstnameInputBijwerken').attr('value', oData[i][2]);
+                $('#lastnameInputBijwerken').attr('value', oData[i][3]);
+                $('#emailInputBijwerken').attr('value', oData[i][4]);
+                $('#phoneInputBijwerken').attr('value', oData[i][5]);
+                $('#adressInputBijwerken').attr('value', oData[i][6]);
+                $('#cityInputBijwerken').attr('value', oData[i][7]);
+                $('#zipcodeInputBijwerken').attr('value', oData[i][8]);
             }
-        } else if($('#verwijderen:selected').val() && elementClicked)
-        {
+        } else if ($('#verwijderen:selected').val() && elementClicked) {
             $('#deleteModal').modal('show');
+        } else if ($('#bekijken:selected').val() && elementClicked) {
+            $('#bekijkenModal').modal('show');
+
+            let oTable = $('#klanten').DataTable();
+            let oData = oTable.rows('.selected').data();
+
+            for (let i = 0; i < oData.length; i++) {
+                $('#firstnameInputBekijken').attr('value', oData[i][2]);
+                $('#lastnameInputBekijken').attr('value', oData[i][3]);
+                $('#emailInputBekijken').attr('value', oData[i][4]);
+                $('#phoneInputBekijken').attr('value', oData[i][5]);
+                $('#adressInputBekijken').attr('value', oData[i][6]);
+                $('#cityInputBekijken').attr('value', oData[i][7]);
+                $('#zipcodeInputBekijken').attr('value', oData[i][8]);
+            }
         }
 
-    });
+        $('#deleteKlant').on('click', function () {
+            let oTable = $('#klanten').DataTable();
+            let oData = oTable.rows('.selected').data();
+            for (let i = 0; i < oData.length; i++) {
+                console.log("ID: " + oData[i][1]);
 
+                $.post("http://localhost/fietsenwinkel/Backend/Controllers/klant_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                    console.log(data);
+                });
+                location.reload();
+            }
+        })
+
+    });
 
 
     // Append Datatable toevoegen aan een id

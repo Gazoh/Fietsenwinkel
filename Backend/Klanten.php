@@ -197,6 +197,8 @@ $records = $con->query("SELECT * FROM customers");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Adres</th>
+                        <th>Stad</th>
+                        <th>Postcode</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -212,6 +214,8 @@ $records = $con->query("SELECT * FROM customers");
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['phone'] ?></td>
                             <td><?php echo $row['adress'] ?></td>
+                            <td><?php echo $row['city'] ?></td>
+                            <td><?php echo $row['zip_code'] ?></td>
                         </tr>
                         <?php
                     }
@@ -226,6 +230,8 @@ $records = $con->query("SELECT * FROM customers");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Adres</th>
+                        <th>Stad</th>
+                        <th>Postcode</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -256,6 +262,152 @@ $records = $con->query("SELECT * FROM customers");
                             <span class="mdc-button__label">Verwijderen</span>
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bekijken Modal -->
+    <div class="modal fade" id="bekijkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Klant Bekijken</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mr-2 mt-2">
+                            <input type="text" name="firstnameInputBekijken" id="firstnameInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Voornaam
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2">
+                            <input type="text" name="lastnameInputBekijken" id="lastnameInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Achternaam
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="emailInputBekijken" id="emailInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Email
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="phoneInputBekijken" id="phoneInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Telefoonnummer
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="adressInputBekijken" id="adressInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Adres + Huisnummer
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="cityInputBekijken" id="cityInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Stad
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="zipcodeInputBekijken" id="zipcodeInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Postcode
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Aanpassen Modal -->
+    <div class="modal fade" id="aanpassenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Klanten Aanpassen</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <form action="Controllers/klant_bijwerken.php" method="POST" id="addKlanten">
+                        <!-- Voornaam & Achternaam -->
+                        <div class="row justify-content-center">
+                            <div class="mdc-text-field mr-2 mt-2">
+                                <input type="text" name="firstnameInputBijwerken" id="firstnameInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Voornaam
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2">
+                                <input type="text" name="lastnameInputBijwerken" id="lastnameInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Achternaam
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="emailInputBijwerken" id="emailInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Email
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="phoneInputBijwerken" id="phoneInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Telefoonnummer
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="adressInputBijwerken" id="adressInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Adres + Huisnummer
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="cityInputBijwerken" id="cityInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Stad
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="zipcodeInputBijwerken" id="zipcodeInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Postcode
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            type="submit" name="submit" form="addMedewerker">
+                        <span class="mdc-button__label">Bijwerken</span>
+                    </button>
                 </div>
             </div>
         </div>
