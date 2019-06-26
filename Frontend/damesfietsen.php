@@ -21,7 +21,8 @@ if (!isset($_SESSION['first_name'])) {
     <link rel="stylesheet" href="scss/style.css">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type=' text/css' media='all'>
+    =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='
+     text/css' media='all'>
     <!-- Animate CSS -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css"/>
     <title>Dames Fietsen</title>
@@ -29,13 +30,15 @@ if (!isset($_SESSION['first_name'])) {
 <body>
 <div class="container-fluid">
     <!-- Modal Mobile Filter-->
-    <div class="modal animated fadeInLeft" id="mobileFilter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal animated fadeInLeft" id="mobileFilter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog float-left m-0" role="document">
             <div class="modal-content border-radius0">
                 <div class="modal-body">
                     <!-- Type Fietsen -->
                     <div id="type-fietsen">
-                        <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right" data-dismiss="modal" aria-label="Close" type="button">
+                        <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right"
+                                data-dismiss="modal" aria-label="Close" type="button">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <p class="h2 bRoboto main-color type-fiets">Type fiets</p>
@@ -903,24 +906,28 @@ if (!isset($_SESSION['first_name'])) {
     <!-- Fietsen   -->
     <div class="row fietsen p-4 text-center">
         <?php
-            while($r = mysqli_fetch_assoc($res)){ ?>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-                <a href="damesfietsen_detail.php">
+        while ($r = mysqli_fetch_assoc($res)) { ?>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike" id="bike-data" data-id="<?php echo $r['id']?>">
+                <a class="detail">
                     <img src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>" class="img-thumbnail">
                 </a>
                 <div class="bike-information">
                     <div class="h5">
-                        <span class="bRoboto"><?php echo $r['bikename']?></span>
-                <div class="d-block h6 pt-2 main-color-light bRoboto">
-                            <span class="Onbeschadigd"><?php if($r['damaged'] == 1){echo "Onbeschadigd";}else{echo "Beschadigd";} ?></span>
+                        <span class="bRoboto"><?php echo $r['bikename'] ?></span>
+                        <div class="d-block h6 pt-2 main-color-light bRoboto">
+                            <span class="Onbeschadigd"><?php if ($r['damaged'] == 1) {
+                                    echo "Onbeschadigd";
+                                } else {
+                                    echo "Beschadigd";
+                                } ?></span>
                         </div>
                     </div>
                     <div class="h3">
-                        <span class="bRoboto mt-5 main-color"><?php echo '&euro;'.$r['selling_price']?></span>
+                        <span class="bRoboto mt-5 main-color"><?php echo '&euro;' . $r['selling_price'] ?></span>
                     </div>
                 </div>
             </div>
-        <?php }?>
+        <?php } ?>
     </div>
     <!-- Account Modal -->
     <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -966,7 +973,8 @@ if (!isset($_SESSION['first_name'])) {
                                 Registeren
                             </button>
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                                    type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
                                     aria-label="Toggle navigation">
                                 Inloggen
                             </button>
@@ -1109,8 +1117,9 @@ if (!isset($_SESSION['first_name'])) {
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -1126,5 +1135,6 @@ if (!isset($_SESSION['first_name'])) {
 <script src="js/material/material.js"></script>
 <!-- Main -->
 <script type="text/javascript" src="js/Main.js"></script>
+<script src="js/fietsen_detail.js"></script>
 </body>
 </html>
