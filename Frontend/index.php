@@ -1,6 +1,6 @@
 <?php
 require_once("Controllers/dbconnect.php");
-$sql = "SELECT * FROM bikes LIMIT 4";
+$sql = "SELECT * FROM bikes ORDER BY date_added DESC LIMIT 4";
 $res = mysqli_query($con, $sql);
 session_start();
 if (!isset($_SESSION['first_name'])) {
@@ -172,51 +172,6 @@ if (!isset($_SESSION['first_name'])) {
                     </div>
                 </div>
             <?php }?>
-<!--            <div>-->
-<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
-<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
-<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
-<!--                <div>-->
-<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
-<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
-<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
-<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
-<!--                <div>-->
-<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
-<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
-<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
-<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
-<!--                <div>-->
-<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
-<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
-<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
-<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
-<!--                <div>-->
-<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
-<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <img class="w-100" src="assets/img/bike.png" alt="fiets">-->
-<!--                <p class="m-0">Lorem ipsum adiscing elit ligula</p>-->
-<!--                <p class="main-color-light mb-2 bRoboto">Onbeschadigd</p>-->
-<!--                <div>-->
-<!--                    <p class="oudeprijs main-color font-italic m-1">&euro; 1276,-</p>-->
-<!--                    <p class="prijs main-color h3 bRoboto">&euro; 1087,-</p>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </div>
     <!-- Review -->
