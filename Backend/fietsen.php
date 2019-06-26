@@ -310,7 +310,7 @@ $records = $con->query("SELECT * FROM bikes");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons">
                                 <label class="btn btn-secondary active">
                                     <input type="radio" name="damaged" value="0" autocomplete="off" checked> Onbeschadigd
                                 </label>
@@ -364,7 +364,6 @@ $records = $con->query("SELECT * FROM bikes");
             </div>
         </div>
     </div>
-
     <!-- Delete Bike -->
     <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
         <div class="modal-dialog" role="document">
@@ -387,6 +386,91 @@ $records = $con->query("SELECT * FROM bikes");
                         <span class="mdc-button__label">Verwijderen</span>
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Aanpassen Modal -->
+<div class="modal fade" id="bijwerkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Fiets Aanpassen</h5>
+            </div>
+            <div class="modal-body p-4">
+                <form action="Controllers/fiets_aanpassen.php" method="POST" id="addFiets">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mr-2 mt-2">
+                            <input type="text" name="brandInputBijwerken" id="brandInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Merk
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2">
+                            <input type="text" name="colorInputBijwerken" id="colorInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Kleur
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="framenumberInputBijwerken" id="framenumberInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Framenummer
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="damaged">
+                            <label class="btn btn-secondary" id="onbeschadigd">
+                                <input type="radio" name="damaged" value="0" autocomplete="off" checked> Onbeschadigd
+                            </label>
+                            <label class="btn btn-secondary" id="beschadigd">
+                                <input type="radio" name="damaged" value="1" autocomplete="off"> Beschadigd
+                            </label>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="nameInputBijwerken" id="nameInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Naam
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="typeInputBijwerken" id="typeInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Type
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="gearsInputBijwerken" id="gearsInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Versnellingen
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="priceInputBijwerken" id="priceInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Prijs
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal"
+                        class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                    <span class="mdc-button__label">Sluiten</span>
+                </button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                        type="submit" name="submit" form="addMedewerker">
+                    <span class="mdc-button__label">Aanpassen</span>
+                </button>
             </div>
         </div>
     </div>

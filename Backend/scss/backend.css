@@ -43,7 +43,7 @@
   background: #073f7f !important;
   float: left;
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   width: 240px;
 }
 
@@ -651,10 +651,6 @@ a#fietsen_next:hover {
   float: left;
 }
 
-.fiets-image {
-  width: 100%;
-}
-
 .container-data {
   position: relative;
   top: 120px;
@@ -669,19 +665,20 @@ a#fietsen_next:hover {
   text-decoration: line-through;
 }
 
-@media only screen and (max-width: 1329px) {
+.fiets-image {
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
   .container-data {
     top: 0px !important;
-  }
-
-  .fiets-image {
-    height: 100%;
   }
 
   .image {
     float: none !important;
     display: flex;
     justify-content: center;
+    margin: 0 !important;
   }
 
   .data-fiets {
@@ -1040,6 +1037,10 @@ body, html {
 
 .rRoboto {
   Font-family: Roboto-Regular !important;
+}
+
+#wrapper {
+  height: 100% !important;
 }
 
 /*# sourceMappingURL=backend.css.map */
