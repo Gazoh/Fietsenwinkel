@@ -48,25 +48,46 @@ $(document).ready(function () {
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
-            var oTable = $('#aanbiedingen').DataTable();
+            $('#bijwerkenModal').modal('show');
             $('#aanbiedingen thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
                 var pos = oTable.row(this).index();
                 var row = oTable.row(pos).data();
                 console.log(row);
             });
+            var oTable = $('#aanbiedingen').DataTable();
             var oData = oTable.rows('.selected').data();
-
             for (var i = 0; i < oData.length; i++) {
-                console.log("ID: " + oData[i][1]);
-                console.log("Code: " + oData[i][2]);
-                console.log("Bedrag: " + oData[i][3]);
-                console.log("Geldig: " + oData[i][4]);
-                console.log("Van: " + oData[i][5]);
-                console.log("Tot: " + oData[i][6]);
+                $('#codeinputAanpassen').attr('value', oData[i][2]);
+                $('#amountinputAanpassen').attr('value', oData[i][3]);
+                // Als die geldig of ongeldig is maak de button active
+                if (oData[i][4] == 'Geldig') {
+                    $('#geldig').addClass('active');
+                } else if (oData[i][4] == 'Ongeldig') {
+                    $('#ongeldig').addClass('active');
+                }
+                $('#creationdateGeldigvanafInput').attr('value', oData[i][5].substr('', '10'));
+                $('#creationdateGeldigtotInput').attr('value', oData[i][6].substr('', '10'));
             }
         } else if ($('#verwijderen:selected').val() && elementClicked) {
             $('#deleteModal').modal('show');
+        } else if ($('#bekijken:selected').val() && elementClicked) {
+            $('#bekijkenModal').modal('show');
+            var oTable = $('#aanbiedingen').DataTable();
+            var oData = oTable.rows('.selected').data();
+            for (var i = 0; i < oData.length; i++) {
+                $('#codeinputBekijken').attr('value', oData[i][2]);
+                $('#amountinputBekijken').attr('value', oData[i][3]);
+                // Als die geldig of ongeldig is maak de button active
+                if (oData[i][4] == 'Geldig') {
+                    $('#geldigBekijken').addClass('active');
+                } else if (oData[i][4] == 'Ongeldig') {
+                    $('#ongeldigBekijken').addClass('active');
+                }
+                $('#creationdateGeldigvanafInputBekijken').attr('value', oData[i][5].substr('', '10'));
+                $('#creationdateGeldigtotInputBekijken').attr('value', oData[i][6].substr('', '10'));
+            }
+
         }
 
 
