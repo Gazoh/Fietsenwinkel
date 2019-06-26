@@ -56,19 +56,30 @@ $(document).ready(function () {
                 console.log(row);
             });
 
+            // Set textbox value's
             var oData = oTable.rows('.selected').data();
             for (let i = 0; i < oData.length; i++) {
-                console.log(oData[i][6]);
                 $('#brandInputBijwerken').attr('value', oData[i][3]);
                 $('#colorInputBijwerken').attr('value', oData[i][4]);
                 $('#framenumberInputBijwerken').attr('value', oData[i][5]);
-                if ($('#damaged').attr('value', 1)) {
-                    $('#beschadigd').addClass('active')
-                } else if ($('#onbeschadigd').attr('value', 2)) {
-                    $('#beschadigd').addClass('active')
+
+                // set Beschadigd buttons
+                if (oData[i][6] == 'Onbeschadigd') {
+                    $('#onbeschadigd').addClass('active');
+                } else {
+                    $('#beschadigd').addClass('active');
                 }
                 $('#nameInputBijwerken').attr('value', oData[i][7]);
-                $('#typeInputBijwerken').attr('value', oData[i][8]);
+
+                if(oData[i][8] == 'Damesfiets') {
+                    $('#damesfiets').addClass('active')
+                }else  if(oData[i][8] == 'Herenfiets') {
+                    $('#herenfiets').addClass('active')
+                }else  if(oData[i][8] == 'Kinderfiets') {
+                    $('#kinderfiets').addClass('active')
+                }
+
+
                 $('#gearsInputBijwerken').attr('value', oData[i][9]);
                 $('#priceInputBijwerken').attr('value', oData[i][10]);
             }
@@ -77,23 +88,24 @@ $(document).ready(function () {
         } else if ($('#verwijderen:selected').val() && elementClicked) {
             $('#deleteModal').modal('show');
         }
+
+        $('#deleteBike').on('click', function () {
+            let oTable = $('#fietsen').DataTable();
+            let oData = oTable.rows('.selected').data();
+            for (let i = 0; i < oData.length; i++) {
+                console.log("ID: " + oData[i][1]);
+
+                $.post("http://localhost/fietsenwinkel/Backend/Controllers/fiets_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                    console.log(data);
+                });
+                location.reload();
+            }
+        })
     });
 
     // Only 1 checkbox can be selected in the form of the bike.
     $('input[type="checkbox"]').on('change', function () {
         $('input[type="checkbox"]').not(this).prop('checked', false);
-    });
-
-    $('#deleteBike').on('click', function () {
-        var oTable = $('#fietsen').DataTable();
-        var oData = oTable.rows('.selected').data();
-        for (var i = 0; i < oData.length; i++) {
-            console.log("ID: " + oData[i][1]);
-
-            $.post("http://localhost/fietsenwinkel/Backend/Controllers/fiets_verwijderen.php?id=" + oData[i][1] + "", function (data) {
-                console.log(data);
-            });
-        }
     });
 
     // Append Datatable toevoegen aan een id
