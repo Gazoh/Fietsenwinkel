@@ -65,13 +65,23 @@ $(document).ready(function () {
                 console.log("Van: " + oData[i][5]);
                 console.log("Tot: " + oData[i][6]);
             }
+        } else if ($('#verwijderen:selected').val() && elementClicked) {
+            $('#deleteModal').modal('show');
         }
+
+
+        $('#deleteAanbieding').on('click', function () {
+            var oTable = $('#aanbiedingen').DataTable();
+            var oData = oTable.rows('.selected').data();
+            for (var i = 0; i < oData.length; i++) {
+                console.log("ID: " + oData[i][1]);
+
+                $.post("http://localhost/fietsenwinkel/Backend/Controllers/aanbieding_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                });
+            }
+        })
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
 
     // Append Datatable toevoegen aan een id
     $('#aanbiedingen_length').appendTo('#card-header');

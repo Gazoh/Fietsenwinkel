@@ -5,12 +5,14 @@ nav.navbar.navbar-light.bg-light.justify-content-between {
   height: 72px;
 }
 
-button.btn.btn-primary.nav-buttons {
-  background-color: $main_color;
-  border-color: $main_color;
-  padding-left: 16px;
-  padding-right: 16px;
+.account {
+  background-color: $main_color_light !important;
 }
+
+.help {
+  background-color: $main_color_light !important;
+}
+
 
 .form-inline {
   margin-bottom: 0 !important;

@@ -286,11 +286,12 @@ nav.navbar.navbar-light.bg-light.justify-content-between {
   height: 72px;
 }
 
-button.btn.btn-primary.nav-buttons {
-  background-color: #073f7f;
-  border-color: #073f7f;
-  padding-left: 16px;
-  padding-right: 16px;
+.account {
+  background-color: #1587d2 !important;
+}
+
+.help {
+  background-color: #1587d2 !important;
 }
 
 .form-inline {
@@ -351,7 +352,7 @@ button.btn.btn-primary.nav-buttons {
   width: 100%;
 }
 
-a#gebruikers_previous:hover {
+a#medewerkers_previous:hover {
   color: #fff !important;
 }
 
@@ -370,37 +371,37 @@ thead {
   height: 38px;
 }
 
-div#gebruikers_filter {
+div#medewerkers_filter {
   float: right;
   font-family: Roboto-Bold !important;
 }
 
-#gebruikers_length {
+#medewerkers_length {
   float: right !important;
   height: 28px !important;
 }
 
-a#gebruikers_next:hover {
+a#medewerkers_next:hover {
   color: #fff !important;
 }
 
 @media only screen and (max-width: 1107px) {
-  div#gebruikers_filter {
+  div#medewerkers_filter {
     display: none;
   }
 }
 @media only screen and (max-width: 856px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: none;
   }
 }
 @media only screen and (max-width: 788px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: block;
   }
 }
 @media only screen and (max-width: 616px) {
-  #gebruikers_length {
+  #medewerkers_length {
     display: none !important;
   }
 }
@@ -713,7 +714,7 @@ ul.list-group {
 .modal-body {
   display: flex;
   justify-content: center;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .modal-header {
@@ -744,7 +745,7 @@ select {
   height: 38px !important;
   margin-left: 5px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: #073A74 !important;
+  background-color: #1587d2;
   color: #fff !important;
   font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -771,6 +772,14 @@ select {
   overflow: hidden;
   vertical-align: middle;
   border-radius: 4px;
+}
+
+.form-control {
+  background-color: #1587d2 !important;
+}
+
+.mdc-select__native-control {
+  background-color: none !important;
 }
 
 input[type=search] {
@@ -809,6 +818,7 @@ a.paginate_button.current {
 
 .uitvoeren {
   height: 38px;
+  background-color: #1587d2 !important;
 }
 
 .table-card {
@@ -818,6 +828,10 @@ a.paginate_button.current {
   font-family: Roboto, sans-serif !important;
   border: none !important;
   outline: none !important;
+}
+
+.mdc-select__menu.mdc-menu.mdc-menu-surface.mdc-menu-surface--open {
+  z-index: 9999 !important;
 }
 
 div#aanbiedingen_filter {
@@ -907,11 +921,6 @@ a#nieuwsbrief_next:hover {
   padding-right: 9rem !important;
 }
 
-.main-color {
-  background: #073f7f !important;
-  border-color: #073f7f !important;
-}
-
 .width300 {
   width: 300px !important;
 }
@@ -993,6 +1002,44 @@ body, html {
   --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
   --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+}
+
+.w-91 {
+  width: 91% !important;
+}
+
+.main-color {
+  background: #073f7f !important;
+  border-color: #073f7f !important;
+}
+
+.main-color-light {
+  background-color: #1587d2 !important;
+  border-color: #1587d2 !important;
+}
+
+.error {
+  background-color: #b00020 !important;
+}
+
+.no-border {
+  border: 0px !important;
+}
+
+.bRoboto {
+  Font-family: Roboto-Bold !important;
+}
+
+.iRoboto {
+  Font-family: Roboto-Italic !important;
+}
+
+.mRoboto {
+  Font-family: Roboto-Medium !important;
+}
+
+.rRoboto {
+  Font-family: Roboto-Regular !important;
 }
 
 /*# sourceMappingURL=backend.css.map */

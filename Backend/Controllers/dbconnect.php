@@ -5,6 +5,7 @@
  * Date: 13/05/2019
  * Time: 12:50
  */
+$siteurl = "http://localhost/Fietsenwinkel/Backend/";
 function debug_to_console( $data, $context = 'Info' ) {
 
     // Buffering to solve problems frameworks, like header() in this and not a solid return.

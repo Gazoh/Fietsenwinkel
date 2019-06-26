@@ -46,10 +46,6 @@ $(document).ready(function () {
         elementClicked = true;
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
 
     // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
@@ -65,13 +61,29 @@ $(document).ready(function () {
 
             for (var i = 0; i < oData.length; i++) {
                 console.log("ID: " + oData[i][1]);
-                console.log("Voornaam: " + oData[i][2]);
-                console.log("Achternaam: " + oData[i][3]);
+                console.log("Klant: " + oData[i][2]);
+                console.log("Fiets ID: " + oData[i][3]);
                 console.log("Klant ID: " + oData[i][4]);
                 console.log("Beoordeeling: " + oData[i][5]);
-                console.log("Datum: " + oData[i][6]);
-                console.log("Zichtbaarheid op website: " + oData[i][7]);
+                console.log("Titel: " + oData[i][6]);
+                console.log("Beschrijving: " + oData[i][7]);
+                console.log("Datum: " + oData[i][8]);
             }
+        } else if($('#verwijderen:selected').val() && elementClicked)
+        {
+            $('#deleteModal').modal('show');
+        }
+    });
+
+    $('#deleteReview').on('click', function () {
+        var oTable = $('#reviews').DataTable();
+        var oData = oTable.rows('.selected').data();
+        for (var i = 0; i < oData.length; i++) {
+            console.log("ID: " + oData[i][1]);
+
+            $.post("http://localhost/fietsenwinkel/Backend/Controllers/fiets_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                console.log(data);
+            });
         }
     });
 

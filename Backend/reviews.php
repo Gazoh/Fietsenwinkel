@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+require_once("Controllers/dbconnect.php");
+// Ophalen van fietsen uit database en die in $records zetten om er later doorheen te loopen.
+$records = $con->query("SELECT * FROM reviews r
+INNER JOIN customers c
+ON  r.user_id = c.id");
+?>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -12,7 +18,7 @@
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
           type='text/css' media='all'>
     <!-- Material -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -22,7 +28,7 @@
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css">
     <!--   Title -->
-    <title>Fietsenwinkel - Fietsen</title>
+    <title>Fietsenwinkel - Reviews</title>
 </head>
 <body>
 <div id="wrapper" class="toggled">
@@ -36,7 +42,7 @@
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="index.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -45,11 +51,11 @@
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="medewerkers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
-                        <span class="sidebar-title">Gebruikers</span>
+                        <span class="sidebar-title">Medewerkers</span>
                     </div>
                 </a>
             </li>
@@ -75,7 +81,8 @@
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon pr-2"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i
+                                        class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
                     </a>
@@ -143,12 +150,12 @@
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -169,11 +176,6 @@
     <div class="row gebruikers">
         <div class="card text-black mb-5 mt-5">
             <div class="card-header" id="card-header">
-                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded toevoegen" id="toevoegen">
-                    <i class="fas fa-plus"></i>
-                    <span class="pr-2"></span>
-                    <span class="mdc-button__label">Toevoegen</span>
-                </button>
                 <div class="selectDatatable mdc-button__label">
                     <select class="form-control">
                         <option value="" disabled selected id="opties">Opties</option>
@@ -192,76 +194,97 @@
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
+                        <th>Klant</th>
+                        <th>Fiets ID</th>
                         <th>Klant ID</th>
                         <th>Beoordeling</th>
+                        <th>Titel</th>
+                        <th>Beschrijving</th>
                         <th>Datum</th>
-                        <th>Zichtbaarheid op website</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>Lorem</td>
-                        <td>Loremipsum</td>
-                        <td>123</td>
-                        <td>4 STERREN</td>
-                        <td>27-3-2019</td>
-                        <td>Zichtbaar</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>101</td>
-                        <td>Lorem</td>
-                        <td>Loremipsum</td>
-                        <td>123</td>
-                        <td>5 STERRREN</td>
-                        <td>27-3-2019</td>
-                        <td>Niet zichtbaar</td>
-                    </tr>
+                    <?php
+                    while ($row = mysqli_fetch_array($records)) {
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['review_id'] ?></td>
+                            <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
+                            <td><?php echo $row['bike_id'] ?></td>
+                            <td><?php echo $row['user_id'] ?></td>
+                            <td><?php echo $row['rating'] ?></td>
+                            <td><?php echo $row['title'] ?></td>
+                            <td><?php echo $row['description'] ?></td>
+                            <td><?php echo $row['post_date'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
+                        <th>Klant</th>
+                        <th>Fiets ID</th>
                         <th>Klant ID</th>
                         <th>Beoordeling</th>
+                        <th>Titel</th>
+                        <th>Beschrijving</th>
                         <th>Datum</th>
-                        <th>Zichtbaarheid op website</th>
                     </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
     </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous"></script>
-        <!-- Datatable -->
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript"
-                src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript"
-                src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_reviews.js"></script>
-        <script type="text/javascript"
-                src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!-- Sidebar & Nav -->
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
-        <!-- Material -->
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
+    <!-- Delete Bike -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            data-dismiss="modal">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                            type="submit" name="submit" id="deleteReview">
+                        <span class="mdc-button__label">Verwijderen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="JS/datatable/datatable_reviews.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+    <!-- Sidebar & Nav -->
+    <script src="JS/sidebar.js"></script>
+    <script src="JS/nav.js"></script>
+    <!-- Material -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="JS/google-material/index.js"></script>
 </body>
 </html>

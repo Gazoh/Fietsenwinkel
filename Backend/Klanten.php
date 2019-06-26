@@ -16,7 +16,7 @@ $records = $con->query("SELECT * FROM customers");
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
           type='text/css' media='all'>
     <!-- Material -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -40,7 +40,7 @@ $records = $con->query("SELECT * FROM customers");
                 </a>
             </div>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="dashboard.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="index.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-home iconwidth"></i></span>
                         <span class="pr-15"></span>
@@ -49,11 +49,11 @@ $records = $con->query("SELECT * FROM customers");
                 </a>
             </li>
             <li class="sidebarLi">
-                <a class="accordion-toggle collapsed toggle-switch" href="gebruikers.php">
+                <a class="accordion-toggle collapsed toggle-switch" href="medewerkers.php">
                     <div class="sidebarData">
                         <span class="sidebar-icon"><i class="fas fa-user iconwidth"></i></span>
                         <span class="pr-15"></span>
-                        <span class="sidebar-title">Gebruikers</span>
+                        <span class="sidebar-title">Medewerkers</span>
                     </div>
                 </a>
             </li>
@@ -79,7 +79,8 @@ $records = $con->query("SELECT * FROM customers");
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon pr-2"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i
+                                        class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
                     </a>
@@ -147,12 +148,12 @@ $records = $con->query("SELECT * FROM customers");
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
         <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded account">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account">
                 <i class="fas fa-user"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Account</span>
             </button>
-            <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded help">
+            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
                 <i class="fas fa-question"></i>
                 <span class="pr-2"></span>
                 <span class="mdc-button__label">Help</span>
@@ -196,6 +197,8 @@ $records = $con->query("SELECT * FROM customers");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Adres</th>
+                        <th>Stad</th>
+                        <th>Postcode</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -211,6 +214,8 @@ $records = $con->query("SELECT * FROM customers");
                             <td><?php echo $row['email'] ?></td>
                             <td><?php echo $row['phone'] ?></td>
                             <td><?php echo $row['adress'] ?></td>
+                            <td><?php echo $row['city'] ?></td>
+                            <td><?php echo $row['zip_code'] ?></td>
                         </tr>
                         <?php
                     }
@@ -225,28 +230,209 @@ $records = $con->query("SELECT * FROM customers");
                         <th>E-mail</th>
                         <th>Telefoonnummer</th>
                         <th>Adres</th>
+                        <th>Stad</th>
+                        <th>Postcode</th>
                     </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
     </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!-- Datatable -->
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/datatable/datatable_klanten.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!-- Sidebar & Nav -->
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/sidebar.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/nav.js"></script>
-        <!-- Material -->
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <script src="http://bbeyogullari.gcmediavormgeving.nl/Backend/JS/google-material/index.js"></script>
+    <!-- Delete Customer -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet
+                        ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <form>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                data-dismiss="modal">
+                            <span class="mdc-button__label">Sluiten</span>
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                type="submit" name="submit" id="deleteKlant">
+                            <span class="mdc-button__label">Verwijderen</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bekijken Modal -->
+    <div class="modal fade" id="bekijkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Klant Bekijken</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mr-2 mt-2">
+                            <input type="text" name="firstnameInputBekijken" id="firstnameInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Voornaam
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2">
+                            <input type="text" name="lastnameInputBekijken" id="lastnameInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Achternaam
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="emailInputBekijken" id="emailInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Email
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="phoneInputBekijken" id="phoneInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Telefoonnummer
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="adressInputBekijken" id="adressInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Adres + Huisnummer
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="cityInputBekijken" id="cityInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Stad
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="email" name="zipcodeInputBekijken" id="zipcodeInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Postcode
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Aanpassen Modal -->
+    <div class="modal fade" id="aanpassenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Klanten Aanpassen</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <form action="Controllers/klant_bijwerken.php" method="POST" id="addKlanten">
+                        <!-- Voornaam & Achternaam -->
+                        <div class="row justify-content-center">
+                            <div class="mdc-text-field mr-2 mt-2">
+                                <input type="text" name="firstnameInputBijwerken" id="firstnameInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Voornaam
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2">
+                                <input type="text" name="lastnameInputBijwerken" id="lastnameInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Achternaam
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="emailInputBijwerken" id="emailInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Email
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="phoneInputBijwerken" id="phoneInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Telefoonnummer
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="adressInputBijwerken" id="adressInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Adres + Huisnummer
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="cityInputBijwerken" id="cityInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Stad
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <div class="mdc-text-field mt-2 w-91">
+                                <input type="email" name="zipcodeInputBijwerken" id="zipcodeInputBijwerken" class="mdc-text-field__input" value="">
+                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                    Postcode
+                                </label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            type="submit" name="submit" form="addMedewerker">
+                        <span class="mdc-button__label">Bijwerken</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- Datatable -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="JS/datatable/datatable_klanten.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+    <!-- Sidebar & Nav -->
+    <script src="JS/sidebar.js"></script>
+    <script src="JS/nav.js"></script>
+    <!-- Material -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="JS/google-material/index.js"></script>
 </body>
 </html>

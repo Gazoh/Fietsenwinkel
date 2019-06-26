@@ -74,11 +74,6 @@ $(document).ready(function () {
         }
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
-    });
-
     // Append Datatable toevoegen aan een id
     $('#nieuwsbrief_length').appendTo('#card-header');
     $('#nieuwsbrief_filter').appendTo('#card-header');

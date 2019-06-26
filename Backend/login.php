@@ -20,7 +20,7 @@ if (isset($_COOKIE['rememberMe'])) {
         if ($token == $row['remember_me']) {
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['last_name'] = $row['last_name'];
-            header("Location: dashboard.php");
+            header("Location: index.php");
 
         }
     }

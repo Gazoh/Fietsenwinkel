@@ -44,7 +44,6 @@ $(document).ready(function () {
     $('td:first-child').on('click', function () {
         elementClicked = true;
     });
-
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
@@ -70,12 +69,27 @@ $(document).ready(function () {
             }
         } else if ($('#bekijken:selected').val() && elementClicked) {
             $("body").load( "/fietsenwinkel/Backend/fietsen_bekijken.php" );
-        }
+        } else if($('#verwijderen:selected').val() && elementClicked)
+    {
+        $('#deleteModal').modal('show');
+    }
     });
 
-    // Toevoegen knop actie
-    $('#toevoegen').on('click', function () {
-        alert('test');
+    // Only 1 checkbox can be selected in the form of the bike.
+    $('input[type="checkbox"]').on('change', function() {
+        $('input[type="checkbox"]').not(this).prop('checked', false);
+    });
+
+    $('#deleteBike').on('click', function () {
+        var oTable = $('#fietsen').DataTable();
+        var oData = oTable.rows('.selected').data();
+        for (var i = 0; i < oData.length; i++) {
+            console.log("ID: " + oData[i][1]);
+
+            $.post("http://localhost/fietsenwinkel/Backend/Controllers/fiets_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                console.log(data);
+            });
+        }
     });
 
     // Append Datatable toevoegen aan een id
