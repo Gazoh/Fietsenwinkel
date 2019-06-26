@@ -8,6 +8,13 @@ if (isset($_POST['submit'])) {
     $amount = $_POST['amountInput'];
     $valid = $_POST['validInput'];
 
+    // Set valid or invalid coupon code
+    if($_POST['validInput'] == 0) {
+        $valid = 0;
+    } else if($_POST['validInput'] == 1) {
+        $valid = 1;
+    }
+
     $sql = "INSERT INTO discount_codes(code, amount, is_valid, creation_date, expiry_date) VALUES ('$code', '$amount', '$valid', '$creationDate', '$expiryDate');";
     if ($con->query($sql) === TRUE) {
         {
