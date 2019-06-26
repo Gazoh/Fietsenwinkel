@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO discount_codes(code, amount, is_valid, creation_date, expiry_date) VALUES ('$code', '$amount', '$valid', '$creationDate', '$expiryDate');";
     if ($con->query($sql) === TRUE) {
         {
-            header('Location: ../aanbiedingen.php');
+            header('Location: ../index.php');
         }
     }
 }
