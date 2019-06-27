@@ -369,6 +369,16 @@ if (isset($_COOKIE['rememberMe'])) {
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                                <input type="text" name="invitecodeInput" id="tf-outlined" class="mdc-text-field__input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="tf-outlined" class="mdc-floating-label">Invite code</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

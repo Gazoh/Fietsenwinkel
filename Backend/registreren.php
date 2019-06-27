@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login - CMS</title>
+    <title>Registreren - CMS</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -39,6 +39,24 @@
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Achternaam</label>
                                 <input type="text" name="lastNameInput" class="form-control controller" required>
+                            </div>
+                        </div>
+                        <div class="form-group form-login">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating disabled">Stad</label>
+                                <input type="text" name="cityInput" class="form-control controller" required>
+                            </div>
+                        </div>
+                        <div class="form-group form-login">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating disabled">Adres</label>
+                                <input type="text" name="adressInput" class="form-control controller" required>
+                            </div>
+                        </div>
+                        <div class="form-group form-login">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating disabled">Postcode</label>
+                                <input type="text" name="zipcodeInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">

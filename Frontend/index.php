@@ -611,7 +611,7 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
     </div>
-</div>g
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
