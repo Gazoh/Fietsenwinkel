@@ -3,6 +3,11 @@ session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
+if (!isset($_SESSION['cart'])) {
+    if (empty($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+}
 
 // Id ophalen
 require_once("controllers/dbconnect.php");
@@ -20,6 +25,16 @@ while ($row = mysqli_fetch_assoc($res)) {
     $color = $row['color'];
     $gears = $row['gears'];
     $description = $row['description'];
+}
+if (!empty($_SESSION['cart'])) {
+    debug_to_console(var_dump($_SESSION['cart']));
+}
+$itemids = implode(", ", $_SESSION['cart']);
+debug_to_console($itemids);
+if ($itemids != "") {
+    $sqlgetItems = "SELECT * FROM bikes WHERE id in(" . $itemids . ")";
+    $resItems = mysqli_query($con, $sqlgetItems);
+    debug_to_console(mysqli_error($con));
 }
 ?>
 <html lang="en">
@@ -106,39 +121,39 @@ while ($row = mysqli_fetch_assoc($res)) {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
-                            <p>&euro; 3758,-</p>
-                        </div>
-                        <hr>
-                        <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
-                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
-                                    type="button" id="bestellenDropdown">
-                                Bestellen
-                            </button>
-                        </div>
+                        <?php
+                        if ($itemids == "") {
+                            echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
+                        } else {
+                            if (isset($res)) {
+                                if (mysqli_num_rows($resItems) > 0) {
+                                    while ($bike = mysqli_fetch_assoc($resItems)) {
+                                        echo "<div class=\"order\">";
+                                        echo "<div class=\"float-right\">";
+                                        echo " <div class=\"m-0 pt-3 bRoboto\">" . $bike['brand'] . " " . $bike['bikename'] . "</div>";
+                                        echo "<div class=\"m-0 text-right shopping-bedrag font-weight-normal\">&euro;" . $bike['selling_price'] . "</div>";
+                                        echo "</div>";
+                                        echo "<div class=\"float-left pt-4\">";
+                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id']  ."' class=\"fas fa-times pr-4\"></a>";
+                                        echo "</div>";
+                                        echo "<img src=\"assets/img/bike.png\" width=\"60\">";
+
+                                        echo "</div>";
+                                    }
+                                    echo "<hr>";
+                                    echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
+                                    echo "  <p>&euro; 3758,-</p>";
+                                    echo "</div>";
+                                    echo "<hr>";
+                                    echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
+                                    echo "<div class='row'>";
+                                    echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
+                                    type = 'button' id = 'bestellenDropdown' >Bestellen</button >";
+                                    echo "</div >";
+                                }
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -178,9 +193,10 @@ while ($row = mysqli_fetch_assoc($res)) {
                         } ?></p>
                     <div class="w-100">
                         <p class="h3 main-color bRoboto float-left prijsdetail">&euro; <?php echo $price ?>,-</p>
-                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account bRoboto winkelwagen ml-5" type="button" id="bestellenDropdown">
+                        <a class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account bRoboto winkelwagen ml-5"
+                           href="Controllers/cart.php?id=<?php echo $id ?>" type="button" id="bestellenDropdown">
                             In Winkelwagen
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <hr class="w-100">
@@ -289,7 +305,8 @@ while ($row = mysqli_fetch_assoc($res)) {
                                 Registeren
                             </button>
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                                    type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
                                     aria-label="Toggle navigation">
                                 Inloggen
                             </button>
@@ -397,7 +414,8 @@ while ($row = mysqli_fetch_assoc($res)) {
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined w-91 mt-2">
-                                <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
+                                <input type="password" name="passwordInput" id="tf-outlined"
+                                       class="mdc-text-field__input"
                                        required minlength="6">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
