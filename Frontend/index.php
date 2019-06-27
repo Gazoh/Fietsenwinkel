@@ -232,8 +232,7 @@ if (!isset($_SESSION['first_name'])) {
         </div>
         <form class="text-center" action="nieuwsbrief_aangemeld.php" method="post">
             <div class="mdc-text-field mdc-text-field--outlined">
-                <input type="email" id="tf-outlined" class="mdc-text-field__input" name="email" required>
-                <form action="controllers/nieuwsbrief.php" method="POST" id="nieuwsbrief-versturen"git p>
+                <form action="controllers/nieuwsbrief.php" method="POST" id="nieuwsbrief-versturen">
                     <div class="mdc-text-field mdc-text-field--outlined w-100">
                         <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
                         <div class="mdc-notched-outline">

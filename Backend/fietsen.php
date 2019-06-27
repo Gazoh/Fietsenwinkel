@@ -205,6 +205,7 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Framenummer</th>
                         <th>Beschadigd</th>
                         <th>Naam</th>
+                        <th>Beschrijving</th>
                         <th>Type</th>
                         <th>Versnellingen</th>
                         <th>Prijs</th>
@@ -227,6 +228,7 @@ $records = $con->query("SELECT * FROM bikes");
                                     echo "Onbeschadigd";
                                 } ?></td>
                             <td><?php echo $row['bikename'] ?></td>
+                            <td><?php echo $row['description']?></td>
                             <td><?php if ($row['biketype'] == 0) {
                                     echo 'Damesfiets';
                                 } else if ($row['biketype'] == 1) {
@@ -251,6 +253,7 @@ $records = $con->query("SELECT * FROM bikes");
                         <th>Framenummer</th>
                         <th>Beschadigd</th>
                         <th>Naam</th>
+                        <th>Beschrijving</th>
                         <th>Type</th>
                         <th>Versnellingen</th>
                         <th>Prijs</th>
@@ -288,6 +291,16 @@ $records = $con->query("SELECT * FROM bikes");
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
                                         <label for="tf-outlined" class="mdc-floating-label">Merk</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--textarea mt-2 w-91">
+                                <textarea id="textarea" name="descriptionInput" class="mdc-text-field__input" rows="8" cols="40"></textarea>
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="textarea" class="mdc-floating-label">Description</label>
                                     </div>
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
@@ -340,7 +353,7 @@ $records = $con->query("SELECT * FROM bikes");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="biketype">
+                             <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="biketype">
                                 <label class="btn btn-secondary">
                                     <input type="radio" name="biketype" value="0" autocomplete="off" checked>Damesfiets
                                 </label>
@@ -444,11 +457,22 @@ $records = $con->query("SELECT * FROM bikes");
                             <div class="mdc-line-ripple"></div>
                         </div>
                         <div class="mdc-text-field mt-2 w-91">
-                            <input type="text" name="typeInputBijwerken" id="typeInputBijwerken" class="mdc-text-field__input" value="">
+                            <input type="text" name="descriptionInputBijwerken" id="descriptionInputBijwerken" class="mdc-text-field__input" value="">
                             <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                Type
+                                Description
                             </label>
                             <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="biketype">
+                            <label class="btn btn-secondary" id="damesfiets">
+                                <input type="radio" name="biketype" value="0" autocomplete="off">Damesfiets
+                            </label>
+                            <label class="btn btn-secondary" id="herenfiets">
+                                <input type="radio" name="biketype" value="1" autocomplete="off">Herenfiets
+                            </label>
+                            <label class="btn btn-secondary" id="kinderfiets">
+                                <input type="radio" name="biketype" value="2" autocomplete="off">Kinderfiets
+                            </label>
                         </div>
                         <div class="mdc-text-field mt-2 w-91">
                             <input type="text" name="gearsInputBijwerken" id="gearsInputBijwerken" class="mdc-text-field__input" value="">
@@ -463,17 +487,6 @@ $records = $con->query("SELECT * FROM bikes");
                                 Prijs
                             </label>
                             <div class="mdc-line-ripple"></div>
-                        </div>
-                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="biketype">
-                            <label class="btn btn-secondary" id="damesfiets">
-                                <input type="radio" name="biketype" value="0" autocomplete="off">Damesfiets
-                            </label>
-                            <label class="btn btn-secondary" id="herenfiets">
-                                <input type="radio" name="biketype" value="1" autocomplete="off">Herenfiets
-                            </label>
-                            <label class="btn btn-secondary" id="kinderfiets">
-                                <input type="radio" name="biketype" value="2" autocomplete="off">Kinderfiets
-                            </label>
                         </div>
                     </div>
                 </form>
