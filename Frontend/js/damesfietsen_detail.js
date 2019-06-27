@@ -5,11 +5,3 @@ $(document).ready(function () {
         $('.detail').attr('href', 'http://localhost/fietsenwinkel/Frontend/Damesfietsen_detail.php?id='+ id +'');
     });
 });
-
-
-/*
-let id = $(this).attr('data-value');
-$('#fietsen_detail').attr('href', 'http://localhost/fietsenwinkel/Frontend/Damesfietsen_detail.php?id='+ id +'');
-console.log(id);
-
-*/

@@ -54,13 +54,13 @@ if (isset($_COOKIE['rememberMe'])) {
                         <div class="form-group form-login mt-30">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">E-mail</label>
-                                <input type="text" name="emailInput" class="form-control">
+                                <input type="text" name="emailInput" class="">
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Wachtwoord</label>
-                                <input type="password" name="passwordInput" class="form-control">
+                                <input type="password" name="passwordInput" class="">
                             </div>
                         </div>
                         <div class="form-check form-login onthoud-mij">

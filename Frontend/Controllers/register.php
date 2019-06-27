@@ -14,7 +14,8 @@ if (isset($_POST['submit'])) {
     $date = date("Y-m-d H:i:s");
     $password = stripslashes($password);
     $hashedpw = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO customers(first_name, last_name, adress, house_number, city, zip_code, email, email_verified, password, register_date) VALUES('$firstname', '$lastname', '$adress', '$housenumber', '$city', '$zipcode' ,'$email', 0, '$hashedpw', '$date')";
+    $sql = "INSERT INTO customers(first_name, last_name, adress, house_number, city, zip_code, email, email_verified, password, register_date, phone) VALUES('$firstname', '$lastname', '$adress', 
+'$housenumber', '$city', '$zipcode' ,'$email', 0, '$hashedpw', '$date', '$phone')";
     if ($con->query($sql) === TRUE) {
         {
             header('Location: ../');
