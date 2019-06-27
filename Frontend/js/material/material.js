@@ -18,3 +18,8 @@
 [].map.call(document.querySelectorAll('.mdc-slider'), function (el) {
     return new mdc.slider.MDCSlider(el);
 });
+
+// Tab-bar\
+[].map.call(document.querySelectorAll('.mdc-list'), function (el) {
+    return new mdc.list.MDCList(el);
+});

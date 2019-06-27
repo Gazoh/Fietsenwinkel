@@ -165,10 +165,10 @@ while ($row = mysqli_fetch_assoc($res)) {
     </div>
     <div class="content pt-3">
         <div class="row justify-content-center w-100">
-            <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10">
-                <img src="<?php echo $image_path?>" class="img-thumbnail image-detail">
+            <div class="col-xl-3 col-lg-5 col-md-10 col-sm-10 float-left mr-5">
+                <img src="<?php echo $image_path ?>" class="img-thumbnail image-detail">
             </div>
-            <div class="col-xl-6 col-lg-10 col-md-10 col-sm-10 col-10 h-100 my-auto p-3">
+            <div class="col-xl-5 col-lg-10 col-md-10 col-sm-10 col-10 h-100 my-auto p-3">
                 <div class="bike_information_detail">
                     <p class="h4"><span class="bRoboto"><?php echo $bikename ?></p>
                     <p class="h6 main-color-light"><?php if ($damaged == 0) {

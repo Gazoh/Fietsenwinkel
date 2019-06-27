@@ -165,18 +165,7 @@ if (isset($_COOKIE['rememberMe'])) {
     </div>
     <!--   Hier eindigt de Not minified sidebar-->
     <nav class="navbar navbar-light bg-light mr-auto nav" id="nav">
-        <div class="justify-content-end">
-            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account">
-                <i class="fas fa-user"></i>
-                <span class="pr-2"></span>
-                <span class="mdc-button__label">Account</span>
-            </button>
-            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help">
-                <i class="fas fa-question"></i>
-                <span class="pr-2"></span>
-                <span class="mdc-button__label">Help</span>
-            </button>
-        </div>
+        <div class="justify-content-end"></div>
         <div class="mdc-chip-set pl-2 pr-2">
             <div class="hiUser pr-1 pt-2">
                 <span class="hiNav">Hi,  <span class="bRoboto" id="usernameNav"><?php echo print_r($_SESSION["first_name"]);?></span></span>

@@ -1,3 +1,3 @@
-// De eerste letter van de username
-$('#usernameNav').text(username);
+// Get username
+let username = $("#usernameNav").attr('value');
 $('#usernameFirstLetter').text(username.slice(0, 1)).css('color','#fff');

@@ -34,6 +34,8 @@ if (isset($_POST['submit'])) {
                 {
                     header('Location: ../login.php');
                 }
+            } else {
+                echo mysqli_errno($con) . ": " . mysqli_error($con) . "\n";
             }
         }
     }

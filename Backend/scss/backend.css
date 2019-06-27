@@ -322,12 +322,10 @@ nav.navbar.navbar-light.bg-light.justify-content-between {
   background-color: #eceef0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: #fff;
 }
 
 .mdc-chip {
   background: #1587d2;
-  color: #fff;
 }
 
 @media only screen and (max-width: 480px) {
