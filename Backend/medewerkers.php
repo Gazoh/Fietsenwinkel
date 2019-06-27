@@ -2,6 +2,24 @@
 require_once("Controllers/dbconnect.php");
 // Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
 $records = $con->query("SELECT * FROM employees");
+
+session_start();
+if (isset($_SESSION['loginstatus'])) {
+    $loginstatus = $_SESSION['loginstatus'];
+}
+// Check if remember me cookie is on.
+if (isset($_COOKIE['rememberMe'])) {
+    $token = $_COOKIE['rememberMe'];
+    $sql = "SELECT * FROM users WHERE remember_me = '$token'";
+
+    $result = mysqli_query($con, $sql);
+
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $count = mysqli_num_rows($result);
+    $name = $_POST['first_name'];
+}
+
 ?>
 <html lang="en">
 <head>
@@ -161,7 +179,7 @@ $records = $con->query("SELECT * FROM employees");
         </div>
         <div class="mdc-chip-set pl-2 pr-2">
             <div class="hiUser pr-1 pt-2">
-                <span class="hiNav">Hi, </span>
+                <span class="hiNav">Hi,  <span class="bRoboto" id="usernameNav"><?php echo print_r($_SESSION["first_name"]);?></span></span>
                 <span class="usernameNav" id="usernameNav"></span>
             </div>
             <div class="mdc-chip" tabindex="0">
