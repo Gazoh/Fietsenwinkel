@@ -72,6 +72,7 @@ if (!isset($_SESSION['first_name'])) {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
+                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
@@ -526,17 +527,13 @@ if (!isset($_SESSION['first_name'])) {
             </div>
             <div class="modal-body">
                 <!-- List group -->
-                <aside class="mdc-drawer float-left mr-3 h-100 mt-4">
+                <aside class="mdc-drawer float-left mr-3 h-100 mt-5">
                     <div class="mdc-drawer__content">
                         <nav class="list-group mdc-list">
                             <a class="mdc-list-item mdc-list-item--activated" data-toggle="list" href="#profile" role="tab">
                                 <i class="fas fa-user-circle detail-modal-icon"></i>
                                 <i class="material-icons mdc-list-item__graphic w-100" aria-hidden="true">Mijn
                                     Profiel</i>
-                            </a>
-                            <a class="mdc-list-item mdc-list-item" data-toggle="list" href="#bestellingen" role="tab">
-                                <i class="fas fa-shopping-cart detail-modal-icon"></i>
-                                <i class="material-icons mdc-list-item__graphic w-100" aria-hidden="true">Mijn bestellingen</i>
                             </a>
                             <a class="mdc-list-item" href="controllers/logout.php">
                                 <i class="fas fa-sign-out-alt detail-modal-icon pl-1"></i>
@@ -610,9 +607,6 @@ if (!isset($_SESSION['first_name'])) {
                                 <div class="mdc-line-ripple"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane" id="bestellingen" role="tabpanel">
-                        ada
                     </div>
                 </div>
             </div>
