@@ -265,7 +265,7 @@ $records = $con->query("SELECT * FROM discount_codes");
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined">
-                                <input type="text" name="amountInput" id="tf-outlined" class="mdc-text-field__input">
+                                <input type="number" name="amountInput" id="tf-outlined" class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch">
@@ -274,18 +274,16 @@ $records = $con->query("SELECT * FROM discount_codes");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                                <input type="text" name="validInput" id="tf-outlined" class="mdc-text-field__input">
-                                <div class="mdc-notched-outline">
-                                    <div class="mdc-notched-outline__leading"></div>
-                                    <div class="mdc-notched-outline__notch">
-                                        <label for="tf-outlined" class="mdc-floating-label">Geldig</label>
-                                    </div>
-                                    <div class="mdc-notched-outline__trailing"></div>
-                                </div>
+                            <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="valid">
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="validInput" value="0" autocomplete="off">Ongeldig
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="validInput" value="1" autocomplete="off">Geldig
+                                </label>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                                <input type="date" name="creationdateInput" id="tf-outlined"
+                                <input type="date" name="creationdateInput" id="creationdateInput"
                                        class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
@@ -299,7 +297,7 @@ $records = $con->query("SELECT * FROM discount_codes");
                                 <div class="mdc-text-field-helper-text">Geldig vanaf</div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                                <input type="date" name="expirydateInput" id="tf-outlined"
+                                <input type="date" name="expirydateInput" id="expirydateInput"
                                        class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
@@ -356,27 +354,177 @@ $records = $con->query("SELECT * FROM discount_codes");
             </div>
         </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-    <!-- Datatable -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-    <script type="text/javascript" src="JS/datatable/datatable_aanbiedingen.js  "></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-    <!-- Sidebar & Nav -->
-    <script src="JS/sidebar.js"></script>
-    <script src="JS/nav.js"></script>
-    <!-- Material -->
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="JS/google-material/index.js"></script>
+</div>
+<!-- Aanpassen Modal -->
+<div class="modal fade" id="bijwerkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Aanbieding Aanpassen</h5>
+            </div>
+            <div class="modal-body p-4">
+                <form action="Controllers/medewerker_toevoegen.php" method="POST" id="addAanbieding">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mr-2 mt-2">
+                            <input type="text" name="codeinputAanpassen" id="codeinputAanpassen" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Kortingscode
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2">
+                            <input type="text" name="amountinputAanpassen" id="amountinputAanpassen" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Bedrag
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="valid">
+                            <label class="btn btn-secondary" id="ongeldig">
+                                <input type="radio" name="validInputAanpassen" value="0" autocomplete="off">Ongeldig
+                            </label>
+                            <label class="btn btn-secondary" id="geldig">
+                                <input type="radio" name="validInputAanpassen" value="1" autocomplete="off">Geldig
+                            </label>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="date" name="creationdateGeldigvanafInput" id="creationdateGeldigvanafInput" class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label"></label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text">Geldig vanaf</div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="date" name="creationdateGeldigtotInput" id="creationdateGeldigtotInput"
+                                   class="mdc-text-field__input">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label"></label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text">Geldig tot</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal"
+                        class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                    <span class="mdc-button__label">Sluiten</span>
+                </button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                        type="submit" name="submit" form="addMedewerker">
+                    <span class="mdc-button__label">Toevoegen</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bekijken Modal -->
+<div class="modal fade" id="bekijkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Aanbieding Bekijken</h5>
+            </div>
+            <div class="modal-body p-4">
+                <form action="Controllers/medewerker_toevoegen.php" method="POST" id="addAanbieding">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mr-2 mt-2">
+                            <input type="text" name="codeinputBekijken" id="codeinputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Kortingscode
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2">
+                            <input type="text" name="amountinputBekijken" id="amountinputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Bedrag
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="valid">
+                            <label class="btn btn-secondary" id="ongeldigBekijken">
+                                <input type="radio" name="validInputBekijken" value="0" autocomplete="off" disabled>Ongeldig
+                            </label>
+                            <label class="btn btn-secondary" id="geldigBekijken">
+                                <input type="radio" name="validInputBekijken" value="1" autocomplete="off" disabled>Geldig
+                            </label>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="date" name="creationdateGeldigvanafInputBekijken" id="creationdateGeldigvanafInputBekijken" class="mdc-text-field__input" disabled>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label"></label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text">Geldig vanaf</div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
+                            <input type="date" name="creationdateGeldigtotInputBekijken" id="creationdateGeldigtotInputBekijken" class="mdc-text-field__input" disabled>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="tf-outlined" class="mdc-floating-label"></label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text">Geldig tot</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal"
+                        class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                    <span class="mdc-button__label">Sluiten</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Datatable -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+<script type="text/javascript" src="JS/datatable/datatable_aanbiedingen.js  "></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+<!-- Sidebar & Nav -->
+<script src="JS/sidebar.js"></script>
+<script src="JS/nav.js"></script>
+<!-- Material -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="JS/google-material/index.js"></script>
 </body>
 </html>

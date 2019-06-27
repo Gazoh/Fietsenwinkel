@@ -225,6 +225,20 @@
   background-color: #1587d2 !important;
 }
 
+@media only screen and (max-width: 628px) {
+  .bike_information_detail {
+    text-align: center !important;
+  }
+
+  .prijsdetail {
+    float: none !important;
+  }
+
+  .winkelwagen {
+    margin: 0 !important;
+    width: 100%;
+  }
+}
 /* -------------------------------------------- */
 /*                    FONTS                     */
 /* -------------------------------------------- */
@@ -315,6 +329,10 @@ body, html {
 
 .border-radius0 {
   border-radius: 0 !important;
+}
+
+.border-0 {
+  border: 0 !important;
 }
 
 .dismiss-button {

@@ -178,8 +178,8 @@
            </span>
         </header>
         <div class="container-fluid">
-            <div class="image mt-5">
-                <img class="fiets-image" src="http://bbeyogullari.gcmediavormgeving.nl/Backend/Assets/img/fiets1.jpg" width="" alt=""/>
+            <div class="col-xl-7 col-lg-7 image mt-5 text-center">
+                <img class="fiets-image mt-5" src="Assets/img/fiets1.jpg"  alt="Fiets Foto"/>
             </div>
             <div class="row data-fiets">
                 <div class="col-sm"></div>

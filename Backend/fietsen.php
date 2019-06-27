@@ -224,13 +224,15 @@ $records = $con->query("SELECT * FROM bikes");
                             <td><?php if ($row['damaged'] == 1) {
                                     echo "Beschadigd";
                                 } else if ($row['damaged'] == 0) {
-                                    echo "Niet beschadigd";
+                                    echo "Onbeschadigd";
                                 } ?></td>
                             <td><?php echo $row['bikename'] ?></td>
                             <td><?php if ($row['biketype'] == 0) {
-                                    echo "Damesfiets";
-                                } elseif ($row['biketype'] == 1) {
-                                    echo "Herenfiets";
+                                    echo 'Damesfiets';
+                                } else if ($row['biketype'] == 1) {
+                                    echo 'Herenfiets';
+                                } else if ($row['biketype'] == 2) {
+                                    echo 'Kinderfiets';
                                 } ?></td>
                             <td><?php echo $row['gears'] ?></td>
                             <td><?php echo "&euro; " . $row['selling_price'] ?></td>
@@ -291,16 +293,6 @@ $records = $con->query("SELECT * FROM bikes");
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
-                                <input type="text" name="typeInput" id="tf-outlined" class="mdc-text-field__input">
-                                <div class="mdc-notched-outline">
-                                    <div class="mdc-notched-outline__leading"></div>
-                                    <div class="mdc-notched-outline__notch">
-                                        <label for="tf-outlined" class="mdc-floating-label">Type</label>
-                                    </div>
-                                    <div class="mdc-notched-outline__trailing"></div>
-                                </div>
-                            </div>
-                            <div class="mdc-text-field mdc-text-field--outlined mt-2 w-91">
                                 <input type="text" name="frametypeInput" id="tf-outlined" class="mdc-text-field__input">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
@@ -310,8 +302,8 @@ $records = $con->query("SELECT * FROM bikes");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
+                            <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons">
+                                <label class="btn btn-secondary">
                                     <input type="radio" name="damaged" value="0" autocomplete="off" checked> Onbeschadigd
                                 </label>
                                 <label class="btn btn-secondary">
@@ -348,6 +340,17 @@ $records = $con->query("SELECT * FROM bikes");
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
+                            <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="biketype">
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="biketype" value="0" autocomplete="off" checked>Damesfiets
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="biketype" value="1" autocomplete="off">Herenfiets
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="biketype" value="2" autocomplete="off">Kinderfiets
+                                </label>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -364,7 +367,6 @@ $records = $con->query("SELECT * FROM bikes");
             </div>
         </div>
     </div>
-
     <!-- Delete Bike -->
     <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
         <div class="modal-dialog" role="document">
@@ -378,15 +380,113 @@ $records = $con->query("SELECT * FROM bikes");
                     <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
-                            data-dismiss="modal">
-                        <span class="mdc-button__label">Sluiten</span>
-                    </button>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
-                            type="submit" name="submit" id="deleteBike">
-                        <span class="mdc-button__label">Verwijderen</span>
-                    </button>
+                    <form>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                data-dismiss="modal">
+                            <span class="mdc-button__label">Sluiten</span>
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                type="submit" name="submit" id="deleteBike">
+                            <span class="mdc-button__label">Verwijderen</span>
+                        </button>
+                    </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Aanpassen Modal -->
+<div class="modal fade" id="bijwerkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Fiets Aanpassen</h5>
+            </div>
+            <div class="modal-body p-4">
+                <form action="Controllers/fiets_aanpassen.php" method="POST" id="addFiets">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="row justify-content-center">
+                        <div class="mdc-text-field mr-2 mt-2">
+                            <input type="text" name="brandInputBijwerken" id="brandInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Merk
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2">
+                            <input type="text" name="colorInputBijwerken" id="colorInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Kleur
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="framenumberInputBijwerken" id="framenumberInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Framenummer
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="damaged">
+                            <label class="btn btn-secondary" id="onbeschadigd">
+                                <input type="radio" name="damaged" value="0" autocomplete="off"> Onbeschadigd
+                            </label>
+                            <label class="btn btn-secondary" id="beschadigd">
+                                <input type="radio" name="damaged" value="1" autocomplete="off"> Beschadigd
+                            </label>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="nameInputBijwerken" id="nameInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Naam
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="typeInputBijwerken" id="typeInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Type
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="gearsInputBijwerken" id="gearsInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Versnellingen
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="mdc-text-field mt-2 w-91">
+                            <input type="text" name="priceInputBijwerken" id="priceInputBijwerken" class="mdc-text-field__input" value="">
+                            <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                Prijs
+                            </label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="btn-group btn-group-toggle mt-2 w-91" data-toggle="buttons" id="biketype">
+                            <label class="btn btn-secondary" id="damesfiets">
+                                <input type="radio" name="biketype" value="0" autocomplete="off">Damesfiets
+                            </label>
+                            <label class="btn btn-secondary" id="herenfiets">
+                                <input type="radio" name="biketype" value="1" autocomplete="off">Herenfiets
+                            </label>
+                            <label class="btn btn-secondary" id="kinderfiets">
+                                <input type="radio" name="biketype" value="2" autocomplete="off">Kinderfiets
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal"
+                        class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                    <span class="mdc-button__label">Sluiten</span>
+                </button>
+                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                        type="submit" name="submit" form="addMedewerker">
+                    <span class="mdc-button__label">Aanpassen</span>
+                </button>
             </div>
         </div>
     </div>

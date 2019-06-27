@@ -223,6 +223,9 @@ if (!isset($_SESSION['first_name'])) {
         <form class="text-center" action="nieuwsbrief_aangemeld.php" method="post">
             <div class="mdc-text-field mdc-text-field--outlined">
                 <input type="email" id="tf-outlined" class="mdc-text-field__input" name="email" required>
+        <form action="controllers/nieuwsbrief.php" method="POST" id="nieuwsbrief-versturen" class="text-center">
+            <div class="mdc-text-field mdc-text-field--outlined">
+                <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
                 <div class="mdc-notched-outline">
                     <div class="mdc-notched-outline__leading"></div>
                     <div class="mdc-notched-outline__notch">
@@ -232,6 +235,9 @@ if (!isset($_SESSION['first_name'])) {
                 </div>
                 <input class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded inschrijven mt-4"
                         type="submit" value="Inschrijven">
+                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded inschrijven mt-4" type="submit" name="submit" form="nieuwsbrief-versturen">
+                    Inschrijven
+                </button>
             </div>
         </form>
     </div>

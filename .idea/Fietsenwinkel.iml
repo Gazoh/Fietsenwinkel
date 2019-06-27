@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="iwantfoodnow" />
     <orderEntry type="module" module-name="PHP-Leren" />
+    <orderEntry type="module" module-name="Pokidex" />
   </component>
 </module>

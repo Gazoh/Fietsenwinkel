@@ -298,28 +298,28 @@ $records = $con->query("SELECT * FROM customers");
                             <div class="mdc-line-ripple"></div>
                         </div>
                         <div class="mdc-text-field mt-2 w-91">
-                            <input type="email" name="phoneInputBekijken" id="phoneInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <input type="text" name="phoneInputBekijken" id="phoneInputBekijken" class="mdc-text-field__input" value="" disabled>
                             <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                 Telefoonnummer
                             </label>
                             <div class="mdc-line-ripple"></div>
                         </div>
                         <div class="mdc-text-field mt-2 w-91">
-                            <input type="email" name="adressInputBekijken" id="adressInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <input type="text" name="adressInputBekijken" id="adressInputBekijken" class="mdc-text-field__input" value="" disabled>
                             <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                 Adres + Huisnummer
                             </label>
                             <div class="mdc-line-ripple"></div>
                         </div>
                         <div class="mdc-text-field mt-2 w-91">
-                            <input type="email" name="cityInputBekijken" id="cityInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <input type="text" name="cityInputBekijken" id="cityInputBekijken" class="mdc-text-field__input" value="" disabled>
                             <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                 Stad
                             </label>
                             <div class="mdc-line-ripple"></div>
                         </div>
                         <div class="mdc-text-field mt-2 w-91">
-                            <input type="email" name="zipcodeInputBekijken" id="zipcodeInputBekijken" class="mdc-text-field__input" value="" disabled>
+                            <input type="text" name="zipcodeInputBekijken" id="zipcodeInputBekijken" class="mdc-text-field__input" value="" disabled>
                             <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                 Postcode
                             </label>

@@ -513,35 +513,35 @@ $records = $con->query("SELECT * FROM employees");
                                 <div class="mdc-line-ripple"></div>
                             </div>
                             <div class="mdc-text-field mt-2 w-91">
-                                <input type="email" name="phoneInput" id="phoneInputBekijken" class="mdc-text-field__input" value="" disabled="">
+                                <input type="text" name="phoneInput" id="phoneInputBekijken" class="mdc-text-field__input" value="" disabled="">
                                 <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                     Telefoonnummer
                                 </label>
                                 <div class="mdc-line-ripple"></div>
                             </div>
                             <div class="mdc-text-field mt-2 w-91">
-                                <input type="email" name="usernameInput" id="usernameInputBekijken" class="mdc-text-field__input" value="" disabled="">
+                                <input type="text" name="usernameInput" id="usernameInputBekijken" class="mdc-text-field__input" value="" disabled="">
                                 <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                     Username
                                 </label>
                                 <div class="mdc-line-ripple"></div>
                             </div>
                             <div class="mdc-text-field mt-2 w-91">
-                                <input type="email" name="adressInput" id="adressInputBekijken" class="mdc-text-field__input" value="" disabled="">
+                                <input type="text" name="adressInput" id="adressInputBekijken" class="mdc-text-field__input" value="" disabled="">
                                 <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                     Adres + Huisnummer
                                 </label>
                                 <div class="mdc-line-ripple"></div>
                             </div>
                             <div class="mdc-text-field mt-2 w-91">
-                                <input type="email" name="cityInput" id="cityInputBekijken" class="mdc-text-field__input" value="" disabled="">
+                                <input type="text" name="cityInput" id="cityInputBekijken" class="mdc-text-field__input" value="" disabled="">
                                 <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                     Stad
                                 </label>
                                 <div class="mdc-line-ripple"></div>
                             </div>
                             <div class="mdc-text-field mt-2 w-91">
-                                <input type="email" name="zipcodeInput" id="zipcodeInputBekijken" class="mdc-text-field__input" value="" disabled="">
+                                <input type="text" name="zipcodeInput" id="zipcodeInputBekijken" class="mdc-text-field__input" value="" disabled="">
                                 <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
                                     Postcode
                                 </label>

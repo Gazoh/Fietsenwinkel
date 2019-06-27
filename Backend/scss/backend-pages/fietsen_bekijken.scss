@@ -50,10 +50,6 @@
   float: left;
 }
 
-.fiets-image {
-  width: 100%;
-}
-
 .container-data {
   position: relative;
   top: 120px;
@@ -68,19 +64,21 @@
   text-decoration: line-through;
 }
 
-@media only screen and (max-width: 1329px) {
+.fiets-image {
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 992px) {
   .container-data {
     top: 0px !important;
-  }
-
-  .fiets-image {
-    height: 100%;
   }
 
   .image {
     float: none !important;
     display: flex;
     justify-content: center;
+    margin: 0 !important;
   }
 
   .data-fiets {

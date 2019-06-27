@@ -3,6 +3,23 @@ session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
+
+// Id ophalen
+require_once("controllers/dbconnect.php");
+$requested_query_vars = $_SERVER["QUERY_STRING"];
+$id = str_replace("id=", "", $requested_query_vars);
+$sql = "SELECT * FROM bikes WHERE id = '$id'";
+$res = mysqli_query($con, $sql);
+while ($row = mysqli_fetch_assoc($res)) {
+    $bikename = $row['bikename'];
+    $bikebrand = $row['brand'];
+    $damaged = $row['damaged'];
+    $price = $row['selling_price'];
+    $description = $row['description'];
+    $framenumber = $row['framenumber'];
+    $color = $row['color'];
+    $gears = $row['gears'];
+}
 ?>
 <html lang="en">
 <head>
@@ -145,21 +162,25 @@ if (!isset($_SESSION['first_name'])) {
             </div>
         </div>
     </div>
-    <div class="content pt-3">
-        <div class="row justify-content-center w-100">
-            <div class="col-xl-5 col-lg-10 col-md-10 col-sm-10 col-10">
+    <div class="content pt-3 p-2">
+        <div class="row justify-content-center w-100 m-0">
+            <div class="col-xl-4 col-lg-7 col-md-10 col-sm-10">
                 <img src="assets/img/bike_detail.png" class="img-thumbnail image-detail">
             </div>
             <div class="col-xl-6 col-lg-10 col-md-10 col-sm-10 col-10 h-100 my-auto p-3">
-                <p class="h4"><span class="bRoboto">Lorem</span> ipsum adiscing elit ligula eros vestibulum mi</p>
-                <p class="h6 main-color-light">Licht beschadigd</p>
-                <p class="mt-4 h4 color-light iRoboto font-italic line-through">&euro; 1276,-</p>
-                <div class="w-100">
-                    <p class="h3 main-color bRoboto float-left">&euro; 1087,-</p>
-                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account bRoboto winkelwagen ml-5"
-                            type="button" id="bestellenDropdown">
-                        In Winkelwagen
-                    </button>
+                <div class="bike_information_detail">
+                    <p class="h4"><span class="bRoboto"><?php echo $bikename ?></p>
+                    <p class="h6 main-color-light"><?php if ($damaged == 0) {
+                            echo "Onbeschadigd";
+                        } else if ($damaged == 1) {
+                            echo "Beschadigd";
+                        } ?></p>
+                    <div class="w-100">
+                        <p class="h3 main-color bRoboto float-left prijsdetail">&euro; <?php echo $price ?>,-</p>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account bRoboto winkelwagen ml-5" type="button" id="bestellenDropdown">
+                            In Winkelwagen
+                        </button>
+                    </div>
                 </div>
                 <hr class="w-100">
                 <div id="check">
@@ -181,46 +202,42 @@ if (!isset($_SESSION['first_name'])) {
                     </div>
                 </div>
             </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 mt-4 float-left" id="product-omschrijving">
-                <p class="h2 bRoboto">Productomschrijving</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis mi nec mi laoreet efficitur.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae interdum ex, et mattis libero.
-                    Nullam convallis, justo sed feugiat varius, risus nibh faucibus ante, a venenatis leo turpis ut
-                    urna. Nam faucibus, eros vitae accumsan cursus, magna odio pellentesque urna, et gravida sapien
-                    mauris non risus. Vivamus porta quis sem quis aliquet. Suspendisse at porttitor orci. Class aptent
-                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vel faucibus
-                    neque. Nam quis orci sit amet est pretium hendrerit. Mauris scelerisque pulvinar eleifend. Nullam
-                    ullamcorper ut orci nec dictum. Maecenas suscipit ipsum et eros mattis ultrices. Cras eget libero id
-                    dui consectetur finibus sit amet ut metus. Phasellus consectetur rhoncus faucibus.</p>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 mt-4 float-left" id="product-omschrijving">
+                <p class="h3 bRoboto">Productomschrijving</p>
+                <p><?php echo $description ?></p>
             </div>
-            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 float-left">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 float-left">
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="row">Merk</th>
+                        <td><?php echo $bikebrand ?></td>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">Framenummer</th>
+                        <td><?php echo $framenumber ?></td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <th scope="row">Kleur</th>
+                        <td><?php echo $color ?></td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <th scope="row">Conditie</th>
+                        <td><?php if ($damaged == 0) {
+                                echo "Onbeschadigd";
+                            } else if ($damaged == 1) {
+                                echo "Beschadigd";
+                            } ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Productnaam</th>
+                        <td><?php echo $bikename ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Versnellingen</th>
+                        <td><?php echo $gears ?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -271,7 +288,8 @@ if (!isset($_SESSION['first_name'])) {
                                 Registeren
                             </button>
                             <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                                    type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
                                     aria-label="Toggle navigation">
                                 Inloggen
                             </button>

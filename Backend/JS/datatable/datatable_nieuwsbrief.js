@@ -52,6 +52,7 @@ $(document).ready(function () {
 // Wanneer een column is selected en hij op aanpassen staat dan krijg je alle data te zien van de column
     $('#uitvoeren').on('click', function () {
         if ($('#aanpassen:selected').val() && elementClicked) {
+            $('#bijwerkenModal').modal('show');
             var oTable = $('#nieuwsbrief').DataTable();
             $('#nieuwsbrief thead').on('click', 'tr', function () {
                 $(this).toggleClass('selected');
@@ -60,18 +61,33 @@ $(document).ready(function () {
                 console.log(row);
             });
             var oData = oTable.rows('.selected').data();
-
             for (var i = 0; i < oData.length; i++) {
-                console.log("ID: " + oData[i][1]);
-                console.log("Voornaam: " + oData[i][2]);
-                console.log("Achternaam: " + oData[i][3]);
-                console.log("Klant ID: " + oData[i][4]);
-                console.log("Beoordeling: " + oData[i][5]);
-                console.log("Datum: " + oData[i][6]);
-                console.log("Zichtbaarheid op website: " + oData[i][7]);
-                console.log("Status: " + oData[i][8]);
+                $('#emailInputBijwerken').attr('value', oData[i][2]);
             }
+        } else if ($('#bekijken:selected').val() && elementClicked) {
+            $('#bekijkenModal').modal('show');
+
+            var oTable = $('#nieuwsbrief').DataTable();
+            var oData = oTable.rows('.selected').data();
+            for (var i = 0; i < oData.length; i++) {
+                $('#emailInputBekijken').attr('value', oData[i][2]);
+            }
+        } else if ($('#verwijderen:selected').val() && elementClicked) {
+            $('#deleteModal').modal('show');
         }
+
+        $('#deleteNieuwsbrief').on('click', function () {
+            let oTable = $('#nieuwsbrief').DataTable();
+            let oData = oTable.rows('.selected').data();
+            for (let i = 0; i < oData.length; i++) {
+                console.log("ID: " + oData[i][1]);
+
+                $.post("http://localhost/fietsenwinkel/Backend/Controllers/nieuwsbrief_verwijderen.php?id=" + oData[i][1] + "", function (data) {
+                    console.log(data);
+                });
+                location.reload();
+            }
+        })
     });
 
     // Append Datatable toevoegen aan een id

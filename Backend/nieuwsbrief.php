@@ -10,11 +10,14 @@ $records = $con->query("SELECT * FROM newsletter");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Material -->
-     <link href="css/Material/material-components-web.min.css" rel="stylesheet">
+    <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!--  FontAwesome  -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='text/css' media='all'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
+          type='text/css' media='all'>
     <!--  Fonts & Eigen CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="scss/backend.css">
@@ -77,7 +80,8 @@ $records = $con->query("SELECT * FROM newsletter");
                 <li class="submenu-bestellingenLi openstaand">
                     <a href="bestellingen_openstaand.php">
                         <div class="sidebarData">
-                            <span class="sidebar-icon pr-2"><i class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
+                            <span class="sidebar-icon pr-2"><i
+                                        class="fa fa-times-circle iconwidthBestellingen iconwidth"></i></span>
                             <span class="sidebar-title">Openstaand</span>
                         </div>
                     </a>
@@ -189,54 +193,126 @@ $records = $con->query("SELECT * FROM newsletter");
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Titel</th>
-                        <th>Onderwerp</th>
-                        <th>Verzonden</th>
-                        <th>Status</th>
+                        <th>Email</th>
                     </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        while ($row = mysqli_fetch_array($records))
-                        {
-                            ?>
-                            <tr>
-                                <td></td>
-                                <td><?php echo $row['id'] ?></td>
-                                <td><?php echo $row['title'] ?></td>
-                                <td><?php echo $row['description'] ?></td>
-                                <td><?php echo $row['date_sent'] ?></td>
-                                <?php if($row['status'] == 0)
-                                    {
-                                        echo "<td style='color: orangered'>Concept</td>";
-                                    } elseif ($row['status'] == 1)
-                                {
-                                    echo  "<td style='color: green'>Verstuurd</td>";
-                                }?>
-                            </tr>
-                            <?php
-                        }
+                    <?php
+                    while ($row = mysqli_fetch_array($records)) {
+
                         ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['email'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                     </tbody>
                     <tfoot>
                     <tr>
                         <th></th>
                         <th>ID</th>
-                        <th>Titel</th>
-                        <th>Onderwerp</th>
-                        <th>Verzonden</th>
-                        <th>Status</th>
+                        <th>Email</th>
                     </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
     </div>
+    <!-- Bekijken Modal -->
+    <div class="modal fade" id="bekijkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aanbieding Bekijken</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="mdc-text-field mr-2 mt-2 w-91">
+                        <input type="text" name="emailInputBekijken" id="emailInputBekijken"
+                               class="mdc-text-field__input" value="" disabled>
+                        <label class="mdc-floating-label mdc-floating-label--float-above"
+                               for="pre-filled">E-mail</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Aanpassen Modal -->
+    <div class="modal fade" id="bijwerkenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Fiets Aanpassen</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Voornaam & Achternaam -->
+                    <div class="mdc-text-field mr-2 mt-2 w-91">
+                        <input type="email" name="emailInputBijwerken" id="emailInputBijwerken" class="mdc-text-field__input" value="">
+                        <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">Email</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal"
+                            class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error">
+                        <span class="mdc-button__label">Sluiten</span>
+                    </button>
+                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                            type="submit" name="submit" form="addNieuwsbrief">
+                        <span class="mdc-button__label">Aanpassen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Nieuwsbrief -->
+    <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body p-5 row">
+                    <img src="Assets/img/delete_icon.svg" alt="DELETE ICON"
+                         class="img-thumbnail no-border justify-content-center" width="75">
+                    <p class="col-10 text-center bRoboto pt-3">Wilt u dit record echt verwijderen? Dit proces kan niet ongedaan worden gemaakt.</p>
+                </div>
+                <div class="modal-footer">
+                    <form>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help main-color-light"
+                                data-dismiss="modal">
+                            <span class="mdc-button__label">Sluiten</span>
+                        </button>
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded help error"
+                                type="submit" name="submit" id="deleteNieuwsbrief">
+                            <span class="mdc-button__label">Verwijderen</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     <!-- Datatable -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
