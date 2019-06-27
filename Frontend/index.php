@@ -172,14 +172,16 @@ if (!isset($_SESSION['first_name'])) {
             <?php
             while ($r = mysqli_fetch_assoc($res)) { ?>
                 <div>
-                    <img class="w-100" src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>">
+                    <a class="details">
+                        <img id="bike-data" class="w-100" data-role="<?php echo $r['biketype']; ?>" data-id="<?php echo $r['id']; ?>" src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>">
+                    </a>
                     <p class="m-0 bikename"><?php echo $r['bikename'] ?></p>
                     <p class="main-color-light mb-2 bRoboto damaged"><?php if ($r['damaged'] == 1) {
                             echo "Onbeschadigd";
                         } else {
                             echo "Beschadigd";
                         } ?></p>
-                        <p class="prijs main-color h3 bRoboto prijs-nieuwecollectie"><?php echo '&euro;' . $r['selling_price'] ?></p>
+                    <p class="prijs main-color h3 bRoboto prijs-nieuwecollectie"><?php echo '&euro;' . $r['selling_price'] ?></p>
                 </div>
             <?php } ?>
         </div>
@@ -624,5 +626,6 @@ if (!isset($_SESSION['first_name'])) {
 <!-- Material.io -->
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="js/material/material.js"></script>
+<script src="js/index_detail_fietsen.js"></script>
 </body>
 </html>
