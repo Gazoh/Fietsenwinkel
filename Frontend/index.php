@@ -9,6 +9,7 @@ $resTwee = mysqli_query($con, $reviews);
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
+$_SESSION['']
 ?>
 <html lang="en">
 <head>
