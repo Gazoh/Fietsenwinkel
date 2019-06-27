@@ -245,13 +245,7 @@ if ($itemids != "") {
                 echo "</div>";
                 echo "</div>";
             }
-        }
-        if($_SESSION['loginstatus'] == 1)
-        {
-            echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown'><a href='Controllers/order.php'>Bestellen</a></button >";
-        }
-        ?>
+        } ?>
     </div>
 </div>
 <!-- Account Modal -->

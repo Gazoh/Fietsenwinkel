@@ -14,6 +14,19 @@ if (!isset($_SESSION['cart'])) {
     }
 }
 $id = $_GET['id'];
+if ($_GET['id']) {
+    $sql = "SELECT * FROM bikes WHERE id = '$id'";
+    $sqlres = mysqli_query($con, $sql);
+    while ($row = mysqli_fetch_assoc($sqlres)) {
+        $bike_id = $row['id'];
+        $bike_image = $row['image_path'];
+        $bike_brand = $row['brand'];
+        $bike_name = $row['bikename'];
+        $bike_framenumber = $row['framenumber'];
+        $bike_price = $row['selling_price'];
+        $_SESSION['total_price'] -= $bike_price;
+    }
+}
 $deleteItem = array_search($id, $_SESSION['cart']);
 unset($_SESSION['cart'][$deleteItem]);
 $status = "product deleted";

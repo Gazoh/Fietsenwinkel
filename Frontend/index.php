@@ -7,15 +7,42 @@ if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
     }
 }
+if (!isset($_SESSION['first_name'])) {
+    $_SESSION['first_name'] = "";
+}
+if (!isset($_SESSION['loginstatus'])) {
+    $_SESSION['loginstatus'] = "false";
+}
 $bikes = "SELECT * FROM bikes ORDER BY date_added DESC";
 $res = mysqli_query($con, $bikes);
 $reviews = "SELECT * FROM reviews ";
 $resTwee = mysqli_query($con, $reviews);
 $json_data = file_get_contents("php://input");
 debug_to_console($json_data);
-if (!isset($_SESSION['first_name'])) {
-    $_SESSION['first_name'] = "";
+// Id ophalen
+$requested_query_vars = $_SERVER["QUERY_STRING"];
+$id = str_replace("id=", "", $requested_query_vars);
+$sql = "SELECT * FROM bikes WHERE id = '$id'";
+$res = mysqli_query($con, $sql);
+while ($row = mysqli_fetch_assoc($res)) {
+    $image_path = $row['image_path'];
+    $bikename = $row['bikename'];
+    $bikebrand = $row['brand'];
+    $damaged = $row['damaged'];
+    $price = $row['selling_price'];
+    $framenumber = $row['framenumber'];
+    $color = $row['color'];
+    $gears = $row['gears'];
+    $description = $row['description'];
 }
+$itemids = implode(", ", $_SESSION['cart']);
+debug_to_console($itemids);
+if ($itemids != "") {
+    $sqlgetItems = "SELECT * FROM bikes WHERE id in(" . $itemids . ")";
+    $resItems = mysqli_query($con, $sqlgetItems);
+    debug_to_console(mysqli_error($con));
+}
+
 ?>
 <html lang="en">
 <head>
@@ -79,6 +106,10 @@ if (!isset($_SESSION['first_name'])) {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
+                <?php if (($_SESSION['loginstatus'] == "false")) {
+                    echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
+                        data-toggle=\"modal\" data-target=\"#accountModal\">";
+                }?>
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
@@ -103,39 +134,39 @@ if (!isset($_SESSION['first_name'])) {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
-                            <p>&euro; 3758,-</p>
-                        </div>
-                        <hr>
-                        <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <a href="winkelwagen.php">
-                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
-                                    type="button" id="bestellenDropdown">
-                                Bestellen
-                            </button>
-                        </a>
+                        <?php
+                        if ($itemids == "") {
+                            echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
+                        } else {
+                            if (isset($res)) {
+                                if (mysqli_num_rows($resItems) > 0) {
+                                    while ($bike = mysqli_fetch_assoc($resItems)) {
+                                        echo "<div class=\"order\">";
+                                        echo "<div class=\"float-right\">";
+                                        echo " <div class=\"m-0 pt-3 bRoboto\">" . $bike['brand'] . " " . $bike['bikename'] . "</div>";
+                                        echo "<div class=\"m-0 text-right shopping-bedrag font-weight-normal\">&euro;" . $bike['selling_price'] . "</div>";
+                                        echo "</div>";
+                                        echo "<div class=\"float-left pt-4\">";
+                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id'] . "' class=\"fas fa-times pr-4\"></a>";
+                                        echo "</div>";
+                                        echo "<img src=\"assets/img/bike.png\" width=\"60\">";
+
+                                        echo "</div>";
+                                    }
+                                    echo "<hr>";
+                                    echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
+                                    echo "  <p>&euro; " . $_SESSION['total_price'] .",-</p>";
+                                    echo "</div>";
+                                    echo "<hr>";
+                                    echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
+                                    echo "<div class='row'>";
+                                    echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
+                                    type = 'button' id = 'bestellenDropdown'><a href='winkelwagen.php'>Bestellen</a></button >";
+                                    echo "</div >";
+                                }
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
