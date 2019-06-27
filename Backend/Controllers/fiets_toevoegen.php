@@ -10,29 +10,28 @@ if (isset($_POST['submit'])) {
     $color = $_POST['colorInput'];
     $gears = $_POST['gearsInput'];
     $price = $_POST['priceInput'];
-    debug_to_console($_POST['damaged']);
+    $description = $_POST['descriptionInput'];
+
     // Set beschadigd
-    if($_POST['damaged'] == 1)
-    {
+    if ($_POST['damaged'] == 1) {
         $damaged = 1;
-    } elseif ($_POST['damaged'] == 0)
-    {
+    } elseif ($_POST['damaged'] == 0) {
         $damaged = 0;
     }
 
     // Set biketype
     // 0 = Damesfiets, 1 = Herenfiets, 2 = Kinderfiets
-    if($_POST['biketype'] == 0) {
+    if ($_POST['biketype'] == 0) {
         $type = 0;
-    } elseif($_POST['biketype'] == 1) {
+    } elseif ($_POST['biketype'] == 1) {
         $type = 1;
-    } elseif($_POST['biketype'] == 2) {
+    } elseif ($_POST['biketype'] == 2) {
         $type = 2;
     }
 
 
-    $sql = "INSERT INTO bikes(bikename, brand, framenumber, color, gears, selling_price, damaged, biketype) VALUES('$bikenameInput', '$brand', '$frametype', '$color', '$gears', '$price', 
-'$damaged', '$type')";
+    $sql = "INSERT INTO bikes(bikename, brand, framenumber, color, gears, selling_price, damaged, biketype, description) VALUES('$bikenameInput', '$brand', '$frametype', '$color', '$gears', 
+'$price', '$damaged', '$type', '$description')";
 
     if ($con->query($sql) === TRUE) {
         {

@@ -1,7 +1,7 @@
 <?php
 require_once("Controllers/dbconnect.php");
 // Ophalen van users uit database en die in $records zetten om er later doorheen te loopen.
-$records = $con->query("SELECT * FROM newsletter");
+$records = $con->query("SELECT * FROM newsletter_receivers");
 ?>
 <html lang="en">
 <head>
@@ -203,7 +203,7 @@ $records = $con->query("SELECT * FROM newsletter");
                         ?>
                         <tr>
                             <td></td>
-                            <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['receiver_id'] ?></td>
                             <td><?php echo $row['email'] ?></td>
                         </tr>
                         <?php

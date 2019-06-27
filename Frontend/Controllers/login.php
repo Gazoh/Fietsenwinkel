@@ -38,6 +38,7 @@ if(isset($_POST['submit'])) {
             $sql = "UPDATE customers SET last_login = '$date' WHERE email = '$email'";
             if($con->query($sql) === TRUE)
             {
+                $_SESSION['user_id'] = $row['id'];
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['last_name'] = $row['last_name'];
                 $_SESSION['loginstatus'] = 1;

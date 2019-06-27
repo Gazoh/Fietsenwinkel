@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 27 jun 2019 om 10:46
--- Serverversie: 10.1.26-MariaDB
--- PHP-versie: 7.1.8
+-- Gegenereerd op: 27 jun 2019 om 10:54
+-- Serverversie: 10.1.37-MariaDB
+-- PHP-versie: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,6 +38,7 @@ CREATE TABLE `bikes` (
   `bikename` text COLLATE utf8_bin NOT NULL,
   `biketype` int(11) NOT NULL,
   `gears` int(11) NOT NULL,
+  `description` varchar(200) COLLATE utf8_bin NOT NULL,
   `selling_price` float NOT NULL,
   `date_added` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -46,12 +47,13 @@ CREATE TABLE `bikes` (
 -- Gegevens worden geëxporteerd voor tabel `bikes`
 --
 
-INSERT INTO `bikes` (`id`, `image_path`, `brand`, `color`, `framenumber`, `damaged`, `bikename`, `biketype`, `gears`, `selling_price`, `date_added`) VALUES
-(1, 'assets/img/bike.png', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, 555.5, '2019-05-02'),
-(2, 'assets/img/bike.png', 'Batavus', 'White', 'GZ465846', 1, 'Batavus', 1, 7, 745.5, '2019-05-12'),
-(3, 'assets/img/bike.png', 'Slayer', 'black', 'nce8nce', 0, 'Aap', 2, 7, 666, '2019-06-02'),
-(4, 'assets/img/bike.png', 'kenker', 'black', 'dubget', 0, 'Arnold', 3, 7, 200, '2019-06-22'),
-(5, 'assets/img/bike_men.png', 'Cortina', 'Zwart', '6924849', 0, 'Dikke fiets', 2, 3, 145, '2019-06-27');
+INSERT INTO `bikes` (`id`, `image_path`, `brand`, `color`, `framenumber`, `damaged`, `bikename`, `biketype`, `gears`, `description`, `selling_price`, `date_added`) VALUES
+(1, 'assets/img/bike.png', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, '', 555.5, '2019-05-02'),
+(2, 'assets/img/bike.png', 'Batavus', 'White', 'GZ465846', 1, 'Batavus', 1, 7, '', 745.5, '2019-05-12'),
+(3, 'assets/img/bike.png', 'Slayer', 'black', 'nce8nce', 0, 'Aap', 2, 7, '', 666, '2019-06-02'),
+(4, 'assets/img/bike.png', 'kenker', 'black', 'dubget', 0, 'Arnold', 3, 7, '', 200, '2019-06-22'),
+(5, 'assets/img/bike_men.png', 'Cortina', 'Zwart', '6924849', 0, 'Dikke fiets', 2, 3, '', 145, '2019-06-27'),
+(6, 'assets/img/bike_men.png', 'TEST', 'Zwart', 'EALDKALD', 1, 'Cem', 0, 7, '', 599, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -256,37 +258,44 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT voor een tabel `bikes`
 --
 ALTER TABLE `bikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT voor een tabel `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT voor een tabel `discount_codes`
 --
 ALTER TABLE `discount_codes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT voor een tabel `employees`
 --
 ALTER TABLE `employees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT voor een tabel `newsletter_receivers`
 --
 ALTER TABLE `newsletter_receivers`
   MODIFY `receiver_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT voor een tabel `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Beperkingen voor geëxporteerde tabellen
 --

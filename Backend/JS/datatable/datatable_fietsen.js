@@ -70,18 +70,18 @@ $(document).ready(function () {
                     $('#beschadigd').addClass('active');
                 }
                 $('#nameInputBijwerken').attr('value', oData[i][7]);
-
-                if(oData[i][8] == 'Damesfiets') {
+                $('#descriptionInputBijwerken').attr('value', oData[i][8]);
+                if(oData[i][9] == 'Damesfiets') {
                     $('#damesfiets').addClass('active')
-                }else  if(oData[i][8] == 'Herenfiets') {
+                }else  if(oData[i][9] == 'Herenfiets') {
                     $('#herenfiets').addClass('active')
-                }else  if(oData[i][8] == 'Kinderfiets') {
+                }else  if(oData[i][9] == 'Kinderfiets') {
                     $('#kinderfiets').addClass('active')
                 }
+                $('#gearsInputBijwerken').attr('value', oData[i][10]);
+                $('#priceInputBijwerken').attr('value', oData[i][11]);
 
 
-                $('#gearsInputBijwerken').attr('value', oData[i][9]);
-                $('#priceInputBijwerken').attr('value', oData[i][10]);
             }
         } else if ($('#bekijken:selected').val() && elementClicked) {
             $("body").load("/fietsenwinkel/Backend/fietsen_bekijken.php");
