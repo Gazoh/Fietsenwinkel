@@ -1,20 +1,26 @@
-if ($(window).width() <= 376) {
+if ($(window).width() <= 509) {
     $('.slick-slider').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1
     });
-} else if ($(window).width() <= 446) {
+} else if ($(window).width() <= 709) {
     $('.slick-slider').slick({
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 2
     });
-} else if ($(window).width() <= 769) {
+} else if ($(window).width() <= 809) {
     $('.slick-slider').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3
+    });
+} else if ($(window).width() <= 1009) {
+    $('.slick-slider').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4
     });
 } else {
     $('.slick-slider').slick({

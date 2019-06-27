@@ -2,9 +2,9 @@
 session_start();
 require_once("Controllers/dbconnect.php");
 require_once("Controllers/userdata.php");
-$bikes = "SELECT * FROM bikes ORDER BY date_added DESC LIMIT 4";
+$bikes = "SELECT * FROM bikes ORDER BY date_added DESC";
 $res = mysqli_query($con, $bikes);
-$reviews = "SELECT * FROM reviews LIMIT 4";
+$reviews = "SELECT * FROM reviews ";
 $resTwee = mysqli_query($con, $reviews);
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
@@ -168,20 +168,18 @@ if (!isset($_SESSION['first_name'])) {
     <div class="p-5" id="nieuwe-collectie">
         <h1 class="text-center main-color h2 bRoboto">Nieuwe Collectie</h1>
         <div class="slick-buttons"></div>
-        <div class="slick-slider">
+        <div class="slick-slider col-xl-12">
             <?php
             while ($r = mysqli_fetch_assoc($res)) { ?>
                 <div>
                     <img class="w-100" src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>">
-                    <p class="m-0"><?php echo $r['bikename'] ?></p>
-                    <p class="main-color-light mb-2 bRoboto"><?php if ($r['damaged'] == 1) {
+                    <p class="m-0 bikename"><?php echo $r['bikename'] ?></p>
+                    <p class="main-color-light mb-2 bRoboto damaged"><?php if ($r['damaged'] == 1) {
                             echo "Onbeschadigd";
                         } else {
                             echo "Beschadigd";
                         } ?></p>
-                    <div>
-                        <p class="prijs main-color h3 bRoboto"><?php echo '&euro;' . $r['selling_price'] ?></p>
-                    </div>
+                        <p class="prijs main-color h3 bRoboto prijs-nieuwecollectie"><?php echo '&euro;' . $r['selling_price'] ?></p>
                 </div>
             <?php } ?>
         </div>
@@ -514,7 +512,7 @@ if (!isset($_SESSION['first_name'])) {
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <div class="list-group" id="list-tab" role="tablist">
+                                <div class="list-group float-left" id="list-tab" role="tablist">
                                     <a class="list-group-item list-group-item-action active" id="list-home-list"
                                        data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
                                     <a class="list-group-item list-group-item-action" id="list-profile-list"
@@ -524,7 +522,7 @@ if (!isset($_SESSION['first_name'])) {
                                     <a class="list-group-item list-group-item-action" href="Controllers/logout.php" id="list-settings-list" role="tab">Uitloggen</a>
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="text-center d-flex justify-content-center p-3">
                                 <div class="tab-content" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                                          aria-labelledby="list-home-list">...
@@ -532,160 +530,99 @@ if (!isset($_SESSION['first_name'])) {
                                     <div class="tab-pane fade" id="list-profile" role="tabpanel"
                                          aria-labelledby="list-profile-list">
                                         <form action="" method="POST" id="formUpdateUser">
-                                            <div class="row">
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined" value="<?php echo $user_first_name ?>" class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">Voornaam</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
+                                            <div class="row mt-2">
+                                                <div class="mdc-text-field mr-2">
+                                                    <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_first_name ?>">
+                                                    <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                        Voornaam
+                                                    </label>
+                                                    <div class="mdc-line-ripple"></div>
                                                 </div>
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_last_name ?>"
-                                                           class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">Achternaam</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
+                                                <div class="mdc-text-field">
+                                                    <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_last_name ?>">
+                                                    <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                        Voornaam
+                                                    </label>
+                                                    <div class="mdc-line-ripple"></div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_adress; ?>"
-                                                           class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">Adres</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
-                                                    <div class="mdc-text-field mdc-text-field--outlined">
-                                                        <input type="text" id="tf-outlined"
-                                                               value="<?php echo $user_house_number; ?>"
-                                                               class="mdc-text-field__input">
-                                                        <div class="mdc-notched-outline">
-                                                            <div class="mdc-notched-outline__leading"></div>
-                                                            <div class="mdc-notched-outline__notch">
-                                                                <label for="tf-outlined"
-                                                                       class="mdc-floating-label">Huisnummer</label>
-                                                            </div>
-                                                            <div class="mdc-notched-outline__trailing"></div>
-                                                        </div>
-                                                    </div>
+                                            <div class="row mt-2">
+                                                <div class="mdc-text-field mr-2">
+                                                    <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_adress; ?>">
+                                                    <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                        Adres
+                                                    </label>
+                                                    <div class="mdc-line-ripple"></div>
+                                                </div>
+                                                <div class="mdc-text-field">
+                                                    <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_house_number; ?>">
+                                                    <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                        Huisnummer
+                                                    </label>
+                                                    <div class="mdc-line-ripple"></div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_zip_code; ?>"
-                                                           class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">Postcode</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
+                                            <div class="row mt-2">
+                                                <div class="mdc-text-field mr-2">
+                                                    <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_zip_code; ?>">
+                                                    <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                        Postcode
+                                                    </label>
+                                                    <div class="mdc-line-ripple"></div>
                                                 </div>
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_city; ?>"
-                                                           class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">Stad</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
+                                                <div class="mdc-text-field">
+                                                    <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_email; ?>">
+                                                    <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                        Email
+                                                    </label>
+                                                    <div class="mdc-line-ripple"></div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_email; ?>"
-                                                           class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">E-mail</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
+                                            <div class="mdc-text-field w-91 mt-2">
+                                                <input type="text" id="pre-filled" class="mdc-text-field__input" value="<?php echo $user_phone; ?>">
+                                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
+                                                    Telefoonnummer
+                                                </label>
+                                                <div class="mdc-line-ripple"></div>
+                                            </div>
+                                            <div class="row mt-4 d-flex justify-content-center">
+                                                <div id="modal-buttons" class="float-right">
+                                                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler mr-1"
+                                                            type="submit" aria-controls="navbarSupportedContent" aria-expanded="false" data-dismiss="modal">
+                                                        Annuleer
+                                                    </button>
+                                                    <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
+                                                            type="submit" name="submit" form="formUpdateUser"
+                                                            aria-controls="navbarSupportedContent"
+                                                            aria-expanded="false"
+                                                            aria-label="Toggle navigation">
+                                                        Inloggen
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_phone; ?>"
-                                                           class="mdc-text-field__input">
-                                                    <div class="mdc-notched-outline">
-                                                        <div class="mdc-notched-outline__leading"></div>
-                                                        <div class="mdc-notched-outline__notch">
-                                                            <label for="tf-outlined"
-                                                                   class="mdc-floating-label">Telefoonnummer</label>
-                                                        </div>
-                                                        <div class="mdc-notched-outline__trailing"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <div class="row">
-                                            <div id="modal-buttons" class="float-right">
-                                                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler mr-1"
-                                                        type="submit" aria-controls="navbarSupportedContent" aria-expanded="false" data-dismiss="modal">
-                                                    Annuleer
-                                                </button>
-                                                <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                                                        type="submit" name="submit" form="formUpdateUser"
-                                                        aria-controls="navbarSupportedContent"
-                                                        aria-expanded="false"
-                                                        aria-label="Toggle navigation">
-                                                    Inloggen
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </form>
+    </div>
+</div>
 
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                    crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                    crossorigin="anonymous"></script>
-            <!-- Slick Slider -->
-            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-            <script src="js/slick/slick_slider.js"></script>
-            <!-- Main -->
-            <script type="text/javascript" src="js/Main.js"></script>
-            <!-- Material.io -->
-            <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-            <script src="js/material/material.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!-- Slick Slider -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/slick/slick_slider.js"></script>
+<!-- Main -->
+<script type="text/javascript" src="js/Main.js"></script>
+<!-- Material.io -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script src="js/material/material.js"></script>
 </body>
 </html>
