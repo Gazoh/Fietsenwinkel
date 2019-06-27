@@ -1,4 +1,6 @@
 <?php
+require_once("Controllers/dbconnect.php");
+require_once("Controllers/userdata.php");
 session_start();
 require_once("Controllers/userdata.php");
 if (!isset($_SESSION['first_name'])) {
@@ -9,9 +11,18 @@ if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
     }
 }
-
+if(isset($_SESSION['cartstatus']))
+{
+    debug_to_console($_SESSION['cartstatus']);
+    if($_SESSION['cartstatus'] == "product added")
+    {
+        echo "<script>$('#productAddedModal').modal('show');</script>";
+    } elseif($_SESSION['cartstatus'] == "product already in cart")
+    {
+        echo "<script>$('#productAddedModal').modal('show');</script>";
+    }
+}
 // Id ophalen
-require_once("controllers/dbconnect.php");
 $requested_query_vars = $_SERVER["QUERY_STRING"];
 $id = str_replace("id=", "", $requested_query_vars);
 $sql = "SELECT * FROM bikes WHERE id = '$id'";
@@ -26,9 +37,6 @@ while ($row = mysqli_fetch_assoc($res)) {
     $color = $row['color'];
     $gears = $row['gears'];
     $description = $row['description'];
-}
-if (!empty($_SESSION['cart'])) {
-    debug_to_console(var_dump($_SESSION['cart']));
 }
 $itemids = implode(", ", $_SESSION['cart']);
 debug_to_console($itemids);
@@ -104,7 +112,8 @@ if ($itemids != "") {
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
-                <?php if (!isset($_SESSION['loginstatus'])) {
+
+                <?php if (($_SESSION['loginstatus'] == "false")) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
                 } elseif ($_SESSION['loginstatus'] == 1) {
@@ -141,7 +150,7 @@ if ($itemids != "") {
                                         echo "<div class=\"m-0 text-right shopping-bedrag font-weight-normal\">&euro;" . $bike['selling_price'] . "</div>";
                                         echo "</div>";
                                         echo "<div class=\"float-left pt-4\">";
-                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id']  ."' class=\"fas fa-times pr-4\"></a>";
+                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id'] . "' class=\"fas fa-times pr-4\"></a>";
                                         echo "</div>";
                                         echo "<img src=\"assets/img/bike.png\" width=\"60\">";
 
@@ -149,13 +158,13 @@ if ($itemids != "") {
                                     }
                                     echo "<hr>";
                                     echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
-                                    echo "  <p>&euro; 3758,-</p>";
+                                    echo "  <p>&euro; " . $_SESSION['total_price'] .",-</p>";
                                     echo "</div>";
                                     echo "<hr>";
                                     echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
                                     echo "<div class='row'>";
                                     echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown' >Bestellen</button >";
+                                    type = 'button' id = 'bestellenDropdown'><a href='winkelwagen.php'>Bestellen</a></button >";
                                     echo "</div >";
                                 }
                             }
@@ -450,6 +459,44 @@ if ($itemids != "") {
                             Registreren
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Product added Modal -->
+    <div class="modal fade" id="productAddedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Fiets toegevoegd</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php $bikebrand . " " . $bikename . " is succesvol toegevoegd aan de winkelwagen" ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Product added Modal -->
+    <div class="modal fade" id="productInCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Fiets al in winkelwagen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php $bikebrand . " " . $bikename . " staat al in uw winkelwagen!" ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>

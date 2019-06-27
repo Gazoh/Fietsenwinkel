@@ -106,8 +106,11 @@ if ($itemids != "") {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (($_SESSION['loginstatus'] == "false")) {
+                    echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
+                        data-toggle=\"modal\" data-target=\"#accountModal\">";
+                } ?>
+                <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
                 } elseif ($_SESSION['loginstatus'] == 1) {
@@ -242,13 +245,7 @@ if ($itemids != "") {
                 echo "</div>";
                 echo "</div>";
             }
-        }
-        if($_SESSION['loginstatus'] == 1)
-        {
-            echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown'><a href='Controllers/order.php'>Bestellen</a></button >";
-        }
-        ?>
+        } ?>
     </div>
 </div>
 <!-- Account Modal -->
@@ -436,108 +433,8 @@ if ($itemids != "") {
         </div>
     </div>
 </div>
-<!-- Account detail modal -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-     aria-hidden="true" id="accountDetailModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
-                        data-dismiss="modal" aria-label="Close" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h5 class="modal-title w-100 text-center bRoboto" id="account">Account gegevens</h5>
-            </div>
-            <div class="modal-body">
-                <!-- List group -->
-                <aside class="mdc-drawer float-left mr-3 h-100 mt-5">
-                    <div class="mdc-drawer__content">
-                        <nav class="list-group mdc-list">
-                            <a class="mdc-list-item mdc-list-item--activated" data-toggle="list" href="#profile" role="tab">
-                                <i class="fas fa-user-circle detail-modal-icon"></i>
-                                <i class="material-icons mdc-list-item__graphic w-100" aria-hidden="true">Mijn
-                                    Profiel</i>
-                            </a>
-                            <a class="mdc-list-item" href="controllers/logout.php">
-                                <i class="fas fa-sign-out-alt detail-modal-icon pl-1"></i>
-                                <i class="material-icons mdc-list-item__graphic w-100" aria-hidden="true">Uitloggen</i>
-                            </a>
-                        </nav>
-                    </div>
-                </aside>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div class="tab-pane active" id="profile" role="tabpanel">
-                        <div class="row">
-                            <div class="mdc-text-field w-50 mr-2">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_first_name ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Voornaam
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                            <div class="mdc-text-field w-48">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_last_name ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Achternaam
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="mdc-text-field mr-2 w-70">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_adress; ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Adres
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                            <div class="mdc-text-field w-28">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_house_number; ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Huisnummer
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="mdc-text-field mr-2 w-50">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_zip_code; ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Postcode
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                            <div class="mdc-text-field w-48">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_email; ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Email
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                            <div class="mdc-text-field mt-2 w-100">
-                                <input type="text" id="pre-filled" class="mdc-text-field__input"
-                                       value="<?php echo $user_phone; ?>">
-                                <label class="mdc-floating-label mdc-floating-label--float-above" for="pre-filled">
-                                    Telefoonnummer
-                                </label>
-                                <div class="mdc-line-ripple"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--Optional JavaScript-->
+<!--jQuery first, then Popper . js, then Bootstrap JS-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
