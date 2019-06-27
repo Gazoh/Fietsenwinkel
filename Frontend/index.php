@@ -2,10 +2,17 @@
 session_start();
 require_once("Controllers/dbconnect.php");
 require_once("Controllers/userdata.php");
+if (!isset($_SESSION['cart'])) {
+    if (empty($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+}
 $bikes = "SELECT * FROM bikes ORDER BY date_added DESC";
 $res = mysqli_query($con, $bikes);
 $reviews = "SELECT * FROM reviews ";
 $resTwee = mysqli_query($con, $reviews);
+$json_data = file_get_contents("php://input");
+debug_to_console($json_data);
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
