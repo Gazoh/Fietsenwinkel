@@ -1,7 +1,9 @@
 <?php
 require_once("Controllers/dbconnect.php");
-$sql = "SELECT * FROM bikes ORDER BY date_added DESC LIMIT 4";
-$res = mysqli_query($con, $sql);
+$bikes = "SELECT * FROM bikes ORDER BY date_added DESC LIMIT 4";
+$res = mysqli_query($con, $bikes);
+$reviews = "SELECT * FROM reviews LIMIT 4";
+$resTwee = mysqli_query($con, $reviews);
 session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
@@ -177,46 +179,28 @@ if (!isset($_SESSION['first_name'])) {
     <!-- Review -->
     <div class="p-5" id="review">
         <h1 class="text-center text-white h2 bRoboto">Vele gingen u al voor</h1>
-        <div class="row pt-4">
-            <div class="col-lg-4 review">
-                <div class="star">
-                    <img class="float-right" src="assets/img/4_sterren.png" alt="sterren">
+            <div class="row pt-4">
+                <?php
+                while($r = mysqli_fetch_assoc($resTwee)){ ?>
+                <div class="col-lg-4 review">
+                    <div class="star">
+                        <img class="float-right" src="<?php
+
+                        if($r['stars'] == 1){echo 'assets/img/1_ster.png';}
+                        elseif($r['stars'] == 2){echo 'assets/img/2_sterren.png';}
+                        elseif($r['stars'] == 3){echo 'assets/img/3_sterren.png';}
+                        elseif($r['stars'] == 4){echo 'assets/img/4_sterren.png';}
+                        elseif($r['stars'] == 5){echo 'assets/img/5_sterren.png';}
+
+                        ?>" alt="sterren">
+                    </div>
+                    <h1 class="h3 m-0 text-white"><?php echo $r['title'] ?></h1>
+                    <br>
+                    <p class="review-persoon text-white">
+                        <?php echo $r['content']?>
+                    </p>
                 </div>
-                <h1 class="h3 m-0 text-white">Een fiets van chocolade!</h1>
-                <p class="datum text-white">10-01-2019</p>
-                <p class="review-persoon text-white">
-                    Ik had 3 fietsen bestelt, maar ik kreeg er maar 2 binnen op de lever datum!
-                    Nadat ik contact had opgenomen met de service kreeg ik de volgende dag de fiets binnen, met een
-                    sorry pakket!
-                    Dit is netjes behandeld en de fiets chocolaatjes waren zeer lekker!
-                </p>
-            </div>
-            <div class="col-lg-4 review">
-                <div class="star">
-                    <img class="float-right" src="assets/img/5_sterren.png" alt="sterren">
-                </div>
-                <h1 class="h3 m-0 text-white">Beste service!</h1>
-                <p class="datum text-white">10-06-2019</p>
-                <p class="review-persoon text-white">
-                    Ik had een fiets bestelt die over 2 weken zou binnenkomen.
-                    Ik werd de dag er na gebeld dat die al binnen was en dat ze hem graag vandaag nog zouden leveren!
-                    De fiets werd zoals afgesproken om 14:30 geleverd!
-                    Wat een top service!
-                </p>
-            </div>
-            <div class="col-lg-4 review">
-                <div class="star">
-                    <img class="float-right" src="assets/img/3_sterren.png" alt="sterren">
-                </div>
-                <h1 class="h3 m-0 text-white">Service probleem is net opgelost</h1>
-                <p class="datum text-white">31-04-2019</p>
-                <p class="review-persoon text-white">
-                    De fiets kwam 2 dagen te laat met een briefje er op geplakt en een kras!
-                    De fiets werkt goed en ze zijn speciaal langsgekomen om de kras weg te halen ook al was die ontstaan
-                    tijdens tijdens de bezorging!
-                    De service kan nog beter maar ik zou hier zo meer fieten bestellen!
-                </p>
-            </div>
+                <?php } ?>
         </div>
     </div>
     <!-- Nieuwsbrief -->
@@ -236,9 +220,9 @@ if (!isset($_SESSION['first_name'])) {
             </div>
             <div class="col"></div>
         </div>
-        <form class="text-center">
+        <form class="text-center" action="nieuwsbrief_aangemeld.php" method="post">
             <div class="mdc-text-field mdc-text-field--outlined">
-                <input type="email" id="tf-outlined" class="mdc-text-field__input">
+                <input type="email" id="tf-outlined" class="mdc-text-field__input" name="email" required>
                 <div class="mdc-notched-outline">
                     <div class="mdc-notched-outline__leading"></div>
                     <div class="mdc-notched-outline__notch">
@@ -246,10 +230,8 @@ if (!isset($_SESSION['first_name'])) {
                     </div>
                     <div class="mdc-notched-outline__trailing"></div>
                 </div>
-                <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded inschrijven mt-4"
-                        type="button">
-                    Inschrijven
-                </button>
+                <input class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded inschrijven mt-4"
+                        type="submit" value="Inschrijven">
             </div>
         </form>
     </div>
