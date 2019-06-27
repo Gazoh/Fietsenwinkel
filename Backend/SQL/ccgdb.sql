@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 27 jun 2019 om 10:54
+-- Gegenereerd op: 27 jun 2019 om 12:47
 -- Serverversie: 10.1.37-MariaDB
 -- PHP-versie: 7.2.12
 
@@ -48,12 +48,16 @@ CREATE TABLE `bikes` (
 --
 
 INSERT INTO `bikes` (`id`, `image_path`, `brand`, `color`, `framenumber`, `damaged`, `bikename`, `biketype`, `gears`, `description`, `selling_price`, `date_added`) VALUES
-(1, 'assets/img/bike.png', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, '', 555.5, '2019-05-02'),
+(1, 'assets/img/bike.png', 'Gazelle', 'Zwart', 'GZ0316026', 1, 'Orange C7+', 1, 7, 'Miauw nigga', 555.5, '2019-05-02'),
 (2, 'assets/img/bike.png', 'Batavus', 'White', 'GZ465846', 1, 'Batavus', 1, 7, '', 745.5, '2019-05-12'),
 (3, 'assets/img/bike.png', 'Slayer', 'black', 'nce8nce', 0, 'Aap', 2, 7, '', 666, '2019-06-02'),
 (4, 'assets/img/bike.png', 'kenker', 'black', 'dubget', 0, 'Arnold', 3, 7, '', 200, '2019-06-22'),
 (5, 'assets/img/bike_men.png', 'Cortina', 'Zwart', '6924849', 0, 'Dikke fiets', 2, 3, '', 145, '2019-06-27'),
-(6, 'assets/img/bike_men.png', 'TEST', 'Zwart', 'EALDKALD', 1, 'Cem', 0, 7, '', 599, '0000-00-00');
+(6, 'assets/img/bike_men.png', 'TEST', 'Zwart', 'EALDKALD', 1, 'Cem', 0, 7, '', 599, '0000-00-00'),
+(7, '', '', '', '', 0, '', 0, 0, '', 0, '0000-00-00'),
+(8, '', '', '', '', 0, '', 0, 0, 'kasadkjakdas', 0, '0000-00-00'),
+(9, 'assets/img/bike_men.png', 'Kaasdkad', 'Zwart', 'kadjkajskdja', 1, 'Cem', 0, 7, 'asdkasdsdfkds;lk;f;kf;lsdk;flk;fldsfklsdfjadklajdlkj', 599, '0000-00-00'),
+(10, '', '', '', '', 0, 'Batu', 0, 0, 'jasdaksdkajsjkasjdakdjakd', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -67,6 +71,7 @@ CREATE TABLE `customers` (
   `first_name` varchar(30) COLLATE utf8_bin NOT NULL,
   `last_name` varchar(30) COLLATE utf8_bin NOT NULL,
   `adress` varchar(60) COLLATE utf8_bin NOT NULL,
+  `house_number` varchar(4) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `zip_code` varchar(6) COLLATE utf8_bin NOT NULL,
   `email` varchar(60) COLLATE utf8_bin NOT NULL,
@@ -77,6 +82,14 @@ CREATE TABLE `customers` (
   `remember_me` varchar(80) COLLATE utf8_bin NOT NULL,
   `last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `customers`
+--
+
+INSERT INTO `customers` (`id`, `username`, `first_name`, `last_name`, `adress`, `house_number`, `city`, `zip_code`, `email`, `email_verified`, `phone`, `password`, `register_date`, `remember_me`, `last_login`) VALUES
+(1, '', 'Cem', 'Serin', 'kaas 12', '', 'Cemstad', '6904ep', 'kaas@kaas.nl', 0, '', '$2y$10$oAg8N/bizep.OszQ3wgGnuulgXGot9F41D07oetMr/T5bbO5N9rQC', '2019-06-27 12:43:50', '806836d4f45df046b9ee609ae90a8d29', '2019-06-27 12:45:13'),
+(2, '', 'Cem', 'Serin', 'kaas 12', '8', 'Cemstad', '6904ep', 'kaas@kaas.nl', 0, '', '$2y$10$0eFjy7VjQkS99L/D3ZUaHu47G/tEIiWvI6TKqQ8G9p7EvggE.ABVe', '2019-06-27 12:44:03', '806836d4f45df046b9ee609ae90a8d29', '2019-06-27 12:45:13');
 
 -- --------------------------------------------------------
 
@@ -258,13 +271,13 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT voor een tabel `bikes`
 --
 ALTER TABLE `bikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT voor een tabel `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `discount_codes`
