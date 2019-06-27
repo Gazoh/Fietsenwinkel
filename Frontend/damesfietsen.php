@@ -33,14 +33,10 @@ if (!isset($_SESSION['first_name'])) {
     <div class="modal animated fadeInLeft" id="mobileFilter" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog float-left m-0" role="document">
-            <div class="modal-content border-radius0">
-                <div class="modal-body">
+            <div class="modal-content border-0 border-radius0">
+                <div class="modal-body p-5">
                     <!-- Type Fietsen -->
                     <div id="type-fietsen">
-                        <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right"
-                                data-dismiss="modal" aria-label="Close" type="button">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                         <p class="h2 bRoboto main-color type-fiets">Type fiets</p>
                         <hr>
                         <div class="mdc-form-field d-block">
@@ -420,6 +416,10 @@ if (!isset($_SESSION['first_name'])) {
             <img class="image" src="assets/img/logo.png" width="" alt="logo">
         </a>
         <div id="navbar-buttons">
+            <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
+                    type="button" id="header-list" data-toggle="modal" data-target="#mobileFilter">
+                <i class="fas fa-list fontSize1-2rem"></i>
+            </button>
             <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account navbar-toggler"
                     type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -904,7 +904,7 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
     <!-- Fietsen   -->
-    <div class="row fietsen p-4 text-center">
+    <div class="row fietsen p-4 text-center pr-0">
         <?php
         while ($r = mysqli_fetch_assoc($res)) { ?>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike" id="bike-data" data-id="<?php echo $r['id']?>">
@@ -915,9 +915,9 @@ if (!isset($_SESSION['first_name'])) {
                     <div class="h5">
                         <span class="bRoboto"><?php echo $r['bikename'] ?></span>
                         <div class="d-block h6 pt-2 main-color-light bRoboto">
-                            <span class="Onbeschadigd"><?php if ($r['damaged'] == 1) {
+                            <span class="Onbeschadigd"><?php if ($r['damaged'] == 0) {
                                     echo "Onbeschadigd";
-                                } else {
+                                } else if ($r['damaged'] == 1) {
                                     echo "Beschadigd";
                                 } ?></span>
                         </div>

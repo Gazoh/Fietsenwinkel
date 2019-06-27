@@ -33,14 +33,10 @@ if (!isset($_SESSION['first_name'])) {
     <div class="modal animated fadeInLeft" id="mobileFilter" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog float-left m-0" role="document">
-            <div class="modal-content border-radius0">
-                <div class="modal-body">
+            <div class="modal-content border-0 border-radius0">
+                <div class="modal-body p-5">
                     <!-- Type Fietsen -->
                     <div id="type-fietsen">
-                        <button class="foo-button mdc-button mdc-ripple-upgraded account times-button float-right"
-                                data-dismiss="modal" aria-label="Close" type="button">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                         <p class="h2 bRoboto main-color type-fiets">Type fiets</p>
                         <hr>
                         <div class="mdc-form-field d-block">
