@@ -19,6 +19,7 @@ while ($row = mysqli_fetch_assoc($res)) {
     $framenumber = $row['framenumber'];
     $color = $row['color'];
     $gears = $row['gears'];
+    $description = $row['description'];
 }
 ?>
 <html lang="en">
@@ -204,6 +205,7 @@ while ($row = mysqli_fetch_assoc($res)) {
             </div>
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 mt-4 float-left" id="product-omschrijving">
                 <p class="h2 bRoboto">Productomschrijving</p>
+                <p><?php echo $description ?></p>
             </div>
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 float-left">
                 <table class="table table-striped">
