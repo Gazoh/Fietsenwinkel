@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     $password = $_POST['passwordInput'];
     $repassword = $_POST['repasswordInput'];
     $phone = $_POST['phoneInput'];
+    $email = $_POST['emailInput'];
     $date = date("Y-m-d H:i:s");
 
     $checkInvite = "SELECT * FROM employees WHERE invite_code = '$inviteCode'";
@@ -24,7 +25,8 @@ if (isset($_POST['submit'])) {
         if ($password == $repassword) {
             $password = stripslashes($password);
             $hashedpw = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "UPDATE employees SET username = '$username', first_name = '$firstname', last_name = '$lastname', phone = '$phone' , password = '$hashedpw', register_date = '$date', invite_code = '' WHERE invite_code = '$inviteCode'";
+            $sql = "UPDATE employees SET username = '$username', first_name = '$firstname', last_name = '$lastname', phone = '$phone' , password = '$hashedpw', register_date = '$date', invite_code = 
+'', email = '$email' WHERE invite_code = '$inviteCode'";
             if ($con->query($sql) === TRUE) {
                 {
                     header('Location: ../login.php');

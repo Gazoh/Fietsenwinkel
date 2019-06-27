@@ -54,7 +54,7 @@ if(isset($_POST['submit'])) {
                     $sql = "UPDATE employees SET remember_me = '$token' WHERE email = '$email'";
                     if($con->query($sql) === TRUE)
                     {
-                        header('Location: ../dashboard.php');
+                        header('Location: ../index.php');
                     }
                 }
                 elseif($rememberme == "on")

@@ -26,43 +26,49 @@
                         <div class="form-group form-login mt-30">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Invite code</label>
-                                <input type="text" name="inviteCode" class="form-control" required>
+                                <input type="text" name="inviteCode" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Voornaam</label>
-                                <input type="text" name="firstNameInput" class="form-control" required>
+                                <input type="text" name="firstNameInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Achternaam</label>
-                                <input type="text" name="lastNameInput" class="form-control" required>
+                                <input type="text" name="lastNameInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Telefoonnummer</label>
-                                <input type="text" name="phoneInput" class="form-control" required>
+                                <input type="text" name="phoneInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Gebruikersnaam</label>
-                                <input type="text" name="usernameInput" class="form-control" required>
+                                <input type="text" name="usernameInput" class="form-control controller" required>
+                            </div>
+                        </div>
+                        <div class="form-group form-login">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating disabled">Email</label>
+                                <input type="text" name="emailInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Wachtwoord</label>
-                                <input type="password" name="passwordInput" class="form-control" required>
+                                <input type="password" name="passwordInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="form-group form-login">
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating disabled">Herhaal wachtwoord</label>
-                                <input type="password" name="repasswordInput" class="form-control" required>
+                                <input type="password" name="repasswordInput" class="form-control controller" required>
                             </div>
                         </div>
                         <div class="text-center">
