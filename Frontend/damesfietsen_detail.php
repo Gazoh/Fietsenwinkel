@@ -11,11 +11,11 @@ $id = str_replace("id=", "", $requested_query_vars);
 $sql = "SELECT * FROM bikes WHERE id = '$id'";
 $res = mysqli_query($con, $sql);
 while ($row = mysqli_fetch_assoc($res)) {
+    $image_path = $row['image_path'];
     $bikename = $row['bikename'];
     $bikebrand = $row['brand'];
     $damaged = $row['damaged'];
     $price = $row['selling_price'];
-    $description = $row['description'];
     $framenumber = $row['framenumber'];
     $color = $row['color'];
     $gears = $row['gears'];
@@ -165,7 +165,7 @@ while ($row = mysqli_fetch_assoc($res)) {
     <div class="content pt-3 p-2">
         <div class="row justify-content-center w-100 m-0">
             <div class="col-xl-4 col-lg-7 col-md-10 col-sm-10">
-                <img src="assets/img/bike_detail.png" class="img-thumbnail image-detail">
+                <img src="<?php echo $image_path ?>" class="img-thumbnail image-detail">
             </div>
             <div class="col-xl-6 col-lg-10 col-md-10 col-sm-10 col-10 h-100 my-auto p-3">
                 <div class="bike_information_detail">
@@ -204,7 +204,6 @@ while ($row = mysqli_fetch_assoc($res)) {
             </div>
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 mt-4 float-left" id="product-omschrijving">
                 <p class="h3 bRoboto">Productomschrijving</p>
-                <p><?php echo $description ?></p>
             </div>
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 float-left">
                 <table class="table table-striped">

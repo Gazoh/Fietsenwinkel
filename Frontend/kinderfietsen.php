@@ -904,8 +904,8 @@ if (!isset($_SESSION['first_name'])) {
     <div class="row fietsen p-4 text-center">
         <?php
         while($r = mysqli_fetch_assoc($res)){ ?>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike">
-                <a href="damesfietsen_detail.php">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike" id="bike-data" data-id="<?php echo $r['id']?>">
+                <a class="detail">
                     <img src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>" class="img-thumbnail">
                 </a>
                 <div class="bike-information">
@@ -1126,5 +1126,6 @@ if (!isset($_SESSION['first_name'])) {
 <script src="js/material/material.js"></script>
 <!-- Main -->
 <script type="text/javascript" src="js/Main.js"></script>
+<script src="js/kinderfietsen_detail.js"></script>
 </body>
 </html>

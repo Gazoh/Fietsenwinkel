@@ -1135,6 +1135,6 @@ if (!isset($_SESSION['first_name'])) {
 <script src="js/material/material.js"></script>
 <!-- Main -->
 <script type="text/javascript" src="js/Main.js"></script>
-<script src="js/fietsen_detail.js"></script>
+<script src="js/damesfietsen_detail.js"></script>
 </body>
 </html>
