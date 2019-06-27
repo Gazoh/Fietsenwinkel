@@ -9,7 +9,6 @@ $resTwee = mysqli_query($con, $reviews);
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
-$_SESSION['']
 ?>
 <html lang="en">
 <head>
@@ -469,7 +468,7 @@ $_SESSION['']
                                         </div>
                                     </div>
                                     <div class="mdc-text-field mdc-text-field--outlined w-91 mt-2">
-                                        <input type="text" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
+                                        <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
                                                required minlength="6">
                                         <div class="mdc-notched-outline">
                                             <div class="mdc-notched-outline__leading"></div>
@@ -535,9 +534,7 @@ $_SESSION['']
                                         <form action="" method="POST" id="formUpdateUser">
                                             <div class="row">
                                                 <div class="mdc-text-field mdc-text-field--outlined">
-                                                    <input type="text" id="tf-outlined"
-                                                           value="<?php echo $user_first_name ?>"
-                                                           class="mdc-text-field__input">
+                                                    <input type="text" id="tf-outlined" value="<?php echo $user_first_name ?>" class="mdc-text-field__input">
                                                     <div class="mdc-notched-outline">
                                                         <div class="mdc-notched-outline__leading"></div>
                                                         <div class="mdc-notched-outline__notch">
@@ -664,9 +661,6 @@ $_SESSION['']
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tab-pane fade" id="list-orders" role="tabpanel"
-                                     aria-labelledby="list-messages-list">Je bestellingen
                                 </div>
                             </div>
                         </div>

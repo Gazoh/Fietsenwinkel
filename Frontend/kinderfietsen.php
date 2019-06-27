@@ -1074,7 +1074,7 @@ if (!isset($_SESSION['first_name'])) {
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined w-91 mt-2">
-                                <input type="text" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
+                                <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
                                        required minlength="6">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
