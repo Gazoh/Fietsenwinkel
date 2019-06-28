@@ -2,17 +2,23 @@
 session_start();
 require_once("Controllers/dbconnect.php");
 require_once("Controllers/userdata.php");
+<<<<<<< HEAD
 if (!isset($_SESSION['cart'])) {
     if (empty($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
     }
 }
+=======
+>>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
 $bikes = "SELECT * FROM bikes ORDER BY date_added DESC";
 $res = mysqli_query($con, $bikes);
 $reviews = "SELECT * FROM reviews ";
 $resTwee = mysqli_query($con, $reviews);
+<<<<<<< HEAD
 $json_data = file_get_contents("php://input");
 debug_to_console($json_data);
+=======
+>>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
@@ -80,12 +86,17 @@ if (!isset($_SESSION['first_name'])) {
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (($_SESSION['loginstatus'] == "false")) {
 =======
                 <?php if (!isset($_SESSION['loginstatus'])) {
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
+=======
+                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
+                <?php if (!isset($_SESSION['loginstatus'])) {
+>>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
                 } elseif ($_SESSION['loginstatus'] == 1) {

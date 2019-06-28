@@ -456,7 +456,7 @@ if (!isset($_SESSION['first_name'])) {
             <div class="navbar-buttons-top" id="navbar-buttons-top">
 <<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
-                <?php if (($_SESSION['loginstatus'] == "false")) {
+                <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
                 } elseif ($_SESSION['loginstatus'] == 1) {
@@ -494,6 +494,7 @@ if (!isset($_SESSION['first_name'])) {
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <?php
                         if ($itemids == "") {
                             echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
@@ -528,6 +529,8 @@ if (!isset($_SESSION['first_name'])) {
                         }
                         ?>
 =======
+=======
+>>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
                         <div class="order">
                             <div class="float-left pt-4">
                                 <i class="fas fa-times pr-4"></i>
@@ -561,7 +564,10 @@ if (!isset($_SESSION['first_name'])) {
                                 Bestellen
                             </button>
                         </div>
+<<<<<<< HEAD
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
+=======
+>>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
                     </div>
                 </div>
             </div>
@@ -964,7 +970,7 @@ if (!isset($_SESSION['first_name'])) {
     <div class="row fietsen p-4 text-center">
         <?php
         while ($r = mysqli_fetch_assoc($res)) { ?>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike" id="bike-data" data-id="<?php echo $r['id'] ?>">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 bike" id="bike-data" data-id="<?php echo $r['id']?>">
                 <a class="detail">
                     <img src="<?php echo $r['image_path']; ?>" alt="<?php echo $r['bikename'] ?>" class="img-thumbnail">
                 </a>
@@ -975,10 +981,14 @@ if (!isset($_SESSION['first_name'])) {
                             <span class="Onbeschadigd"><?php if ($r['damaged'] == 1) {
                                     echo "Onbeschadigd";
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 } else if ($r['damaged'] == 1) {
 =======
                                 } else {
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
+=======
+                                } else {
+>>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
                                     echo "Beschadigd";
                                 } ?></span>
                         </div>
@@ -1142,8 +1152,7 @@ if (!isset($_SESSION['first_name'])) {
                                 </div>
                             </div>
                             <div class="mdc-text-field mdc-text-field--outlined w-91 mt-2">
-                                <input type="password" name="passwordInput" id="tf-outlined"
-                                       class="mdc-text-field__input"
+                                <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
                                        required minlength="6">
                                 <div class="mdc-notched-outline">
                                     <div class="mdc-notched-outline__leading"></div>
@@ -1193,8 +1202,7 @@ if (!isset($_SESSION['first_name'])) {
                 <aside class="mdc-drawer float-left mr-3 h-100 mt-5">
                     <div class="mdc-drawer__content">
                         <nav class="list-group mdc-list">
-                            <a class="mdc-list-item mdc-list-item--activated" data-toggle="list" href="#profile"
-                               role="tab">
+                            <a class="mdc-list-item mdc-list-item--activated" data-toggle="list" href="#profile" role="tab">
                                 <i class="fas fa-user-circle detail-modal-icon"></i>
                                 <i class="material-icons mdc-list-item__graphic w-100" aria-hidden="true">Mijn
                                     Profiel</i>

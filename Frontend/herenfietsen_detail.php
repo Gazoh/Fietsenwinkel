@@ -105,8 +105,7 @@ if ($itemids != "") {
             <div class="navbar-buttons-top" id="navbar-buttons-top">
 <<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
-
-                <?php if (($_SESSION['loginstatus'] == "false")) {
+                <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
                 } elseif ($_SESSION['loginstatus'] == 1) {
