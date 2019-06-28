@@ -100,7 +100,10 @@ if ($itemids != "") {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
+                <?php if (($_SESSION['loginstatus'] == "false")) {
+                    echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
+                        data-toggle=\"modal\" data-target=\"#accountModal\">";
+                }?>
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
@@ -146,7 +149,7 @@ if ($itemids != "") {
                                     }
                                     echo "<hr>";
                                     echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
-                                    echo "  <p>&euro; " . $_SESSION['total_price'] . ",-</p>";
+                                    echo "  <p>&euro; " . $_SESSION['total_price'] .",-</p>";
                                     echo "</div>";
                                     echo "<hr>";
                                     echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
@@ -552,8 +555,6 @@ if ($itemids != "") {
             </div>
         </div>
     </div>
-    =======
-    >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
