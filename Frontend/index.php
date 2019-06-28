@@ -79,7 +79,10 @@ if (!isset($_SESSION['first_name'])) {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
+<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";

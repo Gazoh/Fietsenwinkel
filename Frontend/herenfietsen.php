@@ -455,6 +455,7 @@ if (!isset($_SESSION['first_name'])) {
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
@@ -473,6 +474,8 @@ if (!isset($_SESSION['first_name'])) {
                     echo "<span class='mdc-button__label rRoboto'>Account</span>";
                 } ?>
 =======
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
                         data-toggle="modal" data-target="#accountModal">
                     <i class="fas fa-user"></i>
@@ -484,6 +487,9 @@ if (!isset($_SESSION['first_name'])) {
                     } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                         echo "<span class='mdc-button__label rRoboto'>Account</span>";
                     } ?>
+<<<<<<< HEAD
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
+=======
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 </button>
                 <div class="dropdown float-right">
@@ -493,6 +499,7 @@ if (!isset($_SESSION['first_name'])) {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         <?php
@@ -531,6 +538,8 @@ if (!isset($_SESSION['first_name'])) {
 =======
 =======
 >>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                         <div class="order">
                             <div class="float-left pt-4">
                                 <i class="fas fa-times pr-4"></i>
@@ -565,9 +574,12 @@ if (!isset($_SESSION['first_name'])) {
                             </button>
                         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 =======
 >>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                     </div>
                 </div>
             </div>
@@ -982,6 +994,7 @@ if (!isset($_SESSION['first_name'])) {
                                     echo "Onbeschadigd";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 } else if ($r['damaged'] == 1) {
 =======
                                 } else {
@@ -989,6 +1002,9 @@ if (!isset($_SESSION['first_name'])) {
 =======
                                 } else {
 >>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
+=======
+                                } else {
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                                     echo "Beschadigd";
                                 } ?></span>
                         </div>

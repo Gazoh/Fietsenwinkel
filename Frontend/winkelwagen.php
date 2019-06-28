@@ -1,9 +1,12 @@
 <?php
 session_start();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 require_once("Controllers/userdata.php");
 >>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
@@ -74,6 +77,7 @@ if (!isset($_SESSION['first_name'])) {
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
@@ -92,6 +96,8 @@ if (!isset($_SESSION['first_name'])) {
                     echo "<span class='mdc-button__label rRoboto'>Account</span>";
                 } ?>
 =======
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
                         data-toggle="modal" data-target="#accountModal">
                     <i class="fas fa-user"></i>
@@ -103,6 +109,9 @@ if (!isset($_SESSION['first_name'])) {
                     } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                         echo "<span class='mdc-button__label rRoboto'>Account</span>";
                     } ?>
+<<<<<<< HEAD
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
+=======
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 </button>
                 <div class="dropdown float-right">
@@ -401,6 +410,7 @@ if (!isset($_SESSION['first_name'])) {
     </div>
 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- Account detail modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
      aria-hidden="true" id="accountDetailModal">
@@ -501,6 +511,8 @@ if (!isset($_SESSION['first_name'])) {
         </div>
     </div>
 </div>
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 =======
 >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 <!-- Optional JavaScript -->
