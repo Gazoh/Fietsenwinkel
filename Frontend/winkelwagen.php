@@ -1,42 +1,7 @@
 <?php
-require_once("Controllers/dbconnect.php");
-require_once("Controllers/userdata.php");
 session_start();
-if (!isset($_SESSION['cart'])) {
-    if (empty($_SESSION['cart'])) {
-        $_SESSION['cart'] = array();
-    }
-}
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
-}
-if (!isset($_SESSION['loginstatus'])) {
-    $_SESSION['loginstatus'] = "false";
-}
-// Id ophalen
-$requested_query_vars = $_SERVER["QUERY_STRING"];
-$id = str_replace("id=", "", $requested_query_vars);
-$sql = "SELECT * FROM bikes WHERE id = '$id'";
-$res = mysqli_query($con, $sql);
-while ($row = mysqli_fetch_assoc($res)) {
-    $image_path = $row['image_path'];
-    $bikename = $row['bikename'];
-    $bikebrand = $row['brand'];
-    $damaged = $row['damaged'];
-    $price = $row['selling_price'];
-    $framenumber = $row['framenumber'];
-    $color = $row['color'];
-    $gears = $row['gears'];
-    $description = $row['description'];
-}
-$itemids = implode(", ", $_SESSION['cart']);
-debug_to_console($itemids);
-if ($itemids != "") {
-    $sqlgetItems = "SELECT * FROM bikes WHERE id in(" . $itemids . ")";
-    debug_to_console($sqlgetItems);
-    $resItems = mysqli_query($con, $sqlgetItems);
-    $resBikes = mysqli_query($con, $sqlgetItems);
-    debug_to_console(mysqli_error($con));
 }
 ?>
 <html lang="en">
@@ -46,16 +11,14 @@ if ($itemids != "") {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Material.io -->
     <link href="css/Material/material-components-web.min.css" rel="stylesheet">
     <!-- Eigen CSS-->
     <link rel="stylesheet" href="scss/style.css">
     <!--  FontAwesome  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
-    type='
+    =integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" type='
      text/css' media='all'>
     <!-- Animate CSS -->
     <link rel="stylesheet" type="text/css" href="css/Animate/animate.css"/>
@@ -106,6 +69,7 @@ if ($itemids != "") {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
+<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (($_SESSION['loginstatus'] == "false")) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
@@ -123,6 +87,19 @@ if ($itemids != "") {
                 } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                     echo "<span class='mdc-button__label rRoboto'>Account</span>";
                 } ?>
+=======
+                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
+                        data-toggle="modal" data-target="#accountModal">
+                    <i class="fas fa-user"></i>
+                    <span class="pr-2"></span>
+                    <?php if ($_SESSION['first_name'] != "") {
+                        echo "<span class=\"mdc-button__label\">";
+                        echo $_SESSION['first_name'];
+                        echo "</span>";
+                    } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
+                        echo "<span class='mdc-button__label rRoboto'>Account</span>";
+                    } ?>
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 </button>
                 <div class="dropdown float-right">
                     <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
@@ -131,39 +108,39 @@ if ($itemids != "") {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
-                        <?php
-                        if ($itemids == "") {
-                            echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
-                        } else {
-                            if (isset($res)) {
-                                if (mysqli_num_rows($resItems) > 0) {
-                                    while ($bike = mysqli_fetch_assoc($resItems)) {
-                                        echo "<div class=\"order\">";
-                                        echo "<div class=\"float-right\">";
-                                        echo " <div class=\"m-0 pt-3 bRoboto\">" . $bike['brand'] . " " . $bike['bikename'] . "</div>";
-                                        echo "<div class=\"m-0 text-right shopping-bedrag font-weight-normal\">&euro;" . $bike['selling_price'] . "</div>";
-                                        echo "</div>";
-                                        echo "<div class=\"float-left pt-4\">";
-                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id'] . "' class=\"fas fa-times pr-4\"></a>";
-                                        echo "</div>";
-                                        echo "<img src=\"assets/img/bike.png\" width=\"60\">";
-
-                                        echo "</div>";
-                                    }
-                                    echo "<hr>";
-                                    echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
-                                    echo "  <p>&euro; " . $_SESSION['total_price'] . ",-</p>";
-                                    echo "</div>";
-                                    echo "<hr>";
-                                    echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
-                                    echo "<div class='row'>";
-                                    echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown'><a href='winkelwagen.php'>Bestellen</a></button >";
-                                    echo "</div >";
-                                }
-                            }
-                        }
-                        ?>
+                        <div class="order">
+                            <div class="float-left pt-4">
+                                <i class="fas fa-times pr-4"></i>
+                            </div>
+                            <img src="assets/img/bike.png" width="60">
+                            <div class="float-right">
+                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="order">
+                            <div class="float-left pt-4">
+                                <i class="fas fa-times pr-4"></i>
+                            </div>
+                            <img src="assets/img/bike.png" width="60">
+                            <div class="float-right">
+                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
+                            <p>&euro; 3758,-</p>
+                        </div>
+                        <hr>
+                        <p class="text-center">2 Artikelen in winkelwagen</p>
+                        <a href="winkelwagen.php">
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
+                                    type="button" id="bestellenDropdown">
+                                Bestellen
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -190,114 +167,97 @@ if ($itemids != "") {
     </div>
     <!-- Winkelwagen -->
     <div id="winkelwagen">
-        <p class="h1 d-flex justify-content-center mt-4 bRoboto">Winkelwagen</p>
+        <p class="h1 d-flex justify-content-center mt-4 bRoboto">Winkel wagen</p>
         <hr class="w-50">
-        <?php
-        if ($itemids == "") {
-            echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
-        }else if ($resItems->num_rows > 0) {
-            while ($bike = mysqli_fetch_assoc($resBikes)) {
-                echo "<div class=\"row p-2 bg-light w-100 m-0 justify-content-center\">";
-                echo "<div class=\"col-xl-2 float-right\">";
-                echo "<img src=\"assets/img/bike_detail.png\" class=\"float-left winkelwagen-image\">";
-                echo "<p class=\"bRoboto d-block justify-content-center text-center m-0\">" . $bike['brand'] . " " . $bike['bikename'] . "</p>";
-                if($bike['damaged'] == 0)
-                {
-                    echo "<p class=\"main-color-light d-block justify-content-center text-center\">Onbeschadigd</p>";
-                } elseif($bike['damaged'] == 1)
-                {
-                    echo "<p class=\"main-color-light d-block justify-content-center text-center\">Beschadigd</p>";
-                }
-                echo "</div>";
-                echo "<div class=\"vr my-auto\"></div>";
-                echo "<div class=\"brand pl-5 pr-5 h-100 my-auto\">";
-                echo "<p class=\"iRoboto m-0 text-center\">Merk</p>";
-                echo "<p class=\"bRoboto text-center\">" . $bike['brand'] . "</p>";
-                echo "</div>";
-                echo "<div class=\"vr my-auto\"></div>";
-                echo "<div class=\"brand pl-5 pr-5 h-100 my-auto\">";
-                echo "<p class=\"iRoboto m-0 text-center\">Color</p>";
-                echo "<p class=\"bRoboto text-center\">". $bike['color'] ."</p>";
-                echo "</div>";
-                echo "<div class=\"vr my-auto\"></div>";
-                echo "<div class=\"brand pl-5 pr-5 h-100 my-auto\">";
-                echo "<p class=\"iRoboto m-0 text-center\">Framenummer</p>";
-                echo "<p class=\"bRoboto text-center\">". $bike['framenumber'] ."</p>";
-                echo "</div>";
-                echo "<div class=\"vr my-auto\"></div>";
-                echo "<div class=\"brand pl-5 pr-5 h-100 my-auto\">";
-                echo "<p class=\"iRoboto m-0 text-center\">Versnellingen</p>";
-                echo "<p class=\"bRoboto text-center   \">". $bike['gears'] ."</p>";
-                echo "</div>";
-                echo "<div class=\"vr my-auto\"></div>";
-                echo "<div class=\"brand pl-5 pr-5 h-100 my-auto\">";
-                echo "<p class=\"iRoboto m-0 text-center\">Prijs</p>";
-                echo "<p class=\"bRoboto text-center main-color-light\">&euro; ". $bike['selling_price'] .",-</p>";
-                echo "</div>";
-                echo "<div class=\"vr my-auto\"></div>";
-                echo "<div class=\"brand pl-5 pr-5 h-100 my-auto\">";
-                echo "<a class=\"foo-button mdc-button mdc-button--label mdc-ripple-upgraded account navbar-toggler mr-1\" href='Controllers/delete_cart.php?id=" . $bike['id'] . "'>
-                    <span aria-hidden=\"true\">&times;</span>
-                </a>";
-                echo "</div>";
-                echo "</div>";
-            }
-        }
-        if($_SESSION['loginstatus'] == 1)
-        {
-            echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown'><a href='Controllers/order.php'>Bestellen</a></button >";
-        }
-        ?>
+        <div class="row p-2 bg-light w-100 m-0 justify-content-center">
+            <div class="col-xl-2 float-right">
+                <img src="assets/img/bike_detail.png" class="float-left winkelwagen-image">
+                <p class="bRoboto d-block justify-content-center text-center m-0">Berenfiets kaas</p>
+                <p class="main-color-light d-block justify-content-center text-center">Onbeschadigd</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Merk</p>
+                <p class="bRoboto text-center">Gazelle</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Color</p>
+                <p class="bRoboto text-center">Black</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Framenummer</p>
+                <p class="bRoboto text-center">GZ0316026</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Versnellingen</p>
+                <p class="bRoboto text-center   ">7</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <p class="iRoboto m-0 text-center">Prijs</p>
+                <p class="bRoboto text-center main-color-light">&euro; 745,-</p>
+            </div>
+            <div class="vr my-auto"></div>
+            <div class="brand pl-5 pr-5 h-100 my-auto">
+                <button class="foo-button mdc-button mdc-button--label mdc-ripple-upgraded account navbar-toggler mr-1"
+                        type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                        data-target="#registreerModal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Account Modal -->
-<div class="modal fade" id="accountModal" tabindex=" - 1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
-    <div class="modal - dialog modal - dialog - centered" role="document">
-        <div class="modal - content">
-            <div class="modal - header">
-                <button class="mdc - button mdc - ripple - upgraded account times - button float - right dismiss - button"
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
                         data-dismiss="modal" aria-label="Close" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal - title w - 100 text - center bRoboto" id="account">Inloggen</h5>
+                <h5 class="modal-title w-100 text-center bRoboto" id="account">Inloggen</h5>
             </div>
-            <div class="modal - body bg - light h - 100">
-                <form action="Controllers / login . php" method="POST" id="formLogin">
-                    <div class="mdc - text - field mdc - text - field--outlined w - 100">
-                        <input type="email" name="emailInput" id="tf - outlined" class="mdc - text - field__input"
+            <div class="modal-body bg-light h-100">
+                <form action="Controllers/login.php" method="POST" id="formLogin">
+                    <div class="mdc-text-field mdc-text-field--outlined w-100">
+                        <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input"
                                required>
-                        <div class="mdc - notched - outline">
-                            <div class="mdc - notched - outline__leading"></div>
-                            <div class="mdc - notched - outline__notch">
-                                <label for="tf - outlined" class="mdc - floating - label">E-mail</label>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="tf-outlined" class="mdc-floating-label">E-mail</label>
                             </div>
-                            <div class="mdc - notched - outline__trailing"></div>
+                            <div class="mdc-notched-outline__trailing"></div>
                         </div>
                     </div>
-                    <div class="mdc - text - field mdc - text - field--outlined w - 100 mt - 3 mb - 3">
-                        <input type="password" name="passwordInput" id="tf - outlined" class="mdc - text - field__input"
+                    <div class="mdc-text-field mdc-text-field--outlined w-100 mt-3 mb-3">
+                        <input type="password" name="passwordInput" id="tf-outlined" class="mdc-text-field__input"
                                required>
-                        <div class="mdc - notched - outline">
-                            <div class="mdc - notched - outline__leading"></div>
-                            <div class="mdc - notched - outline__notch">
-                                <label for="tf - outlined" class="mdc - floating - label">Password</label>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="tf-outlined" class="mdc-floating-label">Password</label>
                             </div>
-                            <div class="mdc - notched - outline__trailing"></div>
+                            <div class="mdc-notched-outline__trailing"></div>
                         </div>
                     </div>
-                    <div id="modal - buttons" class="float - right">
-                        <button class="foo - button mdc - button mdc - button--unelevated mdc - ripple - upgraded account navbar - toggler mr - 1"
+                    <div id="modal-buttons" class="float-right">
+                        <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler mr-1"
                                 type="submit" aria-controls="navbarSupportedContent" aria-expanded="false"
                                 aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
                                 data-target="#registreerModal">
                             Registeren
                         </button>
                         <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                                type="submit" name="submit" form="formLogin" aria - controls="navbarSupportedContent"
-                                aria - expanded="false"
-                                aria - label="Toggle navigation">
+                                type="submit" name="submit" form="formLogin" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
                             Inloggen
                         </button>
                     </div>
@@ -306,17 +266,17 @@ if ($itemids != "") {
         </div>
     </div>
 </div>
-<!--Registreren Modal-->
-<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria - labelledby="registreerModalTitle"
-     aria - hidden="true">
+<!-- Registreren Modal -->
+<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="registreerModalTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button class="mdc-button mdc-ripple-upgraded account times-button float-right dismiss-button"
-                        data - dismiss="modal" aria - label="Close" type="button">
-                    <span aria - hidden="true">&times;</span>
+                        data-dismiss="modal" aria-label="Close" type="button">
+                    <span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title w-100 text-center bRoboto" id="account"> Registreren</h5>
+                <h5 class="modal-title w-100 text-center bRoboto" id="account">Registreren</h5>
             </div>
             <div class="modal-body p-4">
                 <form action="Controllers/register.php" method="POST" id="registreerForm">
@@ -326,7 +286,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Voornaam</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Voornaam</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -336,7 +296,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Achternaam</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Achternaam</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -346,7 +306,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Straat</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Straat</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -357,7 +317,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Huisnummer</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Huisnummer</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -367,7 +327,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Postcode</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Postcode</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -377,7 +337,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Stad</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Stad</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -387,7 +347,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Telefoonnummer</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Telefoonnummer</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -398,7 +358,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> E - mail</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">E-mail</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -409,7 +369,7 @@ if ($itemids != "") {
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="tf-outlined" class="mdc-floating-label"> Wachtwoord</label>
+                                    <label for="tf-outlined" class="mdc-floating-label">Wachtwoord</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
@@ -420,15 +380,15 @@ if ($itemids != "") {
             <div class="modal-footer w-100">
                 <div id="modal-buttons" class="float-right">
                     <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            aria - controls="navbarSupportedContent" aria - expanded="false"
-                            aria - label="Toggle navigation" data - dismiss="modal" data - toggle="modal"
-                            data - target="#accountModal">
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation" data-dismiss="modal" data-toggle="modal"
+                            data-target="#accountModal">
                         Terug
                     </button>
                     <button type="submit" name="submit" form="registreerForm"
                             class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account navbar-toggler"
-                            aria - controls="navbarSupportedContent" aria - expanded="false"
-                            aria - label="Toggle navigation">
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
                         Registreren
                     </button>
                 </div>
@@ -436,6 +396,7 @@ if ($itemids != "") {
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <!-- Account detail modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
      aria-hidden="true" id="accountDetailModal">
@@ -536,6 +497,8 @@ if ($itemids != "") {
         </div>
     </div>
 </div>
+=======
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -547,10 +510,10 @@ if ($itemids != "") {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<!--Material.io-->
+<!-- Material.io -->
 <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <script src="js/material/material.js"></script>
-<!--Main -->
+<!-- Main -->
 <script type="text/javascript" src="js/Main.js"></script>
 </body>
 </html>

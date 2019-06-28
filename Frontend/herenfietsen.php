@@ -7,14 +7,6 @@ session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
-// Cart
-$itemids = implode(", ", $_SESSION['cart']);
-debug_to_console($itemids);
-if ($itemids != "") {
-    $sqlgetItems = "SELECT * FROM bikes WHERE id in(" . $itemids . ")";
-    $resItems = mysqli_query($con, $sqlgetItems);
-    debug_to_console(mysqli_error($con));
-}
 ?>
 <html lang="en">
 <head>
@@ -462,6 +454,7 @@ if ($itemids != "") {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
+<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (($_SESSION['loginstatus'] == "false")) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
@@ -479,6 +472,19 @@ if ($itemids != "") {
                 } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                     echo "<span class='mdc-button__label rRoboto'>Account</span>";
                 } ?>
+=======
+                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
+                        data-toggle="modal" data-target="#accountModal">
+                    <i class="fas fa-user"></i>
+                    <span class="pr-2"></span>
+                    <?php if ($_SESSION['first_name'] != "") {
+                        echo "<span class=\"mdc-button__label\">";
+                        echo $_SESSION['first_name'];
+                        echo "</span>";
+                    } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
+                        echo "<span class='mdc-button__label rRoboto'>Account</span>";
+                    } ?>
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 </button>
                 <div class="dropdown float-right">
                     <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
@@ -487,6 +493,7 @@ if ($itemids != "") {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
+<<<<<<< HEAD
                         <?php
                         if ($itemids == "") {
                             echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
@@ -520,6 +527,41 @@ if ($itemids != "") {
                             }
                         }
                         ?>
+=======
+                        <div class="order">
+                            <div class="float-left pt-4">
+                                <i class="fas fa-times pr-4"></i>
+                            </div>
+                            <img src="assets/img/bike.png" width="60">
+                            <div class="float-right">
+                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="order">
+                            <div class="float-left pt-4">
+                                <i class="fas fa-times pr-4"></i>
+                            </div>
+                            <img src="assets/img/bike.png" width="60">
+                            <div class="float-right">
+                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
+                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
+                            <p>&euro; 3758,-</p>
+                        </div>
+                        <hr>
+                        <p class="text-center">2 Artikelen in winkelwagen</p>
+                        <div class="row">
+                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
+                                    type="button" id="bestellenDropdown">
+                                Bestellen
+                            </button>
+                        </div>
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                     </div>
                 </div>
             </div>
@@ -930,9 +972,13 @@ if ($itemids != "") {
                     <div class="h5">
                         <span class="bRoboto"><?php echo $r['bikename'] ?></span>
                         <div class="d-block h6 pt-2 main-color-light bRoboto">
-                            <span class="Onbeschadigd"><?php if ($r['damaged'] == 0) {
+                            <span class="Onbeschadigd"><?php if ($r['damaged'] == 1) {
                                     echo "Onbeschadigd";
+<<<<<<< HEAD
                                 } else if ($r['damaged'] == 1) {
+=======
+                                } else {
+>>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                                     echo "Beschadigd";
                                 } ?></span>
                         </div>
