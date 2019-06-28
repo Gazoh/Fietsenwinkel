@@ -10,6 +10,7 @@ require_once("dbconnect.php");
 if (!isset($_SESSION['cart'])) {
     if (empty($_SESSION['cart'])) {
         $_SESSION['cart'] = array();
+        $_SESSION['total_price'] = 0;
     }
 }
 $id = $_GET['id'];
@@ -23,10 +24,16 @@ if ($_GET['id']) {
         $bike_name = $row['bikename'];
         $bike_framenumber = $row['framenumber'];
         $bike_price = $row['selling_price'];
+        $_SESSION['total_price'] += $bike_price;
     }
-    if (array_push($_SESSION['cart'], $_GET['id'])) {
-        $status = "product added";
-        json_encode($status);
+    if (!in_array($bike_id, $_SESSION['cart'], true)) {
+        if (array_push($_SESSION['cart'], $_GET['id'])) {
+            $_SESSION['cartstatus']= "product added";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
+    }
+    else if(in_array($bike_id, $_SESSION['cart'], true)){
+        $_SESSION['cartstatus'] = "product already in cart";
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

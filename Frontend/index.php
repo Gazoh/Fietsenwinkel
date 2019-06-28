@@ -16,6 +16,15 @@ debug_to_console($json_data);
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
+
+// Cart
+$itemids = implode(", ", $_SESSION['cart']);
+debug_to_console($itemids);
+if ($itemids != "") {
+    $sqlgetItems = "SELECT * FROM bikes WHERE id in(" . $itemids . ")";
+    $resItems = mysqli_query($con, $sqlgetItems);
+    debug_to_console(mysqli_error($con));
+}
 ?>
 <html lang="en">
 <head>
@@ -79,10 +88,7 @@ if (!isset($_SESSION['first_name'])) {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
                         data-toggle=\"modal\" data-target=\"#accountModal\">";
@@ -107,39 +113,39 @@ if (!isset($_SESSION['first_name'])) {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
-                            <p>&euro; 3758,-</p>
-                        </div>
-                        <hr>
-                        <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <a href="winkelwagen.php">
-                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
-                                    type="button" id="bestellenDropdown">
-                                Bestellen
-                            </button>
-                        </a>
+                        <?php
+                        if ($itemids == "") {
+                            echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
+                        } else {
+                            if (isset($res)) {
+                                if (mysqli_num_rows($resItems) > 0) {
+                                    while ($bike = mysqli_fetch_assoc($resItems)) {
+                                        echo "<div class=\"order\">";
+                                        echo "<div class=\"float-right\">";
+                                        echo " <div class=\"m-0 pt-3 bRoboto\">" . $bike['brand'] . " " . $bike['bikename'] . "</div>";
+                                        echo "<div class=\"m-0 text-right shopping-bedrag font-weight-normal\">&euro;" . $bike['selling_price'] . "</div>";
+                                        echo "</div>";
+                                        echo "<div class=\"float-left pt-4\">";
+                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id'] . "' class=\"fas fa-times pr-4\"></a>";
+                                        echo "</div>";
+                                        echo "<img src=\"assets/img/bike.png\" width=\"60\">";
+
+                                        echo "</div>";
+                                    }
+                                    echo "<hr>";
+                                    echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
+                                    echo "  <p>&euro; " . $_SESSION['total_price'] . ",-</p>";
+                                    echo "</div>";
+                                    echo "<hr>";
+                                    echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
+                                    echo "<div class='row'>";
+                                    echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
+                                    type = 'button' id = 'bestellenDropdown'><a class='text-white' href='winkelwagen.php'>Bestellen</a></button >";
+                                    echo "</div >";
+                                }
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -251,73 +257,72 @@ if (!isset($_SESSION['first_name'])) {
             </div>
             <div class="col"></div>
         </div>
-        <form class="text-center" action="nieuwsbrief_aangemeld.php" method="post">
+        <form action="controllers/nieuwsbrief.php" method="POST" id="nieuwsbrief-versturen" class="text-center">
             <div class="mdc-text-field mdc-text-field--outlined">
-                <form action="controllers/nieuwsbrief.php" method="POST" id="nieuwsbrief-versturen">
-                    <div class="mdc-text-field mdc-text-field--outlined w-100">
-                        <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
-                        <div class="mdc-notched-outline">
-                            <div class="mdc-notched-outline__leading"></div>
-                            <div class="mdc-notched-outline__notch">
-                                <label for="tf-outlined" class="mdc-floating-label">Email</label>
-                            </div>
-                            <div class="mdc-notched-outline__trailing"></div>
+                <div class="mdc-text-field mdc-text-field--outlined w-100">
+                    <input type="email" name="emailInput" id="tf-outlined" class="mdc-text-field__input">
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="tf-outlined" class="mdc-floating-label">Email</label>
                         </div>
-                        <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded inschrijven"
-                                type="submit" name="submit" form="nieuwsbrief-versturen">
-                            Inschrijven
-                        </button>
+                        <div class="mdc-notched-outline__trailing"></div>
                     </div>
-                </form>
-            </div>
-            <!-- Service -->
-            <div class="p-5 pt-0 d-flex justify-content-center" id="service">
-                <div class="row">
-                    <div class="col" id="klanten_service">
-                        <p class="pl-3 bRoboto lead m-2 main-color-light">Klantenservice</p>
-                        <ul class="service-ul main-color">
-                            <li class="service-li">Contact</li>
-                            <li class="service-li">Garantie</li>
-                            <li class="service-li">Onderhoud</li>
-                            <li class="service-li">Reparatie</li>
-                            <li class="service-li">Fietsverzekering</li>
-                            <li class="service-li">Privacy verklaring</li>
-                            <li class="service-li">Algemene voorwaarden</li>
-                        </ul>
-                    </div>
-                    <div class="col" id="bestellen_betalen">
-                        <p class="pl-3 bRoboto lead m-2 main-color-light">Bestellen en betalen</p>
-                        <ul class="service-ul main-color">
-                            <li class="service-li">Bestellen</li>
-                            <li class="service-li">Betaling</li>
-                            <li class="service-li">Verzenden & Bezorging</li>
-                            <li class="service-li">Retouren</li>
-                            <li class="service-li">Leasen</li>
-                            <li class="service-li">Financieren</li>
-                        </ul>
-                    </div>
-                    <div class="col" id="merken">
-                        <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
-                        <ul class="service-ul main-color">
-                            <li class="service-li">Gazelle</li>
-                            <li class="service-li">Scott</li>
-                            <li class="service-li">Cortina</li>
-                            <li class="service-li">Batavus</li>
-                            <li class="service-li">Stromer</li>
-                        </ul>
-                    </div>
-                    <div class="col" id="over_ons">
-                        <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
-                        <ul class="service-ul main-color">
-                            <li class="service-li">Gebruikte Fietsen BV</li>
-                            <li class="service-li">fietsstraat 111</li>
-                            <li class="service-li">1078 GV Amsterdam</li>
-                            <li class="service-li">Nederland</li>
-                            <li class="service-li">Tel nr: +31 (0)12 345 6789</li>
-                        </ul>
-                    </div>
+                    <button class="foo-button mdc-button mdc-button--raised mdc-ripple-upgraded inschrijven"
+                            type="submit" name="submit" form="nieuwsbrief-versturen">
+                        Inschrijven
+                    </button>
                 </div>
             </div>
+        </form>
+        <!-- Service -->
+        <div class="p-5 pt-0 d-flex justify-content-center" id="service">
+            <div class="row">
+                <div class="col" id="klanten_service">
+                    <p class="pl-3 bRoboto lead m-2 main-color-light">Klantenservice</p>
+                    <ul class="service-ul main-color">
+                        <li class="service-li">Contact</li>
+                        <li class="service-li">Garantie</li>
+                        <li class="service-li">Onderhoud</li>
+                        <li class="service-li">Reparatie</li>
+                        <li class="service-li">Fietsverzekering</li>
+                        <li class="service-li">Privacy verklaring</li>
+                        <li class="service-li">Algemene voorwaarden</li>
+                    </ul>
+                </div>
+                <div class="col" id="bestellen_betalen">
+                    <p class="pl-3 bRoboto lead m-2 main-color-light">Bestellen en betalen</p>
+                    <ul class="service-ul main-color">
+                        <li class="service-li">Bestellen</li>
+                        <li class="service-li">Betaling</li>
+                        <li class="service-li">Verzenden & Bezorging</li>
+                        <li class="service-li">Retouren</li>
+                        <li class="service-li">Leasen</li>
+                        <li class="service-li">Financieren</li>
+                    </ul>
+                </div>
+                <div class="col" id="merken">
+                    <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
+                    <ul class="service-ul main-color">
+                        <li class="service-li">Gazelle</li>
+                        <li class="service-li">Scott</li>
+                        <li class="service-li">Cortina</li>
+                        <li class="service-li">Batavus</li>
+                        <li class="service-li">Stromer</li>
+                    </ul>
+                </div>
+                <div class="col" id="over_ons">
+                    <p class="pl-3 bRoboto lead m-2 main-color-light">Populaire merken</p>
+                    <ul class="service-ul main-color">
+                        <li class="service-li">Gebruikte Fietsen BV</li>
+                        <li class="service-li">fietsstraat 111</li>
+                        <li class="service-li">1078 GV Amsterdam</li>
+                        <li class="service-li">Nederland</li>
+                        <li class="service-li">Tel nr: +31 (0)12 345 6789</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Footer -->
     <div class="bg-light copyright-footer my-auto p-3" id="copyright-footer">

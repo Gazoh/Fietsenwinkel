@@ -27,9 +27,6 @@ while ($row = mysqli_fetch_assoc($res)) {
     $gears = $row['gears'];
     $description = $row['description'];
 }
-if (!empty($_SESSION['cart'])) {
-    debug_to_console(var_dump($_SESSION['cart']));
-}
 $itemids = implode(", ", $_SESSION['cart']);
 debug_to_console($itemids);
 if ($itemids != "") {
@@ -103,8 +100,6 @@ if ($itemids != "") {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
@@ -122,24 +117,6 @@ if ($itemids != "") {
                 } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                     echo "<span class='mdc-button__label rRoboto'>Account</span>";
                 } ?>
-=======
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
-                        data-toggle="modal" data-target="#accountModal">
-                    <i class="fas fa-user"></i>
-                    <span class="pr-2"></span>
-                    <?php if ($_SESSION['first_name'] != "") {
-                        echo "<span class=\"mdc-button__label\">";
-                        echo $_SESSION['first_name'];
-                        echo "</span>";
-                    } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
-                        echo "<span class='mdc-button__label rRoboto'>Account</span>";
-                    } ?>
-<<<<<<< HEAD
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 </button>
                 <div class="dropdown float-right">
                     <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
@@ -161,7 +138,7 @@ if ($itemids != "") {
                                         echo "<div class=\"m-0 text-right shopping-bedrag font-weight-normal\">&euro;" . $bike['selling_price'] . "</div>";
                                         echo "</div>";
                                         echo "<div class=\"float-left pt-4\">";
-                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id']  ."' class=\"fas fa-times pr-4\"></a>";
+                                        echo "<a href='Controllers/delete_cart.php?id=" . $bike['id'] . "' class=\"fas fa-times pr-4\"></a>";
                                         echo "</div>";
                                         echo "<img src=\"assets/img/bike.png\" width=\"60\">";
 
@@ -169,13 +146,13 @@ if ($itemids != "") {
                                     }
                                     echo "<hr>";
                                     echo "<div class='pt - 1 text - center bRoboto' id='totaalbedrag'>";
-                                    echo "  <p>&euro; 3758,-</p>";
+                                    echo "  <p>&euro; " . $_SESSION['total_price'] . ",-</p>";
                                     echo "</div>";
                                     echo "<hr>";
                                     echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
                                     echo "<div class='row'>";
                                     echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown' >Bestellen</button >";
+                                    type = 'button' id = 'bestellenDropdown'><a class='text-white' href='winkelwagen.php'>Bestellen</a></button >";
                                     echo "</div >";
                                 }
                             }
@@ -474,7 +451,7 @@ if ($itemids != "") {
             </div>
         </div>
     </div>
-<<<<<<< HEAD
+    <<<<<<< HEAD
 </div>
 <!-- Account detail modal -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -575,8 +552,8 @@ if ($itemids != "") {
             </div>
         </div>
     </div>
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
+    =======
+    >>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

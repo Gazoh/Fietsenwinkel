@@ -7,6 +7,14 @@ session_start();
 if (!isset($_SESSION['first_name'])) {
     $_SESSION['first_name'] = "";
 }
+
+$itemids = implode(", ", $_SESSION['cart']);
+debug_to_console($itemids);
+if ($itemids != "") {
+    $sqlgetItems = "SELECT * FROM bikes WHERE id in(" . $itemids . ")";
+    $resItems = mysqli_query($con, $sqlgetItems);
+    debug_to_console(mysqli_error($con));
+}
 ?>
 <html lang="en">
 <head>
@@ -454,8 +462,6 @@ if (!isset($_SESSION['first_name'])) {
             </ul>
             <!-- Nav Buttons / Shopping cart -->
             <div class="navbar-buttons-top" id="navbar-buttons-top">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
                 <?php if (!isset($_SESSION['loginstatus'])) {
                     echo "<button class=\"foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2\"
@@ -473,24 +479,6 @@ if (!isset($_SESSION['first_name'])) {
                 } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
                     echo "<span class='mdc-button__label rRoboto'>Account</span>";
                 } ?>
-=======
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-                <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account mr-2"
-                        data-toggle="modal" data-target="#accountModal">
-                    <i class="fas fa-user"></i>
-                    <span class="pr-2"></span>
-                    <?php if ($_SESSION['first_name'] != "") {
-                        echo "<span class=\"mdc-button__label\">";
-                        echo $_SESSION['first_name'];
-                        echo "</span>";
-                    } elseif (!isset($_SESSION["first_name"]) || $_SESSION['first_name'] == "") {
-                        echo "<span class='mdc-button__label rRoboto'>Account</span>";
-                    } ?>
-<<<<<<< HEAD
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                 </button>
                 <div class="dropdown float-right">
                     <button class="foo-button mdc-button mdc-button--dense mdc-ripple-upgraded account"
@@ -499,9 +487,6 @@ if (!isset($_SESSION['first_name'])) {
                         <i class="fas fa-shopping-bag fontSize1rem"></i>
                     </button>
                     <div class="dropdown-menu p-4" id="dropdown" aria-labelledby="dropdownMenuButton">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <?php
                         if ($itemids == "") {
                             echo "<p>Er zijn geen artikelen in uw winkelwagen</p>";
@@ -529,57 +514,12 @@ if (!isset($_SESSION['first_name'])) {
                                     echo "<p class='text - center'>" . count($_SESSION['cart']) . " Artikelen in winkelwagen</p>";
                                     echo "<div class='row'>";
                                     echo "<button class='foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto'
-                                    type = 'button' id = 'bestellenDropdown'><a href='winkelwagen.php'>Bestellen</a></button >";
+                                    type = 'button' id = 'bestellenDropdown'><a class='text-white' href='winkelwagen.php'>Bestellen</a></button >";
                                     echo "</div >";
                                 }
                             }
                         }
                         ?>
-=======
-=======
->>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="order">
-                            <div class="float-left pt-4">
-                                <i class="fas fa-times pr-4"></i>
-                            </div>
-                            <img src="assets/img/bike.png" width="60">
-                            <div class="float-right">
-                                <div class="m-0 pt-3 bRoboto">Lorem Ipsum Text</div>
-                                <div class="m-0 text-right shopping-bedrag font-weight-normal">&euro; 1879,-</div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="pt-1 text-center bRoboto" id="totaalbedrag">
-                            <p>&euro; 3758,-</p>
-                        </div>
-                        <hr>
-                        <p class="text-center">2 Artikelen in winkelwagen</p>
-                        <div class="row">
-                            <button class="foo-button mdc-button mdc-button--unelevated mdc-ripple-upgraded account w-100 bRoboto"
-                                    type="button" id="bestellenDropdown">
-                                Bestellen
-                            </button>
-                        </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-=======
->>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
-=======
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                     </div>
                 </div>
             </div>
@@ -992,19 +932,7 @@ if (!isset($_SESSION['first_name'])) {
                         <div class="d-block h6 pt-2 main-color-light bRoboto">
                             <span class="Onbeschadigd"><?php if ($r['damaged'] == 1) {
                                     echo "Onbeschadigd";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 } else if ($r['damaged'] == 1) {
-=======
-                                } else {
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
-=======
-                                } else {
->>>>>>> parent of 6068f8b... Merge branch 'master' of https://github.com/Gazoh/Fietsenwinkel
-=======
-                                } else {
->>>>>>> parent of 399205a... Cart werkt volledig, bestellen ook
                                     echo "Beschadigd";
                                 } ?></span>
                         </div>
